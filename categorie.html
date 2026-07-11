@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Categorie - Magazin mobila</title>
+<style>
+  /* aceleasi variabile ca in prototip-meniu.html - le sincronizam cand
+     stabilim paleta finala */
+  :root {
+    --bg: #dbe8d9;
+    --ink: #1f2e22;
+    --ink-soft: #4c5c4c;
+    --line: #b9cbb4;
+    --panel: #f3f7f1;
+    --accent: #2f4a37;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+
+  header.topbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 68px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    z-index: 50;
+  }
+
+  .logo {
+    font-size: 15px;
+    letter-spacing: 0.14em;
+    font-weight: 600;
+    color: var(--ink-soft);
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  nav.mainnav ul {
+    display: flex;
+    gap: 8px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-item {
+    position: relative;
+    padding: 10px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    color: var(--ink);
+    border-radius: 6px;
+    user-select: none;
+    transition: background 0.15s ease;
+  }
+
+  .nav-item:hover { background: rgba(0,0,0,0.04); }
+
+  .nav-item.active {
+    background: var(--ink);
+    color: #fff;
+  }
+
+  .nav-item.active::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -13px;
+    transform: translateX(-50%);
+    width: 0; height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid var(--ink);
+  }
+
+  .catalog-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 18, 15, 0.25);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 40;
+  }
+  .catalog-overlay.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .catalog-panel {
+    position: fixed;
+    top: 68px;
+    min-width: 340px;
+    max-width: 560px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-top: none;
+    box-shadow: 0 18px 40px rgba(20,18,15,0.12);
+    border-radius: 0 0 10px 10px;
+    transform-origin: top center;
+    transform: perspective(1400px) rotateX(-92deg);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.5s cubic-bezier(.22,.9,.3,1.15), opacity 0.25s ease;
+    z-index: 45;
+    padding: 22px 10px;
+  }
+
+  .catalog-panel.open {
+    transform: perspective(1400px) rotateX(0deg);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .catalog-pages { display: flex; flex-direction: column; }
+
+  .page { perspective: 900px; }
+
+  .page .page-inner {
+    transform-origin: left center;
+    transform: rotateY(-100deg);
+    opacity: 0;
+    transition: transform 0.5s cubic-bezier(.2,.8,.2,1), opacity 0.4s ease;
+    padding: 13px 18px;
+    border-bottom: 1px solid var(--line);
+    font-size: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--ink);
+  }
+
+  .page:last-child .page-inner { border-bottom: none; }
+
+  .page.flip-in .page-inner { transform: rotateY(0deg); opacity: 1; }
+
+  .page .page-inner:hover { background: rgba(0,0,0,0.035); }
+
+  .page .arrow {
+    color: var(--ink-soft);
+    font-size: 13px;
+    transform: translateX(-4px);
+    opacity: 0;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  .page .page-inner:hover .arrow { transform: translateX(0); opacity: 1; }
+
+  /* ====================== o singura carte mare ====================== */
+
+  .book-stage {
+    padding: 118px 20px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .breadcrumb {
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-bottom: 20px;
+  }
+  .breadcrumb a { color: var(--ink-soft); text-decoration: none; }
+  .breadcrumb a:hover { text-decoration: underline; }
+
+  .book-wrap {
+    position: relative;
+    width: 920px;
+    max-width: 94vw;
+    height: 560px;
+    perspective: 2600px;
+  }
+
+  .pages {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    background: var(--panel);
+    border-radius: 8px;
+    box-shadow: 0 34px 80px rgba(20,18,15,0.24);
+    overflow: hidden;
+  }
+
+  .page-left, .page-right {
+    width: 50%;
+    height: 100%;
+    padding: 36px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .page-left { border-right: 1px solid var(--line); }
+
+  .spine-shadow {
+    position: absolute;
+    top: 0; bottom: 0; left: 50%;
+    width: 70px;
+    margin-left: -35px;
+    background: linear-gradient(to right,
+      rgba(0,0,0,0.12), rgba(0,0,0,0) 25%,
+      rgba(0,0,0,0) 75%, rgba(0,0,0,0.12));
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .hero-photo {
+    flex: 1;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 18px;
+    background: var(--line);
+  }
+  .hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .page-left h1 {
+    font-size: 25px;
+    font-weight: 600;
+    margin: 0 0 6px;
+  }
+  .page-left p {
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .thumb-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 1fr;
+    align-content: start;
+    gap: 16px;
+  }
+  .thumb-grid .thumb {
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--line);
+    aspect-ratio: 4 / 3;
+  }
+  .thumb-grid img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .cover {
+    position: absolute;
+    inset: 0;
+    background: var(--accent);
+    color: #f3f7f1;
+    border-radius: 8px;
+    box-shadow: -12px 0 0 rgba(0,0,0,0.14) inset, 0 34px 80px rgba(20,18,15,0.32);
+    transform-origin: left center;
+    transform: rotateY(0deg);
+    transition: transform 1.15s cubic-bezier(.5,0,.2,1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    z-index: 5;
+    backface-visibility: hidden;
+  }
+  .cover.open { transform: rotateY(-160deg); }
+
+  .cover-title {
+    font-size: 36px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+  .cover-sub {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    opacity: 0.75;
+  }
+</style>
+</head>
+<body>
+
+  <header class="topbar">
+    <a class="logo" href="prototip-meniu.html">MOBILA</a>
+    <nav class="mainnav">
+      <ul id="nav-list">
+        <li class="nav-item" data-menu="colectie">Colectie</li>
+        <li class="nav-item" data-menu="mobilier">Mobilier</li>
+        <li class="nav-item" data-menu="inspiratie">Inspiratie</li>
+        <li class="nav-item" data-menu="despre">Despre noi</li>
+        <li class="nav-item" data-menu="contact">Contact</li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="catalog-overlay" id="overlay"></div>
+  <div class="catalog-panel" id="panel">
+    <div class="catalog-pages" id="pages"></div>
+  </div>
+
+  <main class="book-stage">
+    <div class="breadcrumb"><a href="prototip-meniu.html">Acasa</a> / <span id="breadcrumbTitle">Categorie</span></div>
+
+    <div class="book-wrap" id="bookWrap">
+      <div class="pages">
+        <div class="page-left">
+          <div class="hero-photo">
+            <img id="heroImg" alt="" />
+          </div>
+          <h1 id="categoryTitle">Categorie</h1>
+          <p>Pagina placeholder pentru categoria selectata. Descrierile si produsele reale se adauga intr-un pas urmator.</p>
+        </div>
+        <div class="page-right">
+          <div class="thumb-grid" id="thumbGrid"></div>
+        </div>
+        <div class="spine-shadow"></div>
+      </div>
+
+      <div class="cover" id="cover">
+        <div class="cover-title" id="coverTitle">Categorie</div>
+        <div class="cover-sub">Catalog</div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    /* PLACEHOLDER: continutul real al fiecarui submeniu vine mai tarziu */
+    const menus = {
+      colectie: ["Colectia 1", "Colectia 2", "Colectia 3"], /* PLACEHOLDER: denumirile vin de la tine */
+      mobilier: ["Dormitoare", "Bucatarii", "Corpuri de mobila"],
+      inspiratie: ["Idei de amenajare", "Proiecte realizate", "Blog"],
+      despre: ["Povestea noastra", "Valori", "Echipa"],
+      contact: ["Showroom", "Programare vizita", "Suport"]
+    };
+
+    /* PLACEHOLDER: poze reale doar pentru Dormitoare / Bucatarii / Corpuri
+       de mobila (din poze trimise pe WhatsApp). Restul categoriilor
+       refolosesc un set generic pana avem poze proprii. */
+    const photosByCategory = {
+      "Dormitoare": {
+        hero: "images/dormitoare/hero.jpg",
+        thumbs: ["images/dormitoare/thumb1.jpg", "images/dormitoare/thumb2.jpg", "images/dormitoare/thumb3.jpg", "images/dormitoare/thumb4.jpg"]
+      },
+      "Bucatarii": {
+        hero: "images/bucatarii/hero.jpg",
+        thumbs: ["images/bucatarii/thumb1.jpg", "images/bucatarii/thumb2.jpg", "images/bucatarii/thumb3.jpg", "images/bucatarii/thumb4.jpg"]
+      },
+      "Corpuri de mobila": {
+        hero: "images/corpuri-mobila/hero.jpg",
+        thumbs: ["images/corpuri-mobila/thumb1.jpg"]
+      }
+    };
+
+    const defaultPhotos = {
+      hero: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=900&q=80",
+      thumbs: [
+        "https://images.unsplash.com/photo-1567016432779-094069958ea5?auto=format&fit=crop&w=500&q=75",
+        "https://images.unsplash.com/photo-1691480152351-4b3f2c89ccff?auto=format&fit=crop&w=500&q=75",
+        "https://images.unsplash.com/photo-1573866926487-a1865558a9cf?auto=format&fit=crop&w=500&q=75",
+        "https://images.unsplash.com/photo-1512212621149-107ffe572d2f?auto=format&fit=crop&w=500&q=75"
+      ]
+    };
+
+    /* --- titlu din query string (?titlu=Dormitoare) --- */
+    const params = new URLSearchParams(window.location.search);
+    const titlu = params.get("titlu") || "Categorie";
+    document.title = titlu + " - Magazin mobila";
+    document.getElementById("coverTitle").textContent = titlu;
+    document.getElementById("categoryTitle").textContent = titlu;
+    document.getElementById("breadcrumbTitle").textContent = titlu;
+
+    const photos = photosByCategory[titlu] || defaultPhotos;
+    const heroImg = document.getElementById("heroImg");
+    heroImg.src = photos.hero;
+    heroImg.alt = titlu;
+
+    const thumbGrid = document.getElementById("thumbGrid");
+    photos.thumbs.forEach((src, i) => {
+      const div = document.createElement("div");
+      div.className = "thumb";
+      const img = document.createElement("img");
+      img.src = src;
+      img.alt = titlu + " - poza " + (i + 1);
+      div.appendChild(img);
+      thumbGrid.appendChild(div);
+    });
+
+    /* --- animatia de deschidere a cartii mari, la incarcarea paginii --- */
+    const cover = document.getElementById("cover");
+    window.addEventListener("load", () => {
+      setTimeout(() => { cover.classList.add("open"); }, 350);
+    });
+
+    /* --- meniul de sus, identic cu cel din pagina principala --- */
+    const navItems = document.querySelectorAll(".nav-item");
+    const panel = document.getElementById("panel");
+    const pagesContainer = document.getElementById("pages");
+    const overlay = document.getElementById("overlay");
+    let activeMenu = null;
+
+    function positionPanel(anchorEl) {
+      const rect = anchorEl.getBoundingClientRect();
+      const maxLeft = window.innerWidth - 380;
+      panel.style.left = Math.min(rect.left, maxLeft) + "px";
+    }
+
+    function buildPages(key) {
+      pagesContainer.innerHTML = "";
+      const items = menus[key] || [];
+      items.forEach((label, i) => {
+        const page = document.createElement("div");
+        page.className = "page";
+        const inner = document.createElement("div");
+        inner.className = "page-inner";
+        inner.style.transitionDelay = (i * 70) + "ms";
+        inner.innerHTML = "<span>" + label + "</span><span class='arrow'>-></span>";
+        inner.addEventListener("click", () => {
+          window.location.href = "categorie.html?titlu=" + encodeURIComponent(label);
+        });
+        page.appendChild(inner);
+        pagesContainer.appendChild(page);
+      });
+    }
+
+    function openMenu(key, anchorEl) {
+      if (activeMenu === key) { closeMenu(); return; }
+      activeMenu = key;
+      buildPages(key);
+      positionPanel(anchorEl);
+
+      panel.classList.add("open");
+      overlay.classList.add("visible");
+      navItems.forEach(n => n.classList.toggle("active", n === anchorEl));
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          pagesContainer.querySelectorAll(".page").forEach(p => p.classList.add("flip-in"));
+        });
+      });
+    }
+
+    function closeMenu() {
+      activeMenu = null;
+      panel.classList.remove("open");
+      overlay.classList.remove("visible");
+      navItems.forEach(n => n.classList.remove("active"));
+      pagesContainer.querySelectorAll(".page").forEach(p => p.classList.remove("flip-in"));
+    }
+
+    navItems.forEach(item => {
+      item.addEventListener("click", (e) => {
+        e.stopPropagation();
+        openMenu(item.dataset.menu, item);
+      });
+    });
+
+    overlay.addEventListener("click", closeMenu);
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenu(); });
+    window.addEventListener("resize", () => { if (activeMenu) closeMenu(); });
+  </script>
+
+</body>
+</html>
