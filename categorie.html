@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Categorie - Magazin mobila</title>
 <style>
-  /* aceleasi variabile ca in prototip-meniu.html - le sincronizam cand
+  /* aceleasi variabile ca in index.html - le sincronizam cand
      stabilim paleta finala */
   :root {
     --bg: #dbe8d9;
@@ -237,21 +237,180 @@
     margin: 0;
   }
 
-  .thumb-grid {
+  /* ====================== rola de film (galerie piese) ====================== */
+
+  .filmreel-wrap {
     flex: 1;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-auto-rows: 1fr;
-    align-content: start;
-    gap: 16px;
+    display: flex;
+    flex-direction: column;
   }
-  .thumb-grid .thumb {
+
+  .filmreel-title {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--ink-soft);
+    margin-bottom: 12px;
+  }
+
+  .filmreel {
+    flex: 1;
+    background: var(--panel);
+    border: 1px solid var(--line);
     border-radius: 8px;
-    overflow: hidden;
-    background: var(--line);
-    aspect-ratio: 4 / 3;
+    padding: 14px 10px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    position: relative;
   }
-  .thumb-grid img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .frame {
+    display: inline-block;
+    vertical-align: middle;
+    width: 128px;
+    height: 96px;
+    margin: 6px 8px 0;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--line);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(20,18,15,0.1);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .frame:hover { transform: translateY(-4px); box-shadow: 0 8px 18px rgba(20,18,15,0.16); }
+  .frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .frame .frame-label {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    background: rgba(243,247,241,0.9);
+    color: var(--ink);
+    font-size: 10px;
+    padding: 3px 6px;
+    white-space: normal;
+    line-height: 1.2;
+  }
+  .frame .frame-count {
+    position: absolute;
+    top: 4px; right: 4px;
+    background: rgba(31,46,34,0.75);
+    color: #f3f7f1;
+    font-size: 10px;
+    padding: 1px 6px;
+    border-radius: 10px;
+  }
+
+  /* ====================== lightbox cu toate pozele piesei ====================== */
+
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(219, 232, 217, 0.97);
+    z-index: 300;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 14px 10px;
+  }
+  .lightbox.open { display: flex; }
+
+  .lightbox .lb-title {
+    color: var(--ink);
+    font-size: 15px;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+
+  .lightbox .lb-main {
+    max-width: 98vw;
+    max-height: 88vh;
+    border-radius: 8px;
+    object-fit: contain;
+    box-shadow: 0 20px 60px rgba(20,18,15,0.2);
+    display: block;
+  }
+
+  .lightbox .lb-thumbs {
+    display: flex;
+    gap: 10px;
+    margin-top: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .lightbox .lb-thumbs img {
+    width: 70px;
+    height: 52px;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0.55;
+    border: 2px solid transparent;
+  }
+  .lightbox .lb-thumbs img.active {
+    opacity: 1;
+    border-color: var(--accent);
+  }
+
+  .lightbox .lb-close {
+    position: absolute;
+    top: 22px; right: 30px;
+    color: var(--ink);
+    font-size: 26px;
+    cursor: pointer;
+    line-height: 1;
+  }
+
+  .lightbox .lb-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--ink);
+    font-size: 32px;
+    cursor: pointer;
+    padding: 10px 16px;
+    user-select: none;
+  }
+  .lightbox .lb-prev { left: 10px; }
+  .lightbox .lb-next { right: 10px; }
+
+  .lb-image-wrap {
+    position: relative;
+    display: inline-block;
+    max-width: 98vw;
+    max-height: 88vh;
+  }
+  .lb-color-overlay {
+    position: absolute;
+    inset: 0;
+    mix-blend-mode: color;
+    opacity: 0.9;
+    pointer-events: none;
+    display: none;
+  }
+
+  .lb-colors {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    margin-top: 16px;
+  }
+  .lb-colors.visible { display: flex; }
+  .lb-colors span {
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-right: 4px;
+  }
+  .lb-swatch {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #fff;
+    box-shadow: 0 0 0 1px rgba(20,18,15,0.3);
+  }
 
   .cover {
     position: absolute;
@@ -289,7 +448,7 @@
 <body>
 
   <header class="topbar">
-    <a class="logo" href="prototip-meniu.html">MOBILA</a>
+    <a class="logo" href="index.html">MOBILA</a>
     <nav class="mainnav">
       <ul id="nav-list">
         <li class="nav-item" data-menu="colectie">Colectie</li>
@@ -307,7 +466,7 @@
   </div>
 
   <main class="book-stage">
-    <div class="breadcrumb"><a href="prototip-meniu.html">Acasa</a> / <span id="breadcrumbTitle">Categorie</span></div>
+    <div class="breadcrumb"><a href="index.html">Acasa</a> / <span id="breadcrumbTitle">Categorie</span></div>
 
     <div class="book-wrap" id="bookWrap">
       <div class="pages">
@@ -319,7 +478,10 @@
           <p>Pagina placeholder pentru categoria selectata. Descrierile si produsele reale se adauga intr-un pas urmator.</p>
         </div>
         <div class="page-right">
-          <div class="thumb-grid" id="thumbGrid"></div>
+          <div class="filmreel-wrap">
+            <div class="filmreel-title">Piese din aceasta categorie - click pentru toate pozele</div>
+            <div class="filmreel" id="filmreel"></div>
+          </div>
         </div>
         <div class="spine-shadow"></div>
       </div>
@@ -330,6 +492,21 @@
       </div>
     </div>
   </main>
+
+  <div class="lightbox" id="lightbox">
+    <div class="lb-close" id="lbClose">&times;</div>
+    <div class="lb-nav lb-prev" id="lbPrev">&#8592;</div>
+    <div class="lb-nav lb-next" id="lbNext">&#8594;</div>
+    <div class="lb-title" id="lbTitle"></div>
+    <div class="lb-image-wrap">
+      <img class="lb-main" id="lbMain" alt="" />
+      <div class="lb-color-overlay" id="lbColorOverlay"></div>
+    </div>
+    <div class="lb-colors" id="lbColors">
+      <span>Culoare:</span>
+    </div>
+    <div class="lb-thumbs" id="lbThumbs"></div>
+  </div>
 
   <script>
     /* PLACEHOLDER: continutul real al fiecarui submeniu vine mai tarziu */
@@ -342,32 +519,49 @@
     };
 
     /* PLACEHOLDER: poze reale doar pentru Dormitoare / Bucatarii / Corpuri
-       de mobila (din poze trimise pe WhatsApp). Restul categoriilor
-       refolosesc un set generic pana avem poze proprii. */
-    const photosByCategory = {
-      "Dormitoare": {
-        hero: "images/dormitoare/hero.jpg",
-        thumbs: ["images/dormitoare/thumb1.jpg", "images/dormitoare/thumb2.jpg", "images/dormitoare/thumb3.jpg", "images/dormitoare/thumb4.jpg"]
-      },
-      "Bucatarii": {
-        hero: "images/bucatarii/hero.jpg",
-        thumbs: ["images/bucatarii/thumb1.jpg", "images/bucatarii/thumb2.jpg", "images/bucatarii/thumb3.jpg", "images/bucatarii/thumb4.jpg"]
-      },
-      "Corpuri de mobila": {
-        hero: "images/corpuri-mobila/hero.jpg",
-        thumbs: ["images/corpuri-mobila/thumb1.jpg"]
-      }
-    };
-
-    const defaultPhotos = {
-      hero: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=900&q=80",
-      thumbs: [
-        "https://images.unsplash.com/photo-1567016432779-094069958ea5?auto=format&fit=crop&w=500&q=75",
-        "https://images.unsplash.com/photo-1691480152351-4b3f2c89ccff?auto=format&fit=crop&w=500&q=75",
-        "https://images.unsplash.com/photo-1573866926487-a1865558a9cf?auto=format&fit=crop&w=500&q=75",
-        "https://images.unsplash.com/photo-1512212621149-107ffe572d2f?auto=format&fit=crop&w=500&q=75"
+       de mobila (din poze trimise pe WhatsApp). Fiecare "piesa" e o bucata
+       de mobilier distincta; cand avem mai multe poze ale ACELEIASI piese
+       (unghiuri diferite), le punem impreuna in acelasi array "photos" -
+       ele apar apoi grupate in lightbox cand se da click pe piesa.
+       Restul categoriilor refolosesc un set generic pana avem poze proprii. */
+    const productsByCategory = {
+      "Dormitoare": [
+        { name: "Dulap cu usi oglinda", photos: ["images/dormitoare/hero.jpg"] },
+        { name: "Dulap cu usi oglinda (lemn)", photos: ["images/dormitoare/thumb1.jpg"] },
+        {
+          name: "Mobilier camera copii",
+          photos: ["images/dormitoare/thumb2.jpg"],
+          /* PLACEHOLDER: contur aproximativ al panoului colorat - demo,
+             nu e pixel-perfect. Recalibram daca vrei mai multe piese. */
+          colorRegion: { photoIndex: 0, clipPath: "polygon(58% 18%, 70% 20%, 66% 78%, 46% 84%)" }
+        },
+        { name: "Pat etajat copii", photos: ["images/dormitoare/thumb3.jpg"] },
+        { name: "Pat cu tablie si dulapuri", photos: ["images/dormitoare/thumb4.jpg"] },
+        { name: "Exemplu - dulap 2 usi lemn", photos: ["https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=700&q=70"] },
+        { name: "Exemplu - dulap alb-lemn", photos: ["https://images.unsplash.com/photo-1593069431672-f903a33c286f?auto=format&fit=crop&w=700&q=70"] },
+        { name: "Exemplu - dulap alb mare cu comoda", photos: ["https://images.unsplash.com/photo-1769690398694-9c5d5ca4b4ea?auto=format&fit=crop&w=700&q=70"] },
+        { name: "Exemplu - dulap lemn langa fereastra", photos: ["https://images.unsplash.com/photo-1752407828514-660d6945d392?auto=format&fit=crop&w=700&q=70"] }
+      ],
+      "Bucatarii": [
+        { name: "Bucatarie cu insula mobila", photos: ["images/bucatarii/thumb1.jpg", "images/bucatarii/thumb2.jpg", "images/bucatarii/thumb3.jpg", "images/bucatarii/thumb4.jpg"] },
+        { name: "Bucatarie clasica cu fereastra", photos: ["images/bucatarii/hero.jpg"] },
+        { name: "Exemplu - bucatarie alba cu marmura", photos: ["https://images.unsplash.com/photo-1722605090433-41d1183a792d?auto=format&fit=crop&w=700&q=70"] },
+        { name: "Exemplu - bucatarie lemn inchis", photos: ["https://images.unsplash.com/photo-1631048835473-73c7aaf86096?auto=format&fit=crop&w=700&q=70"] },
+        { name: "Exemplu - bucatarie alba cu electrocasnice", photos: ["https://images.unsplash.com/photo-1599083549933-838ea352c1cc?auto=format&fit=crop&w=700&q=70"] },
+        { name: "Exemplu - bucatarie cu fereastra mare", photos: ["https://images.unsplash.com/photo-1713514374038-656f7bbde9db?auto=format&fit=crop&w=700&q=70"] }
+      ],
+      "Corpuri de mobila": [
+        { name: "Biblioteca de colt", photos: ["images/corpuri-mobila/thumb1.jpg"] },
+        { name: "Perete mobilier living", photos: ["images/corpuri-mobila/hero.jpg"] }
       ]
     };
+
+    const defaultProducts = [
+      { name: "Piesa exemplu 1", photos: ["https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=900&q=80"] },
+      { name: "Piesa exemplu 2", photos: ["https://images.unsplash.com/photo-1567016432779-094069958ea5?auto=format&fit=crop&w=500&q=75"] },
+      { name: "Piesa exemplu 3", photos: ["https://images.unsplash.com/photo-1691480152351-4b3f2c89ccff?auto=format&fit=crop&w=500&q=75"] },
+      { name: "Piesa exemplu 4", photos: ["https://images.unsplash.com/photo-1573866926487-a1865558a9cf?auto=format&fit=crop&w=500&q=75"] }
+    ];
 
     /* --- titlu din query string (?titlu=Dormitoare) --- */
     const params = new URLSearchParams(window.location.search);
@@ -377,20 +571,112 @@
     document.getElementById("categoryTitle").textContent = titlu;
     document.getElementById("breadcrumbTitle").textContent = titlu;
 
-    const photos = photosByCategory[titlu] || defaultPhotos;
+    const products = productsByCategory[titlu] || defaultProducts;
+
     const heroImg = document.getElementById("heroImg");
-    heroImg.src = photos.hero;
+    heroImg.src = products[0].photos[0];
     heroImg.alt = titlu;
 
-    const thumbGrid = document.getElementById("thumbGrid");
-    photos.thumbs.forEach((src, i) => {
-      const div = document.createElement("div");
-      div.className = "thumb";
+    /* --- construim rola de film cu cate un cadru per piesa --- */
+    const filmreel = document.getElementById("filmreel");
+    products.forEach((product, i) => {
+      const frame = document.createElement("div");
+      frame.className = "frame";
       const img = document.createElement("img");
-      img.src = src;
-      img.alt = titlu + " - poza " + (i + 1);
-      div.appendChild(img);
-      thumbGrid.appendChild(div);
+      img.src = product.photos[0];
+      img.alt = product.name;
+      frame.appendChild(img);
+      if (product.photos.length > 1) {
+        const count = document.createElement("div");
+        count.className = "frame-count";
+        count.textContent = product.photos.length + " poze";
+        frame.appendChild(count);
+      }
+      const label = document.createElement("div");
+      label.className = "frame-label";
+      label.textContent = product.name;
+      frame.appendChild(label);
+      frame.addEventListener("click", () => openLightbox(i));
+      filmreel.appendChild(frame);
+    });
+
+    /* --- lightbox: toate pozele piesei selectate --- */
+    const lightbox = document.getElementById("lightbox");
+    const lbMain = document.getElementById("lbMain");
+    const lbTitle = document.getElementById("lbTitle");
+    const lbThumbs = document.getElementById("lbThumbs");
+    let currentProduct = 0;
+    let currentPhoto = 0;
+
+    const lbColorOverlay = document.getElementById("lbColorOverlay");
+    const lbColors = document.getElementById("lbColors");
+    const colorChoices = ["#b98cc9", "#8ea9c9", "#c98e8e", "#a3c98e", "#d9d9d9", "#e8c56a"];
+
+    function renderLightbox() {
+      const product = products[currentProduct];
+      lbMain.src = product.photos[currentPhoto];
+      lbMain.alt = product.name;
+      lbTitle.textContent = product.name + " (" + (currentPhoto + 1) + "/" + product.photos.length + ")";
+      lbThumbs.innerHTML = "";
+      if (product.photos.length > 1) {
+        product.photos.forEach((src, i) => {
+          const t = document.createElement("img");
+          t.src = src;
+          t.className = i === currentPhoto ? "active" : "";
+          t.addEventListener("click", () => { currentPhoto = i; renderLightbox(); });
+          lbThumbs.appendChild(t);
+        });
+      }
+
+      /* --- mostre de culoare, doar daca piesa are o zona colorabila definita --- */
+      const region = product.colorRegion;
+      lbColors.querySelectorAll(".lb-swatch").forEach(el => el.remove());
+      if (region && region.photoIndex === currentPhoto) {
+        lbColorOverlay.style.clipPath = region.clipPath;
+        lbColorOverlay.style.background = colorChoices[0];
+        lbColorOverlay.style.display = "block";
+        lbColors.classList.add("visible");
+        colorChoices.forEach(color => {
+          const sw = document.createElement("div");
+          sw.className = "lb-swatch";
+          sw.style.background = color;
+          sw.addEventListener("click", () => { lbColorOverlay.style.background = color; });
+          lbColors.appendChild(sw);
+        });
+      } else {
+        lbColorOverlay.style.display = "none";
+        lbColors.classList.remove("visible");
+      }
+    }
+
+    function openLightbox(productIndex) {
+      currentProduct = productIndex;
+      currentPhoto = 0;
+      renderLightbox();
+      lightbox.classList.add("open");
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove("open");
+    }
+
+    document.getElementById("lbClose").addEventListener("click", closeLightbox);
+    lightbox.addEventListener("click", (e) => { if (e.target === lightbox) closeLightbox(); });
+    document.getElementById("lbPrev").addEventListener("click", () => {
+      const product = products[currentProduct];
+      currentPhoto = (currentPhoto - 1 + product.photos.length) % product.photos.length;
+      renderLightbox();
+    });
+    document.getElementById("lbNext").addEventListener("click", () => {
+      const product = products[currentProduct];
+      currentPhoto = (currentPhoto + 1) % product.photos.length;
+      renderLightbox();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (!lightbox.classList.contains("open")) return;
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") document.getElementById("lbPrev").click();
+      if (e.key === "ArrowRight") document.getElementById("lbNext").click();
     });
 
     /* --- animatia de deschidere a cartii mari, la incarcarea paginii --- */
