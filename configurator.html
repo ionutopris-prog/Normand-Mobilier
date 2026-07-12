@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Configurator — Normand Mobilier</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232f4a37'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' font-weight='700' text-anchor='middle' fill='%23f5f3ec'%3EN%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sage:#dbe8d9; --sage-deep:#c8d9c3; --cream:#f5f3ec; --ink:#21301f; --ink-soft:#56634f;
+    --line:#cad8c3; --forest:#2f4a37; --forest-hover:#243a2b; --wood:#9a6a43;
+    --shadow:0 18px 40px rgba(20,28,18,.12); --shadow-lg:0 30px 70px rgba(20,28,18,.2);
+  }
+  * { box-sizing:border-box; }
+  html,body { margin:0; padding:0; background:var(--sage); color:var(--ink);
+    font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3,.serif { font-family:"Cormorant Garamond",Georgia,serif; font-weight:700; }
+  a { color:inherit; }
+
+  header.topbar {
+    position:sticky; top:0; height:66px; background:rgba(219,232,217,.9);
+    backdrop-filter:saturate(1.4) blur(10px); -webkit-backdrop-filter:saturate(1.4) blur(10px);
+    border-bottom:1px solid var(--line); display:flex; align-items:center; justify-content:space-between;
+    padding:0 clamp(16px,4vw,36px); z-index:50;
+  }
+  .brand { display:flex; align-items:baseline; gap:9px; text-decoration:none; }
+  .brand .bn { font-family:"Cormorant Garamond",serif; font-size:25px; font-weight:700; color:var(--ink); }
+  .brand .bs { font-size:10px; text-transform:uppercase; letter-spacing:.32em; color:var(--ink-soft); font-weight:600; }
+  .top-actions { display:flex; align-items:center; gap:14px; }
+  .top-actions a { text-decoration:none; font-size:13.5px; font-weight:500; color:var(--ink-soft); }
+  .top-actions a:hover { color:var(--forest); }
+  .top-cta { background:var(--forest); color:var(--cream)!important; padding:10px 18px; border-radius:999px; font-weight:600; }
+
+  .config-wrap { display:grid; grid-template-columns:1fr 380px; gap:0; min-height:calc(100vh - 66px); }
+
+  /* ---- STAGE ---- */
+  .stage {
+    position:relative; padding:28px clamp(16px,4vw,48px);
+    display:flex; flex-direction:column;
+    background:
+      radial-gradient(120% 80% at 50% 0%, #e7f0e5 0%, var(--sage) 60%);
+  }
+  .stage-head { display:flex; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:6px; }
+  .stage-head .eyebrow { font-size:11px; text-transform:uppercase; letter-spacing:.22em; color:var(--wood); font-weight:600; }
+  .stage-head h1 { font-size:clamp(26px,3.4vw,38px); margin:4px 0 2px; line-height:1.05; }
+  .stage-head .sub { font-size:14px; color:var(--ink-soft); }
+
+  .viewer {
+    flex:1; display:flex; align-items:center; justify-content:center;
+    min-height:340px; position:relative;
+  }
+  .viewer svg { width:100%; height:100%; max-height:62vh; }
+
+  .stage-foot { display:flex; flex-wrap:wrap; gap:14px; align-items:stretch; margin-top:8px; }
+  .stat {
+    flex:1; min-width:150px; background:var(--cream); border:1px solid var(--line);
+    border-radius:14px; padding:14px 18px; box-shadow:var(--shadow);
+  }
+  .stat .k { font-size:11px; text-transform:uppercase; letter-spacing:.14em; color:var(--ink-soft); }
+  .stat .v { font-family:"Cormorant Garamond",serif; font-size:26px; font-weight:700; color:var(--forest); line-height:1.1; margin-top:3px; }
+  .stat .v small { font-size:13px; font-family:"Inter"; color:var(--ink-soft); font-weight:500; }
+  .stat.badge .v { color:var(--wood); }
+
+  .view-toggle { display:flex; gap:6px; background:var(--sage-deep); border-radius:999px; padding:4px; }
+  .view-toggle button {
+    border:none; background:transparent; padding:7px 14px; border-radius:999px; cursor:pointer;
+    font-size:12.5px; font-weight:600; color:var(--ink-soft); font-family:inherit;
+  }
+  .view-toggle button.active { background:var(--cream); color:var(--forest); box-shadow:0 2px 6px rgba(20,28,18,.1); }
+
+  /* ---- PANEL ---- */
+  .panel {
+    background:var(--cream); border-left:1px solid var(--line); padding:24px 22px 30px;
+    overflow-y:auto; max-height:calc(100vh - 66px);
+  }
+  .group { margin-bottom:24px; }
+  .group > .glabel { font-size:11px; text-transform:uppercase; letter-spacing:.16em; color:var(--ink-soft); font-weight:600; margin-bottom:12px; }
+
+  .type-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+  .type-btn {
+    border:1px solid var(--line); background:var(--sage); border-radius:11px; padding:10px 8px; cursor:pointer;
+    display:flex; flex-direction:column; align-items:center; gap:6px; text-align:center; transition:all .15s ease;
+  }
+  .type-btn:hover { border-color:var(--forest); }
+  .type-btn.active { background:var(--forest); border-color:var(--forest); }
+  .type-btn.active .tb-label, .type-btn.active svg { color:var(--cream); }
+  .type-btn svg { width:34px; height:30px; color:var(--forest); }
+  .type-btn .tb-label { font-size:11.5px; font-weight:600; color:var(--ink); line-height:1.15; }
+
+  .field { margin-bottom:16px; }
+  .field .frow { display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px; }
+  .field .fname { font-size:13.5px; font-weight:600; color:var(--ink); }
+  .field .fval { font-size:13px; color:var(--forest); font-weight:600; }
+  input[type=range] {
+    -webkit-appearance:none; appearance:none; width:100%; height:5px; border-radius:999px;
+    background:var(--sage-deep); outline:none;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance:none; width:20px; height:20px; border-radius:50%; background:var(--forest);
+    cursor:pointer; border:3px solid var(--cream); box-shadow:0 1px 4px rgba(20,28,18,.3);
+  }
+  .seg { display:flex; gap:6px; flex-wrap:wrap; }
+  .seg button {
+    border:1px solid var(--line); background:var(--sage); border-radius:9px; padding:8px 12px; cursor:pointer;
+    font-size:13px; font-weight:600; color:var(--ink); font-family:inherit; transition:all .12s ease;
+  }
+  .seg button:hover { border-color:var(--forest); }
+  .seg button.active { background:var(--forest); color:var(--cream); border-color:var(--forest); }
+  .seg button:disabled { opacity:.35; cursor:not-allowed; }
+
+  .swatches { display:grid; grid-template-columns:repeat(6,1fr); gap:8px; }
+  .sw {
+    aspect-ratio:1; border-radius:9px; cursor:pointer; position:relative; border:2px solid transparent;
+    box-shadow:inset 0 0 0 1px rgba(20,28,18,.14); transition:transform .12s ease;
+  }
+  .sw:hover { transform:scale(1.08); }
+  .sw.active { border-color:var(--forest); box-shadow:0 0 0 2px var(--cream), 0 0 0 4px var(--forest); }
+  .swatch-name { font-size:12px; color:var(--ink-soft); margin-top:9px; text-align:center; }
+
+  .cta-block { position:sticky; bottom:0; background:var(--cream); padding-top:14px; margin-top:8px; border-top:1px solid var(--line); }
+  .btn-primary {
+    display:flex; align-items:center; justify-content:center; gap:9px; width:100%; padding:15px;
+    background:var(--forest); color:var(--cream); border:none; border-radius:999px; font-size:15px; font-weight:600;
+    cursor:pointer; text-decoration:none; font-family:inherit; transition:background .2s ease;
+  }
+  .btn-primary:hover { background:var(--forest-hover); }
+  .cta-note { text-align:center; font-size:12px; color:var(--ink-soft); margin-top:9px; }
+
+  .spec-line { font-size:12.5px; color:var(--ink-soft); margin-top:10px; line-height:1.5; }
+  .spec-line b { color:var(--ink); }
+
+  @media (max-width:900px) {
+    .config-wrap { grid-template-columns:1fr; }
+    .panel { border-left:none; border-top:1px solid var(--line); max-height:none; }
+    .viewer svg { max-height:48vh; }
+  }
+  @media (max-width:560px) {
+    .brand .bs { display:none; }
+    .top-actions .back { display:none; }
+    header.topbar { padding:0 16px; }
+  }
+</style>
+</head>
+<body>
+
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="bn">Normand</span><span class="bs">Mobilier</span></a>
+    <div class="top-actions">
+      <a class="back" href="index.html">← Înapoi la site</a>
+      <a class="top-cta" href="#" id="topCta">Cere ofertă</a>
+    </div>
+  </header>
+
+  <div class="config-wrap">
+    <!-- STAGE -->
+    <section class="stage">
+      <div class="stage-head">
+        <div>
+          <div class="eyebrow">Configurator · mobilă din PAL</div>
+          <h1 id="pieceTitle">Dulap cu 2 uși</h1>
+          <div class="sub">Alege forma, dimensiunile și finisajul — se desenează în timp real.</div>
+        </div>
+        <div class="view-toggle">
+          <button data-view="closed" class="active">Uși închise</button>
+          <button data-view="open">Interior</button>
+        </div>
+      </div>
+
+      <div class="viewer" id="viewer"></div>
+
+      <div class="stage-foot">
+        <div class="stat">
+          <div class="k">Dimensiuni (L × Î × A)</div>
+          <div class="v" id="statDims">100 × 210 × 58 <small>cm</small></div>
+        </div>
+        <div class="stat">
+          <div class="k">Estimare orientativă</div>
+          <div class="v" id="statPrice">— <small>lei</small></div>
+        </div>
+        <div class="stat badge">
+          <div class="k">Configurații posibile</div>
+          <div class="v" id="statCombos">—</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PANEL -->
+    <aside class="panel">
+      <div class="group">
+        <div class="glabel">Tip de corp</div>
+        <div class="type-grid" id="typeGrid"></div>
+      </div>
+
+      <div class="group">
+        <div class="glabel">Dimensiuni</div>
+        <div class="field" data-dim="w">
+          <div class="frow"><span class="fname">Lățime</span><span class="fval"><span class="dv">100</span> cm</span></div>
+          <input type="range" id="rngW">
+        </div>
+        <div class="field" data-dim="h">
+          <div class="frow"><span class="fname">Înălțime</span><span class="fval"><span class="dv">210</span> cm</span></div>
+          <input type="range" id="rngH">
+        </div>
+        <div class="field" data-dim="d">
+          <div class="frow"><span class="fname">Adâncime</span><span class="fval"><span class="dv">58</span> cm</span></div>
+          <input type="range" id="rngD">
+        </div>
+      </div>
+
+      <div class="group" id="grpDoors">
+        <div class="glabel">Uși</div>
+        <div class="seg" id="segDoors"></div>
+      </div>
+
+      <div class="group" id="grpDrawers">
+        <div class="glabel">Sertare</div>
+        <div class="seg" id="segDrawers"></div>
+      </div>
+
+      <div class="group" id="grpShelves">
+        <div class="glabel">Rafturi interioare</div>
+        <div class="seg" id="segShelves"></div>
+      </div>
+
+      <div class="group" id="grpOverhead">
+        <div class="glabel">Corpuri suspendate deasupra</div>
+        <div class="seg" id="segOverhead">
+          <button data-oh="0" class="active">Fără</button>
+          <button data-oh="1">Cu corpuri sus</button>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="glabel">Finisaj PAL</div>
+        <div class="swatches" id="swatches"></div>
+        <div class="swatch-name" id="finishName">Alb</div>
+      </div>
+
+      <div class="group">
+        <div class="glabel">Mâner</div>
+        <div class="seg" id="segHandle"></div>
+      </div>
+
+      <div class="cta-block">
+        <a class="btn-primary" id="ctaOffer" href="#">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M4 7l8 6 8-6"/></svg>
+          Cere ofertă cu această configurație
+        </a>
+        <div class="cta-note">Preț final după măsurătoare la fața locului.</div>
+        <div class="spec-line" id="specLine"></div>
+      </div>
+    </aside>
+  </div>
+
+<script>
+/* =========================================================================
+   NORMAND · Configurator parametric de mobilă din PAL
+   Mobila e DESENATĂ (SVG), nu fotografiată — se recolorează și redimensionează.
+   „Versiunile" = combinatoric: tipuri × dimensiuni × finisaje × structură × mâner.
+   ========================================================================= */
+
+/* ---- finisaje PAL (decoruri uzuale; culori reprezentative) ---- */
+const FINISHES = [
+  { id:"alb",         name:"Alb",              base:"#eef0ec", wood:false },
+  { id:"alb-lucios",  name:"Alb lucios",       base:"#fafbf8", wood:false, gloss:true },
+  { id:"crem",        name:"Crem / Vanilie",   base:"#e8dcc4", wood:false },
+  { id:"gri-deschis", name:"Gri deschis",      base:"#c6c8c5", wood:false },
+  { id:"antracit",    name:"Antracit",         base:"#3c4043", wood:false },
+  { id:"negru",       name:"Negru mat",        base:"#26282a", wood:false },
+  { id:"sonoma",      name:"Sonoma deschis",   base:"#cbb188", wood:true },
+  { id:"sonoma-inch", name:"Sonoma închis",    base:"#8f6f49", wood:true },
+  { id:"stejar",      name:"Stejar auriu",     base:"#c39a5c", wood:true },
+  { id:"fag",         name:"Fag",              base:"#dcc196", wood:true },
+  { id:"nuc",         name:"Nuc",              base:"#7a5230", wood:true },
+  { id:"wenge",       name:"Wenge",            base:"#3b2c25", wood:true },
+  { id:"cappuccino",  name:"Cappuccino",       base:"#8a6f57", wood:true },
+  { id:"artizan",     name:"Stejar Artizan",   base:"#9b7a4f", wood:true },
+  { id:"gri-grafit",  name:"Gri grafit",       base:"#6e7276", wood:false },
+  { id:"trufa",       name:"Trufă",            base:"#7d6a5a", wood:true },
+  { id:"alb-mat",     name:"Alb mat",          base:"#e7e8e3", wood:false },
+  { id:"salcam",      name:"Salcâm",           base:"#b98f5c", wood:true }
+];
+
+const HANDLES = [
+  { id:"bara",   name:"Bară" },
+  { id:"buton",  name:"Buton" },
+  { id:"scoica", name:"Scoică" },
+  { id:"push",   name:"Push (fără mâner)" }
+];
+
+/* ---- tipuri de corp; fiecare descrie ce controale are + cum se compune fața ---- */
+const TYPES = {
+  "dulap2": {
+    label:"Dulap 2 uși", icon:"wardrobe",
+    dims:{ w:[80,140,100], h:[180,245,210], d:[50,65,58] },
+    doors:[2], drawers:[0,1,2,3], shelves:[2,3,4,5], overhead:true,
+    build:(p)=>columnsDoors(p, 2)
+  },
+  "dulap3": {
+    label:"Dulap 3 uși", icon:"wardrobe",
+    dims:{ w:[120,220,165], h:[180,245,215], d:[52,65,58] },
+    doors:[3], drawers:[0,2,3], shelves:[3,4,5,6], overhead:true,
+    build:(p)=>columnsDoors(p, 3)
+  },
+  "dulap4": {
+    label:"Dulap 4 uși", icon:"wardrobe",
+    dims:{ w:[180,300,220], h:[180,245,220], d:[52,66,60], }, wLock:false,
+    doors:[4], drawers:[0,2,4], shelves:[4,5,6,7], overhead:true,
+    build:(p)=>columnsDoors(p, 4)
+  },
+  "glisant": {
+    label:"Uși glisante", icon:"slider",
+    dims:{ w:[150,280,200], h:[180,245,215], d:[60,70,65] },
+    doors:[2,3], drawers:[0], shelves:[3,4,5,6], overhead:false,
+    build:(p)=>slidingDoors(p)
+  },
+  "comoda": {
+    label:"Comodă sertare", icon:"drawers",
+    dims:{ w:[60,160,90], h:[70,120,85], d:[40,55,45] },
+    doors:[0], drawers:[2,3,4,5], shelves:[0], overhead:false,
+    build:(p)=>drawersStack(p)
+  },
+  "biblioteca": {
+    label:"Bibliotecă", icon:"shelf",
+    dims:{ w:[60,220,120], h:[150,230,200], d:[28,45,32] },
+    doors:[0,2], drawers:[0,2], shelves:[3,4,5,6,7], overhead:false,
+    build:(p)=>bookcase(p)
+  },
+  "tv": {
+    label:"Corp TV", icon:"tv",
+    dims:{ w:[120,320,200], h:[40,70,50], d:[35,55,45] },
+    doors:[2,4], drawers:[0,2], shelves:[0], overhead:false,
+    build:(p)=>tvUnit(p)
+  },
+  "baza-buc": {
+    label:"Bază bucătărie", icon:"cabinet",
+    dims:{ w:[40,120,60], h:[82,92,85], d:[56,62,60] },
+    doors:[1,2], drawers:[0,3,4], shelves:[1,2], overhead:false,
+    build:(p)=> p.drawers>0 ? drawersStack(p) : columnsDoors(p, p.doors)
+  },
+  "suspendat-buc": {
+    label:"Suspendat bucătărie", icon:"cabinet",
+    dims:{ w:[40,120,60], h:[55,90,72], d:[30,40,32] },
+    doors:[1,2], drawers:[0], shelves:[1,2], overhead:false,
+    build:(p)=>columnsDoors(p, p.doors)
+  }
+};
+
+/* ------------------------------------------------------------------ state */
+const state = {
+  type:"dulap2", w:100, h:210, d:58, doors:2, drawers:0, shelves:3,
+  overhead:0, finish:FINISHES[0], handle:HANDLES[0], view:"closed"
+};
+
+/* --------------------------------------------------------------- helpers */
+const el = (id)=>document.getElementById(id);
+const clamp = (v,a,b)=>Math.max(a,Math.min(b,v));
+function shade(hex, amt){ // amt -1..1 (darken/lighten)
+  const n=parseInt(hex.slice(1),16); let r=(n>>16)&255,g=(n>>8)&255,b=n&255;
+  const f=(c)=> Math.round(amt<0 ? c*(1+amt) : c+(255-c)*amt);
+  r=clamp(f(r),0,255); g=clamp(f(g),0,255); b=clamp(f(b),0,255);
+  return "#"+((1<<24)+(r<<16)+(g<<8)+b).toString(16).slice(1);
+}
+
+/* icons pentru butoanele de tip */
+const ICONS = {
+  wardrobe:'<svg viewBox="0 0 40 34" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="7" y="4" width="26" height="26"/><line x1="20" y1="4" x2="20" y2="30"/><circle cx="17" cy="17" r="1.1" fill="currentColor"/><circle cx="23" cy="17" r="1.1" fill="currentColor"/></svg>',
+  slider:'<svg viewBox="0 0 40 34" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="5" width="30" height="24"/><line x1="19" y1="5" x2="19" y2="29"/><line x1="15" y1="14" x2="15" y2="20"/><line x1="25" y1="14" x2="25" y2="20"/></svg>',
+  drawers:'<svg viewBox="0 0 40 34" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="8" y="5" width="24" height="24"/><line x1="8" y1="13" x2="32" y2="13"/><line x1="8" y1="21" x2="32" y2="21"/><circle cx="20" cy="9" r="1" fill="currentColor"/><circle cx="20" cy="17" r="1" fill="currentColor"/><circle cx="20" cy="25" r="1" fill="currentColor"/></svg>',
+  shelf:'<svg viewBox="0 0 40 34" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="8" y="4" width="24" height="26"/><line x1="8" y1="12" x2="32" y2="12"/><line x1="8" y1="19" x2="32" y2="19"/><line x1="8" y1="26" x2="32" y2="26"/></svg>',
+  tv:'<svg viewBox="0 0 40 34" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="12" width="30" height="15"/><line x1="20" y1="12" x2="20" y2="27"/></svg>',
+  cabinet:'<svg viewBox="0 0 40 34" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="9" y="5" width="22" height="24"/><line x1="20" y1="5" x2="20" y2="29"/></svg>'
+};
+
+/* =======================================================================
+   RENDERE SVG — fiecare întoarce un array de elemente <rect>/<line> etc.
+   Coord. în „unități carcasă": (0,0) stânga-sus, (W,H) dreapta-jos.
+   ======================================================================= */
+function faceFill(id){ return "url(#grad-"+id+")"; }
+
+function panel(x,y,w,h, fin, opts={}){
+  const inset = opts.inset ?? 2;
+  const r = opts.r ?? 2.5;
+  let s = `<rect x="${x+inset}" y="${y+inset}" width="${w-inset*2}" height="${h-inset*2}" rx="${r}"
+      fill="${faceFill(fin.id)}" stroke="${shade(fin.base,-0.28)}" stroke-width="1"/>`;
+  // muchie de jos (umbră subtilă de volum)
+  s += `<rect x="${x+inset}" y="${y+h-inset-3}" width="${w-inset*2}" height="3" rx="1.5" fill="${shade(fin.base,-0.14)}" opacity="0.5"/>`;
+  return s;
+}
+function handle(cx, cy, kind, fin, vertical=true){
+  const metal = fin.wood ? "#c9c9c9" : "#8a8f8c";
+  if(kind==="push") return "";
+  if(kind==="buton") return `<circle cx="${cx}" cy="${cy}" r="3.2" fill="${metal}" stroke="#5f625f" stroke-width="0.6"/>`;
+  if(kind==="scoica") return `<rect x="${cx-9}" y="${cy-2}" width="18" height="4" rx="2" fill="${shade(fin.base,-0.32)}"/>`;
+  // bara
+  if(vertical) return `<rect x="${cx-1.6}" y="${cy-16}" width="3.2" height="32" rx="1.6" fill="${metal}"/>`;
+  return `<rect x="${cx-16}" y="${cy-1.6}" width="32" height="3.2" rx="1.6" fill="${metal}"/>`;
+}
+
+function columnsDoors(p, n){
+  const {W,H,fin,handle:hk,view}=p; let s="";
+  const gap=1.4, colW=W/n;
+  for(let i=0;i<n;i++){
+    const x=i*colW;
+    if(view==="open"){
+      // interior: spate + rafturi + bară + (eventual sertare jos)
+      s+=`<rect x="${x+2}" y="2" width="${colW-4}" height="${H-4}" rx="2" fill="${shade(fin.base,-0.42)}"/>`;
+      const rail = p.type && p.type.startsWith("dulap");
+      const shelfTop = rail ? H*0.30 : 6;
+      const nSh = p.shelves;
+      const zoneTop=shelfTop, zoneBot=H-6 - (p.drawers>0? Math.min(p.drawers,3)*10 : 0);
+      for(let k=1;k<=nSh;k++){
+        const yy=zoneTop + (zoneBot-zoneTop)*k/(nSh+1);
+        s+=`<rect x="${x+4}" y="${yy}" width="${colW-8}" height="3" fill="${shade(fin.base,-0.08)}"/>`;
+      }
+      if(rail){ s+=`<rect x="${x+5}" y="${shelfTop-8}" width="${colW-10}" height="2.4" rx="1.2" fill="#b9beba"/>`;
+        for(let h=0;h<3;h++){ const hx=x+colW*0.28+h*colW*0.22; s+=`<rect x="${hx}" y="${shelfTop-8}" width="1.4" height="14" fill="#9aa09b"/><rect x="${hx-5}" y="${shelfTop+5}" width="11" height="20" rx="2" fill="${shade(fin.base,0.12)}" opacity="0.5"/>`; }
+      }
+    } else {
+      s+=panel(x,0,colW,H,fin);
+      const hx = (i< n-1) ? x+colW-8 : x+8; // mânere spre centru/exterior
+      const hy = H*0.5;
+      s+=handle(hx,hy,hk,fin,true);
+    }
+  }
+  return s;
+}
+
+function slidingDoors(p){
+  const {W,H,fin,view}=p; let s="";
+  if(view==="open"){ return columnsDoors({...p,view:"open"}, Math.max(2,p.doors)); }
+  const n=Math.max(2,p.doors);
+  // panouri late care se suprapun ușor
+  const panelW = W/n * 1.06;
+  for(let i=0;i<n;i++){
+    const x = (W-panelW)* (i/(n-1||1));
+    const z = i%2;
+    s+=`<rect x="${x+ (z?3:0)}" y="${3}" width="${panelW-3}" height="${H-6}" rx="2"
+        fill="${faceFill(fin.id)}" stroke="${shade(fin.base,-0.28)}" stroke-width="1" opacity="${z?0.98:1}"/>`;
+    // profil vertical de prindere
+    s+=`<rect x="${x+panelW*0.5-1.5}" y="6" width="3" height="${H-12}" rx="1.5" fill="${shade(fin.base,-0.2)}" opacity="0.4"/>`;
+    s+=`<rect x="${x+ (z? panelW-10:4)}" y="${H*0.4}" width="3" height="${H*0.2}" rx="1.5" fill="#b9beba"/>`;
+  }
+  return s;
+}
+
+function drawersStack(p){
+  const {W,H,fin,handle:hk,drawers}=p; let s="";
+  const n=Math.max(1,drawers||3);
+  const dh=H/n;
+  for(let i=0;i<n;i++){
+    const y=i*dh;
+    s+=panel(0,y,W,dh,fin);
+    if(p.view==="open"){
+      s+=`<rect x="6" y="${y+4}" width="${W-12}" height="${dh-8}" rx="2" fill="${shade(fin.base,-0.36)}"/>`;
+      s+=`<rect x="6" y="${y+4}" width="${W-12}" height="6" rx="2" fill="${shade(fin.base,-0.15)}"/>`;
+    } else {
+      s+=handle(W/2, y+dh/2, hk==="bara"?"bara":hk, fin, false);
+    }
+  }
+  return s;
+}
+
+function bookcase(p){
+  const {W,H,fin,shelves,doors}=p; let s="";
+  const hasDoors = doors>0;
+  const doorZone = hasDoors ? H*0.32 : 0;
+  const openBot = H - doorZone;
+  // spate
+  s+=`<rect x="2" y="2" width="${W-4}" height="${openBot-2}" rx="2" fill="${shade(fin.base,-0.4)}"/>`;
+  // laterale + top
+  s+=panelFrameOnly(0,0,W,openBot,fin);
+  const nSh=Math.max(2,shelves);
+  for(let k=1;k<=nSh;k++){ const yy=6+(openBot-12)*k/(nSh+1);
+    s+=`<rect x="4" y="${yy}" width="${W-8}" height="4.5" rx="1.5" fill="${shade(fin.base,0.05)}" stroke="${shade(fin.base,-0.25)}" stroke-width="0.6"/>`
+      + `<rect x="4" y="${yy+3.2}" width="${W-8}" height="1.3" fill="${shade(fin.base,-0.18)}" opacity="0.6"/>`; }
+  if(hasDoors){
+    if(p.view==="open"){
+      s+=`<rect x="2" y="${openBot}" width="${W-4}" height="${doorZone-2}" rx="2" fill="${shade(fin.base,-0.4)}"/>`;
+    } else {
+      s+=columnsDoorsSub(0,openBot,W,doorZone,2,fin,p.handle);
+    }
+  }
+  return s;
+}
+function panelFrameOnly(x,y,w,h,fin){
+  return `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="3" fill="none" stroke="${shade(fin.base,-0.2)}" stroke-width="4"/>`
+    + `<rect x="${x+2}" y="${y+2}" width="${w-4}" height="${h-4}" rx="2" fill="none" stroke="${shade(fin.base,0.02)}" stroke-width="2"/>`;
+}
+function columnsDoorsSub(x0,y0,w,h,n,fin,hk){
+  let s=""; const colW=w/n;
+  for(let i=0;i<n;i++){ const x=x0+i*colW;
+    s+=panel(x,y0,colW,h,fin);
+    const hx=(i<n-1)?x+colW-8:x+8; s+=handle(hx,y0+h/2,hk,fin,true);
+  }
+  return s;
+}
+
+function tvUnit(p){
+  const {W,H,fin,doors,drawers}=p; let s="";
+  const openCenter = W*0.4;
+  const sideW=(W-openCenter)/2;
+  // spate zona deschisă
+  s+=`<rect x="${sideW}" y="2" width="${openCenter}" height="${H-4}" rx="2" fill="${shade(fin.base,-0.38)}"/>`;
+  if(p.view==="open"){
+    s+=`<rect x="2" y="2" width="${sideW-2}" height="${H-4}" fill="${shade(fin.base,-0.36)}"/>`;
+    s+=`<rect x="${W-sideW}" y="2" width="${sideW-2}" height="${H-4}" fill="${shade(fin.base,-0.36)}"/>`;
+  } else {
+    if(drawers>0){ s+=drawersStackSub(0,0,sideW,H,Math.max(1,drawers/2|0||1),fin,p.handle);
+      s+=drawersStackSub(W-sideW,0,sideW,H,Math.max(1,drawers/2|0||1),fin,p.handle); }
+    else { s+=panel(0,0,sideW,H,fin); s+=handle(sideW-8,H/2,p.handle,fin,true);
+      s+=panel(W-sideW,0,sideW,H,fin); s+=handle(W-sideW+8,H/2,p.handle,fin,true); }
+  }
+  // blat + picioruse
+  s+=`<rect x="-3" y="-4" width="${W+6}" height="6" rx="2" fill="${faceFill(fin.id)}" stroke="${shade(fin.base,-0.25)}" stroke-width="0.8"/>`;
+  return s;
+}
+function drawersStackSub(x0,y0,w,h,n,fin,hk){
+  let s=""; const dh=h/n; for(let i=0;i<n;i++){ const y=y0+i*dh; s+=panel(x0,y,w,dh,fin); s+=handle(x0+w/2,y+dh/2,hk,fin,false);} return s;
+}
+
+/* =======================================================================
+   COMPUNERE SVG FINALĂ (viewBox, podea, umbră, defs cu gradienti)
+   ======================================================================= */
+function buildSVG(){
+  const t=TYPES[state.type];
+  const p={ W:state.w, H:state.h, fin:state.finish, handle:state.handle.id,
+    view:state.view, doors:state.doors, drawers:state.drawers, shelves:state.shelves, type:state.type };
+
+  // scalare: potrivim la o zonă de desen
+  const overhead = t.overhead && state.overhead ? true : false;
+  const ohH = overhead ? Math.min(70, state.h*0.28) : 0;
+  const totalH = state.h + ohH + (overhead?4:0);
+  const pad=40, drawW=520;
+  const sc = Math.min(drawW/state.w, 480/totalH);
+  const bodyW = state.w*sc, bodyH = state.h*sc, ohHpx=ohH*sc;
+  const vbW = bodyW + pad*2;
+  const vbH = bodyH + ohHpx + pad*2 + 26; // loc de podea
+
+  const ox = pad, oyTop = pad + ohHpx + (overhead?4*sc:0);
+
+  // defs: gradient per finisaj + textură lemn
+  let defs = `<defs>`;
+  const f=state.finish;
+  const g1=shade(f.base, f.gloss?0.14:0.08), g2=shade(f.base,-0.10);
+  defs += `<linearGradient id="grad-${f.id}" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="${g1}"/><stop offset="0.5" stop-color="${f.base}"/><stop offset="1" stop-color="${g2}"/></linearGradient>`;
+  if(f.wood){
+    defs += `<pattern id="wood-${f.id}" width="6" height="120" patternUnits="userSpaceOnUse">
+      <rect width="6" height="120" fill="url(#grad-${f.id})"/>
+      <path d="M2 0 Q3 30 2 60 T2 120" stroke="${shade(f.base,-0.12)}" stroke-width="0.6" fill="none" opacity="0.5"/>
+      <path d="M5 0 Q4 40 5 80 T5 120" stroke="${shade(f.base,0.10)}" stroke-width="0.5" fill="none" opacity="0.4"/></pattern>`;
+  }
+  defs += `<radialGradient id="floorSh" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#000" stop-opacity="0.16"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>`;
+  defs += `</defs>`;
+
+  // dacă e lemn, folosim pattern ca fill (override grad in faceFill via CSS var? simplu: swap)
+  const useWood = f.wood;
+  const fillId = useWood ? ("wood-"+f.id) : ("grad-"+f.id);
+
+  // umbra pe podea
+  const floorY = oyTop + bodyH + 8;
+  let svg = `<svg viewBox="0 0 ${vbW.toFixed(0)} ${vbH.toFixed(0)}" xmlns="http://www.w3.org/2000/svg">`;
+  svg += defs.replaceAll(`url(#grad-${f.id})`, `url(#grad-${f.id})`);
+  svg += `<ellipse cx="${ox+bodyW/2}" cy="${floorY+10}" rx="${bodyW*0.62}" ry="16" fill="url(#floorSh)"/>`;
+
+  // grup corp principal (translate + scale)
+  const bodyInner = t.build(p); // desenat în unități carcasă (0..W,0..H)
+  // înlocuim faceFill spre pattern dacă lemn
+  const inner = useWood ? bodyInner.replaceAll(`url(#grad-${f.id})`, `url(#wood-${f.id})`) : bodyInner;
+
+  // carcasă (contur exterior)
+  svg += `<g transform="translate(${ox},${oyTop}) scale(${sc})">`;
+  svg += `<rect x="-2" y="-2" width="${state.w+4}" height="${state.h+4}" rx="4" fill="${shade(f.base,-0.34)}"/>`;
+  svg += inner;
+  // plintă jos
+  svg += `<rect x="0" y="${state.h-6}" width="${state.w}" height="6" fill="${shade(f.base,-0.3)}"/>`;
+  svg += `</g>`;
+
+  // corpuri suspendate deasupra
+  if(overhead){
+    const n = state.w>150?3:2;
+    svg += `<g transform="translate(${ox},${pad}) scale(${sc})">`;
+    svg += `<rect x="-2" y="-2" width="${state.w+4}" height="${ohH+4}" rx="4" fill="${shade(f.base,-0.34)}"/>`;
+    const cw=state.w/n;
+    for(let i=0;i<n;i++){ svg += panel(i*cw,0,cw,ohH,f); const hx=i*cw+cw/2; svg+=handle(hx, ohH-6, state.handle.id==='bara'?'buton':state.handle.id, f,false); }
+    svg += `</g>`;
+    svg = useWood ? svg : svg; // overhead panels already use faceFill; fix below
+  }
+
+  svg += `</svg>`;
+  // asigură pattern lemn și pe overhead
+  if(useWood) svg = svg.replaceAll(`url(#grad-${f.id})`, matchKeepGrad(f.id));
+  return svg;
+}
+/* păstrează gradientul doar în <defs>, restul -> pattern (deja tratat mai sus prin replace pe inner);
+   funcție no-op sigură pentru overhead */
+function matchKeepGrad(id){ return `url(#wood-${id})`; }
+
+/* =======================================================================
+   COMBINATORICĂ — câte versiuni pot ieși (onest, din opțiuni reale)
+   ======================================================================= */
+function comboCount(){
+  let total=0;
+  for(const k in TYPES){
+    const t=TYPES[k];
+    const wSteps=(t.dims.w[1]-t.dims.w[0])/5+1;
+    const hSteps=(t.dims.h[1]-t.dims.h[0])/5+1;
+    const dSteps=(t.dims.d[1]-t.dims.d[0])/2+1;
+    const doors=Math.max(1,t.doors.length);
+    const dr=Math.max(1,t.drawers.length);
+    const sh=Math.max(1,t.shelves.length);
+    const oh=t.overhead?2:1;
+    total += wSteps*hSteps*dSteps*doors*dr*sh*oh*FINISHES.length*HANDLES.length;
+  }
+  return Math.round(total);
+}
+
+/* =======================================================================
+   PREȚ (estimare orientativă, în lei) — se ajustează ușor
+   ======================================================================= */
+function priceEstimate(){
+  const frontM2 = (state.w*state.h)/10000;
+  const tierWood = state.finish.wood?1.08:1;
+  const gloss = state.finish.gloss?1.12:1;
+  let base = frontM2 * 1250 * tierWood * gloss;
+  base += state.doors*90 + state.drawers*160 + state.shelves*35;
+  if(state.overhead) base *= 1.4;
+  const depthF = 0.7 + (state.d/60)*0.3;
+  base *= depthF;
+  return Math.round(base/10)*10;
+}
+
+/* =======================================================================
+   UI — construire controale + legături
+   ======================================================================= */
+function buildTypeGrid(){
+  const g=el("typeGrid"); g.innerHTML="";
+  for(const k in TYPES){ const t=TYPES[k];
+    const b=document.createElement("button");
+    b.className="type-btn"+(k===state.type?" active":"");
+    b.dataset.type=k;
+    b.innerHTML=(ICONS[t.icon]||ICONS.cabinet)+`<span class="tb-label">${t.label}</span>`;
+    b.onclick=()=>selectType(k);
+    g.appendChild(b);
+  }
+}
+function seg(container, values, current, onPick, labelFn){
+  const c=el(container); c.innerHTML="";
+  values.forEach(v=>{ const b=document.createElement("button");
+    b.textContent=labelFn?labelFn(v):v; b.className=(v===current?"active":"");
+    b.onclick=()=>onPick(v); c.appendChild(b); });
+}
+function buildSwatches(){
+  const g=el("swatches"); g.innerHTML="";
+  FINISHES.forEach(f=>{ const d=document.createElement("div");
+    d.className="sw"+(f.id===state.finish.id?" active":"");
+    d.style.background=f.base; d.title=f.name;
+    if(f.gloss) d.style.boxShadow="inset 0 0 0 1px rgba(20,28,18,.14), inset 0 6px 8px rgba(255,255,255,.5)";
+    d.onclick=()=>{ state.finish=f; el("finishName").textContent=f.name; syncSwatches(); render(); };
+    g.appendChild(d);
+  });
+}
+function syncSwatches(){ [...el("swatches").children].forEach((d,i)=>d.classList.toggle("active", FINISHES[i].id===state.finish.id)); }
+
+function selectType(k){
+  state.type=k; const t=TYPES[k];
+  // aplică defaults dimensiuni + clamp opțiuni
+  state.w=t.dims.w[2]; state.h=t.dims.h[2]; state.d=t.dims.d[2];
+  state.doors = t.doors.includes(state.doors)?state.doors:t.doors[Math.min(1,t.doors.length-1)]|| t.doors[0];
+  if(!t.doors.length||t.doors[0]===0) state.doors=t.doors[0]||0;
+  state.drawers = t.drawers.includes(state.drawers)?state.drawers:t.drawers[0];
+  state.shelves = t.shelves.includes(state.shelves)?state.shelves:t.shelves[Math.floor(t.shelves.length/2)];
+  if(!t.overhead) state.overhead=0;
+  setupControls();
+  [...el("typeGrid").children].forEach(b=>b.classList.toggle("active", b.dataset.type===k));
+  el("pieceTitle").textContent = t.label + (state.finish? "" : "");
+  render();
+}
+
+function setupControls(){
+  const t=TYPES[state.type];
+  // dims
+  const setup=(rng,dv,arr,val)=>{ rng.min=arr[0]; rng.max=arr[1]; rng.step=(rng===el("rngD"))?1:5; rng.value=val; dv.textContent=val; };
+  setup(el("rngW"), q('[data-dim="w"] .dv'), t.dims.w, state.w);
+  setup(el("rngH"), q('[data-dim="h"] .dv'), t.dims.h, state.h);
+  setup(el("rngD"), q('[data-dim="d"] .dv'), t.dims.d, state.d);
+
+  // uși
+  const showDoors = t.doors.some(v=>v>0);
+  el("grpDoors").style.display = showDoors?"block":"none";
+  if(showDoors) seg("segDoors", t.doors.filter(v=>v>0), state.doors, v=>{state.doors=v; render();});
+
+  // sertare
+  const showDr = t.drawers.some(v=>v>0);
+  el("grpDrawers").style.display = showDr?"block":"none";
+  if(showDr) seg("segDrawers", t.drawers, state.drawers, v=>{state.drawers=v; render();}, v=>v===0?"Fără":v);
+
+  // rafturi
+  const showSh = t.shelves.some(v=>v>0);
+  el("grpShelves").style.display = showSh?"block":"none";
+  if(showSh) seg("segShelves", t.shelves.filter(v=>v>0), state.shelves, v=>{state.shelves=v; render();});
+
+  // overhead
+  el("grpOverhead").style.display = t.overhead?"block":"none";
+  [...el("segOverhead").children].forEach(b=>b.classList.toggle("active", (+b.dataset.oh)===state.overhead));
+
+  // mâner
+  seg("segHandle", HANDLES.map(h=>h.id), state.handle.id,
+    id=>{ state.handle=HANDLES.find(h=>h.id===id); render(); },
+    id=>HANDLES.find(h=>h.id===id).name);
+}
+function q(sel){ return document.querySelector(sel); }
+
+/* ------------------------------------------------------------- RENDER */
+function render(){
+  el("viewer").innerHTML = buildSVG();
+  el("statDims").innerHTML = `${state.w} × ${state.h} × ${state.d} <small>cm</small>`;
+  el("statPrice").innerHTML = priceEstimate().toLocaleString("ro-RO") + ` <small>lei est.</small>`;
+  el("pieceTitle").textContent = TYPES[state.type].label;
+  const spec = specText();
+  el("specLine").innerHTML = spec;
+  const body = encodeURIComponent("Bună ziua,\n\nAș dori o ofertă pentru următoarea configurație:\n\n"+specPlain()+"\n\nMulțumesc!");
+  const href = "mailto:contact@normandmobilier.ro?subject="+encodeURIComponent("Cerere ofertă — "+TYPES[state.type].label)+"&body="+body;
+  el("ctaOffer").href = href; el("topCta").href=href;
+}
+function specText(){
+  return `<b>${TYPES[state.type].label}</b> · ${state.w}×${state.h}×${state.d} cm · finisaj <b>${state.finish.name}</b>`
+    + (state.doors?` · ${state.doors} uși`:"") + (state.drawers?` · ${state.drawers} sertare`:"")
+    + (state.overhead?` · cu corpuri suspendate`:"") + ` · mâner ${state.handle.name.toLowerCase()}`;
+}
+function specPlain(){
+  return `• Tip: ${TYPES[state.type].label}\n• Dimensiuni: ${state.w} × ${state.h} × ${state.d} cm (L×Î×A)\n• Finisaj PAL: ${state.finish.name}`
+    + (state.doors?`\n• Uși: ${state.doors}`:"") + (state.drawers?`\n• Sertare: ${state.drawers}`:"")
+    + (state.shelves?`\n• Rafturi: ${state.shelves}`:"") + (state.overhead?`\n• Corpuri suspendate: da`:"")
+    + `\n• Mâner: ${state.handle.name}\n• Estimare orientativă: ${priceEstimate().toLocaleString("ro-RO")} lei (preț final după măsurătoare)`;
+}
+
+/* ------------------------------------------------------------- init */
+function init(){
+  buildTypeGrid(); buildSwatches();
+  el("finishName").textContent = state.finish.name;
+  setupControls();
+  el("rngW").oninput=(e)=>{ state.w=+e.target.value; q('[data-dim="w"] .dv').textContent=state.w; render(); };
+  el("rngH").oninput=(e)=>{ state.h=+e.target.value; q('[data-dim="h"] .dv').textContent=state.h; render(); };
+  el("rngD").oninput=(e)=>{ state.d=+e.target.value; q('[data-dim="d"] .dv').textContent=state.d; render(); };
+  [...el("segOverhead").children].forEach(b=> b.onclick=()=>{ state.overhead=+b.dataset.oh;
+    [...el("segOverhead").children].forEach(x=>x.classList.toggle("active",x===b)); render(); });
+  document.querySelectorAll(".view-toggle button").forEach(b=> b.onclick=()=>{
+    state.view=b.dataset.view; document.querySelectorAll(".view-toggle button").forEach(x=>x.classList.toggle("active",x===b)); render(); });
+  el("statCombos").textContent = comboCount().toLocaleString("ro-RO") + "+";
+  render();
+}
+init();
+</script>
+</body>
+</html>
