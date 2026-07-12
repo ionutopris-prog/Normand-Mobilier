@@ -281,7 +281,17 @@ const FINISHES = [
   { id:"gri-grafit",  name:"Gri grafit",       base:"#6e7276", wood:false },
   { id:"trufa",       name:"Trufă",            base:"#7d6a5a", wood:true },
   { id:"alb-mat",     name:"Alb mat",          base:"#e7e8e3", wood:false },
-  { id:"salcam",      name:"Salcâm",           base:"#b98f5c", wood:true }
+  { id:"salcam",      name:"Salcâm",           base:"#b98f5c", wood:true },
+  /* --- lucioase (high-gloss), potrivite mai ales pt. bucătărie --- */
+  { id:"crem-luc",    name:"Crem lucios",      base:"#ecdcbe", wood:false, gloss:true },
+  { id:"vanilie-luc", name:"Vanilie lucios",   base:"#f0e4bf", wood:false, gloss:true },
+  { id:"gri-luc",     name:"Gri deschis lucios",base:"#ccd0cd", wood:false, gloss:true },
+  { id:"capp-luc",    name:"Cappuccino lucios",base:"#9c7f64", wood:false, gloss:true },
+  { id:"rosu-luc",    name:"Roșu lucios",      base:"#b32a2a", wood:false, gloss:true },
+  { id:"bordo-luc",   name:"Bordo lucios",     base:"#6f2130", wood:false, gloss:true },
+  { id:"verde-luc",   name:"Verde lucios",     base:"#2f5d43", wood:false, gloss:true },
+  { id:"antracit-luc",name:"Antracit lucios",  base:"#363a3d", wood:false, gloss:true },
+  { id:"negru-luc",   name:"Negru lucios",     base:"#1d1f21", wood:false, gloss:true }
 ];
 
 const HANDLES = [
@@ -542,12 +552,32 @@ function buildSVG(){
 
   const ox = pad, oyTop = pad + ohHpx + (overhead?4*sc:0);
 
-  // defs: gradient per finisaj + textură lemn
+  // defs: gradient per finisaj + textură lemn + luciu
   let defs = `<defs>`;
   const f=state.finish;
-  const g1=shade(f.base, f.gloss?0.14:0.08), g2=shade(f.base,-0.10);
-  defs += `<linearGradient id="grad-${f.id}" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="${g1}"/><stop offset="0.5" stop-color="${f.base}"/><stop offset="1" stop-color="${g2}"/></linearGradient>`;
+  if(f.gloss){
+    // gradient lucios: reflexie puternică sus + a doua reflexie jos (efect lăcuit)
+    const gT=shade(f.base,0.34), gH=shade(f.base,0.72), gMid=f.base, gLo=shade(f.base,-0.08), gB=shade(f.base,-0.22);
+    defs += `<linearGradient id="grad-${f.id}" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="${gT}"/>
+        <stop offset="0.06" stop-color="${gH}"/>
+        <stop offset="0.15" stop-color="${gT}"/>
+        <stop offset="0.5" stop-color="${gMid}"/>
+        <stop offset="0.8" stop-color="${gLo}"/>
+        <stop offset="0.93" stop-color="${shade(f.base,0.06)}"/>
+        <stop offset="1" stop-color="${gB}"/></linearGradient>`;
+  } else {
+    const g1=shade(f.base,0.08), g2=shade(f.base,-0.10);
+    defs += `<linearGradient id="grad-${f.id}" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="${g1}"/><stop offset="0.5" stop-color="${f.base}"/><stop offset="1" stop-color="${g2}"/></linearGradient>`;
+  }
+  // dungă diagonală de luciu (specular sweep) pentru fronturi lucioase
+  defs += `<linearGradient id="glossSweep" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="0.30" stop-color="#ffffff" stop-opacity="0.34"/>
+      <stop offset="0.42" stop-color="#ffffff" stop-opacity="0.04"/>
+      <stop offset="0.60" stop-color="#ffffff" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/></linearGradient>`;
   if(f.wood){
     defs += `<pattern id="wood-${f.id}" width="6" height="120" patternUnits="userSpaceOnUse">
       <rect width="6" height="120" fill="url(#grad-${f.id})"/>
@@ -576,6 +606,9 @@ function buildSVG(){
   svg += `<g transform="translate(${ox},${oyTop}) scale(${sc})">`;
   svg += `<rect x="-2" y="-2" width="${state.w+4}" height="${state.h+4}" rx="4" fill="${shade(f.base,-0.34)}"/>`;
   svg += inner;
+  if(f.gloss && state.view==="closed"){
+    svg += `<rect x="0" y="0" width="${state.w}" height="${state.h-6}" rx="3" fill="url(#glossSweep)" pointer-events="none"/>`;
+  }
   // plintă jos
   svg += `<rect x="0" y="${state.h-6}" width="${state.w}" height="6" fill="${shade(f.base,-0.3)}"/>`;
   svg += `</g>`;
@@ -587,6 +620,7 @@ function buildSVG(){
     svg += `<rect x="-2" y="-2" width="${state.w+4}" height="${ohH+4}" rx="4" fill="${shade(f.base,-0.34)}"/>`;
     const cw=state.w/n;
     for(let i=0;i<n;i++){ svg += panel(i*cw,0,cw,ohH,f); const hx=i*cw+cw/2; svg+=handle(hx, ohH-6, state.handle.id==='bara'?'buton':state.handle.id, f,false); }
+    if(f.gloss){ svg += `<rect x="0" y="0" width="${state.w}" height="${ohH}" rx="3" fill="url(#glossSweep)" pointer-events="none"/>`; }
     svg += `</g>`;
     svg = useWood ? svg : svg; // overhead panels already use faceFill; fix below
   }
@@ -657,9 +691,13 @@ function seg(container, values, current, onPick, labelFn){
 function buildSwatches(){
   const g=el("swatches"); g.innerHTML="";
   FINISHES.forEach(f=>{ const d=document.createElement("div");
-    d.className="sw"+(f.id===state.finish.id?" active":"");
-    d.style.background=f.base; d.title=f.name;
-    if(f.gloss) d.style.boxShadow="inset 0 0 0 1px rgba(20,28,18,.14), inset 0 6px 8px rgba(255,255,255,.5)";
+    d.className="sw"+(f.id===state.finish.id?" active":"")+(f.gloss?" gloss":"");
+    if(f.gloss){
+      d.style.background="linear-gradient(135deg, "+shade(f.base,0.55)+" 0%, "+f.base+" 42%, "+shade(f.base,-0.14)+" 100%)";
+    } else {
+      d.style.background=f.base;
+    }
+    d.title=f.name;
     d.onclick=()=>{ state.finish=f; el("finishName").textContent=f.name; syncSwatches(); render(); };
     g.appendChild(d);
   });
