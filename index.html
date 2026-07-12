@@ -275,15 +275,46 @@
     transform: rotate(0deg);
   }
   .hero-figure .frame-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  /* colaj împrăștiat de lucrări (poze rotite, dimensiuni diferite) */
+  .collage { position: relative; width: 100%; aspect-ratio: 4 / 5; }
+  .collage .ph {
+    position: absolute;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border: 5px solid #fff;
+    border-radius: 9px;
+    box-shadow: 0 14px 30px rgba(20,28,18,0.2);
+    background: var(--sage-deep);
+    transition: transform 0.35s cubic-bezier(.2,.8,.2,1), box-shadow 0.35s ease;
+  }
+  .collage .ph:hover { box-shadow: 0 22px 44px rgba(20,28,18,0.28); z-index: 20 !important; }
+  .collage .p1 { top: 0%;  left: 2%;  width: 53%; transform: rotate(-5deg);  z-index: 2; }
+  .collage .p2 { top: 6%;  right: 1%; width: 47%; transform: rotate(4deg);   z-index: 1; }
+  .collage .p3 { top: 25%; left: 0%;  width: 50%; transform: rotate(3.5deg); z-index: 4; }
+  .collage .p4 { top: 31%; right: 1%; width: 49%; transform: rotate(-4deg);  z-index: 3; }
+  .collage .p5 { top: 51%; left: 3%;  width: 52%; transform: rotate(-3.5deg);z-index: 6; }
+  .collage .p6 { top: 56%; right: 2%; width: 47%; transform: rotate(5deg);   z-index: 5; }
+  .collage .p7 { top: 75%; left: 1%;  width: 50%; transform: rotate(4deg);   z-index: 8; }
+  .collage .p8 { top: 80%; right: 2%; width: 49%; transform: rotate(-5deg);  z-index: 7; }
+  .collage .p1:hover { transform: rotate(-5deg) scale(1.05); }
+  .collage .p2:hover { transform: rotate(4deg) scale(1.05); }
+  .collage .p3:hover { transform: rotate(3.5deg) scale(1.05); }
+  .collage .p4:hover { transform: rotate(-4deg) scale(1.05); }
+  .collage .p5:hover { transform: rotate(-3.5deg) scale(1.05); }
+  .collage .p6:hover { transform: rotate(5deg) scale(1.05); }
+  .collage .p7:hover { transform: rotate(4deg) scale(1.05); }
+  .collage .p8:hover { transform: rotate(-5deg) scale(1.05); }
   .hero-figure .float-tag {
     position: absolute;
     left: -18px; bottom: 34px;
     background: var(--cream);
     border: 1px solid var(--line);
     border-radius: 12px;
-    box-shadow: var(--shadow);
+    box-shadow: var(--shadow-lg);
     padding: 14px 18px;
     transform: rotate(-2deg);
+    z-index: 15;
   }
   .hero-figure .float-tag .ft-k { font-family: "Cormorant Garamond", serif; font-size: 30px; font-weight: 700; color: var(--forest); line-height: 1; }
   .hero-figure .float-tag .ft-l { font-size: 11.5px; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.14em; margin-top: 3px; }
@@ -439,9 +470,9 @@
   /* ============================ RESPONSIVE ============================ */
   @media (max-width: 940px) {
     .hero { grid-template-columns: 1fr; padding-top: 132px; }
-    .hero-figure { max-width: 420px; margin: 0 auto; order: -1; }
+    .hero-figure { width: 100%; max-width: 380px; margin: 0 auto 52px; order: -1; }
     .hero-figure .frame-photo { aspect-ratio: 4/5; transform: none; }
-    .hero-figure .float-tag { left: auto; right: -8px; }
+    .hero-figure .float-tag { left: -6px; right: auto; }
     .cat-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
     .values-grid { grid-template-columns: 1fr 1fr; }
     .steps-grid { grid-template-columns: 1fr 1fr; }
@@ -514,8 +545,15 @@
       </div>
     </div>
     <div class="hero-figure reveal">
-      <div class="frame-photo">
-        <img src="images/hero-collage.jpg" alt="Lucrări reale Normand Mobilier — bucătării, dormitoare și corpuri de living la comandă">
+      <div class="collage">
+        <img class="ph p1" src="images/portfolio/p1.jpg" alt="Bucătărie la comandă" loading="lazy">
+        <img class="ph p2" src="images/portfolio/p2.jpg" alt="Bucătărie la comandă" loading="lazy">
+        <img class="ph p3" src="images/portfolio/p3.jpg" alt="Bucătărie la comandă" loading="lazy">
+        <img class="ph p4" src="images/portfolio/p4.jpg" alt="Bucătărie la comandă" loading="lazy">
+        <img class="ph p5" src="images/portfolio/p5.jpg" alt="Bucătărie la comandă" loading="lazy">
+        <img class="ph p6" src="images/portfolio/p6.jpg" alt="Corp de living la comandă" loading="lazy">
+        <img class="ph p7" src="images/portfolio/p7.jpg" alt="Corp de living la comandă" loading="lazy">
+        <img class="ph p8" src="images/portfolio/p8.jpg" alt="Dormitor la comandă" loading="lazy">
       </div>
       <div class="float-tag">
         <div class="ft-k">100%</div>
