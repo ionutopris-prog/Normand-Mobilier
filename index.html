@@ -3,148 +3,207 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Prototip meniu - Magazin mobila</title>
+<title>Normand Mobilier — Mobilă la comandă din PAL</title>
+<meta name="description" content="Atelier de mobilă la comandă din PAL: dormitoare, bucătării, corpuri de mobilă. Proiectăm, producem și montăm exact pe măsura casei tale. Prețuri corecte, livrare și montaj.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232f4a37'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' font-weight='700' text-anchor='middle' fill='%23f5f3ec'%3EN%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  /* ==========================================================
-     PLACEHOLDER: fontul, logo-ul si restul culorilor se definesc
-     mai tarziu. Fundal: verde modern (sage).
-     ========================================================== */
   :root {
-    --bg: #dbe8d9;
-    --ink: #1f2e22;
-    --ink-soft: #4c5c4c;
-    --line: #b9cbb4;
-    --panel: #f3f7f1;
-    --accent: #2f4a37;
+    --sage: #dbe8d9;
+    --sage-deep: #c8d9c3;
+    --cream: #f5f3ec;
+    --ink: #21301f;
+    --ink-soft: #56634f;
+    --line: #cad8c3;
+    --forest: #2f4a37;
+    --forest-hover: #243a2b;
+    --wood: #9a6a43;
+    --shadow: 0 18px 40px rgba(20,28,18,0.12);
+    --shadow-lg: 0 34px 80px rgba(20,28,18,0.22);
   }
 
   * { box-sizing: border-box; }
 
+  html { scroll-behavior: smooth; }
+
   html, body {
     margin: 0;
     padding: 0;
-    background: var(--bg);
+    background: var(--sage);
     color: var(--ink);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
   }
 
+  h1, h2, h3, .serif {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 600;
+    letter-spacing: 0.005em;
+  }
+
+  a { color: inherit; }
+
+  .eyebrow {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.24em;
+    color: var(--wood);
+    font-weight: 600;
+  }
+
+  /* ============================ HEADER ============================ */
   header.topbar {
     position: fixed;
     top: 0; left: 0; right: 0;
-    height: 68px;
-    background: var(--bg);
-    border-bottom: 1px solid var(--line);
+    height: 72px;
+    background: rgba(219, 232, 217, 0.85);
+    backdrop-filter: saturate(1.4) blur(10px);
+    -webkit-backdrop-filter: saturate(1.4) blur(10px);
+    border-bottom: 1px solid transparent;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 32px;
+    padding: 0 clamp(18px, 4vw, 44px);
     z-index: 50;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  }
+  header.topbar.scrolled {
+    border-bottom-color: var(--line);
+    box-shadow: 0 6px 24px rgba(20,28,18,0.06);
   }
 
-  .logo {
-    font-size: 15px;
-    letter-spacing: 0.14em;
-    font-weight: 600;
+  .brand {
+    display: flex;
+    align-items: baseline;
+    gap: 9px;
+    text-decoration: none;
+    line-height: 1;
+  }
+  .brand .brand-name {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 27px;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: 0.01em;
+  }
+  .brand .brand-sub {
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.34em;
     color: var(--ink-soft);
+    font-weight: 600;
   }
 
   nav.mainnav ul {
     display: flex;
-    gap: 8px;
+    align-items: center;
+    gap: 4px;
     list-style: none;
     margin: 0;
     padding: 0;
   }
-
   .nav-item {
     position: relative;
-    padding: 10px 16px;
+    padding: 10px 15px;
     font-size: 14px;
+    font-weight: 500;
     cursor: pointer;
     color: var(--ink);
-    border-radius: 6px;
+    border-radius: 8px;
     user-select: none;
-    transition: background 0.15s ease;
+    text-decoration: none;
+    transition: background 0.15s ease, color 0.15s ease;
   }
-
-  .nav-item:hover { background: rgba(0,0,0,0.04); }
-
-  .nav-item.active {
-    background: var(--ink);
-    color: #fff;
-  }
-
+  .nav-item:hover { background: rgba(47,74,55,0.08); }
+  .nav-item.active { background: var(--forest); color: var(--cream); }
   .nav-item.active::after {
     content: "";
     position: absolute;
-    left: 50%;
-    bottom: -13px;
+    left: 50%; bottom: -14px;
     transform: translateX(-50%);
     width: 0; height: 0;
     border-left: 7px solid transparent;
     border-right: 7px solid transparent;
-    border-bottom: 7px solid var(--ink);
+    border-bottom: 7px solid var(--forest);
   }
+  .nav-cta {
+    margin-left: 10px;
+    padding: 11px 20px;
+    background: var(--forest);
+    color: var(--cream);
+    border-radius: 999px;
+    font-size: 13.5px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease;
+    white-space: nowrap;
+  }
+  .nav-cta:hover { background: var(--forest-hover); transform: translateY(-1px); }
 
-  /* overlay din spatele panoului */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    width: 42px; height: 42px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: transparent;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+  }
+  .hamburger span {
+    display: block;
+    width: 18px; height: 2px;
+    background: var(--ink);
+    border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.2s ease;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* catalog flip menu (semnătura originală, păstrată) */
   .catalog-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(20, 18, 15, 0.25);
-    opacity: 0;
-    pointer-events: none;
+    position: fixed; inset: 0;
+    background: rgba(20, 28, 18, 0.28);
+    opacity: 0; pointer-events: none;
     transition: opacity 0.3s ease;
     z-index: 40;
   }
-  .catalog-overlay.visible {
-    opacity: 1;
-    pointer-events: auto;
-  }
+  .catalog-overlay.visible { opacity: 1; pointer-events: auto; }
 
-  /* panoul se deschide ca o coperta de catalog: rotatie pe axa X,
-     pornind de sus, punct de pivot = marginea de sus a panoului */
   .catalog-panel {
     position: fixed;
-    top: 68px;
-    min-width: 340px;
-    max-width: 560px;
-    background: var(--panel);
+    top: 72px;
+    min-width: 300px;
+    max-width: 460px;
+    background: var(--cream);
     border: 1px solid var(--line);
     border-top: none;
-    box-shadow: 0 18px 40px rgba(20,18,15,0.12);
-    border-radius: 0 0 10px 10px;
+    box-shadow: var(--shadow);
+    border-radius: 0 0 14px 14px;
     transform-origin: top center;
     transform: perspective(1400px) rotateX(-92deg);
-    opacity: 0;
-    pointer-events: none;
+    opacity: 0; pointer-events: none;
     transition: transform 0.5s cubic-bezier(.22,.9,.3,1.15), opacity 0.25s ease;
     z-index: 45;
-    padding: 22px 10px;
+    padding: 14px 12px;
   }
-
   .catalog-panel.open {
     transform: perspective(1400px) rotateX(0deg);
-    opacity: 1;
-    pointer-events: auto;
+    opacity: 1; pointer-events: auto;
   }
-
-  .catalog-pages {
-    display: flex;
-    flex-direction: column;
-  }
-
-  /* fiecare item de submeniu = o "pagina" care se roteste pe axa Y,
-     ca si cum ai intoarce foaie cu foaie catalogul */
-  .page {
-    perspective: 900px;
-  }
-
+  .catalog-pages { display: flex; flex-direction: column; }
+  .page { perspective: 900px; }
   .page .page-inner {
     transform-origin: left center;
     transform: rotateY(-100deg);
     opacity: 0;
     transition: transform 0.5s cubic-bezier(.2,.8,.2,1), opacity 0.4s ease;
-    padding: 13px 18px;
+    padding: 15px 18px;
     border-bottom: 1px solid var(--line);
     font-size: 15px;
     cursor: pointer;
@@ -152,124 +211,481 @@
     align-items: center;
     justify-content: space-between;
     color: var(--ink);
+    border-radius: 8px;
   }
-
   .page:last-child .page-inner { border-bottom: none; }
+  .page.flip-in .page-inner { transform: rotateY(0deg); opacity: 1; }
+  .page .page-inner:hover { background: rgba(47,74,55,0.06); }
+  .page .arrow { color: var(--wood); font-size: 15px; transform: translateX(-4px); opacity: 0; transition: transform 0.2s ease, opacity 0.2s ease; }
+  .page .page-inner:hover .arrow { transform: translateX(0); opacity: 1; }
 
-  .page.flip-in .page-inner {
-    transform: rotateY(0deg);
-    opacity: 1;
-  }
-
-  .page .page-inner:hover {
-    background: rgba(0,0,0,0.035);
-  }
-
-  .page .arrow {
-    color: var(--ink-soft);
-    font-size: 13px;
-    transform: translateX(-4px);
-    opacity: 0;
-    transition: transform 0.2s ease, opacity 0.2s ease;
-  }
-  .page .page-inner:hover .arrow {
-    transform: translateX(0);
-    opacity: 1;
-  }
-
-  main.placeholder-content {
-    padding: 150px 40px 100px;
-    max-width: 640px;
+  /* ============================ HERO ============================ */
+  .hero {
+    padding: 168px clamp(20px, 6vw, 80px) 90px;
+    max-width: 1180px;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: clamp(30px, 5vw, 72px);
+    align-items: center;
+  }
+  .hero-copy .eyebrow { margin-bottom: 20px; display: inline-block; }
+  .hero-copy h1 {
+    font-size: clamp(40px, 6vw, 68px);
+    line-height: 1.04;
+    margin: 0 0 22px;
+    color: var(--ink);
+  }
+  .hero-copy h1 em { font-style: italic; color: var(--forest); }
+  .hero-copy p.lead {
+    font-size: 18px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    max-width: 30em;
+    margin: 0 0 34px;
+  }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 15px 28px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1.5px solid transparent;
+    transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+  }
+  .btn-primary { background: var(--forest); color: var(--cream); }
+  .btn-primary:hover { background: var(--forest-hover); transform: translateY(-2px); }
+  .btn-ghost { background: transparent; color: var(--ink); border-color: var(--forest); }
+  .btn-ghost:hover { background: var(--forest); color: var(--cream); transform: translateY(-2px); }
+
+  .hero-figure {
+    position: relative;
+  }
+  .hero-figure .frame-photo {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    aspect-ratio: 4 / 5;
+    background: var(--sage-deep);
+    transform: rotate(1.4deg);
+  }
+  .hero-figure .frame-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .hero-figure .float-tag {
+    position: absolute;
+    left: -18px; bottom: 34px;
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 14px 18px;
+    transform: rotate(-2deg);
+  }
+  .hero-figure .float-tag .ft-k { font-family: "Cormorant Garamond", serif; font-size: 30px; font-weight: 700; color: var(--forest); line-height: 1; }
+  .hero-figure .float-tag .ft-l { font-size: 11.5px; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.14em; margin-top: 3px; }
+
+  /* ============================ SECTIONS ============================ */
+  section { position: relative; }
+  .section-pad { padding: clamp(60px, 8vw, 108px) clamp(20px, 6vw, 80px); }
+  .wrap { max-width: 1180px; margin: 0 auto; }
+
+  .section-head { text-align: center; max-width: 620px; margin: 0 auto 52px; }
+  .section-head .eyebrow { display: inline-block; margin-bottom: 14px; }
+  .section-head h2 { font-size: clamp(30px, 4.4vw, 46px); margin: 0 0 14px; line-height: 1.1; }
+  .section-head p { font-size: 17px; line-height: 1.6; color: var(--ink-soft); margin: 0; }
+
+  /* categories */
+  .cat-band { background: var(--cream); }
+  .cat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+  }
+  .cat-card {
+    display: block;
+    text-decoration: none;
+    color: var(--ink);
+    background: var(--sage);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .cat-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+  .cat-card .cc-photo { aspect-ratio: 4 / 3; overflow: hidden; background: var(--sage-deep); }
+  .cat-card .cc-photo img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s cubic-bezier(.2,.8,.2,1); }
+  .cat-card:hover .cc-photo img { transform: scale(1.06); }
+  .cat-card .cc-body { padding: 22px 24px 26px; }
+  .cat-card .cc-body h3 { font-size: 25px; margin: 0 0 6px; }
+  .cat-card .cc-body p { margin: 0 0 14px; font-size: 14px; color: var(--ink-soft); line-height: 1.5; }
+  .cat-card .cc-link { font-size: 14px; font-weight: 600; color: var(--forest); display: inline-flex; align-items: center; gap: 7px; }
+  .cat-card .cc-link .a { transition: transform 0.2s ease; }
+  .cat-card:hover .cc-link .a { transform: translateX(4px); }
+
+  /* value strip */
+  .values-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .value {
+    text-align: center;
+    padding: 30px 20px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: var(--cream);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .value:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+  .value .v-ic {
+    width: 46px; height: 46px;
+    margin: 0 auto 16px;
+    color: var(--forest);
+  }
+  .value .v-ic svg { width: 100%; height: 100%; stroke: currentColor; fill: none; stroke-width: 1.6; }
+  .value h3 { font-size: 21px; margin: 0 0 7px; }
+  .value p { margin: 0; font-size: 13.5px; color: var(--ink-soft); line-height: 1.5; }
+
+  /* steps */
+  .steps-band { background: var(--forest); color: var(--cream); }
+  .steps-band .section-head h2 { color: var(--cream); }
+  .steps-band .section-head .eyebrow { color: #c8b39a; }
+  .steps-band .section-head p { color: rgba(245,243,236,0.78); }
+  .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+  .step {
+    padding: 26px 22px;
+    border: 1px solid rgba(245,243,236,0.16);
+    border-radius: 14px;
+    background: rgba(245,243,236,0.04);
+  }
+  .step .s-num { font-family: "Cormorant Garamond", serif; font-size: 40px; font-weight: 700; color: #c8b39a; line-height: 1; margin-bottom: 12px; }
+  .step h3 { font-size: 21px; margin: 0 0 7px; color: var(--cream); }
+  .step p { margin: 0; font-size: 13.5px; color: rgba(245,243,236,0.72); line-height: 1.55; }
+
+  /* contact */
+  .contact-band { background: var(--cream); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(30px, 5vw, 64px); align-items: center; }
+  .contact-copy h2 { font-size: clamp(30px, 4.4vw, 46px); margin: 0 0 16px; line-height: 1.1; }
+  .contact-copy p { font-size: 17px; line-height: 1.65; color: var(--ink-soft); margin: 0 0 28px; max-width: 30em; }
+  .contact-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 18px; }
+  .contact-list li { display: flex; align-items: center; gap: 15px; }
+  .contact-list .ci {
+    width: 44px; height: 44px; flex: none;
+    border-radius: 12px;
+    background: var(--sage);
+    color: var(--forest);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .contact-list .ci svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.7; }
+  .contact-list .ct-k { font-size: 12px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--ink-soft); }
+  .contact-list .ct-v { font-size: 17px; font-weight: 600; color: var(--ink); text-decoration: none; }
+  .contact-list a.ct-v:hover { color: var(--forest); }
+
+  .contact-cta {
+    background: var(--sage);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: clamp(28px, 4vw, 44px);
+    box-shadow: var(--shadow);
     text-align: center;
   }
+  .contact-cta h3 { font-size: 28px; margin: 0 0 10px; }
+  .contact-cta p { font-size: 15px; color: var(--ink-soft); margin: 0 0 24px; line-height: 1.55; }
+  .contact-cta .btn { width: 100%; justify-content: center; }
+  .contact-cta .cc-alt { margin-top: 14px; font-size: 13px; color: var(--ink-soft); }
 
-  main.placeholder-content h1 {
-    font-size: 26px;
-    font-weight: 600;
-    margin-bottom: 12px;
+  /* footer */
+  footer.site-footer {
+    background: var(--forest);
+    color: rgba(245,243,236,0.8);
+    padding: 48px clamp(20px, 6vw, 80px);
   }
+  .footer-inner { max-width: 1180px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between; }
+  .footer-inner .f-brand { display: flex; align-items: baseline; gap: 9px; }
+  .footer-inner .f-brand .brand-name { font-family: "Cormorant Garamond", serif; font-size: 24px; font-weight: 700; color: var(--cream); }
+  .footer-inner .f-brand .brand-sub { font-size: 10px; text-transform: uppercase; letter-spacing: 0.32em; color: rgba(245,243,236,0.6); }
+  .footer-inner .f-links { display: flex; gap: 22px; flex-wrap: wrap; }
+  .footer-inner .f-links a { color: rgba(245,243,236,0.8); text-decoration: none; font-size: 14px; }
+  .footer-inner .f-links a:hover { color: var(--cream); }
+  .footer-copy { max-width: 1180px; margin: 26px auto 0; padding-top: 22px; border-top: 1px solid rgba(245,243,236,0.14); font-size: 12.5px; color: rgba(245,243,236,0.55); }
 
-  main.placeholder-content p {
-    font-size: 15px;
-    color: var(--ink-soft);
-    line-height: 1.6;
+  /* reveal on scroll */
+  .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(.2,.8,.2,1); }
+  .reveal.in { opacity: 1; transform: none; }
+  .reveal.d1 { transition-delay: 0.08s; }
+  .reveal.d2 { transition-delay: 0.16s; }
+  .reveal.d3 { transition-delay: 0.24s; }
+
+  /* mobile menu panel */
+  .mobile-menu {
+    position: fixed;
+    top: 72px; left: 0; right: 0;
+    background: var(--cream);
+    border-bottom: 1px solid var(--line);
+    box-shadow: var(--shadow);
+    padding: 12px 18px 22px;
+    z-index: 44;
+    transform: translateY(-12px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
   }
+  .mobile-menu.open { opacity: 1; transform: none; pointer-events: auto; }
+  .mobile-menu a { display: block; padding: 14px 8px; font-size: 16px; text-decoration: none; color: var(--ink); border-bottom: 1px solid var(--line); }
+  .mobile-menu a.sub { padding-left: 24px; font-size: 15px; color: var(--ink-soft); }
+  .mobile-menu a:last-child { border-bottom: none; }
+  .mobile-menu .mm-cta { margin-top: 14px; text-align: center; background: var(--forest); color: var(--cream); border-radius: 999px; font-weight: 600; border-bottom: none; }
 
-  .hint {
-    margin-top: 34px;
-    font-size: 13px;
-    color: var(--ink-soft);
-    border: 1px dashed var(--line);
-    border-radius: 8px;
-    padding: 14px 18px;
-    display: inline-block;
+  /* ============================ RESPONSIVE ============================ */
+  @media (max-width: 940px) {
+    .hero { grid-template-columns: 1fr; padding-top: 132px; }
+    .hero-figure { max-width: 420px; margin: 0 auto; order: -1; }
+    .hero-figure .frame-photo { aspect-ratio: 16/11; transform: none; }
+    .hero-figure .float-tag { left: auto; right: -8px; }
+    .cat-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
+    .values-grid { grid-template-columns: 1fr 1fr; }
+    .steps-grid { grid-template-columns: 1fr 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 760px) {
+    nav.mainnav, .nav-cta { display: none; }
+    .hamburger { display: flex; }
+    .hero-copy { text-align: center; }
+    .hero-copy .hero-actions { justify-content: center; }
+    .hero-copy p.lead { margin-left: auto; margin-right: auto; }
+  }
+  @media (max-width: 480px) {
+    .values-grid, .steps-grid { grid-template-columns: 1fr; }
+    .hero-copy h1 { font-size: 38px; }
   }
 </style>
 </head>
 <body>
 
-  <header class="topbar">
-    <div class="logo">MOBILA</div>
+  <header class="topbar" id="topbar">
+    <a class="brand" href="index.html" aria-label="Normand Mobilier — acasă">
+      <span class="brand-name">Normand</span>
+      <span class="brand-sub">Mobilier</span>
+    </a>
     <nav class="mainnav">
       <ul id="nav-list">
-        <li class="nav-item" data-menu="colectie">Colectie</li>
-        <li class="nav-item" data-menu="mobilier">Mobilier</li>
-        <li class="nav-item" data-menu="inspiratie">Inspiratie</li>
-        <li class="nav-item" data-menu="despre">Despre noi</li>
-        <li class="nav-item" data-menu="contact">Contact</li>
+        <li><a class="nav-item" href="#top" data-scroll="top">Acasă</a></li>
+        <li><span class="nav-item" data-menu="mobilier">Mobilier</span></li>
+        <li><a class="nav-item" href="#despre" data-scroll="despre">Despre noi</a></li>
+        <li><a class="nav-item" href="#contact" data-scroll="contact">Contact</a></li>
+        <li><a class="nav-cta" href="#contact">Cere o ofertă</a></li>
       </ul>
     </nav>
+    <button class="hamburger" id="hamburger" aria-label="Deschide meniul">
+      <span></span><span></span><span></span>
+    </button>
   </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#top">Acasă</a>
+    <a class="sub" href="categorie.html?titlu=Dormitoare">— Dormitoare</a>
+    <a class="sub" href="categorie.html?titlu=Bucătării">— Bucătării</a>
+    <a class="sub" href="categorie.html?titlu=Corpuri de mobilă">— Corpuri de mobilă</a>
+    <a href="#despre">Despre noi</a>
+    <a href="#contact">Contact</a>
+    <a class="mm-cta" href="#contact">Cere o ofertă</a>
+  </div>
 
   <div class="catalog-overlay" id="overlay"></div>
   <div class="catalog-panel" id="panel">
     <div class="catalog-pages" id="pages"></div>
   </div>
 
-  <main class="placeholder-content">
-    <h1>Prototip structura meniu</h1>
-    <p>
-      Aceasta este doar o schita functionala a navigatiei. Textele din
-      meniu, logo-ul, culorile si restul continutului se stabilesc
-      intr-un pas urmator - momentan testam doar cum se simte
-      animatia submeniurilor.
-    </p>
-    <div class="hint">Click pe un item din meniul de sus pentru a vedea animatia de tip "catalog"</div>
-  </main>
+  <span id="top"></span>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow">Atelier de mobilă la comandă</span>
+      <h1>Mobilă făcută <em>pe măsura</em> casei tale.</h1>
+      <p class="lead">Din PAL, orice tip de mobilă — dormitoare, bucătării, corpuri de living. O proiectăm, o producem și o montăm exact cum ți-o dorești: dimensiuni, culoare, model.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#colectie">Vezi lucrările</a>
+        <a class="btn btn-ghost" href="#contact">Cere o ofertă</a>
+      </div>
+    </div>
+    <div class="hero-figure reveal">
+      <div class="frame-photo">
+        <img src="images/dormitoare/thumb4.jpg" alt="Dormitor la comandă cu pat tapițat și corpuri suspendate">
+      </div>
+      <div class="float-tag">
+        <div class="ft-k">100%</div>
+        <div class="ft-l">La comandă</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORII -->
+  <section class="section-pad cat-band" id="colectie">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Ce facem</span>
+        <h2>Lucrări reale, montate la client</h2>
+        <p>Fiecare piesă e gândită pentru un spațiu anume. Alege o categorie și răsfoiește catalogul.</p>
+      </div>
+      <div class="cat-grid">
+        <a class="cat-card reveal" href="categorie.html?titlu=Dormitoare">
+          <div class="cc-photo"><img src="images/dormitoare/thumb4.jpg" alt="Dormitoare la comandă"></div>
+          <div class="cc-body">
+            <h3>Dormitoare</h3>
+            <p>Paturi, dulapuri cu uși glisante sau batante, corpuri suspendate — potrivite fix pe cameră.</p>
+            <span class="cc-link">Vezi colecția <span class="a">→</span></span>
+          </div>
+        </a>
+        <a class="cat-card reveal d1" href="categorie.html?titlu=Bucătării">
+          <div class="cc-photo"><img src="images/bucatarii/thumb1.jpg" alt="Bucătării la comandă"></div>
+          <div class="cc-body">
+            <h3>Bucătării</h3>
+            <p>Bucătării în formă de L sau U, cu insulă și blat rezistent, folosind fiecare colț al încăperii.</p>
+            <span class="cc-link">Vezi colecția <span class="a">→</span></span>
+          </div>
+        </a>
+        <a class="cat-card reveal d2" href="categorie.html?titlu=Corpuri de mobilă">
+          <div class="cc-photo"><img src="images/corpuri-mobila/hero.jpg" alt="Corpuri de mobilă la comandă"></div>
+          <div class="cc-body">
+            <h3>Corpuri de mobilă</h3>
+            <p>Pereți de living, biblioteci, comode și corpuri de depozitare pe măsura pereților tăi.</p>
+            <span class="cc-link">Vezi colecția <span class="a">→</span></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DE CE NOI -->
+  <section class="section-pad" id="despre">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">De ce Normand</span>
+        <h2>Mobilă corectă, de la proiect la montaj</h2>
+        <p>Fără compromisuri la măsurători și fără surprize la preț. Ne ocupăm de tot, tu doar alegi.</p>
+      </div>
+      <div class="values-grid">
+        <div class="value reveal">
+          <div class="v-ic"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 21v-6h6v6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>La comandă, orice tip</h3>
+          <p>Orice piesă, exact pe dimensiunile și stilul spațiului tău.</p>
+        </div>
+        <div class="value reveal d1">
+          <div class="v-ic"><svg viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Prețuri corecte</h3>
+          <p>Ofertă clară, discutată din start. Plătești ce s-a stabilit.</p>
+        </div>
+        <div class="value reveal d2">
+          <div class="v-ic"><svg viewBox="0 0 24 24"><path d="M3 7l9-4 9 4-9 4-9-4zM3 7v10l9 4 9-4V7M12 11v10" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Livrare și montaj</h3>
+          <p>Aducem și montăm noi mobila la tine, gata de folosit.</p>
+        </div>
+        <div class="value reveal d3">
+          <div class="v-ic"><svg viewBox="0 0 24 24"><path d="M14 3l7 7-4 4-7-7 4-4zM10 7L3 14v7h7l7-7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>Meșteșug</h3>
+          <p>Ani de experiență în lucrul cu PAL-ul și finisajele.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CUM LUCRAM -->
+  <section class="section-pad steps-band">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Cum lucrăm</span>
+        <h2>Patru pași până la mobila ta</h2>
+        <p>Un drum simplu, fără bătăi de cap, de la prima discuție la montajul final.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step reveal"><div class="s-num">01</div><h3>Discuție</h3><p>Ne spui ce-ți dorești și cum arată spațiul. Îți dăm idei și direcție.</p></div>
+        <div class="step reveal d1"><div class="s-num">02</div><h3>Proiect &amp; ofertă</h3><p>Măsurăm, proiectăm piesa și îți dăm un preț clar, dinainte.</p></div>
+        <div class="step reveal d2"><div class="s-num">03</div><h3>Producție</h3><p>Realizăm mobila la comandă, cu materialele și culorile alese.</p></div>
+        <div class="step reveal d3"><div class="s-num">04</div><h3>Livrare &amp; montaj</h3><p>O aducem și o montăm la tine acasă, gata de folosit.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section-pad contact-band" id="contact">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div class="contact-copy reveal">
+          <span class="eyebrow">Contact</span>
+          <h2>Hai să construim mobila ta</h2>
+          <p>Scrie-ne sau sună-ne cu ce ai în minte — dimensiuni, o poză a camerei sau doar o idee. Îți răspundem cu o ofertă personalizată.</p>
+          <ul class="contact-list">
+            <li>
+              <span class="ci"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.6a16 16 0 0 0 6 6l1.1-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.7.7A2 2 0 0 1 22 16.9z" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <div><div class="ct-k">Telefon</div><a class="ct-v" href="tel:+40700000000">07XX XXX XXX</a></div>
+            </li>
+            <li>
+              <span class="ci"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4zM4 6l8 6 8-6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+              <div><div class="ct-k">Email</div><a class="ct-v" href="mailto:contact@normandmobilier.ro">contact@normandmobilier.ro</a></div>
+            </li>
+            <li>
+              <span class="ci"><svg viewBox="0 0 24 24"><path d="M12 21s-7-5.7-7-11a7 7 0 0 1 14 0c0 5.3-7 11-7 11z" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+              <div><div class="ct-k">Showroom / Atelier</div><span class="ct-v">[Oraș, adresă]</span></div>
+            </li>
+          </ul>
+        </div>
+        <div class="contact-cta reveal d1">
+          <h3>Cere o ofertă</h3>
+          <p>Trimite-ne un mesaj cu ce ai nevoie și te contactăm rapid.</p>
+          <a class="btn btn-primary" href="mailto:contact@normandmobilier.ro?subject=Cerere%20ofertă%20mobilă">Scrie-ne pe email</a>
+          <div class="cc-alt">sau sună la <strong>07XX XXX XXX</strong></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="f-brand">
+        <span class="brand-name">Normand</span>
+        <span class="brand-sub">Mobilier</span>
+      </div>
+      <div class="f-links">
+        <a href="#colectie">Mobilier</a>
+        <a href="#despre">Despre noi</a>
+        <a href="#contact">Contact</a>
+        <a href="tel:+40700000000">Telefon</a>
+      </div>
+    </div>
+    <div class="footer-copy">
+      © <span id="year"></span> Normand Mobilier · Mobilă la comandă din PAL · normandmobilier.ro
+    </div>
+  </footer>
 
   <script>
-    /* PLACEHOLDER: continutul real al fiecarui submeniu vine mai tarziu */
+    /* structura reală a submeniului Mobilier */
     const menus = {
-      colectie: ["Colectia 1", "Colectia 2", "Colectia 3"], /* PLACEHOLDER: denumirile vin de la tine */
-      mobilier: ["Dormitoare", "Bucatarii", "Corpuri de mobila"],
-      inspiratie: ["Idei de amenajare", "Proiecte realizate", "Blog"],
-      despre: ["Povestea noastra", "Valori", "Echipa"],
-      contact: ["Showroom", "Programare vizita", "Suport"]
+      mobilier: ["Dormitoare", "Bucătării", "Corpuri de mobilă"]
     };
 
     const navItems = document.querySelectorAll(".nav-item");
     const panel = document.getElementById("panel");
     const pagesContainer = document.getElementById("pages");
     const overlay = document.getElementById("overlay");
+    const topbar = document.getElementById("topbar");
     let activeMenu = null;
 
     function positionPanel(anchorEl) {
       const rect = anchorEl.getBoundingClientRect();
-      const maxLeft = window.innerWidth - 380;
+      const maxLeft = window.innerWidth - 320;
       panel.style.left = Math.min(rect.left, maxLeft) + "px";
     }
 
     function buildPages(key) {
       pagesContainer.innerHTML = "";
-      const items = menus[key] || [];
-      items.forEach((label, i) => {
+      (menus[key] || []).forEach((label, i) => {
         const page = document.createElement("div");
         page.className = "page";
         const inner = document.createElement("div");
         inner.className = "page-inner";
         inner.style.transitionDelay = (i * 70) + "ms";
-        inner.innerHTML = "<span>" + label + "</span><span class='arrow'>-></span>";
+        inner.innerHTML = "<span>" + label + "</span><span class='arrow'>→</span>";
         inner.addEventListener("click", () => {
           window.location.href = "categorie.html?titlu=" + encodeURIComponent(label);
         });
@@ -283,16 +699,12 @@
       activeMenu = key;
       buildPages(key);
       positionPanel(anchorEl);
-
       panel.classList.add("open");
       overlay.classList.add("visible");
       navItems.forEach(n => n.classList.toggle("active", n === anchorEl));
-
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          pagesContainer.querySelectorAll(".page").forEach(p => p.classList.add("flip-in"));
-        });
-      });
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        pagesContainer.querySelectorAll(".page").forEach(p => p.classList.add("flip-in"));
+      }));
     }
 
     function closeMenu() {
@@ -305,14 +717,42 @@
 
     navItems.forEach(item => {
       item.addEventListener("click", (e) => {
-        e.stopPropagation();
-        openMenu(item.dataset.menu, item);
+        if (item.dataset.menu) {
+          e.stopPropagation();
+          openMenu(item.dataset.menu, item);
+        } else {
+          closeMenu();
+        }
       });
     });
 
     overlay.addEventListener("click", closeMenu);
     document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenu(); });
     window.addEventListener("resize", () => { if (activeMenu) closeMenu(); });
+
+    /* header shadow la scroll */
+    const onScroll = () => topbar.classList.toggle("scrolled", window.scrollY > 10);
+    window.addEventListener("scroll", onScroll); onScroll();
+
+    /* meniu mobil */
+    const hamburger = document.getElementById("hamburger");
+    const mobileMenu = document.getElementById("mobileMenu");
+    hamburger.addEventListener("click", () => {
+      const open = mobileMenu.classList.toggle("open");
+      hamburger.classList.toggle("open", open);
+    });
+    mobileMenu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+      mobileMenu.classList.remove("open");
+      hamburger.classList.remove("open");
+    }));
+
+    /* reveal on scroll */
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
+    }, { threshold: 0.14 });
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 
 </body>

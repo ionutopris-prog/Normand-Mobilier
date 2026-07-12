@@ -3,483 +3,261 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Categorie - Magazin mobila</title>
+<title>Categorie — Normand Mobilier</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232f4a37'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' font-weight='700' text-anchor='middle' fill='%23f5f3ec'%3EN%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  /* aceleasi variabile ca in index.html - le sincronizam cand
-     stabilim paleta finala */
   :root {
-    --bg: #dbe8d9;
-    --ink: #1f2e22;
-    --ink-soft: #4c5c4c;
-    --line: #b9cbb4;
-    --panel: #f3f7f1;
-    --accent: #2f4a37;
+    --sage: #dbe8d9;
+    --sage-deep: #c8d9c3;
+    --cream: #f5f3ec;
+    --ink: #21301f;
+    --ink-soft: #56634f;
+    --line: #cad8c3;
+    --forest: #2f4a37;
+    --forest-hover: #243a2b;
+    --wood: #9a6a43;
+    --shadow: 0 18px 40px rgba(20,28,18,0.12);
+    --shadow-lg: 0 34px 80px rgba(20,28,18,0.24);
   }
 
   * { box-sizing: border-box; }
-
   html, body {
-    margin: 0;
-    padding: 0;
-    background: var(--bg);
+    margin: 0; padding: 0;
+    background: var(--sage);
     color: var(--ink);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
   }
+  h1, h2, h3 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 600; }
 
+  /* ===== header (identic cu homepage) ===== */
   header.topbar {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    height: 68px;
-    background: var(--bg);
+    position: fixed; top: 0; left: 0; right: 0;
+    height: 72px;
+    background: rgba(219, 232, 217, 0.85);
+    backdrop-filter: saturate(1.4) blur(10px);
+    -webkit-backdrop-filter: saturate(1.4) blur(10px);
     border-bottom: 1px solid var(--line);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 32px;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 clamp(18px, 4vw, 44px);
     z-index: 50;
   }
+  .brand { display: flex; align-items: baseline; gap: 9px; text-decoration: none; line-height: 1; }
+  .brand .brand-name { font-family: "Cormorant Garamond", serif; font-size: 27px; font-weight: 700; color: var(--ink); }
+  .brand .brand-sub { font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.34em; color: var(--ink-soft); font-weight: 600; }
 
-  .logo {
-    font-size: 15px;
-    letter-spacing: 0.14em;
-    font-weight: 600;
-    color: var(--ink-soft);
-    text-decoration: none;
-    cursor: pointer;
-  }
-
-  nav.mainnav ul {
-    display: flex;
-    gap: 8px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
+  nav.mainnav ul { display: flex; align-items: center; gap: 4px; list-style: none; margin: 0; padding: 0; }
   .nav-item {
-    position: relative;
-    padding: 10px 16px;
-    font-size: 14px;
-    cursor: pointer;
-    color: var(--ink);
-    border-radius: 6px;
-    user-select: none;
+    position: relative; padding: 10px 15px; font-size: 14px; font-weight: 500;
+    cursor: pointer; color: var(--ink); border-radius: 8px; user-select: none; text-decoration: none;
     transition: background 0.15s ease;
   }
-
-  .nav-item:hover { background: rgba(0,0,0,0.04); }
-
-  .nav-item.active {
-    background: var(--ink);
-    color: #fff;
-  }
-
+  .nav-item:hover { background: rgba(47,74,55,0.08); }
+  .nav-item.active { background: var(--forest); color: var(--cream); }
   .nav-item.active::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: -13px;
-    transform: translateX(-50%);
-    width: 0; height: 0;
-    border-left: 7px solid transparent;
-    border-right: 7px solid transparent;
-    border-bottom: 7px solid var(--ink);
+    content: ""; position: absolute; left: 50%; bottom: -14px; transform: translateX(-50%);
+    width: 0; height: 0; border-left: 7px solid transparent; border-right: 7px solid transparent; border-bottom: 7px solid var(--forest);
   }
+  .nav-cta {
+    margin-left: 10px; padding: 11px 20px; background: var(--forest); color: var(--cream);
+    border-radius: 999px; font-size: 13.5px; font-weight: 600; text-decoration: none; white-space: nowrap;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .nav-cta:hover { background: var(--forest-hover); transform: translateY(-1px); }
 
-  .catalog-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(20, 18, 15, 0.25);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-    z-index: 40;
-  }
-  .catalog-overlay.visible {
-    opacity: 1;
-    pointer-events: auto;
-  }
+  .hamburger { display: none; flex-direction: column; gap: 5px; width: 42px; height: 42px; border: 1px solid var(--line); border-radius: 10px; background: transparent; cursor: pointer; align-items: center; justify-content: center; }
+  .hamburger span { display: block; width: 18px; height: 2px; background: var(--ink); border-radius: 2px; }
 
+  .catalog-overlay { position: fixed; inset: 0; background: rgba(20,28,18,0.28); opacity: 0; pointer-events: none; transition: opacity 0.3s ease; z-index: 40; }
+  .catalog-overlay.visible { opacity: 1; pointer-events: auto; }
   .catalog-panel {
-    position: fixed;
-    top: 68px;
-    min-width: 340px;
-    max-width: 560px;
-    background: var(--panel);
-    border: 1px solid var(--line);
-    border-top: none;
-    box-shadow: 0 18px 40px rgba(20,18,15,0.12);
-    border-radius: 0 0 10px 10px;
-    transform-origin: top center;
-    transform: perspective(1400px) rotateX(-92deg);
-    opacity: 0;
-    pointer-events: none;
+    position: fixed; top: 72px; min-width: 300px; max-width: 460px;
+    background: var(--cream); border: 1px solid var(--line); border-top: none;
+    box-shadow: var(--shadow); border-radius: 0 0 14px 14px;
+    transform-origin: top center; transform: perspective(1400px) rotateX(-92deg);
+    opacity: 0; pointer-events: none;
     transition: transform 0.5s cubic-bezier(.22,.9,.3,1.15), opacity 0.25s ease;
-    z-index: 45;
-    padding: 22px 10px;
+    z-index: 45; padding: 14px 12px;
   }
-
-  .catalog-panel.open {
-    transform: perspective(1400px) rotateX(0deg);
-    opacity: 1;
-    pointer-events: auto;
-  }
-
+  .catalog-panel.open { transform: perspective(1400px) rotateX(0deg); opacity: 1; pointer-events: auto; }
   .catalog-pages { display: flex; flex-direction: column; }
-
   .page { perspective: 900px; }
-
   .page .page-inner {
-    transform-origin: left center;
-    transform: rotateY(-100deg);
-    opacity: 0;
+    transform-origin: left center; transform: rotateY(-100deg); opacity: 0;
     transition: transform 0.5s cubic-bezier(.2,.8,.2,1), opacity 0.4s ease;
-    padding: 13px 18px;
-    border-bottom: 1px solid var(--line);
-    font-size: 15px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: var(--ink);
+    padding: 15px 18px; border-bottom: 1px solid var(--line); font-size: 15px; cursor: pointer;
+    display: flex; align-items: center; justify-content: space-between; color: var(--ink); border-radius: 8px;
   }
-
   .page:last-child .page-inner { border-bottom: none; }
-
   .page.flip-in .page-inner { transform: rotateY(0deg); opacity: 1; }
-
-  .page .page-inner:hover { background: rgba(0,0,0,0.035); }
-
-  .page .arrow {
-    color: var(--ink-soft);
-    font-size: 13px;
-    transform: translateX(-4px);
-    opacity: 0;
-    transition: transform 0.2s ease, opacity 0.2s ease;
-  }
+  .page .page-inner:hover { background: rgba(47,74,55,0.06); }
+  .page .arrow { color: var(--wood); font-size: 15px; transform: translateX(-4px); opacity: 0; transition: transform 0.2s ease, opacity 0.2s ease; }
   .page .page-inner:hover .arrow { transform: translateX(0); opacity: 1; }
 
-  /* ====================== o singura carte mare ====================== */
-
-  .book-stage {
-    padding: 118px 20px 60px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .breadcrumb {
-    font-size: 13px;
-    color: var(--ink-soft);
-    margin-bottom: 20px;
-  }
+  /* ===== cartea mare ===== */
+  .book-stage { padding: 116px 20px 72px; display: flex; flex-direction: column; align-items: center; }
+  .breadcrumb { font-size: 13px; color: var(--ink-soft); margin-bottom: 22px; }
   .breadcrumb a { color: var(--ink-soft); text-decoration: none; }
-  .breadcrumb a:hover { text-decoration: underline; }
+  .breadcrumb a:hover { color: var(--forest); text-decoration: underline; }
 
-  .book-wrap {
-    position: relative;
-    width: 920px;
-    max-width: 94vw;
-    height: 560px;
-    perspective: 2600px;
-  }
-
+  .book-wrap { position: relative; width: 940px; max-width: 94vw; height: 566px; perspective: 2600px; }
   .pages {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    background: var(--panel);
-    border-radius: 8px;
-    box-shadow: 0 34px 80px rgba(20,18,15,0.24);
-    overflow: hidden;
+    position: absolute; inset: 0; display: flex;
+    background: var(--cream); border-radius: 10px; box-shadow: var(--shadow-lg); overflow: hidden;
   }
-
-  .page-left, .page-right {
-    width: 50%;
-    height: 100%;
-    padding: 36px;
-    display: flex;
-    flex-direction: column;
-  }
-
+  .page-left, .page-right { width: 50%; height: 100%; padding: 38px; display: flex; flex-direction: column; }
   .page-left { border-right: 1px solid var(--line); }
-
   .spine-shadow {
-    position: absolute;
-    top: 0; bottom: 0; left: 50%;
-    width: 70px;
-    margin-left: -35px;
-    background: linear-gradient(to right,
-      rgba(0,0,0,0.12), rgba(0,0,0,0) 25%,
-      rgba(0,0,0,0) 75%, rgba(0,0,0,0.12));
-    pointer-events: none;
-    z-index: 2;
+    position: absolute; top: 0; bottom: 0; left: 50%; width: 70px; margin-left: -35px;
+    background: linear-gradient(to right, rgba(0,0,0,0.10), rgba(0,0,0,0) 25%, rgba(0,0,0,0) 75%, rgba(0,0,0,0.10));
+    pointer-events: none; z-index: 2;
   }
-
-  .hero-photo {
-    flex: 1;
-    border-radius: 8px;
-    overflow: hidden;
-    margin-bottom: 18px;
-    background: var(--line);
-  }
+  .hero-photo { flex: 1; border-radius: 10px; overflow: hidden; margin-bottom: 20px; background: var(--sage-deep); }
   .hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-  .page-left h1 {
-    font-size: 25px;
-    font-weight: 600;
-    margin: 0 0 6px;
+  .page-left .eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--wood); font-weight: 600; margin-bottom: 8px; }
+  .page-left h1 { font-size: 32px; font-weight: 700; margin: 0 0 10px; line-height: 1.05; }
+  .page-left p { font-size: 14px; color: var(--ink-soft); line-height: 1.6; margin: 0; }
+  .page-left .lp-cta { margin-top: auto; padding-top: 18px; }
+  .page-left .lp-cta a {
+    display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 600;
+    color: var(--forest); text-decoration: none;
   }
-  .page-left p {
-    font-size: 13px;
-    color: var(--ink-soft);
-    line-height: 1.55;
-    margin: 0;
-  }
+  .page-left .lp-cta a:hover { gap: 12px; }
 
-  /* ====================== rola de film (galerie piese) ====================== */
-
-  .filmreel-wrap {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .filmreel-title {
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    color: var(--ink-soft);
-    margin-bottom: 12px;
-  }
-
+  .filmreel-wrap { flex: 1; display: flex; flex-direction: column; min-height: 0; }
+  .filmreel-title { font-size: 11px; text-transform: uppercase; letter-spacing: 0.16em; color: var(--ink-soft); margin-bottom: 14px; }
   .filmreel {
-    flex: 1;
-    background: var(--panel);
-    border: 1px solid var(--line);
-    border-radius: 8px;
-    padding: 14px 10px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
-    position: relative;
+    flex: 1; background: var(--sage); border: 1px solid var(--line); border-radius: 10px;
+    padding: 16px 12px; overflow-y: auto; overflow-x: hidden;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-content: start;
   }
-
   .frame {
-    display: inline-block;
-    vertical-align: middle;
-    width: 128px;
-    height: 96px;
-    margin: 6px 8px 0;
-    border: 1px solid var(--line);
-    border-radius: 6px;
-    background: var(--line);
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 3px 10px rgba(20,18,15,0.1);
+    height: 118px; border: 1px solid var(--line); border-radius: 8px; background: var(--sage-deep);
+    cursor: pointer; position: relative; overflow: hidden; box-shadow: 0 3px 10px rgba(20,28,18,0.08);
     transition: transform 0.15s ease, box-shadow 0.15s ease;
   }
-  .frame:hover { transform: translateY(-4px); box-shadow: 0 8px 18px rgba(20,18,15,0.16); }
-  .frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .frame:hover { transform: translateY(-4px); box-shadow: 0 10px 20px rgba(20,28,18,0.16); }
+  .frame img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
+  .frame:hover img { transform: scale(1.05); }
   .frame .frame-label {
-    position: absolute;
-    left: 0; right: 0; bottom: 0;
-    background: rgba(243,247,241,0.9);
-    color: var(--ink);
-    font-size: 10px;
-    padding: 3px 6px;
-    white-space: normal;
-    line-height: 1.2;
+    position: absolute; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to top, rgba(33,48,31,0.82), rgba(33,48,31,0));
+    color: #f3f7f1; font-size: 11px; padding: 16px 10px 8px; line-height: 1.25; font-weight: 500;
   }
   .frame .frame-count {
-    position: absolute;
-    top: 4px; right: 4px;
-    background: rgba(31,46,34,0.75);
-    color: #f3f7f1;
-    font-size: 10px;
-    padding: 1px 6px;
-    border-radius: 10px;
-  }
-
-  /* ====================== lightbox cu toate pozele piesei ====================== */
-
-  .lightbox {
-    position: fixed;
-    inset: 0;
-    background: rgba(219, 232, 217, 0.97);
-    z-index: 300;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 14px 10px;
-  }
-  .lightbox.open { display: flex; }
-
-  .lightbox .lb-title {
-    color: var(--ink);
-    font-size: 15px;
-    margin-bottom: 8px;
-    text-align: center;
-  }
-
-  .lightbox .lb-main {
-    max-width: 98vw;
-    max-height: 88vh;
-    border-radius: 8px;
-    object-fit: contain;
-    box-shadow: 0 20px 60px rgba(20,18,15,0.2);
-    display: block;
-  }
-
-  .lightbox .lb-thumbs {
-    display: flex;
-    gap: 10px;
-    margin-top: 18px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .lightbox .lb-thumbs img {
-    width: 70px;
-    height: 52px;
-    object-fit: cover;
-    border-radius: 4px;
-    cursor: pointer;
-    opacity: 0.55;
-    border: 2px solid transparent;
-  }
-  .lightbox .lb-thumbs img.active {
-    opacity: 1;
-    border-color: var(--accent);
-  }
-
-  .lightbox .lb-close {
-    position: absolute;
-    top: 22px; right: 30px;
-    color: var(--ink);
-    font-size: 26px;
-    cursor: pointer;
-    line-height: 1;
-  }
-
-  .lightbox .lb-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--ink);
-    font-size: 32px;
-    cursor: pointer;
-    padding: 10px 16px;
-    user-select: none;
-  }
-  .lightbox .lb-prev { left: 10px; }
-  .lightbox .lb-next { right: 10px; }
-
-  .lb-image-wrap {
-    position: relative;
-    display: inline-block;
-    max-width: 98vw;
-    max-height: 88vh;
-  }
-  .lb-color-overlay {
-    position: absolute;
-    inset: 0;
-    mix-blend-mode: color;
-    opacity: 0.9;
-    pointer-events: none;
-    display: none;
-  }
-
-  .lb-colors {
-    display: none;
-    align-items: center;
-    gap: 10px;
-    margin-top: 16px;
-  }
-  .lb-colors.visible { display: flex; }
-  .lb-colors span {
-    font-size: 12px;
-    color: var(--ink-soft);
-    margin-right: 4px;
-  }
-  .lb-swatch {
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    cursor: pointer;
-    border: 2px solid #fff;
-    box-shadow: 0 0 0 1px rgba(20,18,15,0.3);
+    position: absolute; top: 7px; right: 7px; background: rgba(33,48,31,0.8); color: #f3f7f1;
+    font-size: 10px; padding: 2px 8px; border-radius: 10px; font-weight: 600;
   }
 
   .cover {
-    position: absolute;
-    inset: 0;
-    background: var(--accent);
-    color: #f3f7f1;
-    border-radius: 8px;
-    box-shadow: -12px 0 0 rgba(0,0,0,0.14) inset, 0 34px 80px rgba(20,18,15,0.32);
-    transform-origin: left center;
-    transform: rotateY(0deg);
+    position: absolute; inset: 0; background: var(--forest); color: var(--cream); border-radius: 10px;
+    box-shadow: -12px 0 0 rgba(0,0,0,0.12) inset, var(--shadow-lg);
+    transform-origin: left center; transform: rotateY(0deg);
     transition: transform 1.15s cubic-bezier(.5,0,.2,1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    z-index: 5;
-    backface-visibility: hidden;
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px;
+    z-index: 5; backface-visibility: hidden;
   }
   .cover.open { transform: rotateY(-160deg); }
+  .cover .cover-mono { font-family: "Cormorant Garamond", serif; font-size: 20px; letter-spacing: 0.3em; text-transform: uppercase; color: #c8b39a; }
+  .cover-title { font-size: 44px; font-weight: 700; letter-spacing: 0.01em; }
+  .cover-sub { font-size: 12px; text-transform: uppercase; letter-spacing: 0.22em; opacity: 0.72; }
 
-  .cover-title {
-    font-size: 36px;
-    font-weight: 600;
-    letter-spacing: 0.01em;
+  /* ===== lightbox ===== */
+  .lightbox {
+    position: fixed; inset: 0; background: rgba(219,232,217,0.97); z-index: 300;
+    display: none; align-items: center; justify-content: center; flex-direction: column; padding: 14px 10px;
   }
-  .cover-sub {
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    opacity: 0.75;
+  .lightbox.open { display: flex; }
+  .lightbox .lb-title { color: var(--ink); font-size: 15px; margin-bottom: 10px; text-align: center; font-weight: 600; }
+  .lb-image-wrap { position: relative; display: inline-block; max-width: 98vw; max-height: 84vh; }
+  .lightbox .lb-main { max-width: 98vw; max-height: 84vh; border-radius: 10px; object-fit: contain; box-shadow: var(--shadow-lg); display: block; }
+  .lb-color-overlay { position: absolute; inset: 0; mix-blend-mode: color; opacity: 0.9; pointer-events: none; display: none; }
+  .lightbox .lb-thumbs { display: flex; gap: 10px; margin-top: 18px; flex-wrap: wrap; justify-content: center; }
+  .lightbox .lb-thumbs img { width: 70px; height: 52px; object-fit: cover; border-radius: 5px; cursor: pointer; opacity: 0.5; border: 2px solid transparent; transition: opacity 0.2s ease; }
+  .lightbox .lb-thumbs img.active { opacity: 1; border-color: var(--forest); }
+  .lightbox .lb-close { position: absolute; top: 22px; right: 30px; color: var(--ink); font-size: 30px; cursor: pointer; line-height: 1; }
+  .lightbox .lb-nav { position: absolute; top: 50%; transform: translateY(-50%); color: var(--ink); font-size: 34px; cursor: pointer; padding: 10px 16px; user-select: none; }
+  .lightbox .lb-prev { left: 6px; } .lightbox .lb-next { right: 6px; }
+  .lb-colors { display: none; align-items: center; gap: 10px; margin-top: 16px; }
+  .lb-colors.visible { display: flex; }
+  .lb-colors span { font-size: 12px; color: var(--ink-soft); margin-right: 4px; }
+  .lb-swatch { width: 26px; height: 26px; border-radius: 50%; cursor: pointer; border: 2px solid #fff; box-shadow: 0 0 0 1px rgba(20,28,18,0.3); }
+
+  .mobile-menu {
+    position: fixed; top: 72px; left: 0; right: 0; background: var(--cream); border-bottom: 1px solid var(--line);
+    box-shadow: var(--shadow); padding: 12px 18px 22px; z-index: 44;
+    transform: translateY(-12px); opacity: 0; pointer-events: none; transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+  .mobile-menu.open { opacity: 1; transform: none; pointer-events: auto; }
+  .mobile-menu a { display: block; padding: 14px 8px; font-size: 16px; text-decoration: none; color: var(--ink); border-bottom: 1px solid var(--line); }
+  .mobile-menu a.sub { padding-left: 24px; font-size: 15px; color: var(--ink-soft); }
+  .mobile-menu .mm-cta { margin-top: 14px; text-align: center; background: var(--forest); color: var(--cream); border-radius: 999px; font-weight: 600; border-bottom: none; }
+
+  @media (max-width: 900px) {
+    .book-wrap { height: auto; perspective: none; }
+    .pages { position: static; flex-direction: column; }
+    .page-left, .page-right { width: 100%; }
+    .page-left { border-right: none; border-bottom: 1px solid var(--line); }
+    .hero-photo { height: 260px; flex: none; }
+    .filmreel { height: 340px; }
+    .spine-shadow, .cover { display: none; }
+  }
+  @media (max-width: 760px) {
+    nav.mainnav, .nav-cta { display: none; }
+    .hamburger { display: flex; }
   }
 </style>
 </head>
 <body>
 
   <header class="topbar">
-    <a class="logo" href="index.html">MOBILA</a>
+    <a class="brand" href="index.html">
+      <span class="brand-name">Normand</span>
+      <span class="brand-sub">Mobilier</span>
+    </a>
     <nav class="mainnav">
       <ul id="nav-list">
-        <li class="nav-item" data-menu="colectie">Colectie</li>
-        <li class="nav-item" data-menu="mobilier">Mobilier</li>
-        <li class="nav-item" data-menu="inspiratie">Inspiratie</li>
-        <li class="nav-item" data-menu="despre">Despre noi</li>
-        <li class="nav-item" data-menu="contact">Contact</li>
+        <li><a class="nav-item" href="index.html">Acasă</a></li>
+        <li><span class="nav-item" data-menu="mobilier">Mobilier</span></li>
+        <li><a class="nav-item" href="index.html#despre">Despre noi</a></li>
+        <li><a class="nav-item" href="index.html#contact">Contact</a></li>
+        <li><a class="nav-cta" href="index.html#contact">Cere o ofertă</a></li>
       </ul>
     </nav>
+    <button class="hamburger" id="hamburger" aria-label="Meniu"><span></span><span></span><span></span></button>
   </header>
 
-  <div class="catalog-overlay" id="overlay"></div>
-  <div class="catalog-panel" id="panel">
-    <div class="catalog-pages" id="pages"></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Acasă</a>
+    <a class="sub" href="categorie.html?titlu=Dormitoare">— Dormitoare</a>
+    <a class="sub" href="categorie.html?titlu=Bucătării">— Bucătării</a>
+    <a class="sub" href="categorie.html?titlu=Corpuri de mobilă">— Corpuri de mobilă</a>
+    <a href="index.html#despre">Despre noi</a>
+    <a href="index.html#contact">Contact</a>
+    <a class="mm-cta" href="index.html#contact">Cere o ofertă</a>
   </div>
 
+  <div class="catalog-overlay" id="overlay"></div>
+  <div class="catalog-panel" id="panel"><div class="catalog-pages" id="pages"></div></div>
+
   <main class="book-stage">
-    <div class="breadcrumb"><a href="index.html">Acasa</a> / <span id="breadcrumbTitle">Categorie</span></div>
+    <div class="breadcrumb"><a href="index.html">Acasă</a> / <a href="index.html#colectie">Mobilier</a> / <span id="breadcrumbTitle">Categorie</span></div>
 
     <div class="book-wrap" id="bookWrap">
       <div class="pages">
         <div class="page-left">
-          <div class="hero-photo">
-            <img id="heroImg" alt="" />
-          </div>
+          <div class="hero-photo"><img id="heroImg" alt=""></div>
+          <div class="eyebrow" id="catEyebrow">Colecție</div>
           <h1 id="categoryTitle">Categorie</h1>
-          <p>Pagina placeholder pentru categoria selectata. Descrierile si produsele reale se adauga intr-un pas urmator.</p>
+          <p id="categoryDesc">Lucrări realizate la comandă. Alege o piesă din dreapta pentru a vedea toate pozele.</p>
+          <div class="lp-cta"><a href="index.html#contact">Cere o ofertă pentru o piesă similară →</a></div>
         </div>
         <div class="page-right">
           <div class="filmreel-wrap">
-            <div class="filmreel-title">Piese din aceasta categorie - click pentru toate pozele</div>
+            <div class="filmreel-title">Piese din această categorie — click pentru toate pozele</div>
             <div class="filmreel" id="filmreel"></div>
           </div>
         </div>
@@ -487,8 +265,9 @@
       </div>
 
       <div class="cover" id="cover">
+        <div class="cover-mono">Normand</div>
         <div class="cover-title" id="coverTitle">Categorie</div>
-        <div class="cover-sub">Catalog</div>
+        <div class="cover-sub">Catalog de lucrări</div>
       </div>
     </div>
   </main>
@@ -499,77 +278,60 @@
     <div class="lb-nav lb-next" id="lbNext">&#8594;</div>
     <div class="lb-title" id="lbTitle"></div>
     <div class="lb-image-wrap">
-      <img class="lb-main" id="lbMain" alt="" />
+      <img class="lb-main" id="lbMain" alt="">
       <div class="lb-color-overlay" id="lbColorOverlay"></div>
     </div>
-    <div class="lb-colors" id="lbColors">
-      <span>Culoare:</span>
-    </div>
+    <div class="lb-colors" id="lbColors"><span>Culoare:</span></div>
     <div class="lb-thumbs" id="lbThumbs"></div>
   </div>
 
   <script>
-    /* PLACEHOLDER: continutul real al fiecarui submeniu vine mai tarziu */
-    const menus = {
-      colectie: ["Colectia 1", "Colectia 2", "Colectia 3"], /* PLACEHOLDER: denumirile vin de la tine */
-      mobilier: ["Dormitoare", "Bucatarii", "Corpuri de mobila"],
-      inspiratie: ["Idei de amenajare", "Proiecte realizate", "Blog"],
-      despre: ["Povestea noastra", "Valori", "Echipa"],
-      contact: ["Showroom", "Programare vizita", "Suport"]
+    const menus = { mobilier: ["Dormitoare", "Bucătării", "Corpuri de mobilă"] };
+
+    /* descrieri reale pe categorie */
+    const categoryInfo = {
+      "Dormitoare": "Paturi cu tăblie tapițată, dulapuri cu uși glisante sau batante și corpuri suspendate, croite fix pe dimensiunile camerei — depozitare maximă, aspect curat.",
+      "Bucătării": "Bucătării în formă de L sau U, cu insulă mobilă și blat rezistent, care folosesc fiecare colț. Corpuri sus și jos, potrivite pe pereți și electrocasnice.",
+      "Corpuri de mobilă": "Pereți de living, biblioteci, comode și corpuri de depozitare — proiectate pe lungimea pereților tăi, cu vitrine, sertare și rafturi după nevoie."
     };
 
-    /* PLACEHOLDER: poze reale doar pentru Dormitoare / Bucatarii / Corpuri
-       de mobila (din poze trimise pe WhatsApp). Fiecare "piesa" e o bucata
-       de mobilier distincta; cand avem mai multe poze ale ACELEIASI piese
-       (unghiuri diferite), le punem impreuna in acelasi array "photos" -
-       ele apar apoi grupate in lightbox cand se da click pe piesa.
-       Restul categoriilor refolosesc un set generic pana avem poze proprii. */
+    /* DOAR lucrări reale (poze proprii). Mai multe poze ale aceleiași piese
+       = unghiuri grupate în lightbox. */
     const productsByCategory = {
       "Dormitoare": [
-        { name: "Dulap cu usi oglinda", photos: ["images/dormitoare/hero.jpg"] },
-        { name: "Dulap cu usi oglinda (lemn)", photos: ["images/dormitoare/thumb1.jpg"] },
+        { name: "Pat cu tăblie și corpuri suspendate", photos: ["images/dormitoare/thumb4.jpg"] },
+        { name: "Dulap cu uși oglindă", photos: ["images/dormitoare/hero.jpg"] },
+        { name: "Dulap cu uși oglindă (finisaj lemn)", photos: ["images/dormitoare/thumb1.jpg"] },
         {
-          name: "Mobilier camera copii",
+          name: "Mobilier cameră copii",
           photos: ["images/dormitoare/thumb2.jpg"],
-          /* PLACEHOLDER: contur aproximativ al panoului colorat - demo,
-             nu e pixel-perfect. Recalibram daca vrei mai multe piese. */
           colorRegion: { photoIndex: 0, clipPath: "polygon(58% 18%, 70% 20%, 66% 78%, 46% 84%)" }
         },
-        { name: "Pat etajat copii", photos: ["images/dormitoare/thumb3.jpg"] },
-        { name: "Pat cu tablie si dulapuri", photos: ["images/dormitoare/thumb4.jpg"] },
-        { name: "Exemplu - dulap 2 usi lemn", photos: ["https://images.unsplash.com/photo-1558997519-83ea9252edf8?auto=format&fit=crop&w=700&q=70"] },
-        { name: "Exemplu - dulap alb-lemn", photos: ["https://images.unsplash.com/photo-1593069431672-f903a33c286f?auto=format&fit=crop&w=700&q=70"] },
-        { name: "Exemplu - dulap alb mare cu comoda", photos: ["https://images.unsplash.com/photo-1769690398694-9c5d5ca4b4ea?auto=format&fit=crop&w=700&q=70"] },
-        { name: "Exemplu - dulap lemn langa fereastra", photos: ["https://images.unsplash.com/photo-1752407828514-660d6945d392?auto=format&fit=crop&w=700&q=70"] }
+        { name: "Pat etajat pentru copii", photos: ["images/dormitoare/thumb3.jpg"] }
       ],
-      "Bucatarii": [
-        { name: "Bucatarie cu insula mobila", photos: ["images/bucatarii/thumb1.jpg", "images/bucatarii/thumb2.jpg", "images/bucatarii/thumb3.jpg", "images/bucatarii/thumb4.jpg"] },
-        { name: "Bucatarie clasica cu fereastra", photos: ["images/bucatarii/hero.jpg"] },
-        { name: "Exemplu - bucatarie alba cu marmura", photos: ["https://images.unsplash.com/photo-1722605090433-41d1183a792d?auto=format&fit=crop&w=700&q=70"] },
-        { name: "Exemplu - bucatarie lemn inchis", photos: ["https://images.unsplash.com/photo-1631048835473-73c7aaf86096?auto=format&fit=crop&w=700&q=70"] },
-        { name: "Exemplu - bucatarie alba cu electrocasnice", photos: ["https://images.unsplash.com/photo-1599083549933-838ea352c1cc?auto=format&fit=crop&w=700&q=70"] },
-        { name: "Exemplu - bucatarie cu fereastra mare", photos: ["https://images.unsplash.com/photo-1713514374038-656f7bbde9db?auto=format&fit=crop&w=700&q=70"] }
+      "Bucătării": [
+        { name: "Bucătărie cu insulă mobilă", photos: ["images/bucatarii/thumb1.jpg", "images/bucatarii/thumb2.jpg", "images/bucatarii/thumb3.jpg", "images/bucatarii/thumb4.jpg"] },
+        { name: "Bucătărie clasică cu fereastră", photos: ["images/bucatarii/hero.jpg"] }
       ],
-      "Corpuri de mobila": [
-        { name: "Biblioteca de colt", photos: ["images/corpuri-mobila/thumb1.jpg"] },
-        { name: "Perete mobilier living", photos: ["images/corpuri-mobila/hero.jpg"] }
+      "Corpuri de mobilă": [
+        { name: "Perete mobilier living", photos: ["images/corpuri-mobila/hero.jpg"] },
+        { name: "Bibliotecă de colț", photos: ["images/corpuri-mobila/thumb1.jpg"] }
       ]
     };
 
     const defaultProducts = [
-      { name: "Piesa exemplu 1", photos: ["https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=900&q=80"] },
-      { name: "Piesa exemplu 2", photos: ["https://images.unsplash.com/photo-1567016432779-094069958ea5?auto=format&fit=crop&w=500&q=75"] },
-      { name: "Piesa exemplu 3", photos: ["https://images.unsplash.com/photo-1691480152351-4b3f2c89ccff?auto=format&fit=crop&w=500&q=75"] },
-      { name: "Piesa exemplu 4", photos: ["https://images.unsplash.com/photo-1573866926487-a1865558a9cf?auto=format&fit=crop&w=500&q=75"] }
+      { name: "Lucrare la comandă", photos: ["images/corpuri-mobila/hero.jpg"] },
+      { name: "Lucrare la comandă", photos: ["images/bucatarii/hero.jpg"] }
     ];
 
-    /* --- titlu din query string (?titlu=Dormitoare) --- */
     const params = new URLSearchParams(window.location.search);
     const titlu = params.get("titlu") || "Categorie";
-    document.title = titlu + " - Magazin mobila";
+    document.title = titlu + " — Normand Mobilier";
     document.getElementById("coverTitle").textContent = titlu;
     document.getElementById("categoryTitle").textContent = titlu;
     document.getElementById("breadcrumbTitle").textContent = titlu;
+    document.getElementById("catEyebrow").textContent = "Colecție";
+    if (categoryInfo[titlu]) document.getElementById("categoryDesc").textContent = categoryInfo[titlu];
 
     const products = productsByCategory[titlu] || defaultProducts;
 
@@ -577,7 +339,6 @@
     heroImg.src = products[0].photos[0];
     heroImg.alt = titlu;
 
-    /* --- construim rola de film cu cate un cadru per piesa --- */
     const filmreel = document.getElementById("filmreel");
     products.forEach((product, i) => {
       const frame = document.createElement("div");
@@ -600,17 +361,14 @@
       filmreel.appendChild(frame);
     });
 
-    /* --- lightbox: toate pozele piesei selectate --- */
     const lightbox = document.getElementById("lightbox");
     const lbMain = document.getElementById("lbMain");
     const lbTitle = document.getElementById("lbTitle");
     const lbThumbs = document.getElementById("lbThumbs");
-    let currentProduct = 0;
-    let currentPhoto = 0;
-
     const lbColorOverlay = document.getElementById("lbColorOverlay");
     const lbColors = document.getElementById("lbColors");
     const colorChoices = ["#b98cc9", "#8ea9c9", "#c98e8e", "#a3c98e", "#d9d9d9", "#e8c56a"];
+    let currentProduct = 0, currentPhoto = 0;
 
     function renderLightbox() {
       const product = products[currentProduct];
@@ -627,8 +385,6 @@
           lbThumbs.appendChild(t);
         });
       }
-
-      /* --- mostre de culoare, doar daca piesa are o zona colorabila definita --- */
       const region = product.colorRegion;
       lbColors.querySelectorAll(".lb-swatch").forEach(el => el.remove());
       if (region && region.photoIndex === currentPhoto) {
@@ -648,30 +404,13 @@
         lbColors.classList.remove("visible");
       }
     }
-
-    function openLightbox(productIndex) {
-      currentProduct = productIndex;
-      currentPhoto = 0;
-      renderLightbox();
-      lightbox.classList.add("open");
-    }
-
-    function closeLightbox() {
-      lightbox.classList.remove("open");
-    }
+    function openLightbox(i) { currentProduct = i; currentPhoto = 0; renderLightbox(); lightbox.classList.add("open"); }
+    function closeLightbox() { lightbox.classList.remove("open"); }
 
     document.getElementById("lbClose").addEventListener("click", closeLightbox);
     lightbox.addEventListener("click", (e) => { if (e.target === lightbox) closeLightbox(); });
-    document.getElementById("lbPrev").addEventListener("click", () => {
-      const product = products[currentProduct];
-      currentPhoto = (currentPhoto - 1 + product.photos.length) % product.photos.length;
-      renderLightbox();
-    });
-    document.getElementById("lbNext").addEventListener("click", () => {
-      const product = products[currentProduct];
-      currentPhoto = (currentPhoto + 1) % product.photos.length;
-      renderLightbox();
-    });
+    document.getElementById("lbPrev").addEventListener("click", () => { const p = products[currentProduct]; currentPhoto = (currentPhoto - 1 + p.photos.length) % p.photos.length; renderLightbox(); });
+    document.getElementById("lbNext").addEventListener("click", () => { const p = products[currentProduct]; currentPhoto = (currentPhoto + 1) % p.photos.length; renderLightbox(); });
     document.addEventListener("keydown", (e) => {
       if (!lightbox.classList.contains("open")) return;
       if (e.key === "Escape") closeLightbox();
@@ -679,13 +418,10 @@
       if (e.key === "ArrowRight") document.getElementById("lbNext").click();
     });
 
-    /* --- animatia de deschidere a cartii mari, la incarcarea paginii --- */
     const cover = document.getElementById("cover");
-    window.addEventListener("load", () => {
-      setTimeout(() => { cover.classList.add("open"); }, 350);
-    });
+    window.addEventListener("load", () => { setTimeout(() => cover.classList.add("open"), 350); });
 
-    /* --- meniul de sus, identic cu cel din pagina principala --- */
+    /* meniul de sus (identic cu homepage) */
     const navItems = document.querySelectorAll(".nav-item");
     const panel = document.getElementById("panel");
     const pagesContainer = document.getElementById("pages");
@@ -694,63 +430,48 @@
 
     function positionPanel(anchorEl) {
       const rect = anchorEl.getBoundingClientRect();
-      const maxLeft = window.innerWidth - 380;
-      panel.style.left = Math.min(rect.left, maxLeft) + "px";
+      panel.style.left = Math.min(rect.left, window.innerWidth - 320) + "px";
     }
-
     function buildPages(key) {
       pagesContainer.innerHTML = "";
-      const items = menus[key] || [];
-      items.forEach((label, i) => {
+      (menus[key] || []).forEach((label, i) => {
         const page = document.createElement("div");
         page.className = "page";
         const inner = document.createElement("div");
         inner.className = "page-inner";
         inner.style.transitionDelay = (i * 70) + "ms";
-        inner.innerHTML = "<span>" + label + "</span><span class='arrow'>-></span>";
-        inner.addEventListener("click", () => {
-          window.location.href = "categorie.html?titlu=" + encodeURIComponent(label);
-        });
+        inner.innerHTML = "<span>" + label + "</span><span class='arrow'>→</span>";
+        inner.addEventListener("click", () => { window.location.href = "categorie.html?titlu=" + encodeURIComponent(label); });
         page.appendChild(inner);
         pagesContainer.appendChild(page);
       });
     }
-
     function openMenu(key, anchorEl) {
       if (activeMenu === key) { closeMenu(); return; }
-      activeMenu = key;
-      buildPages(key);
-      positionPanel(anchorEl);
-
-      panel.classList.add("open");
-      overlay.classList.add("visible");
+      activeMenu = key; buildPages(key); positionPanel(anchorEl);
+      panel.classList.add("open"); overlay.classList.add("visible");
       navItems.forEach(n => n.classList.toggle("active", n === anchorEl));
-
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          pagesContainer.querySelectorAll(".page").forEach(p => p.classList.add("flip-in"));
-        });
-      });
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        pagesContainer.querySelectorAll(".page").forEach(p => p.classList.add("flip-in"));
+      }));
     }
-
     function closeMenu() {
-      activeMenu = null;
-      panel.classList.remove("open");
-      overlay.classList.remove("visible");
+      activeMenu = null; panel.classList.remove("open"); overlay.classList.remove("visible");
       navItems.forEach(n => n.classList.remove("active"));
       pagesContainer.querySelectorAll(".page").forEach(p => p.classList.remove("flip-in"));
     }
-
-    navItems.forEach(item => {
-      item.addEventListener("click", (e) => {
-        e.stopPropagation();
-        openMenu(item.dataset.menu, item);
-      });
-    });
-
+    navItems.forEach(item => item.addEventListener("click", (e) => {
+      if (item.dataset.menu) { e.stopPropagation(); openMenu(item.dataset.menu, item); }
+      else closeMenu();
+    }));
     overlay.addEventListener("click", closeMenu);
     document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenu(); });
     window.addEventListener("resize", () => { if (activeMenu) closeMenu(); });
+
+    const hamburger = document.getElementById("hamburger");
+    const mobileMenu = document.getElementById("mobileMenu");
+    hamburger.addEventListener("click", () => mobileMenu.classList.toggle("open"));
+    mobileMenu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => mobileMenu.classList.remove("open")));
   </script>
 
 </body>
