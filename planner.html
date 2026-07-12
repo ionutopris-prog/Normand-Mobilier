@@ -183,11 +183,28 @@ const TEMPLATES = {
     mk("baza-buc",{drawers:0,doors:2,front:finById("crem")}),
     mk("corp-chiuveta",{front:finById("crem")}),
     mk("corp-cuptor",{front:finById("crem")}) ] },
+  "Bucătărie în U": { kind:"kitchen", wall:true, make:()=>[
+    mk("coltar-buc",{front:finById("gri-deschis")}),
+    mk("corp-chiuveta",{front:finById("gri-deschis")}),
+    mk("baza-buc",{drawers:3,front:finById("gri-deschis")}),
+    mk("corp-cuptor",{front:finById("gri-deschis")}),
+    mk("baza-buc",{drawers:0,doors:2,front:finById("gri-deschis")}),
+    mk("coltar-buc",{front:finById("gri-deschis")}),
+    mk("coloana-frig",{front:finById("gri-deschis")}) ] },
   "Dormitor": { kind:"bedroom", wall:false, make:()=>[
     mk("dulap3",{front:finById("sonoma"),body:finById("alb")}),
     mk("pat",{front:finById("sonoma"),body:finById("gri-deschis")}),
     mk("noptiera",{front:finById("sonoma")}),
-    mk("comoda",{front:finById("sonoma")}) ] }
+    mk("comoda",{front:finById("sonoma")}) ] },
+  "Dormitor 2 dulapuri": { kind:"bedroom", wall:false, make:()=>[
+    mk("dulap2",{front:finById("nuc"),body:finById("alb")}),
+    mk("pat",{front:finById("nuc"),body:finById("crem")}),
+    mk("noptiera",{front:finById("nuc")}),
+    mk("dulap2",{front:finById("nuc"),body:finById("alb")}) ] },
+  "Living": { kind:"bedroom", wall:false, make:()=>[
+    mk("biblioteca",{front:finById("stejar"),doors:2}),
+    mk("tv",{front:finById("stejar")}),
+    mk("comoda",{front:finById("stejar")}) ] }
 };
 const KITCHEN_TYPES=["baza-buc","corp-chiuveta","corp-cuptor","coloana-frig","coltar-buc","suspendat-buc"];
 const BEDROOM_TYPES=["dulap2","dulap3","dulap4","glisant","pat","noptiera","comoda","biblioteca","tv"];
@@ -211,33 +228,52 @@ function sceneMetrics(){
   const roomH=Math.max(tallest, room.wall?215:tallest);
   return {totalW, roomH};
 }
+const EXTRA_DEFS = `<pattern id="tiles" width="15" height="10" patternUnits="userSpaceOnUse"><rect width="15" height="10" fill="#eceae3"/><path d="M0 10H15M7.5 0V10" stroke="#dcdacf" stroke-width="0.5"/><path d="M0 5H15" stroke="#e2e0d8" stroke-width="0.4"/></pattern>`
+  + `<linearGradient id="counter" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4b4e51"/><stop offset="0.5" stop-color="#343739"/><stop offset="1" stop-color="#292b2d"/></linearGradient>`;
+
+/* rânduri contigue de corpuri de bază (h<140) — pentru blat + faianță continue */
+function baseRuns(){ const runs=[]; let cur=null;
+  room.modules.forEach(m=>{ const lo=layout.find(l=>l.id===m.id); const isBase=m.h<140;
+    if(isBase){ if(!cur) cur={x0:lo.x,x1:lo.x+m.w}; else cur.x1=lo.x+m.w; } else { if(cur){ runs.push(cur); cur=null; } } });
+  if(cur) runs.push(cur); return runs; }
+
 function renderScene(){
   const {totalW,roomH}=sceneMetrics();
   const padX=30, padTop=24, floorPad=26;
   const vbW=totalW+padX*2, vbH=roomH+padTop+floorPad;
   const mods=room.modules;
-  let svg=`<svg id="scene" viewBox="0 0 ${vbW.toFixed(0)} ${vbH.toFixed(0)}" xmlns="http://www.w3.org/2000/svg">`;
-  svg+=defsBlock(finishesUsed(mods.length?mods:[mk("baza-buc")]));
-  // perete + podea
-  svg+=`<rect x="0" y="0" width="${vbW}" height="${padTop+roomH}" fill="#e9f0e6"/>`;
   const floorY=padTop+roomH;
+  let defs=defsBlock(finishesUsed(mods.length?mods:[mk("baza-buc")])).replace('</defs>', EXTRA_DEFS+'</defs>');
+  let svg=`<svg id="scene" viewBox="0 0 ${vbW.toFixed(0)} ${vbH.toFixed(0)}" xmlns="http://www.w3.org/2000/svg">`;
+  svg+=defs;
+  // perete
+  svg+=`<rect x="0" y="0" width="${vbW}" height="${floorY}" fill="#e9f0e6"/>`;
+  // faianță (backsplash) în spatele blatului — doar bucătărie
+  if(room.wall){ baseRuns().forEach(r=>{ svg+=`<rect x="${padX+r.x0}" y="${floorY-145}" width="${r.x1-r.x0}" height="57" fill="url(#tiles)"/>`; }); }
+  // podea
   svg+=`<rect x="0" y="${floorY}" width="${vbW}" height="${floorPad}" fill="#d7c6a8"/>`;
   svg+=`<line x1="0" y1="${floorY}" x2="${vbW}" y2="${floorY}" stroke="#c2ad86" stroke-width="1"/>`;
-  // wall cabinets (bucătărie), sub perete
+  // umbră de contact la podea
+  if(mods.length){ const x0=padX+layout[0].x, x1=padX+layout[layout.length-1].x+mods[mods.length-1].w;
+    svg+=`<ellipse cx="${(x0+x1)/2}" cy="${floorY+3}" rx="${(x1-x0)/2+8}" ry="6" fill="#000" opacity="0.12"/>`; }
+  // corpuri suspendate (bucătărie)
   if(room.wall){ mods.forEach(m=>{ if(m.h<140 && m.type!=="coltar-buc"){ const lo=layout.find(l=>l.id===m.id);
     const wm={type:"suspendat-buc",w:m.w,h:WALL_H,doors:m.w>70?2:1,drawers:0,shelves:1,front:m.front,body:m.body,handle:m.handle,view:"closed"};
     const topY=padTop+(roomH-WALL_BOTTOM-WALL_H);
-    svg+=`<g transform="translate(${padX+lo.x},${topY})" opacity="0.97">`+moduleBody(wm)+`</g>`; } }); }
-  // base row
+    svg+=`<g transform="translate(${padX+lo.x},${topY})" opacity="0.98">`+moduleBody(wm)+`</g>`; } }); }
+  // corpuri de bază + înalte
   mods.forEach(m=>{ const lo=layout.find(l=>l.id===m.id); const topY=padTop+(roomH-m.h);
-    const dragging = drag.active && drag.id===m.id;
-    svg+=`<g class="mod" data-id="${m.id}" transform="translate(${padX+lo.x},${topY})" opacity="${dragging?0.5:1}">`+moduleBody({...m,view:"closed"})+`</g>`;
-    if(m.id===selectedId){ svg+=`<rect x="${padX+lo.x-2}" y="${topY-2}" width="${m.w+4}" height="${m.h+4}" rx="4" fill="none" stroke="var(--forest)" stroke-width="2.5" stroke-dasharray="7 5" pointer-events="none"/>`; }
-  });
+    const dragging=drag.active&&drag.id===m.id;
+    svg+=`<g class="mod" data-id="${m.id}" transform="translate(${padX+lo.x},${topY})" opacity="${dragging?0.5:1}">`+moduleBody({...m,view:"closed"})+`</g>`; });
+  // blat continuu peste rândurile de bază (bucătărie)
+  if(room.wall){ baseRuns().forEach(r=>{ const x=padX+r.x0-2, w=r.x1-r.x0+4;
+    svg+=`<rect x="${x}" y="${floorY-90}" width="${w}" height="6.5" rx="1.5" fill="url(#counter)"/>`;
+    svg+=`<rect x="${x}" y="${floorY-90}" width="${w}" height="1.6" fill="#707375" opacity="0.7"/>`; }); }
+  // highlight selecție
+  mods.forEach(m=>{ if(m.id===selectedId){ const lo=layout.find(l=>l.id===m.id); const topY=padTop+(roomH-m.h);
+    svg+=`<rect x="${padX+lo.x-2}" y="${topY-2}" width="${m.w+4}" height="${m.h+4}" rx="4" fill="none" stroke="var(--forest)" stroke-width="2.5" stroke-dasharray="7 5" pointer-events="none"/>`; } });
   // drop indicator la drag
-  if(drag.active && drag.dropIndex!==null){ let ix=0; const gap=2;
-    for(let i=0;i<drag.dropIndex;i++){ ix+=room.modules[i].w+gap; }
-    const lineX=padX+ix-1;
+  if(drag.active && drag.dropIndex!==null){ let ix=0; const gap=2; for(let i=0;i<drag.dropIndex;i++){ ix+=room.modules[i].w+gap; } const lineX=padX+ix-1;
     svg+=`<rect x="${lineX-1.5}" y="${padTop}" width="3" height="${roomH}" rx="1.5" fill="var(--wood)" pointer-events="none"/>`; }
   svg+=`</svg>`;
   el("viewer").innerHTML=svg;
