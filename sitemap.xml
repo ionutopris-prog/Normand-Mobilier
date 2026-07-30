@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://normandmobilier.ro/</loc><priority>1.0</priority></url>
+  <url><loc>https://normandmobilier.ro/planner.html</loc><priority>0.9</priority></url>
+  <url><loc>https://normandmobilier.ro/configurator.html</loc><priority>0.9</priority></url>
+  <url><loc>https://normandmobilier.ro/categorie.html?titlu=Dormitoare</loc><priority>0.7</priority></url>
+  <url><loc>https://normandmobilier.ro/categorie.html?titlu=Buc%C4%83t%C4%83rii</loc><priority>0.7</priority></url>
+  <url><loc>https://normandmobilier.ro/categorie.html?titlu=Corpuri%20de%20mobil%C4%83</loc><priority>0.7</priority></url>
+</urlset>

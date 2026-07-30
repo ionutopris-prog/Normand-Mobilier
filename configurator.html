@@ -105,7 +105,7 @@
       <div class="viewer" id="viewer"></div>
       <div class="stage-foot">
         <div class="stat"><div class="k">Dimensiuni (L × Î × A)</div><div class="v" id="statDims">100 × 210 × 58 <small>cm</small></div></div>
-        <div class="stat"><div class="k">Estimare orientativă</div><div class="v" id="statPrice">— <small>lei</small></div></div>
+        <div class="stat"><div class="k">Finisaj ales</div><div class="v" id="statFinish" style="font-size:19px; line-height:1.15">Alb</div></div>
         <div class="stat badge"><div class="k">Configurații posibile</div><div class="v" id="statCombos">—</div></div>
       </div>
     </section>
@@ -135,7 +135,7 @@
       <div class="group"><div class="glabel">Mâner</div><div class="seg" id="segHandle"></div></div>
       <div class="cta-block">
         <a class="btn-primary" id="ctaOffer" href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M4 7l8 6 8-6"/></svg>Cere ofertă cu această configurație</a>
-        <div class="cta-note">Preț final după măsurătoare la fața locului.</div>
+        <div class="cta-note">Îți facem oferta după o măsurătoare la fața locului.</div>
         <div class="spec-line" id="specLine"></div>
       </div>
     </aside>
@@ -207,7 +207,7 @@ function setupControls(){ const t=TYPES[state.type];
 
 function render(){ el("viewer").innerHTML=buildSVG();
   el("statDims").innerHTML=`${state.w} × ${state.h} × ${state.d} <small>cm</small>`;
-  el("statPrice").innerHTML=priceOf(currentModule()).toLocaleString("ro-RO")+` <small>lei est.</small>`;
+  el("statFinish").textContent = state.finishMode==="split" ? state.finishFront.name+" + "+state.finishBody.name : state.finishFront.name;
   el("pieceTitle").textContent=TYPES[state.type].label; el("specLine").innerHTML=specText();
   const body=encodeURIComponent("Bună ziua,\n\nAș dori o ofertă pentru următoarea configurație:\n\n"+specPlain()+"\n\nMulțumesc!");
   const href="mailto:contact@normandmobilier.ro?subject="+encodeURIComponent("Cerere ofertă — "+TYPES[state.type].label)+"&body="+body;
@@ -215,7 +215,7 @@ function render(){ el("viewer").innerHTML=buildSVG();
 function finishLabel(){ return state.finishMode==="split"?`fronturi <b>${state.finishFront.name}</b> · corp <b>${state.finishBody.name}</b>`:`finisaj <b>${state.finishFront.name}</b>`; }
 function specText(){ return `<b>${TYPES[state.type].label}</b> · ${state.w}×${state.h}×${state.d} cm · ${finishLabel()}`+(state.doors?` · ${state.doors} uși`:"")+(state.drawers?` · ${state.drawers} sertare`:"")+(state.overhead?` · cu corpuri suspendate`:"")+` · mâner ${state.handle.name.toLowerCase()}`; }
 function specPlain(){ let f=state.finishMode==="split"?`• Finisaj fronturi: ${state.finishFront.name}\n• Finisaj corp: ${state.finishBody.name}`:`• Finisaj PAL: ${state.finishFront.name}`;
-  return `• Tip: ${TYPES[state.type].label}\n• Dimensiuni: ${state.w} × ${state.h} × ${state.d} cm (L×Î×A)\n${f}`+(state.doors?`\n• Uși: ${state.doors}`:"")+(state.drawers?`\n• Sertare: ${state.drawers}`:"")+(state.shelves?`\n• Rafturi: ${state.shelves}`:"")+(state.overhead?`\n• Corpuri suspendate: da`:"")+`\n• Mâner: ${state.handle.name}\n• Estimare orientativă: ${priceOf(currentModule()).toLocaleString("ro-RO")} lei (preț final după măsurătoare)`; }
+  return `• Tip: ${TYPES[state.type].label}\n• Dimensiuni: ${state.w} × ${state.h} × ${state.d} cm (L×Î×A)\n${f}`+(state.doors?`\n• Uși: ${state.doors}`:"")+(state.drawers?`\n• Sertare: ${state.drawers}`:"")+(state.shelves?`\n• Rafturi: ${state.shelves}`:"")+(state.overhead?`\n• Corpuri suspendate: da`:"")+`\n• Mâner: ${state.handle.name}`; }
 
 function init(){ buildCatTabs(); buildTypeGrid(); buildSwatchGrid("swFront","front"); buildSwatchGrid("swBody","body"); updateFinishUI(); setupControls();
   el("rngW").oninput=(e)=>{ state.w=+e.target.value; q('[data-dim="w"] .dv').textContent=state.w; render(); };

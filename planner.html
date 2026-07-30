@@ -107,9 +107,9 @@
       <div class="stage-foot">
         <div class="stat"><div class="k">Corpuri</div><div class="v" id="statCount">—</div></div>
         <div class="stat"><div class="k">Lungime totală</div><div class="v" id="statWidth">—</div></div>
-        <div class="stat"><div class="k">Estimare orientativă</div><div class="v" id="statPrice">— <small>lei</small></div></div>
+        <div class="stat"><div class="k">Material</div><div class="v">PAL</div></div>
       </div>
-      <div class="hint">Estimare orientativă — prețul final se stabilește după măsurătoarea la fața locului.</div>
+      <div class="hint">Piese la comandă din PAL — îți trimitem oferta după o măsurătoare la fața locului.</div>
     </section>
 
     <aside class="panel">
@@ -281,7 +281,6 @@ function renderScene(){
   // stats
   el("statCount").textContent=mods.length;
   el("statWidth").innerHTML=Math.round(totalW)+` <small>cm</small>`;
-  el("statPrice").innerHTML=totalPrice().toLocaleString("ro-RO")+` <small>lei est.</small>`;
   updateOffer();
 }
 function totalPrice(){ return room.modules.reduce((s,m)=>s+priceOf(m),0); }
@@ -380,7 +379,7 @@ function buildAllSwatches(){ const g=el("allSw"); g.innerHTML="";
 /* ===== ofertă ===== */
 function updateOffer(){
   let lines=room.modules.map((m,i)=>`${i+1}. ${TYPES[m.type].label} — ${m.w}×${m.h}×${m.d} cm, fronturi ${m.front.name}`+(m.body.id!==m.front.id?`, corp ${m.body.name}`:"")+(m.drawers?`, ${m.drawers} sertare`:(m.doors?`, ${m.doors} uși`:""))+`, mâner ${handleName(m.handle).toLowerCase()}`).join("\n");
-  const body=encodeURIComponent(`Bună ziua,\n\nAș dori o ofertă pentru amenajarea „${room.name}":\n\n${lines}\n\nEstimare orientativă: ${totalPrice().toLocaleString("ro-RO")} lei (preț final după măsurătoare).\n\nMulțumesc!`);
+  const body=encodeURIComponent(`Bună ziua,\n\nAș dori o ofertă pentru amenajarea „${room.name}":\n\n${lines}\n\nAștept o ofertă după o măsurătoare. Mulțumesc!`);
   const href="mailto:contact@normandmobilier.ro?subject="+encodeURIComponent("Cerere ofertă amenajare — "+room.name)+"&body="+body;
   el("ctaOffer").href=href; el("topCta").href=href;
 }
