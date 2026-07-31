@@ -1,5 +1,5 @@
 /* =========================================================================
-   NORMAND · Motor comun de mobilă PAL (folosit de configurator.html + planner.html)
+   NORMAND · Motor comun de mobilă la comandă (folosit de configurator.html + planner.html)
    Mobila e DESENATĂ parametric (SVG). Sursa unică de adevăr pentru:
    finisaje, tipuri de corp, randare, defs.
    ========================================================================= */

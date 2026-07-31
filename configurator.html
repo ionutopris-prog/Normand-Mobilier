@@ -214,7 +214,7 @@ function render(){ el("viewer").innerHTML=buildSVG();
   el("ctaOffer").href=href; el("topCta").href=href; }
 function finishLabel(){ return state.finishMode==="split"?`fronturi <b>${state.finishFront.name}</b> · corp <b>${state.finishBody.name}</b>`:`finisaj <b>${state.finishFront.name}</b>`; }
 function specText(){ return `<b>${TYPES[state.type].label}</b> · ${state.w}×${state.h}×${state.d} cm · ${finishLabel()}`+(state.doors?` · ${state.doors} ${state.doors===1?"ușă":"uși"}`:"")+(state.drawers?` · ${state.drawers} ${state.drawers===1?"sertar":"sertare"}`:"")+(state.overhead?` · cu corpuri suspendate`:"")+` · mâner ${state.handle.name.toLowerCase()}`; }
-function specPlain(){ let f=state.finishMode==="split"?`• Finisaj fronturi: ${state.finishFront.name}\n• Finisaj corp: ${state.finishBody.name}`:`• Finisaj PAL: ${state.finishFront.name}`;
+function specPlain(){ let f=state.finishMode==="split"?`• Finisaj fronturi: ${state.finishFront.name}\n• Finisaj corp: ${state.finishBody.name}`:`• Finisaj: ${state.finishFront.name}`;
   return `• Tip: ${TYPES[state.type].label}\n• Dimensiuni: ${state.w} × ${state.h} × ${state.d} cm (L×Î×A)\n${f}`+(state.doors?`\n• Uși: ${state.doors}`:"")+(state.drawers?`\n• Sertare: ${state.drawers}`:"")+(state.shelves?`\n• Rafturi: ${state.shelves}`:"")+(state.overhead?`\n• Corpuri suspendate: da`:"")+`\n• Mâner: ${state.handle.name}`; }
 
 function init(){ buildCatTabs(); buildTypeGrid(); buildSwatchGrid("swFront","front"); buildSwatchGrid("swBody","body"); updateFinishUI(); setupControls();
