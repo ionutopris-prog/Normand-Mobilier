@@ -2,8 +2,8 @@ name: Deploy site pe Datahost
 
 # Se declanșează la fiecare push pe main (sau manual din tab-ul Actions)
 on:
-  # push:                 # reactivăm după ce deploy-ul merge (ca să nu spameze emailuri de eșec)
-  #   branches: [ main ]
+  push:
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
