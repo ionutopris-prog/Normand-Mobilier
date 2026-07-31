@@ -368,6 +368,16 @@
   .cat-card .cc-link .a { transition: transform 0.2s ease; }
   .cat-card:hover .cc-link .a { transform: translateX(4px); }
 
+  /* ce putem face (piese desenate de configurator) */
+  .idei-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .idea { background: var(--cream); border: 1px solid var(--line); border-radius: 14px; padding: 14px 14px 16px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  .idea:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+  .idea-ph { aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center; padding: 4px; }
+  .idea-ph img { max-width: 100%; max-height: 100%; }
+  .idea-l { display: block; margin-top: 10px; font-size: 14px; font-weight: 600; color: var(--ink); }
+  .idei-cta { text-align: center; margin-top: 38px; }
+  .idei-cta .btn { display: inline-flex; }
+
   /* value strip */
   .values-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
   .value {
@@ -609,6 +619,30 @@
             <span class="cc-link">Vezi colecția <span class="a">→</span></span>
           </div>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CE PUTEM FACE -->
+  <section class="section-pad" id="idei">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Ce putem face</span>
+        <h2>Orice piesă din PAL, pe măsura ta</h2>
+        <p>De la dulapuri și bucătării la corpuri de living — proiectăm și producem orice tip de mobilă. Iată câteva idei; restul o desenezi chiar tu în configurator.</p>
+      </div>
+      <div class="idei-grid">
+        <div class="idea reveal"><div class="idea-ph"><img src="images/idei/idea1.svg" alt="Dulap 3 uși la comandă" loading="lazy"></div><span class="idea-l">Dulap 3 uși</span></div>
+        <div class="idea reveal d1"><div class="idea-ph"><img src="images/idei/idea2.svg" alt="Dulap cu uși glisante" loading="lazy"></div><span class="idea-l">Uși glisante</span></div>
+        <div class="idea reveal d2"><div class="idea-ph"><img src="images/idei/idea3.svg" alt="Corp de bucătărie lucios" loading="lazy"></div><span class="idea-l">Bucătărie lucioasă</span></div>
+        <div class="idea reveal d3"><div class="idea-ph"><img src="images/idei/idea4.svg" alt="Corp cuptor cu front lucios" loading="lazy"></div><span class="idea-l">Corp cuptor</span></div>
+        <div class="idea reveal"><div class="idea-ph"><img src="images/idei/idea5.svg" alt="Comodă cu sertare" loading="lazy"></div><span class="idea-l">Comodă cu sertare</span></div>
+        <div class="idea reveal d1"><div class="idea-ph"><img src="images/idei/idea6.svg" alt="Bibliotecă cu vitrină" loading="lazy"></div><span class="idea-l">Bibliotecă</span></div>
+        <div class="idea reveal d2"><div class="idea-ph"><img src="images/idei/idea7.svg" alt="Corp TV" loading="lazy"></div><span class="idea-l">Corp TV</span></div>
+        <div class="idea reveal d3"><div class="idea-ph"><img src="images/idei/idea8.svg" alt="Coloană frigider" loading="lazy"></div><span class="idea-l">Coloană frigider</span></div>
+      </div>
+      <div class="idei-cta reveal">
+        <a class="btn btn-primary" href="configurator.html">Configurează-ți piesa →</a>
       </div>
     </div>
   </section>

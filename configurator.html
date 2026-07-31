@@ -85,7 +85,7 @@
     <a class="brand" href="index.html"><span class="bn">Normand</span><span class="bs">Mobilier</span></a>
     <div class="top-actions">
       <a class="back" href="index.html">← Înapoi la site</a>
-      <a class="top-cta" href="#" id="topCta">Cere ofertă</a>
+      <a class="top-cta" href="#" id="topCta">Cere o ofertă</a>
     </div>
   </header>
 
@@ -134,7 +134,7 @@
       </div>
       <div class="group"><div class="glabel">Mâner</div><div class="seg" id="segHandle"></div></div>
       <div class="cta-block">
-        <a class="btn-primary" id="ctaOffer" href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M4 7l8 6 8-6"/></svg>Cere ofertă cu această configurație</a>
+        <a class="btn-primary" id="ctaOffer" href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M4 7l8 6 8-6"/></svg>Cere o ofertă cu această configurație</a>
         <div class="cta-note">Îți facem oferta după o măsurătoare la fața locului.</div>
         <div class="spec-line" id="specLine"></div>
       </div>
@@ -213,7 +213,7 @@ function render(){ el("viewer").innerHTML=buildSVG();
   const href="mailto:contact@normandmobilier.ro?subject="+encodeURIComponent("Cerere ofertă — "+TYPES[state.type].label)+"&body="+body;
   el("ctaOffer").href=href; el("topCta").href=href; }
 function finishLabel(){ return state.finishMode==="split"?`fronturi <b>${state.finishFront.name}</b> · corp <b>${state.finishBody.name}</b>`:`finisaj <b>${state.finishFront.name}</b>`; }
-function specText(){ return `<b>${TYPES[state.type].label}</b> · ${state.w}×${state.h}×${state.d} cm · ${finishLabel()}`+(state.doors?` · ${state.doors} uși`:"")+(state.drawers?` · ${state.drawers} sertare`:"")+(state.overhead?` · cu corpuri suspendate`:"")+` · mâner ${state.handle.name.toLowerCase()}`; }
+function specText(){ return `<b>${TYPES[state.type].label}</b> · ${state.w}×${state.h}×${state.d} cm · ${finishLabel()}`+(state.doors?` · ${state.doors} ${state.doors===1?"ușă":"uși"}`:"")+(state.drawers?` · ${state.drawers} ${state.drawers===1?"sertar":"sertare"}`:"")+(state.overhead?` · cu corpuri suspendate`:"")+` · mâner ${state.handle.name.toLowerCase()}`; }
 function specPlain(){ let f=state.finishMode==="split"?`• Finisaj fronturi: ${state.finishFront.name}\n• Finisaj corp: ${state.finishBody.name}`:`• Finisaj PAL: ${state.finishFront.name}`;
   return `• Tip: ${TYPES[state.type].label}\n• Dimensiuni: ${state.w} × ${state.h} × ${state.d} cm (L×Î×A)\n${f}`+(state.doors?`\n• Uși: ${state.doors}`:"")+(state.drawers?`\n• Sertare: ${state.drawers}`:"")+(state.shelves?`\n• Rafturi: ${state.shelves}`:"")+(state.overhead?`\n• Corpuri suspendate: da`:"")+`\n• Mâner: ${state.handle.name}`; }
 

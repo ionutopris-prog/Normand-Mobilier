@@ -1,7 +1,7 @@
 /* =========================================================================
    NORMAND · Motor comun de mobilă PAL (folosit de configurator.html + planner.html)
    Mobila e DESENATĂ parametric (SVG). Sursa unică de adevăr pentru:
-   finisaje, tipuri de corp, randare, defs, preț.
+   finisaje, tipuri de corp, randare, defs.
    ========================================================================= */
 
 const FINISHES = [
@@ -24,7 +24,7 @@ const FINISHES = [
   { id:"alb-mat",     name:"Alb mat",          base:"#e7e8e3", wood:false },
   { id:"salcam",      name:"Salcâm",           base:"#b98f5c", wood:true },
   { id:"crem-luc",    name:"Crem lucios",      base:"#ecdcbe", wood:false, gloss:true },
-  { id:"vanilie-luc", name:"Vanilie lucios",   base:"#f0e4bf", wood:false, gloss:true },
+  { id:"vanilie-luc", name:"Vanilie lucioasă", base:"#f0e4bf", wood:false, gloss:true },
   { id:"gri-luc",     name:"Gri deschis lucios",base:"#ccd0cd", wood:false, gloss:true },
   { id:"capp-luc",    name:"Cappuccino lucios",base:"#9c7f64", wood:false, gloss:true },
   { id:"rosu-luc",    name:"Roșu lucios",      base:"#b32a2a", wood:false, gloss:true },
@@ -51,11 +51,11 @@ const TYPES = {
   "dulap3": { label:"Dulap 3 uși", icon:"wardrobe", dims:{w:[120,220,165],h:[180,245,215],d:[52,65,58]}, doors:[3], drawers:[0,2,3], shelves:[3,4,5,6], overhead:true, build:(p)=>columnsDoors(p,3) },
   "dulap4": { label:"Dulap 4 uși", icon:"wardrobe", dims:{w:[180,300,220],h:[180,245,220],d:[52,66,60]}, doors:[4], drawers:[0,2,4], shelves:[4,5,6,7], overhead:true, build:(p)=>columnsDoors(p,4) },
   "glisant": { label:"Uși glisante", icon:"slider", dims:{w:[150,280,200],h:[180,245,215],d:[60,70,65]}, doors:[2,3], drawers:[0], shelves:[3,4,5,6], overhead:false, build:(p)=>slidingDoors(p) },
-  "comoda": { label:"Comodă sertare", icon:"drawers", dims:{w:[60,160,90],h:[70,120,85],d:[40,55,45]}, doors:[0], drawers:[3,4,2,5], shelves:[0], overhead:false, build:(p)=>drawersStack(p) },
-  "biblioteca": { label:"Bibliotecă", icon:"shelf", dims:{w:[60,220,120],h:[150,230,200],d:[28,45,32]}, doors:[0,2], drawers:[0,2], shelves:[3,4,5,6,7], overhead:false, build:(p)=>bookcase(p) },
+  "comoda": { label:"Comodă cu sertare", icon:"drawers", dims:{w:[60,160,90],h:[70,120,85],d:[40,55,45]}, doors:[0], drawers:[3,4,2,5], shelves:[0], overhead:false, build:(p)=>drawersStack(p) },
+  "biblioteca": { label:"Bibliotecă", icon:"shelf", dims:{w:[60,220,120],h:[150,230,200],d:[28,45,32]}, doors:[0,2], drawers:[0], shelves:[3,4,5,6,7], overhead:false, build:(p)=>bookcase(p) },
   "tv": { label:"Corp TV", icon:"tv", dims:{w:[120,320,200],h:[40,70,50],d:[35,55,45]}, doors:[2,4], drawers:[0,2], shelves:[0], overhead:false, build:(p)=>tvUnit(p) },
-  "pat": { label:"Pat", icon:"bed", dims:{w:[140,200,160],h:[95,130,110],d:[190,215,200]}, doors:[0], drawers:[0,2], shelves:[0], overhead:false, build:(p)=>bed(p) },
-  "noptiera": { label:"Noptieră", icon:"drawers", dims:{w:[40,60,45],h:[40,60,50],d:[35,45,40]}, doors:[0,1], drawers:[2,3], shelves:[0], overhead:false, build:(p)=> p.doors>0 ? columnsDoors(p,1) : drawersStack(p) },
+  "pat": { label:"Pat", icon:"bed", dims:{w:[140,200,160],h:[95,130,110],d:[190,215,200]}, doors:[0], drawers:[0], shelves:[0], overhead:false, build:(p)=>bed(p) },
+  "noptiera": { label:"Noptieră", icon:"drawers", dims:{w:[40,60,45],h:[40,60,50],d:[35,45,40]}, doors:[0], drawers:[2,3], shelves:[0], overhead:false, build:(p)=> p.drawers>0 ? drawersStack(p) : columnsDoors(p,1) },
   "baza-buc": { label:"Bază bucătărie", icon:"cabinet", dims:{w:[40,120,60],h:[82,92,85],d:[56,62,60]}, doors:[1,2], drawers:[0,3,4], shelves:[1,2], overhead:false, build:(p)=> p.drawers>0 ? drawersStack(p) : columnsDoors(p,p.doors) },
   "suspendat-buc": { label:"Suspendat bucătărie", icon:"cabinet", dims:{w:[40,120,60],h:[55,90,72],d:[30,40,32]}, doors:[1,2], drawers:[0], shelves:[1,2], overhead:false, build:(p)=>columnsDoors(p,p.doors) },
   "coltar-buc": { label:"Colțar bucătărie", icon:"corner", dims:{w:[85,110,90],h:[82,92,85],d:[85,110,90]}, doors:[1], drawers:[0], shelves:[1,2], overhead:false, build:(p)=>cornerBase(p) },
@@ -199,14 +199,3 @@ function moduleBody(m){
 function overheadBody(m,ohH){ const n=m.w>150?3:2, cw=m.w/n; let s=`<rect x="-2" y="-2" width="${m.w+4}" height="${ohH+4}" rx="4" fill="${shade(m.body.base,-0.34)}"/>`;
   for(let i=0;i<n;i++){ s+=panel(i*cw,0,cw,ohH,m.front); const hx=i*cw+cw/2; s+=handle(hx,ohH-6,m.handle==='bara'?'buton':m.handle,m.front,false); }
   if(m.front.gloss) s+=`<rect x="0" y="0" width="${m.w}" height="${ohH}" rx="3" fill="url(#glossSweep)" pointer-events="none"/>`; return s; }
-
-/* preț orientativ (lei) pentru un modul */
-function priceOf(m){ const frontM2=(m.w*m.h)/10000; const f=m.front;
-  let base=frontM2*1250*(f.wood?1.08:1)*(f.gloss?1.12:1);
-  base+=(m.doors||0)*90+(m.drawers||0)*160+(m.shelves||0)*35;
-  if(m.overhead) base*=1.4;
-  if(m.type==="corp-cuptor"||m.type==="coloana-frig") base*=1.25;
-  if(m.type==="coltar-buc") base*=1.15;
-  if(m.type==="pat") base*=1.2;
-  base*=(0.7+((m.d||50)/60)*0.3);
-  return Math.round(base/10)*10; }

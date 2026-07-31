@@ -92,7 +92,7 @@
     <a class="brand" href="index.html"><span class="bn">Normand</span><span class="bs">Mobilier</span></a>
     <div class="top-actions">
       <a class="back" href="configurator.html">← Configurator</a>
-      <a class="top-cta" href="#" id="topCta">Cere ofertă</a>
+      <a class="top-cta" href="#" id="topCta">Cere o ofertă</a>
     </div>
   </header>
 
@@ -150,7 +150,7 @@
       </div>
 
       <div class="cta-block">
-        <a class="btn-primary" id="ctaOffer" href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M4 7l8 6 8-6"/></svg>Cere ofertă pentru toată amenajarea</a>
+        <a class="btn-primary" id="ctaOffer" href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M4 7l8 6 8-6"/></svg>Cere o ofertă pentru toată amenajarea</a>
         <div class="cta-note">Trimite lista completă de corpuri către noi.</div>
       </div>
     </aside>
@@ -283,7 +283,6 @@ function renderScene(){
   el("statWidth").innerHTML=Math.round(totalW)+` <small>cm</small>`;
   updateOffer();
 }
-function totalPrice(){ return room.modules.reduce((s,m)=>s+priceOf(m),0); }
 
 /* ===== interacțiuni scenă (click select + drag reorder) ===== */
 function attachSceneEvents(){
@@ -337,8 +336,8 @@ function renderPanel(){
   el("rngD").oninput=(e)=>{ m.d=+e.target.value; q('[data-dim="d"] .dv').textContent=m.d; renderScene(); };
   // struct: raft(uși) vs sertare
   const struct=el("selStruct"); const opts=[];
-  if(t.doors.some(v=>v>0)) t.doors.filter(v=>v>0).forEach(v=>opts.push({k:"doors",v,label:v+" uși"}));
-  if(t.drawers.some(v=>v>0)) t.drawers.filter(v=>v>0).forEach(v=>opts.push({k:"drawers",v,label:v+" sertare"}));
+  if(t.doors.some(v=>v>0)) t.doors.filter(v=>v>0).forEach(v=>opts.push({k:"doors",v,label:v+(v===1?" ușă":" uși")}));
+  if(t.drawers.some(v=>v>0)) t.drawers.filter(v=>v>0).forEach(v=>opts.push({k:"drawers",v,label:v+(v===1?" sertar":" sertare")}));
   el("selDoorsG").style.display=opts.length>1?"block":"none";
   struct.innerHTML="";
   opts.forEach(o=>{ const b=document.createElement("button"); b.textContent=o.label;
@@ -378,8 +377,8 @@ function buildAllSwatches(){ const g=el("allSw"); g.innerHTML="";
 
 /* ===== ofertă ===== */
 function updateOffer(){
-  let lines=room.modules.map((m,i)=>`${i+1}. ${TYPES[m.type].label} — ${m.w}×${m.h}×${m.d} cm, fronturi ${m.front.name}`+(m.body.id!==m.front.id?`, corp ${m.body.name}`:"")+(m.drawers?`, ${m.drawers} sertare`:(m.doors?`, ${m.doors} uși`:""))+`, mâner ${handleName(m.handle).toLowerCase()}`).join("\n");
-  const body=encodeURIComponent(`Bună ziua,\n\nAș dori o ofertă pentru amenajarea „${room.name}":\n\n${lines}\n\nAștept o ofertă după o măsurătoare. Mulțumesc!`);
+  let lines=room.modules.map((m,i)=>`${i+1}. ${TYPES[m.type].label} — ${m.w}×${m.h}×${m.d} cm, fronturi ${m.front.name}`+(m.body.id!==m.front.id?`, corp ${m.body.name}`:"")+(m.drawers?`, ${m.drawers} ${m.drawers===1?"sertar":"sertare"}`:(m.doors?`, ${m.doors} ${m.doors===1?"ușă":"uși"}`:""))+`, mâner ${handleName(m.handle).toLowerCase()}`).join("\n");
+  const body=encodeURIComponent(`Bună ziua,\n\nAș dori o ofertă pentru amenajarea „${room.name}”:\n\n${lines}\n\nAștept o ofertă după o măsurătoare. Mulțumesc!`);
   const href="mailto:contact@normandmobilier.ro?subject="+encodeURIComponent("Cerere ofertă amenajare — "+room.name)+"&body="+body;
   el("ctaOffer").href=href; el("topCta").href=href;
 }
