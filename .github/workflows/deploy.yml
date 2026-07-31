@@ -1,0 +1,32 @@
+name: Deploy site pe Datahost
+
+# Se declanșează la fiecare push pe main (sau manual din tab-ul Actions)
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Upload prin FTP în public_html
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps          # dacă dă eroare de certificat, schimbă în: ftp
+          port: 21
+          server-dir: public_html/
+          # nu urca fișiere care nu țin de site:
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            .gitignore
+            site.zip
+            README.md
