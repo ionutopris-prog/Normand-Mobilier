@@ -19,10 +19,10 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftp           # FTP normal (FTPS dădea "succes" dar nu urca fișierele)
+          protocol: ftp           # FTP normal (mai robust)
           port: 21
-          server-dir: ./          # contul FTP 'deploy' e ancorat direct în public_html
-          state-name: .deploy-state-2.json   # nume nou -> forțează o urcare completă
+          server-dir: public_html/   # contul principal 'normandm' e ancorat în /home/normandm
+          state-name: .deploy-state-3.json   # nume nou -> forțează o urcare completă
           # nu urca fișiere care nu țin de site:
           exclude: |
             **/.git*
