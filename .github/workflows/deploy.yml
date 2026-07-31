@@ -19,9 +19,10 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps          # dacă dă eroare de certificat, schimbă în: ftp
+          protocol: ftp           # FTP normal (FTPS dădea "succes" dar nu urca fișierele)
           port: 21
           server-dir: ./          # contul FTP 'deploy' e ancorat direct în public_html
+          state-name: .deploy-state-2.json   # nume nou -> forțează o urcare completă
           # nu urca fișiere care nu țin de site:
           exclude: |
             **/.git*
