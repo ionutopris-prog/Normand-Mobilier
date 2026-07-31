@@ -22,7 +22,8 @@ jobs:
           protocol: ftp           # FTP normal (mai robust)
           port: 21
           server-dir: ./          # contul 'deploy' recreat, ancorat direct în public_html
-          state-name: .deploy-state-4.json   # nume nou -> forțează o urcare completă
+          state-name: .deploy-state-4.json
+          timeout: 120000         # 120s — Datahost FTP răspunde uneori lent
           # nu urca fișiere care nu țin de site:
           exclude: |
             **/.git*
