@@ -2,8 +2,8 @@ name: Deploy site pe Datahost
 
 # Se declanșează la fiecare push pe main (sau manual din tab-ul Actions)
 on:
-  push:
-    branches: [ main ]
+  # push:                 # reactivăm după ce deploy-ul merge (ca să nu spameze emailuri de eșec)
+  #   branches: [ main ]
   workflow_dispatch:
 
 jobs:
@@ -21,8 +21,8 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftp           # FTP normal (mai robust)
           port: 21
-          server-dir: public_html/   # contul principal 'normandm' e ancorat în /home/normandm
-          state-name: .deploy-state-3.json   # nume nou -> forțează o urcare completă
+          server-dir: ./          # contul 'deploy' recreat, ancorat direct în public_html
+          state-name: .deploy-state-4.json   # nume nou -> forțează o urcare completă
           # nu urca fișiere care nu țin de site:
           exclude: |
             **/.git*
