@@ -21,7 +21,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps          # dacă dă eroare de certificat, schimbă în: ftp
           port: 21
-          server-dir: public_html/
+          server-dir: ./          # contul FTP 'deploy' e ancorat direct în public_html
           # nu urca fișiere care nu țin de site:
           exclude: |
             **/.git*
