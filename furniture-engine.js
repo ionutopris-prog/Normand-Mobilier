@@ -106,11 +106,21 @@ function columnsDoors(p,n){ const {W,H,fin,body,handle:hk,view}=p; let s=""; con
   for(let i=0;i<n;i++){ const x=i*colW;
     if(view==="open"){
       s+=`<rect x="${x+2}" y="2" width="${colW-4}" height="${H-4}" rx="2" fill="${shade(body.base,-0.42)}"/>`;
-      const rail=p.type&&p.type.startsWith("dulap"); const shelfTop=rail?H*0.30:6;
-      const nSh=p.shelves, zoneTop=shelfTop, zoneBot=H-6-(p.drawers>0?Math.min(p.drawers,3)*10:0);
-      for(let k=1;k<=nSh;k++){ const yy=zoneTop+(zoneBot-zoneTop)*k/(nSh+1); s+=`<rect x="${x+4}" y="${yy}" width="${colW-8}" height="3" fill="${shade(body.base,-0.06)}"/>`; }
-      if(rail){ s+=`<rect x="${x+5}" y="${shelfTop-8}" width="${colW-10}" height="2.4" rx="1.2" fill="#b9beba"/>`;
-        for(let hh=0;hh<3;hh++){ const hx=x+colW*0.28+hh*colW*0.22; s+=`<rect x="${hx}" y="${shelfTop-8}" width="1.4" height="14" fill="#9aa09b"/><rect x="${hx-5}" y="${shelfTop+5}" width="11" height="20" rx="2" fill="${shade(fin.base,0.12)}" opacity="0.5"/>`; } }
+      if(p.layout && p.layout.length){
+        // interior configurat pe elemente (rafturi + bare), distribuite egal de sus în jos
+        const top=12, bot=H-8, nL=p.layout.length;
+        for(let li=0; li<nL; li++){ const yy=top+(bot-top)*(li+1)/(nL+1); const it=p.layout[li];
+          if(it.kind==="rail"){ s+=`<rect x="${x+5}" y="${yy}" width="${colW-10}" height="2.6" rx="1.3" fill="#b9beba"/>`;
+            for(let hh=0;hh<3;hh++){ const hx=x+colW*0.28+hh*colW*0.22; s+=`<rect x="${hx}" y="${yy}" width="1.4" height="15" fill="#9aa09b"/><rect x="${hx-5}" y="${yy+11}" width="11" height="19" rx="2" fill="${shade(fin.base,0.12)}" opacity="0.5"/>`; } }
+          else { s+=`<rect x="${x+4}" y="${yy}" width="${colW-8}" height="3.4" rx="1" fill="${shade(body.base,-0.06)}"/>`; }
+        }
+      } else {
+        const rail=(p.rail!==undefined)?p.rail:(p.type&&p.type.startsWith("dulap")); const shelfTop=rail?H*0.30:6;
+        const nSh=p.shelves, zoneTop=shelfTop, zoneBot=H-6-(p.drawers>0?Math.min(p.drawers,3)*10:0);
+        for(let k=1;k<=nSh;k++){ const yy=zoneTop+(zoneBot-zoneTop)*k/(nSh+1); s+=`<rect x="${x+4}" y="${yy}" width="${colW-8}" height="3" fill="${shade(body.base,-0.06)}"/>`; }
+        if(rail){ s+=`<rect x="${x+5}" y="${shelfTop-8}" width="${colW-10}" height="2.4" rx="1.2" fill="#b9beba"/>`;
+          for(let hh=0;hh<3;hh++){ const hx=x+colW*0.28+hh*colW*0.22; s+=`<rect x="${hx}" y="${shelfTop-8}" width="1.4" height="14" fill="#9aa09b"/><rect x="${hx-5}" y="${shelfTop+5}" width="11" height="20" rx="2" fill="${shade(fin.base,0.12)}" opacity="0.5"/>`; } }
+      }
     } else { s+=panel(x,0,colW,H,fin); const hx=(i<n-1)?x+colW-8:x+8; s+=handle(hx,H*0.5,hk,fin,true); }
   } return s; }
 function slidingDoors(p){ const {W,H,fin,view}=p; if(view==="open") return columnsDoors({...p,view:"open"},Math.max(2,p.doors));
