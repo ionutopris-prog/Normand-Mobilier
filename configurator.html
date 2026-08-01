@@ -65,6 +65,18 @@
   .seg button { border:1px solid var(--line); background:var(--sage); border-radius:9px; padding:8px 12px; cursor:pointer; font-size:13px; font-weight:600; color:var(--ink); font-family:inherit; transition:all .12s ease; }
   .seg button:hover { border-color:var(--forest); }
   .seg button.active { background:var(--forest); color:var(--cream); border-color:var(--forest); }
+  .modal-ovl { position:fixed; inset:0; background:rgba(20,28,18,.5); display:none; align-items:center; justify-content:center; z-index:200; padding:16px; }
+  .modal-ovl.open { display:flex; }
+  .modal-card { position:relative; background:var(--cream); border-radius:16px; max-width:420px; width:100%; padding:26px 24px; box-shadow:0 24px 60px rgba(0,0,0,.32); max-height:92vh; overflow:auto; }
+  .modal-x { position:absolute; top:12px; right:14px; width:32px; height:32px; border:none; background:var(--sage); border-radius:8px; cursor:pointer; font-size:13px; color:var(--ink); }
+  .modal-x:hover { background:var(--line); }
+  .modal-title { font-family:'Cormorant Garamond',Georgia,serif; font-size:25px; font-weight:700; color:var(--ink); line-height:1.1; }
+  .modal-sub { font-size:13.5px; color:var(--ink-soft); line-height:1.5; margin:7px 0 16px; }
+  .fld { display:block; margin-bottom:12px; }
+  .fld span { display:block; font-size:12.5px; font-weight:600; color:var(--ink); margin-bottom:5px; }
+  .fld input { width:100%; box-sizing:border-box; border:1px solid var(--line); border-radius:10px; padding:11px 13px; font-size:15px; font-family:inherit; color:var(--ink); background:#fff; }
+  .fld input:focus { outline:none; border-color:var(--forest); box-shadow:0 0 0 3px rgba(47,74,55,.12); }
+  .modal-err { color:#b23b3b; font-size:13px; margin-top:11px; text-align:center; min-height:1px; }
   .layout-list { display:flex; flex-direction:column; gap:6px; }
   .layout-row { display:flex; align-items:center; gap:8px; background:var(--sage); border:1px solid var(--line); border-radius:10px; padding:6px 8px 6px 10px; }
   .layout-row .lr-ico { flex:none; display:flex; align-items:center; color:var(--forest); }
@@ -152,15 +164,38 @@
       <div class="group"><div class="glabel">Mâner</div><div class="seg" id="segHandle"></div></div>
       <div class="group" id="grpExtras"><div class="glabel">Dotări opționale (feronerie)</div><div class="seg" id="segExtras"></div></div>
       <div class="cta-block">
-        <div class="glabel" style="margin-bottom:8px">Trimite cererea — alegi cum</div>
+        <button class="btn-primary" id="ctaOrder" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v14H8l-4 3z"/><path d="M8 9h8M8 13h5"/></svg>Trimite comanda cu desen</button>
+        <div class="cta-note" style="margin:9px 0 6px">Primești pe email desenul + toate detaliile. Sau, rapid, doar text:</div>
         <div style="display:flex; gap:10px">
-          <a class="btn-primary" id="ctaWa" href="#" target="_blank" rel="noopener" style="flex:1; background:#25D366"><svg width="18" height="18" viewBox="0 0 32 32" fill="currentColor"><path d="M16 .5C7.4.5.5 7.4.5 16c0 2.8.7 5.5 2.1 7.9L.3 31.7l8-2.1c2.3 1.2 4.9 1.9 7.7 1.9 8.6 0 15.5-6.9 15.5-15.5S24.6.5 16 .5zm7.1 18.9c-.4-.2-2.3-1.1-2.6-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.7-.6-3.2-2-1.2-1-2-2.4-2.2-2.7-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.7.2-.2.2-.4.4-.6.1-.2.1-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.7-.6-.6-.9-.7h-.7c-.2 0-.6.1-.9.5-.3.4-1.2 1.2-1.2 2.9 0 1.7 1.2 3.4 1.4 3.6.2.2 2.4 3.7 5.9 5.2.8.4 1.5.6 2 .7.8.3 1.6.2 2.2.1.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.6.2-1.8-.1-.1-.3-.2-.7-.4z"/></svg>WhatsApp</a>
-          <a class="btn-primary" id="ctaEmail" href="#" style="flex:1"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M4 7l8 6 8-6"/></svg>Email</a>
+          <a class="btn-primary" id="ctaWa" href="#" target="_blank" rel="noopener" style="flex:1; background:#25D366; font-size:14px; padding:12px"><svg width="17" height="17" viewBox="0 0 32 32" fill="currentColor"><path d="M16 .5C7.4.5.5 7.4.5 16c0 2.8.7 5.5 2.1 7.9L.3 31.7l8-2.1c2.3 1.2 4.9 1.9 7.7 1.9 8.6 0 15.5-6.9 15.5-15.5S24.6.5 16 .5zm7.1 18.9c-.4-.2-2.3-1.1-2.6-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.7-.6-3.2-2-1.2-1-2-2.4-2.2-2.7-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.7.2-.2.2-.4.4-.6.1-.2.1-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.7-.6-.6-.9-.7h-.7c-.2 0-.6.1-.9.5-.3.4-1.2 1.2-1.2 2.9 0 1.7 1.2 3.4 1.4 3.6.2.2 2.4 3.7 5.9 5.2.8.4 1.5.6 2 .7.8.3 1.6.2 2.2.1.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.6.2-1.8-.1-.1-.3-.2-.7-.4z"/></svg>WhatsApp</a>
+          <a class="btn-primary" id="ctaEmail" href="#" style="flex:1; background:#5c6b56; font-size:14px; padding:12px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M4 7l8 6 8-6"/></svg>Email</a>
         </div>
-        <div class="cta-note">Îți facem oferta după o măsurătoare la fața locului.</div>
         <div class="spec-line" id="specLine"></div>
       </div>
     </aside>
+  </div>
+
+  <div class="modal-ovl" id="orderModal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="omTitle">
+      <button class="modal-x" id="omClose" type="button" aria-label="Închide">✕</button>
+      <div id="omForm">
+        <div class="modal-title" id="omTitle">Trimite comanda cu desen</div>
+        <p class="modal-sub">Îți trimitem pe email desenul configurației + toate detaliile, ca la o comandă de mobilier. Apoi te contactăm pentru o măsurătoare la fața locului și oferta finală.</p>
+        <label class="fld"><span>Nume *</span><input id="ofName" type="text" autocomplete="name" placeholder="Numele tău"></label>
+        <label class="fld"><span>Email</span><input id="ofEmail" type="email" autocomplete="email" placeholder="ca să primești și tu desenul pe email"></label>
+        <label class="fld"><span>Telefon</span><input id="ofPhone" type="tel" autocomplete="tel" placeholder="ca să te putem suna pentru ofertă"></label>
+        <label class="fld"><span>Localitate</span><input id="ofCity" type="text" placeholder="oraș / localitate (opțional)"></label>
+        <input id="ofHoney" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0">
+        <button class="btn-primary" id="ofSend" type="button" style="margin-top:4px">Trimite comanda</button>
+        <div class="modal-err" id="omErr"></div>
+      </div>
+      <div id="omDone" style="display:none; text-align:center; padding:8px 0">
+        <div style="font-size:46px; line-height:1">✅</div>
+        <div class="modal-title" style="margin-top:8px">Am primit configurația!</div>
+        <p class="modal-sub" id="omDoneMsg" style="margin-bottom:18px">Îți mulțumim. Te contactăm în scurt timp.</p>
+        <button class="btn-primary" id="omOk" type="button">Închide</button>
+      </div>
+    </div>
   </div>
 
 <script src="furniture-engine.js"></script>
@@ -207,6 +242,40 @@ function buildInterior(){ const list=el("layoutList"); if(!list) return; list.in
     row.appendChild(mkLBtn("✕",()=>{ L.splice(i,1); refreshInterior(); }, false));
     list.appendChild(row); }); }
 function refreshInterior(){ buildInterior(); setView("open"); render(); }
+
+/* ===== comandă cu desen (rasterizează SVG → JPG → POST la PHP) ===== */
+function rasterize(svgString, vw, vh){ return new Promise((resolve,reject)=>{
+  const img=new Image();
+  img.onload=()=>{ const scale=1.6; const c=document.createElement("canvas"); c.width=Math.round(vw*scale); c.height=Math.round(vh*scale);
+    const ctx=c.getContext("2d"); ctx.fillStyle="#ffffff"; ctx.fillRect(0,0,c.width,c.height); ctx.drawImage(img,0,0,c.width,c.height);
+    try{ resolve(c.toDataURL("image/jpeg",0.85)); }catch(e){ reject(e); } };
+  img.onerror=()=>reject(new Error("svg-img"));
+  img.src="data:image/svg+xml;charset=utf-8,"+encodeURIComponent(svgString);
+}); }
+async function renderPhotos(){ const prev=state.view; const shots=[];
+  const hasInside = WARDROBE.includes(state.type) || TYPES[state.type].shelves.some(x=>x>0);
+  const views = hasInside ? ["closed","open"] : ["closed"];
+  for(const v of views){ state.view=v; const svg=buildSVG(); const mm=svg.match(/viewBox="0 0 (\d+) (\d+)"/); const vw=mm?+mm[1]:600, vh=mm?+mm[2]:600;
+    const sized=svg.replace("<svg ", `<svg width="${vw}" height="${vh}" `);
+    try{ shots.push(await rasterize(sized, vw, vh)); }catch(e){} }
+  state.view=prev; render(); return shots; }
+function openOrder(){ el("omErr").textContent=""; el("omForm").style.display="block"; el("omDone").style.display="none"; el("orderModal").classList.add("open"); setTimeout(()=>el("ofName").focus(),40); }
+function closeOrder(){ el("orderModal").classList.remove("open"); }
+async function sendOrder(){ const name=el("ofName").value.trim();
+  const email=el("ofEmail").value.trim(), phone=el("ofPhone").value.trim();
+  if(!name){ el("omErr").textContent="Te rugăm scrie numele."; el("ofName").focus(); return; }
+  if(!email && !phone){ el("omErr").textContent="Lasă un email sau un telefon, ca să te putem contacta."; return; }
+  const btn=el("ofSend"); btn.disabled=true; btn.textContent="Se trimite…"; el("omErr").textContent="";
+  let images=[]; try{ images=await renderPhotos(); }catch(e){}
+  const payload={ name, email, phone, city:el("ofCity").value.trim(), title:TYPES[state.type].label, spec:specPlain(), images, website:el("ofHoney").value };
+  try{
+    const r=await fetch("trimite-oferta.php",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
+    const j=await r.json();
+    if(j && j.ok){ el("omForm").style.display="none"; el("omDone").style.display="block";
+      el("omDoneMsg").textContent=(email && j.client)?("Ți-am trimis desenul și pe email, la "+email+". Te contactăm în scurt timp."):"Am trimis configurația către atelier. Te contactăm în scurt timp."; }
+    else { el("omErr").textContent="Nu am putut trimite acum. Încearcă WhatsApp sau sună-ne direct."; }
+  }catch(e){ el("omErr").textContent="Nu am putut trimite acum. Încearcă WhatsApp sau sună-ne direct."; }
+  btn.disabled=false; btn.textContent="Trimite comanda"; }
 
 function buildSVG(){
   const t=TYPES[state.type], m=currentModule();
@@ -293,6 +362,9 @@ function init(){ buildCatTabs(); buildTypeGrid(); buildSwatchGrid("swFront","fro
   document.querySelectorAll(".view-toggle button").forEach(b=>b.onclick=()=>{ state.view=b.dataset.view; document.querySelectorAll(".view-toggle button").forEach(x=>x.classList.toggle("active",x===b)); render(); });
   el("addShelf").onclick=()=>{ state.layout.push({kind:"shelf"}); refreshInterior(); };
   el("addRail").onclick=()=>{ state.layout.push({kind:"rail"}); refreshInterior(); };
+  el("ctaOrder").onclick=openOrder; el("omClose").onclick=closeOrder; el("omOk").onclick=closeOrder; el("ofSend").onclick=sendOrder;
+  el("orderModal").addEventListener("click",e=>{ if(e.target===el("orderModal")) closeOrder(); });
+  document.addEventListener("keydown",e=>{ if(e.key==="Escape") closeOrder(); });
   el("statCombos").textContent=comboCount().toLocaleString("ro-RO")+"+"; render(); }
 init();
 </script>
