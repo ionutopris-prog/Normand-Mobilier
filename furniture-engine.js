@@ -42,7 +42,7 @@ function handleName(id){ const h=HANDLES.find(x=>x.id===id); return h?h.name:"Ba
 
 const CATEGORIES = {
   "Dulapuri": ["dulap2","dulap3","dulap4","glisant"],
-  "Bucătărie": ["baza-buc","suspendat-buc","coltar-buc","corp-chiuveta","corp-cuptor","coloana-frig"],
+  "Bucătărie": ["baza-buc","suspendat-buc","coltar-buc","corp-chiuveta","corp-cuptor","coloana-frig","hota-orizontala","hota-verticala"],
   "Dormitor & living": ["pat","noptiera","comoda","biblioteca","tv"]
 };
 
@@ -61,7 +61,9 @@ const TYPES = {
   "coltar-buc": { label:"Colțar bucătărie", icon:"corner", dims:{w:[85,110,90],h:[82,92,85],d:[85,110,90]}, doors:[1], drawers:[0], shelves:[1,2], overhead:false, build:(p)=>cornerBase(p) },
   "corp-chiuveta": { label:"Corp chiuvetă", icon:"sink", dims:{w:[60,120,80],h:[82,92,85],d:[56,62,60]}, doors:[2], drawers:[0], shelves:[1], overhead:false, build:(p)=>sinkBase(p) },
   "corp-cuptor": { label:"Corp cuptor", icon:"oven", dims:{w:[60,70,60],h:[195,235,210],d:[58,65,60]}, doors:[1,2], drawers:[1,2,3], shelves:[0], overhead:false, build:(p)=>ovenTower(p) },
-  "coloana-frig": { label:"Coloană frigider", icon:"column", dims:{w:[60,72,60],h:[195,235,210],d:[58,65,60]}, doors:[2], drawers:[0], shelves:[0], overhead:false, build:(p)=>fridgeColumn(p) }
+  "coloana-frig": { label:"Coloană frigider", icon:"column", dims:{w:[60,72,60],h:[195,235,210],d:[58,65,60]}, doors:[2], drawers:[0], shelves:[0], overhead:false, build:(p)=>fridgeColumn(p) },
+  "hota-orizontala": { label:"Hotă orizontală", icon:"hoodH", dims:{w:[50,120,90],h:[16,50,30],d:[45,60,50]}, doors:[0], drawers:[0], shelves:[0], overhead:false, build:(p)=>hoodH(p) },
+  "hota-verticala": { label:"Hotă verticală", icon:"hoodV", dims:{w:[50,90,60],h:[60,140,95],d:[45,60,50]}, doors:[0], drawers:[0], shelves:[0], overhead:false, build:(p)=>hoodV(p) }
 };
 
 const ICONS = {
@@ -75,8 +77,22 @@ const ICONS = {
   sink:'<svg viewBox="0 0 40 34" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="8" y="9" width="24" height="20"/><ellipse cx="20" cy="13" rx="8" ry="2.4"/><line x1="20" y1="6" x2="20" y2="11"/></svg>',
   oven:'<svg viewBox="0 0 40 34" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="9" y="4" width="22" height="26"/><rect x="12" y="14" width="16" height="12"/><line x1="12" y1="9" x2="28" y2="9"/></svg>',
   column:'<svg viewBox="0 0 40 34" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="11" y="3" width="18" height="28"/><rect x="14" y="12" width="12" height="10"/></svg>',
-  bed:'<svg viewBox="0 0 40 34" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="10" width="32" height="16" rx="2"/><rect x="4" y="6" width="10" height="10" rx="2"/><line x1="4" y1="26" x2="4" y2="30"/><line x1="36" y1="26" x2="36" y2="30"/></svg>'
+  bed:'<svg viewBox="0 0 40 34" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="10" width="32" height="16" rx="2"/><rect x="4" y="6" width="10" height="10" rx="2"/><line x1="4" y1="26" x2="4" y2="30"/><line x1="36" y1="26" x2="36" y2="30"/></svg>',
+  hoodH:'<svg viewBox="0 0 40 34" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 10h28v7l-4 5H10l-4-5z"/><line x1="15" y1="26" x2="25" y2="26"/></svg>',
+  hoodV:'<svg viewBox="0 0 40 34" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="16" y="4" width="8" height="14"/><path d="M8 30h24l-6-12H14z"/></svg>'
 };
+
+/* accesorii de interior — reguli intuitive per tip (partajate de configurator + planner) */
+const ACC_LABELS={ shelf:"Raft", rail:"Bară de haine", glass:"Suport pahare", drainer:"Uscător de vase", drawer:"Sertar interior", basket:"Coș extractibil", spice:"Suport condimente", led:"Bandă LED" };
+function accLabel(kind){ return ACC_LABELS[kind]||"Raft"; }
+const ACC_ICONS={ shelf:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 11h18"/><path d="M6 11v4M18 11v4"/></svg>', rail:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18"/><path d="M12 7v2.5"/><path d="M7.5 16l4.5-6 4.5 6z"/></svg>', box:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="16" height="12" rx="2"/><path d="M4 11h16"/></svg>' };
+function accIco(kind){ return ACC_ICONS[kind]||ACC_ICONS.box; }
+const WARDROBE_TYPES=["dulap2","dulap3","dulap4","glisant"];
+const LAYOUT_TYPES=["dulap2","dulap3","dulap4","glisant","suspendat-buc","baza-buc","noptiera"];
+const KITCHEN_ACC_TYPES=["baza-buc","suspendat-buc"];
+function usesLayout(type){ return LAYOUT_TYPES.indexOf(type)>=0; }
+function accessoriesFor(type){ const isW=WARDROBE_TYPES.indexOf(type)>=0, isK=KITCHEN_ACC_TYPES.indexOf(type)>=0;
+  const out=["shelf"]; if(isW) out.push("rail"); if(isK) out.push("glass","drainer","spice"); out.push("drawer","basket","led"); return out; }
 
 /* ===== primitive de desen ===== */
 function shade(hex,amt){ const n=parseInt(hex.slice(1),16); let r=(n>>16)&255,g=(n>>8)&255,b=n&255;
@@ -220,6 +236,18 @@ function bed(p){ const {W,H,fin,body}=p; let s=""; const hbH=H*0.60;
   s+=`<rect x="2" y="${H-6}" width="8" height="6" fill="${shade(fin.base,-0.3)}"/><rect x="${W-10}" y="${H-6}" width="8" height="6" fill="${shade(fin.base,-0.3)}"/>`;
   return s; }
 
+function hoodH(p){ const {W,H,fin}=p; let s="";
+  s+=`<rect x="0" y="0" width="${W}" height="${H*0.52}" rx="3" fill="${fillOf(fin)}" stroke="${shade(fin.base,-0.25)}" stroke-width="1"/>`;
+  s+=`<polygon points="0,${H*0.52} ${W},${H*0.52} ${W*0.85},${H} ${W*0.15},${H}" fill="${shade(fin.base,-0.06)}" stroke="${shade(fin.base,-0.25)}" stroke-width="1"/>`;
+  for(let i=0;i<3;i++){ s+=`<line x1="${W*0.32}" y1="${H*0.66+i*3}" x2="${W*0.68}" y2="${H*0.66+i*3}" stroke="${shade(fin.base,-0.3)}" stroke-width="0.8"/>`; }
+  s+=`<circle cx="${W*0.28}" cy="${H*0.9}" r="1.8" fill="#ffe9a8"/><circle cx="${W*0.72}" cy="${H*0.9}" r="1.8" fill="#ffe9a8"/>`;
+  return s; }
+function hoodV(p){ const {W,H,fin}=p; let s=""; const canopyH=Math.min(H*0.34,36), chimW=W*0.36;
+  s+=`<rect x="${(W-chimW)/2}" y="0" width="${chimW}" height="${H-canopyH+2}" fill="${fillOf(fin)}" stroke="${shade(fin.base,-0.25)}" stroke-width="1"/>`;
+  s+=`<polygon points="0,${H} ${W},${H} ${W*0.72},${H-canopyH} ${W*0.28},${H-canopyH}" fill="${fillOf(fin)}" stroke="${shade(fin.base,-0.25)}" stroke-width="1"/>`;
+  for(let i=0;i<3;i++){ s+=`<line x1="${W*0.32}" y1="${H-5-i*3}" x2="${W*0.68}" y2="${H-5-i*3}" stroke="${shade(fin.base,-0.3)}" stroke-width="0.8"/>`; }
+  return s; }
+
 /* ===== defs + compunere modul ===== */
 function finishDefs(f){ let d="";
   if(f.gloss){ const gT=shade(f.base,0.34),gH=shade(f.base,0.72),gLo=shade(f.base,-0.08),gB=shade(f.base,-0.22);
@@ -237,10 +265,11 @@ function defsBlock(finishes){ let d=`<defs>`; finishes.forEach(f=>d+=finishDefs(
 /* desenează un modul în coord. unitate (0..w, 0..h). m={type,w,h,d,doors,drawers,shelves,front,body,handle,view} */
 function moduleBody(m){
   const p={W:m.w,H:m.h,fin:m.front,body:m.body,handle:m.handle,view:m.view||"closed",doors:m.doors,drawers:m.drawers,shelves:m.shelves,type:m.type,layout:m.layout};
-  let s=`<rect x="-2" y="-2" width="${m.w+4}" height="${m.h+4}" rx="4" fill="${shade(m.body.base,-0.34)}"/>`;
+  const noBox = m.type==="hota-orizontala"||m.type==="hota-verticala";
+  let s = noBox ? "" : `<rect x="-2" y="-2" width="${m.w+4}" height="${m.h+4}" rx="4" fill="${shade(m.body.base,-0.34)}"/>`;
   s+=TYPES[m.type].build(p);
-  if(m.front.gloss && (m.view||"closed")==="closed") s+=`<rect x="0" y="0" width="${m.w}" height="${m.h-6}" rx="3" fill="url(#glossSweep)" pointer-events="none"/>`;
-  if(m.type!=="pat") s+=`<rect x="0" y="${m.h-6}" width="${m.w}" height="6" fill="${shade(m.body.base,-0.3)}"/>`;
+  if(m.front.gloss && (m.view||"closed")==="closed" && !noBox) s+=`<rect x="0" y="0" width="${m.w}" height="${m.h-6}" rx="3" fill="url(#glossSweep)" pointer-events="none"/>`;
+  if(m.type!=="pat" && !noBox) s+=`<rect x="0" y="${m.h-6}" width="${m.w}" height="6" fill="${shade(m.body.base,-0.3)}"/>`;
   return s;
 }
 function overheadBody(m,ohH){ const n=m.w>150?3:2, cw=m.w/n; let s=`<rect x="-2" y="-2" width="${m.w+4}" height="${ohH+4}" rx="4" fill="${shade(m.body.base,-0.34)}"/>`;

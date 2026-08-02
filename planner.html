@@ -31,14 +31,15 @@
 .ghost-btn:hover{border-color:#2f4a37}
 .viewtog button{flex:1}
 .layout-list{display:flex;flex-direction:column;gap:6px}
-.layout-row{display:flex;align-items:center;gap:8px;background:#dbe8d9;border:1px solid #cad8c3;border-radius:10px;padding:6px 8px 6px 10px}
+.layout-row{display:flex;align-items:center;gap:8px;background:#dbe8d9;border:1px solid #cad8c3;border-radius:10px;padding:6px 8px 6px 10px;cursor:grab}
+.layout-row.dragging{opacity:.4;cursor:grabbing}
 .layout-row .lr-ico{flex:none;display:flex;align-items:center;color:#2f4a37}
 .layout-row .lr-name{flex:1;font-size:13px;font-weight:600;color:#21301f}
 .lr-btn{width:28px;height:28px;flex:none;border:1px solid #cad8c3;background:#fff;border-radius:7px;cursor:pointer;font-size:13px;color:#21301f;display:flex;align-items:center;justify-content:center}
 .lr-btn:hover:not(:disabled){background:#2f4a37;color:#f5f3ec;border-color:#2f4a37}
 .lr-btn:disabled{opacity:.3;cursor:default}
-.layout-add{display:flex;gap:8px;margin-top:9px}
-.lbtn{flex:1;border:1px dashed #b7c2b0;background:#f6f8f3;border-radius:10px;padding:9px;cursor:pointer;font-weight:600;color:#2f4a37;font-size:12.5px;font-family:inherit}
+.layout-add{display:flex;flex-wrap:wrap;gap:8px;margin-top:9px}
+.lbtn{flex:1 1 46%;border:1px dashed #b7c2b0;background:#f6f8f3;border-radius:10px;padding:9px;cursor:pointer;font-weight:600;color:#2f4a37;font-size:12.5px;font-family:inherit}
 .lbtn:hover{background:#e9efe3;border-color:#2f4a37}</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -269,7 +270,7 @@ const TEMPLATES = {
     mk("tv",{front:finById("stejar")}),
     mk("comoda",{front:finById("stejar")}) ] }
 };
-const KITCHEN_TYPES=["baza-buc","corp-chiuveta","corp-cuptor","coloana-frig","coltar-buc","suspendat-buc"];
+const KITCHEN_TYPES=["baza-buc","corp-chiuveta","corp-cuptor","coloana-frig","coltar-buc","suspendat-buc","hota-orizontala","hota-verticala"];
 const BEDROOM_TYPES=["dulap2","dulap3","dulap4","glisant","pat","noptiera","comoda","biblioteca","tv"];
 // corpuri cu interior configurabil (rafturi) — cele randate prin columnsDoors
 const P_LAYOUT_TYPES=["dulap2","dulap3","dulap4","glisant","suspendat-buc","baza-buc","noptiera"];
@@ -284,20 +285,7 @@ function defaultLayoutFor(m){ const n=Math.max(1, m.shelves||2); const arr=[]; i
 function ensureLayout(m){ if(!m.layout) m.layout=defaultLayoutFor(m); return m.layout; }
 const P_SHELF_ICO='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 11h18"/><path d="M6 11v4M18 11v4"/></svg>';
 const P_RAIL_ICO='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18"/><path d="M12 7v2.5"/><path d="M7.5 16l4.5-6 4.5 6z"/></svg>';
-const P_ACC_ICO='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="16" height="12" rx="2"/><path d="M4 11h16"/></svg>';
-const P_ACCESSORIES=[
-  {kind:"shelf",label:"Raft",cat:"all"},
-  {kind:"rail",label:"Bară de haine",cat:"wardrobe"},
-  {kind:"glass",label:"Suport pahare",cat:"all"},
-  {kind:"drainer",label:"Uscător de vase",cat:"kitchen"},
-  {kind:"drawer",label:"Sertar interior",cat:"all"},
-  {kind:"basket",label:"Coș extractibil",cat:"all"},
-  {kind:"spice",label:"Suport condimente",cat:"kitchen"},
-  {kind:"led",label:"Bandă LED",cat:"all"}
-];
-const P_KITCHEN_INTERIOR=["baza-buc","suspendat-buc","corp-cuptor","corp-chiuveta","coloana-frig","coltar-buc"];
-function accLabel(kind){ const a=P_ACCESSORIES.find(x=>x.kind===kind); return a?a.label:"Raft"; }
-function accIco(kind){ return kind==="shelf"?P_SHELF_ICO:(kind==="rail"?P_RAIL_ICO:P_ACC_ICO); }
+/* accLabel/accIco/accessoriesFor vin din furniture-engine.js (comune cu configuratorul) */
 
 let room={ name:"Bucătărie dreaptă", kind:"kitchen", wall:true, modules:[] };
 let selectedIds=[], allTarget="front", selTarget="front", bulkTarget="front";
@@ -493,17 +481,20 @@ function buildViewToggle(m){ const c=el("selView"); if(!canOpen(m)){ c.style.dis
 }
 function buildInteriorEditor(m){ const g=el("selInteriorG"); if(!usesInterior(m)){ g.style.display="none"; return; }
   g.style.display="block"; ensureLayout(m);
-  const list=el("selLayoutList"); list.innerHTML=""; const L=m.layout; const isW=P_WARDROBE.includes(m.type); const isK=P_KITCHEN_INTERIOR.includes(m.type);
+  const list=el("selLayoutList"); list.innerHTML=""; const L=m.layout;
   if(!L.length){ list.innerHTML='<div class="cta-note" style="text-align:left; margin:0">Corp gol — adaugă accesorii mai jos.</div>'; }
-  L.forEach((it,i)=>{ const row=document.createElement("div"); row.className="layout-row";
-    row.innerHTML=`<span class="lr-ico">${accIco(it.kind)}</span><span class="lr-name">${accLabel(it.kind)}</span>`;
+  L.forEach((it,i)=>{ const row=document.createElement("div"); row.className="layout-row"; row.draggable=true;
+    row.innerHTML=`<span class="lr-ico" title="Trage ca să muți">${accIco(it.kind)}</span><span class="lr-name">${accLabel(it.kind)}</span>`;
+    row.addEventListener("dragstart",e=>{ e.dataTransfer.setData("text/plain",String(i)); e.dataTransfer.effectAllowed="move"; row.classList.add("dragging"); });
+    row.addEventListener("dragend",()=>row.classList.remove("dragging"));
+    row.addEventListener("dragover",e=>{ e.preventDefault(); e.dataTransfer.dropEffect="move"; });
+    row.addEventListener("drop",e=>{ e.preventDefault(); const from=parseInt(e.dataTransfer.getData("text/plain"),10); if(!isNaN(from)&&from!==i){ const it2=L.splice(from,1)[0]; L.splice(i,0,it2); refreshInt(m); } });
     row.appendChild(mkIntBtn("↑",()=>{ [L[i-1],L[i]]=[L[i],L[i-1]]; refreshInt(m); }, i===0));
     row.appendChild(mkIntBtn("↓",()=>{ [L[i+1],L[i]]=[L[i],L[i+1]]; refreshInt(m); }, i===L.length-1));
     row.appendChild(mkIntBtn("✕",()=>{ L.splice(i,1); refreshInt(m); }, false));
     list.appendChild(row); });
   const add=el("selLayoutAdd"); add.innerHTML="";
-  P_ACCESSORIES.forEach(a=>{ if(a.cat==="wardrobe"&&!isW) return; if(a.cat==="kitchen"&&!isK) return;
-    const b=document.createElement("button"); b.className="lbtn"; b.textContent="+ "+a.label; b.onclick=()=>{ L.push({kind:a.kind}); refreshInt(m); }; add.appendChild(b); });
+  accessoriesFor(m.type).forEach(kind=>{ const b=document.createElement("button"); b.className="lbtn"; b.textContent="+ "+accLabel(kind); b.draggable=false; b.onclick=()=>{ L.push({kind}); refreshInt(m); }; add.appendChild(b); });
 }
 function mkIntBtn(txt,fn,dis){ const b=document.createElement("button"); b.className="lr-btn"; b.textContent=txt; b.disabled=!!dis; if(!dis) b.onclick=fn; return b; }
 function refreshInt(m){ m.open=true; renderScene(); renderPanel(); }
