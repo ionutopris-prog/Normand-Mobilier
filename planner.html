@@ -3,7 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Amenajează — Normand Mobilier</title>
+<title>Amenajează o cameră — mobilă la comandă | Normand Mobilier</title>
+<meta name="description" content="Amenajează-ți camera cu mobilă la comandă: pornești de la un șablon, schimbi corpurile, culorile și dimensiunile, apoi ceri oferta. Normand Mobilier, Galați.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://normandmobilier.ro/planner.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Normand Mobilier">
+<meta property="og:title" content="Amenajează o cameră întreagă — mobilă la comandă">
+<meta property="og:description" content="Pornește de la un șablon, schimbă corpurile, culorile și dimensiunile, apoi cere oferta pentru toată amenajarea.">
+<meta property="og:url" content="https://normandmobilier.ro/planner.html">
+<meta property="og:image" content="https://normandmobilier.ro/images/og-image.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Amenajează o cameră cu mobilă la comandă — Normand Mobilier">
+<meta property="og:locale" content="ro_RO">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Amenajează o cameră întreagă — mobilă la comandă">
+<meta name="twitter:description" content="Pornește de la un șablon, schimbă corpurile și culorile, apoi cere oferta.">
+<meta name="twitter:image" content="https://normandmobilier.ro/images/og-image.jpg">
+<meta name="twitter:image:alt" content="Amenajează o cameră cu mobilă la comandă — Normand Mobilier">
+<meta name="theme-color" content="#2f4a37">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232f4a37'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' font-weight='700' text-anchor='middle' fill='%23f5f3ec'%3EN%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -398,6 +418,7 @@ function init(){
   document.querySelectorAll('.subtabs button[data-all]').forEach(b=>b.onclick=()=>{ allTarget=b.dataset.all; document.querySelectorAll('.subtabs button[data-all]').forEach(x=>x.classList.toggle("active",x===b)); });
   buildAllSwatches();
   loadTemplate("Bucătărie dreaptă");
+  try { if (navigator.sendBeacon) navigator.sendBeacon("trimite-oferta.php?ping=open"); else fetch("trimite-oferta.php?ping=open").catch(function(){}); } catch(e) {}
 }
 init();
 </script>

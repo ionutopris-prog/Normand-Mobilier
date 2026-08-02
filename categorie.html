@@ -3,7 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Categorie — Normand Mobilier</title>
+<title>Mobilă la comandă Galați · Brăila | Normand Mobilier</title>
+<meta name="description" content="Lucrări de mobilă la comandă din Galați și Brăila: bucătării, dormitoare și corpuri de living, proiectate, produse și montate exact pe măsura casei tale.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://normandmobilier.ro/categorie.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Normand Mobilier">
+<meta property="og:title" content="Lucrări și categorii — mobilă la comandă în Galați · Brăila">
+<meta property="og:description" content="Bucătării, dormitoare și corpuri de living la comandă, proiectate și montate exact pe măsura casei tale.">
+<meta property="og:url" content="https://normandmobilier.ro/categorie.html">
+<meta property="og:image" content="https://normandmobilier.ro/images/og-image.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mobilă la comandă — Normand Mobilier, Galați · Brăila">
+<meta property="og:locale" content="ro_RO">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lucrări și categorii — mobilă la comandă în Galați · Brăila">
+<meta name="twitter:description" content="Bucătării, dormitoare și corpuri de living la comandă, exact pe măsura casei tale.">
+<meta name="twitter:image" content="https://normandmobilier.ro/images/og-image.jpg">
+<meta name="twitter:image:alt" content="Mobilă la comandă — Normand Mobilier, Galați · Brăila">
+<meta name="theme-color" content="#2f4a37">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232f4a37'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' font-weight='700' text-anchor='middle' fill='%23f5f3ec'%3EN%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -329,8 +349,40 @@
     ];
 
     const params = new URLSearchParams(window.location.search);
-    const titlu = params.get("titlu") || "Categorie";
-    document.title = titlu + " — Normand Mobilier";
+    const KNOWN = ["Dormitoare", "Bucătării", "Corpuri de mobilă"];
+    const rawTitlu = params.get("titlu");
+    const titlu = rawTitlu || "Mobilă la comandă";
+    // meta descriptions scurte (≤155c), cu orașul devreme — decuplate de textul vizibil
+    const categoryMeta = {
+      "Dormitoare": "Dormitoare la comandă în Galați și Brăila: paturi cu tăblie tapițată și dulapuri cu uși glisante, croite fix pe dimensiunile camerei.",
+      "Bucătării": "Bucătării la comandă în Galați și Brăila, în L sau U, cu insulă și blat rezistent — corpuri croite pe pereți și pe electrocasnice.",
+      "Corpuri de mobilă": "Corpuri de mobilă la comandă în Galați și Brăila: pereți de living, biblioteci și comode, croite pe lungimea pereților tăi."
+    };
+    const setMeta = (sel, val) => { const m = document.querySelector(sel); if (m) m.setAttribute("content", val); };
+    const setLink = (sel, val) => { const l = document.querySelector(sel); if (l) l.setAttribute("href", val); };
+    if (rawTitlu && KNOWN.includes(titlu)) {
+      const canonicalUrl = "https://normandmobilier.ro/categorie.html?titlu=" + encodeURIComponent(titlu);
+      document.title = titlu + " la comandă în Galați | Normand Mobilier";
+      const descTxt = categoryMeta[titlu] || (titlu + " la comandă în Galați și Brăila, exact pe măsura casei tale.");
+      setMeta('meta[name="description"]', descTxt);
+      setMeta('meta[property="og:title"]', titlu + " la comandă în Galați · Brăila");
+      setMeta('meta[name="twitter:title"]', titlu + " la comandă în Galați · Brăila");
+      setMeta('meta[property="og:description"]', descTxt);
+      setMeta('meta[name="twitter:description"]', descTxt);
+      setMeta('meta[property="og:url"]', canonicalUrl);
+      setLink('link[rel="canonical"]', canonicalUrl);
+      // BreadcrumbList pentru rich result (Acasă → Mobilier → categorie)
+      const crumb = { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://normandmobilier.ro/" },
+        { "@type": "ListItem", "position": 2, "name": "Mobilier", "item": "https://normandmobilier.ro/index.html#colectie" },
+        { "@type": "ListItem", "position": 3, "name": titlu, "item": canonicalUrl }
+      ] };
+      const s = document.createElement("script"); s.type = "application/ld+json"; s.textContent = JSON.stringify(crumb); document.head.appendChild(s);
+    } else if (rawTitlu) {
+      // categorie necunoscută (link greșit): nu o indexa, canonical spre homepage
+      setLink('link[rel="canonical"]', "https://normandmobilier.ro/");
+      setMeta('meta[name="robots"]', "noindex, follow");
+    }
     document.getElementById("coverTitle").textContent = titlu;
     document.getElementById("categoryTitle").textContent = titlu;
     document.getElementById("breadcrumbTitle").textContent = titlu;
@@ -384,6 +436,7 @@
         product.photos.forEach((src, i) => {
           const t = document.createElement("img");
           t.src = src;
+          t.alt = product.name + " — poza " + (i + 1);
           t.className = i === currentPhoto ? "active" : "";
           t.addEventListener("click", () => { currentPhoto = i; renderLightbox(); });
           lbThumbs.appendChild(t);

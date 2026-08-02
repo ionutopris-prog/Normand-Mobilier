@@ -13,6 +13,27 @@ $SITE    = 'Normand Mobilier';
 $TEL      = '0749 572 087';
 $ADRESA   = 'Str. Brăilei 256, Bl. G6A, parter — Galați';
 
+/* ---- contor persistent (stocat în afara public_html, ferit de deploy) ---- */
+function np_counter_file() {
+  $cands = [ dirname(__DIR__) . '/normand-contor.json', __DIR__ . '/.normand-contor.json' ];
+  foreach ($cands as $c) { if (file_exists($c) || is_writable(dirname($c))) return $c; }
+  return $cands[1];
+}
+function np_counter_read() {
+  $f = np_counter_file();
+  if (is_readable($f)) { $j = json_decode((string)@file_get_contents($f), true); if (is_array($j)) return array_merge(['orders'=>0,'opens'=>0], $j); }
+  return ['orders'=>0, 'opens'=>0];
+}
+function np_counter_bump($key) {
+  $f = np_counter_file(); $c = np_counter_read(); $c[$key] = ((int)($c[$key] ?? 0)) + 1;
+  @file_put_contents($f, json_encode($c), LOCK_EX); return $c;
+}
+
+/* ping „s-a deschis configuratorul/planner-ul" (sendBeacon, orice metodă) */
+if (isset($_GET['ping']) && $_GET['ping'] === 'open') { np_counter_bump('opens'); echo json_encode(['ok'=>true]); exit; }
+/* citirea contorului: comenzi trimise + deschideri */
+if (isset($_GET['count'])) { echo json_encode(array_merge(['ok'=>true], np_counter_read())); exit; }
+
 /* GET = verificare că PHP rulează (nu trimite nimic) */
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
   echo json_encode(['ok'=>true, 'service'=>'normand-oferta', 'mail'=>function_exists('mail')]);
@@ -134,7 +155,7 @@ $htmlAtelier = order_html([
   'contactBlock' => '<div style="background:#f3f6ef;border-radius:10px;padding:14px 16px;font-size:13px;color:#42513f">Sună clientul pentru o măsurătoare și o ofertă. Datele de contact sunt mai sus.</div>',
 ]);
 $okAtelier = send_mail($ATELIER, $FROM, $SITE, "Comandă nouă — {$title} ({$name})", $htmlAtelier, $attach);
-if ($okAtelier) { $hist[] = $now; @file_put_contents($tf, json_encode($hist)); }
+if ($okAtelier) { $hist[] = $now; @file_put_contents($tf, json_encode($hist)); np_counter_bump('orders'); }
 
 /* email de confirmare către CLIENT (dacă a lăsat email valid) */
 $okClient = false;
