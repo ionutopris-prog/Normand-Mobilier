@@ -102,6 +102,22 @@ function columnsDoorsSub(x0,y0,w,h,n,fin,hk){ let s=""; const colW=w/n;
   for(let i=0;i<n;i++){ const x=x0+i*colW; s+=panel(x,y0,colW,h,fin); const hx=(i<n-1)?x+colW-8:x+8; s+=handle(hx,y0+h/2,hk,fin,true); } return s; }
 function drawersStackSub(x0,y0,w,h,n,fin,hk){ let s=""; const dh=h/n; for(let i=0;i<n;i++){ const y=y0+i*dh; s+=panel(x0,y,w,dh,fin); s+=handle(x0+w/2,y+dh/2,hk,fin,false);} return s; }
 
+function interiorAccessory(kind, x, yy, colW, fin, body){ let s=""; const cx=x+colW/2;
+  if(kind==="rail"){ s+=`<rect x="${x+5}" y="${yy}" width="${colW-10}" height="2.6" rx="1.3" fill="#b9beba"/>`;
+    for(let h=0;h<3;h++){ const hx=x+colW*0.28+h*colW*0.22; s+=`<rect x="${hx}" y="${yy}" width="1.4" height="15" fill="#9aa09b"/><rect x="${hx-5}" y="${yy+11}" width="11" height="19" rx="2" fill="${shade(fin.base,0.12)}" opacity="0.5"/>`; } return s; }
+  if(kind==="glass"){ s+=`<rect x="${x+4}" y="${yy}" width="${colW-8}" height="3" fill="${shade(body.base,-0.06)}"/>`;
+    for(let g=0;g<3;g++){ const gx=x+colW*0.3+g*colW*0.2; s+=`<line x1="${gx}" y1="${yy+3}" x2="${gx}" y2="${yy+8}" stroke="#b9beba" stroke-width="1"/><path d="M${gx-4} ${yy+8} Q${gx} ${yy+17} ${gx+4} ${yy+8} Z" fill="#d7e6ee" opacity="0.75" stroke="#a9bcc4" stroke-width="0.6"/>`; } return s; }
+  if(kind==="drainer"){ s+=`<rect x="${x+5}" y="${yy+17}" width="${colW-10}" height="3" rx="1.5" fill="#c4c9c8"/>`;
+    for(let d=0; x+8+d*9 < x+colW-6; d++){ const dx=x+8+d*9; s+=`<line x1="${dx}" y1="${yy}" x2="${dx}" y2="${yy+17}" stroke="#bcc1c0" stroke-width="1.3"/>`; }
+    s+=`<ellipse cx="${x+colW*0.4}" cy="${yy+9}" rx="2.4" ry="9" fill="#e9eeeb" stroke="#c4c9c8" stroke-width="0.7"/><ellipse cx="${x+colW*0.6}" cy="${yy+9}" rx="2.4" ry="9" fill="#eef1ee" stroke="#c4c9c8" stroke-width="0.7"/>`; return s; }
+  if(kind==="drawer"){ s+=`<rect x="${x+4}" y="${yy}" width="${colW-8}" height="14" rx="2" fill="${shade(body.base,-0.3)}"/><rect x="${x+4}" y="${yy}" width="${colW-8}" height="4.5" rx="2" fill="${shade(body.base,-0.12)}"/><rect x="${cx-6}" y="${yy+7}" width="12" height="2" rx="1" fill="${shade(body.base,-0.2)}"/>`; return s; }
+  if(kind==="basket"){ s+=`<path d="M${x+5} ${yy} L${x+colW-5} ${yy} L${x+colW-8} ${yy+15} L${x+8} ${yy+15} Z" fill="${shade(body.base,-0.34)}" stroke="#9aa09b" stroke-width="1"/>`;
+    for(let w=1;w<4;w++){ s+=`<line x1="${x+5+(colW-10)*w/4}" y1="${yy}" x2="${x+8+(colW-16)*w/4}" y2="${yy+15}" stroke="#8f948f" stroke-width="0.7"/>`; }
+    s+=`<line x1="${x+6}" y1="${yy+7.5}" x2="${x+colW-6}" y2="${yy+7.5}" stroke="#8f948f" stroke-width="0.7"/>`; return s; }
+  if(kind==="spice"){ s+=`<rect x="${x+4}" y="${yy+9}" width="${colW-8}" height="2.6" fill="${shade(body.base,-0.06)}"/>`; const cols=["#c07b4a","#8a9a5b","#b23b3b","#d8b24e"];
+    for(let j=0;j<4;j++){ const jx=x+7+j*((colW-14)/3); s+=`<rect x="${jx-2.5}" y="${yy}" width="5" height="9" rx="1" fill="${cols[j%4]}" opacity="0.85"/><rect x="${jx-2.5}" y="${yy}" width="5" height="2" fill="#6a6e70"/>`; } return s; }
+  if(kind==="led"){ s+=`<rect x="${x+4}" y="${yy}" width="${colW-8}" height="6" rx="3" fill="#fff3c4" opacity="0.35"/><rect x="${x+5}" y="${yy+1.5}" width="${colW-10}" height="2" rx="1" fill="#ffdf7e"/>`; return s; }
+  s+=`<rect x="${x+4}" y="${yy}" width="${colW-8}" height="3.4" rx="1" fill="${shade(body.base,-0.06)}"/>`; return s; }
 function columnsDoors(p,n){ const {W,H,fin,body,handle:hk,view}=p; let s=""; const colW=W/n;
   for(let i=0;i<n;i++){ const x=i*colW;
     if(view==="open"){
@@ -109,11 +125,7 @@ function columnsDoors(p,n){ const {W,H,fin,body,handle:hk,view}=p; let s=""; con
       if(p.layout && p.layout.length){
         // interior configurat pe elemente (rafturi + bare), distribuite egal de sus în jos
         const top=12, bot=H-8, nL=p.layout.length;
-        for(let li=0; li<nL; li++){ const yy=top+(bot-top)*(li+1)/(nL+1); const it=p.layout[li];
-          if(it.kind==="rail"){ s+=`<rect x="${x+5}" y="${yy}" width="${colW-10}" height="2.6" rx="1.3" fill="#b9beba"/>`;
-            for(let hh=0;hh<3;hh++){ const hx=x+colW*0.28+hh*colW*0.22; s+=`<rect x="${hx}" y="${yy}" width="1.4" height="15" fill="#9aa09b"/><rect x="${hx-5}" y="${yy+11}" width="11" height="19" rx="2" fill="${shade(fin.base,0.12)}" opacity="0.5"/>`; } }
-          else { s+=`<rect x="${x+4}" y="${yy}" width="${colW-8}" height="3.4" rx="1" fill="${shade(body.base,-0.06)}"/>`; }
-        }
+        for(let li=0; li<nL; li++){ const yy=top+(bot-top)*(li+1)/(nL+1); s+=interiorAccessory(p.layout[li].kind, x, yy, colW, fin, body); }
       } else {
         const rail=(p.rail!==undefined)?p.rail:(p.type&&p.type.startsWith("dulap")); const shelfTop=rail?H*0.30:6;
         const nSh=p.shelves, zoneTop=shelfTop, zoneBot=H-6-(p.drawers>0?Math.min(p.drawers,3)*10:0);

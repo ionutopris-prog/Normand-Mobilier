@@ -284,6 +284,20 @@ function defaultLayoutFor(m){ const n=Math.max(1, m.shelves||2); const arr=[]; i
 function ensureLayout(m){ if(!m.layout) m.layout=defaultLayoutFor(m); return m.layout; }
 const P_SHELF_ICO='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 11h18"/><path d="M6 11v4M18 11v4"/></svg>';
 const P_RAIL_ICO='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18"/><path d="M12 7v2.5"/><path d="M7.5 16l4.5-6 4.5 6z"/></svg>';
+const P_ACC_ICO='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="16" height="12" rx="2"/><path d="M4 11h16"/></svg>';
+const P_ACCESSORIES=[
+  {kind:"shelf",label:"Raft",cat:"all"},
+  {kind:"rail",label:"Bară de haine",cat:"wardrobe"},
+  {kind:"glass",label:"Suport pahare",cat:"all"},
+  {kind:"drainer",label:"Uscător de vase",cat:"kitchen"},
+  {kind:"drawer",label:"Sertar interior",cat:"all"},
+  {kind:"basket",label:"Coș extractibil",cat:"all"},
+  {kind:"spice",label:"Suport condimente",cat:"kitchen"},
+  {kind:"led",label:"Bandă LED",cat:"all"}
+];
+const P_KITCHEN_INTERIOR=["baza-buc","suspendat-buc","corp-cuptor","corp-chiuveta","coloana-frig","coltar-buc"];
+function accLabel(kind){ const a=P_ACCESSORIES.find(x=>x.kind===kind); return a?a.label:"Raft"; }
+function accIco(kind){ return kind==="shelf"?P_SHELF_ICO:(kind==="rail"?P_RAIL_ICO:P_ACC_ICO); }
 
 let room={ name:"Bucătărie dreaptă", kind:"kitchen", wall:true, modules:[] };
 let selectedIds=[], allTarget="front", selTarget="front", bulkTarget="front";
@@ -479,17 +493,17 @@ function buildViewToggle(m){ const c=el("selView"); if(!canOpen(m)){ c.style.dis
 }
 function buildInteriorEditor(m){ const g=el("selInteriorG"); if(!usesInterior(m)){ g.style.display="none"; return; }
   g.style.display="block"; ensureLayout(m);
-  const list=el("selLayoutList"); list.innerHTML=""; const L=m.layout; const isW=P_WARDROBE.includes(m.type);
-  if(!L.length){ list.innerHTML='<div class="cta-note" style="text-align:left; margin:0">Corp gol — adaugă un raft'+(isW?' sau o bară':'')+'.</div>'; }
+  const list=el("selLayoutList"); list.innerHTML=""; const L=m.layout; const isW=P_WARDROBE.includes(m.type); const isK=P_KITCHEN_INTERIOR.includes(m.type);
+  if(!L.length){ list.innerHTML='<div class="cta-note" style="text-align:left; margin:0">Corp gol — adaugă accesorii mai jos.</div>'; }
   L.forEach((it,i)=>{ const row=document.createElement("div"); row.className="layout-row";
-    row.innerHTML=`<span class="lr-ico">${it.kind==="rail"?P_RAIL_ICO:P_SHELF_ICO}</span><span class="lr-name">${it.kind==="rail"?"Bară de haine":"Raft"}</span>`;
+    row.innerHTML=`<span class="lr-ico">${accIco(it.kind)}</span><span class="lr-name">${accLabel(it.kind)}</span>`;
     row.appendChild(mkIntBtn("↑",()=>{ [L[i-1],L[i]]=[L[i],L[i-1]]; refreshInt(m); }, i===0));
     row.appendChild(mkIntBtn("↓",()=>{ [L[i+1],L[i]]=[L[i],L[i+1]]; refreshInt(m); }, i===L.length-1));
     row.appendChild(mkIntBtn("✕",()=>{ L.splice(i,1); refreshInt(m); }, false));
     list.appendChild(row); });
   const add=el("selLayoutAdd"); add.innerHTML="";
-  const sb=document.createElement("button"); sb.className="lbtn"; sb.textContent="+ Raft"; sb.onclick=()=>{ L.push({kind:"shelf"}); refreshInt(m); }; add.appendChild(sb);
-  if(isW){ const rb=document.createElement("button"); rb.className="lbtn"; rb.textContent="+ Bară de haine"; rb.onclick=()=>{ L.push({kind:"rail"}); refreshInt(m); }; add.appendChild(rb); }
+  P_ACCESSORIES.forEach(a=>{ if(a.cat==="wardrobe"&&!isW) return; if(a.cat==="kitchen"&&!isK) return;
+    const b=document.createElement("button"); b.className="lbtn"; b.textContent="+ "+a.label; b.onclick=()=>{ L.push({kind:a.kind}); refreshInt(m); }; add.appendChild(b); });
 }
 function mkIntBtn(txt,fn,dis){ const b=document.createElement("button"); b.className="lr-btn"; b.textContent=txt; b.disabled=!!dis; if(!dis) b.onclick=fn; return b; }
 function refreshInt(m){ m.open=true; renderScene(); renderPanel(); }
@@ -525,7 +539,7 @@ function buildAllSwatches(){ const g=el("allSw"); g.innerHTML="";
 /* ===== ofertă ===== */
 function updateOffer(){
   const items=[]; room.modules.forEach(m=>{ if(!m.gap) items.push(m); if(room.wall && m.wall && m.wall.present) items.push(m.wall); });
-  let lines=items.map((m,i)=>{ const interior=(usesInterior(m)&&m.layout&&m.layout.length)?`, interior: ${m.layout.map(it=>it.kind==="rail"?"bară":"raft").join(", ")}`:"";
+  let lines=items.map((m,i)=>{ const interior=(usesInterior(m)&&m.layout&&m.layout.length)?`, interior: ${m.layout.map(it=>accLabel(it.kind).toLowerCase()).join(", ")}`:"";
     const suf=m.isWall?" (suspendat)":"";
     return `${i+1}. ${TYPES[m.type].label}${suf} — ${m.w}×${m.h}×${m.d} cm, fronturi ${m.front.name}`+(m.body.id!==m.front.id?`, corp ${m.body.name}`:"")+(m.drawers?`, ${m.drawers} ${m.drawers===1?"sertar":"sertare"}`:(m.doors?`, ${m.doors} ${m.doors===1?"ușă":"uși"}`:""))+`, mâner ${handleName(m.handle).toLowerCase()}`+interior; }).join("\n");
   const plain=`Bună ziua,\n\nAș dori o ofertă pentru amenajarea „${room.name}”:\n\n${lines}\n\nAștept o ofertă după o măsurătoare. Mulțumesc!`;
