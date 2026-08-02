@@ -199,7 +199,7 @@ function defsBlock(finishes){ let d=`<defs>`; finishes.forEach(f=>d+=finishDefs(
 
 /* desenează un modul în coord. unitate (0..w, 0..h). m={type,w,h,d,doors,drawers,shelves,front,body,handle,view} */
 function moduleBody(m){
-  const p={W:m.w,H:m.h,fin:m.front,body:m.body,handle:m.handle,view:m.view||"closed",doors:m.doors,drawers:m.drawers,shelves:m.shelves,type:m.type};
+  const p={W:m.w,H:m.h,fin:m.front,body:m.body,handle:m.handle,view:m.view||"closed",doors:m.doors,drawers:m.drawers,shelves:m.shelves,type:m.type,layout:m.layout};
   let s=`<rect x="-2" y="-2" width="${m.w+4}" height="${m.h+4}" rx="4" fill="${shade(m.body.base,-0.34)}"/>`;
   s+=TYPES[m.type].build(p);
   if(m.front.gloss && (m.view||"closed")==="closed") s+=`<rect x="0" y="0" width="${m.w}" height="${m.h-6}" rx="3" fill="url(#glossSweep)" pointer-events="none"/>`;

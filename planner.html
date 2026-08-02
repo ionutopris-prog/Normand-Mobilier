@@ -25,7 +25,21 @@
 <meta name="twitter:image:alt" content="Amenajează o cameră cu mobilă la comandă — Normand Mobilier">
 <meta name="theme-color" content="#2f4a37">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232f4a37'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' font-weight='700' text-anchor='middle' fill='%23cf9a4e'%3EN%3C/text%3E%3C/svg%3E">
-<style>a.brand{align-items:center}.brand-words{display:inline-flex;align-items:baseline;gap:9px}.brand-logo{width:30px;height:30px;border-radius:7px;flex:none;display:block}</style>
+<style>a.brand{align-items:center}.brand-words{display:inline-flex;align-items:baseline;gap:9px}.brand-logo{width:30px;height:30px;border-radius:7px;flex:none;display:block}
+.sel-actions{display:flex;gap:8px}
+.ghost-btn{border:1px solid #cad8c3;background:#dbe8d9;color:#21301f;border-radius:8px;padding:7px 12px;font-size:12.5px;font-weight:600;cursor:pointer;font-family:inherit}
+.ghost-btn:hover{border-color:#2f4a37}
+.viewtog button{flex:1}
+.layout-list{display:flex;flex-direction:column;gap:6px}
+.layout-row{display:flex;align-items:center;gap:8px;background:#dbe8d9;border:1px solid #cad8c3;border-radius:10px;padding:6px 8px 6px 10px}
+.layout-row .lr-ico{flex:none;display:flex;align-items:center;color:#2f4a37}
+.layout-row .lr-name{flex:1;font-size:13px;font-weight:600;color:#21301f}
+.lr-btn{width:28px;height:28px;flex:none;border:1px solid #cad8c3;background:#fff;border-radius:7px;cursor:pointer;font-size:13px;color:#21301f;display:flex;align-items:center;justify-content:center}
+.lr-btn:hover:not(:disabled){background:#2f4a37;color:#f5f3ec;border-color:#2f4a37}
+.lr-btn:disabled{opacity:.3;cursor:default}
+.layout-add{display:flex;gap:8px;margin-top:9px}
+.lbtn{flex:1;border:1px dashed #b7c2b0;background:#f6f8f3;border-radius:10px;padding:9px;cursor:pointer;font-weight:600;color:#2f4a37;font-size:12.5px;font-family:inherit}
+.lbtn:hover{background:#e9efe3;border-color:#2f4a37}</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -122,7 +136,7 @@
       <div class="stage-head">
         <div class="eyebrow">Amenajare · cameră întreagă</div>
         <h1 id="roomTitle">Bucătărie dreaptă</h1>
-        <div class="sub">Click pe un corp ca să-l modifici · trage-l ca să-l muți · adaugă corpuri noi.</div>
+        <div class="sub">Click = alegi un corp · <b>Shift/⌘+click</b> = mai multe deodată · trage = mută · butonul verde = deschide interiorul.</div>
       </div>
       <div class="viewer" id="viewer"></div>
       <div class="stage-foot">
@@ -142,7 +156,8 @@
       <div class="group" id="editGroup">
         <div class="empty" id="emptyHint">Dă click pe un corp din desen ca să-i schimbi tipul, culoarea și dimensiunile.</div>
         <div id="editPanel" style="display:none">
-          <div class="sel-head"><h3 id="selTitle">Corp</h3><button class="del-btn" id="delBtn">Șterge</button></div>
+          <div class="sel-head"><h3 id="selTitle">Corp</h3><div class="sel-actions"><button class="ghost-btn" id="pullBtn" title="Scoate corpul și lasă spațiul gol">Scoate</button><button class="del-btn" id="delBtn">Șterge</button></div></div>
+          <div class="seg viewtog" id="selView" style="margin-bottom:16px; display:none"></div>
           <div class="glabel">Schimbă tipul de corp</div>
           <div class="type-grid" id="selTypes" style="margin-bottom:16px"></div>
           <div class="glabel">Dimensiuni</div>
@@ -156,6 +171,29 @@
           <div class="swatch-name" id="selSwName">Alb</div>
           <div class="glabel" style="margin-top:16px">Mâner</div>
           <div class="seg" id="selHandle"></div>
+          <div class="group" id="selInteriorG" style="margin-top:18px; display:none">
+            <div class="glabel">Interior — rafturi & bare</div>
+            <div id="selLayoutList" class="layout-list"></div>
+            <div class="layout-add" id="selLayoutAdd"></div>
+            <div class="cta-note" style="text-align:left; margin-top:7px">Mută cu ↑ ↓, scoate cu ✕. Se văd când corpul e deschis.</div>
+          </div>
+        </div>
+        <div id="gapPanel" style="display:none">
+          <div class="sel-head"><h3>Spațiu liber</h3></div>
+          <p class="cta-note" style="text-align:left; margin-top:0">Ai scos corpul de aici și a rămas un gol. Îl poți umple la loc sau închide (corpurile se lipesc).</p>
+          <div class="field" data-dim="gw"><div class="frow"><span class="fname">Lățime gol</span><span class="fval"><span class="dv" id="gapWv">60</span> cm</span></div><input type="range" id="rngGapW" min="30" max="180" step="5"></div>
+          <button class="btn-ghost" id="gapFillBtn" style="width:100%">+ Umple cu un corp</button>
+          <button class="del-btn" id="gapDelBtn" style="width:100%; margin-top:8px">Închide golul</button>
+        </div>
+        <div id="bulkPanel" style="display:none">
+          <div class="sel-head"><h3 id="bulkTitle">2 corpuri</h3><button class="del-btn" id="bulkDelBtn">Șterge</button></div>
+          <div class="glabel">Culoare — se aplică pe toate</div>
+          <div class="subtabs"><button data-bw="front" class="active">Fronturi</button><button data-bw="body">Corp</button></div>
+          <div class="swatches" id="bulkSw"></div>
+          <div class="glabel" style="margin-top:14px">Mâner (toate)</div>
+          <div class="seg" id="bulkHandle"></div>
+          <div class="seg viewtog" id="bulkView" style="margin-top:14px"></div>
+          <div class="cta-note" style="text-align:left; margin-top:8px">Ține <b>Shift</b> (sau <b>⌘</b>) și dă click pe corpuri ca să le adaugi/scoți din selecție — așa faci fronturi în zebră, dalmațian, orice combinație.</div>
         </div>
       </div>
 
@@ -190,7 +228,7 @@ const WALL_BOTTOM=145, WALL_H=70;
 function mk(type,opts){ const t=TYPES[type]; return Object.assign({ id:uid(), type,
   w:t.dims.w[2], h:t.dims.h[2], d:t.dims.d[2],
   doors:(t.doors.find(v=>v>0)||t.doors[0]), drawers:t.drawers[0], shelves:t.shelves[Math.floor(t.shelves.length/2)],
-  overhead:0, front:finById("alb"), body:finById("alb"), handle:"bara" }, opts||{}); }
+  overhead:0, front:finById("alb"), body:finById("alb"), handle:"bara", open:false, gap:false, layout:null }, opts||{}); }
 
 const TEMPLATES = {
   "Bucătărie dreaptă": { kind:"kitchen", wall:true, make:()=>[
@@ -233,14 +271,23 @@ const TEMPLATES = {
 };
 const KITCHEN_TYPES=["baza-buc","corp-chiuveta","corp-cuptor","coloana-frig","coltar-buc","suspendat-buc"];
 const BEDROOM_TYPES=["dulap2","dulap3","dulap4","glisant","pat","noptiera","comoda","biblioteca","tv"];
+// corpuri cu interior configurabil (rafturi) — cele randate prin columnsDoors
+const P_LAYOUT_TYPES=["dulap2","dulap3","dulap4","glisant","suspendat-buc","baza-buc","noptiera"];
+const P_WARDROBE=["dulap2","dulap3","dulap4","glisant"]; // permit și bară de haine
+function usesInterior(m){ return m && !m.gap && P_LAYOUT_TYPES.includes(m.type) && (m.drawers||0)===0; }
+function canOpen(m){ return m && !m.gap && m.type!=="pat"; }
+function defaultLayoutFor(m){ const n=Math.max(1, m.shelves||2); const arr=[]; if(P_WARDROBE.includes(m.type)) arr.push({kind:"rail"}); for(let i=0;i<n;i++) arr.push({kind:"shelf"}); return arr; }
+function ensureLayout(m){ if(!m.layout) m.layout=defaultLayoutFor(m); return m.layout; }
+const P_SHELF_ICO='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 11h18"/><path d="M6 11v4M18 11v4"/></svg>';
+const P_RAIL_ICO='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18"/><path d="M12 7v2.5"/><path d="M7.5 16l4.5-6 4.5 6z"/></svg>';
 
 let room={ name:"Bucătărie dreaptă", kind:"kitchen", wall:true, modules:[] };
-let selectedId=null, allTarget="front", selTarget="front";
+let selectedIds=[], allTarget="front", selTarget="front", bulkTarget="front";
 let layout=[]; // {id,x,w} in cm for base row
 let drag={active:false,id:null,startX:0,moved:false,dropIndex:null};
 
 function loadTemplate(name){ const t=TEMPLATES[name]; room={ name, kind:t.kind, wall:t.wall, modules:t.make() };
-  selectedId=null; el("roomTitle").textContent=name;
+  selectedIds=[]; el("roomTitle").textContent=name;
   [...el("tplGrid").children].forEach(b=>b.classList.toggle("active",b.dataset.tpl===name));
   renderScene(); renderPanel(); }
 
@@ -258,7 +305,7 @@ const EXTRA_DEFS = `<pattern id="tiles" width="15" height="10" patternUnits="use
 
 /* rânduri contigue de corpuri de bază (h<140) — pentru blat + faianță continue */
 function baseRuns(){ const runs=[]; let cur=null;
-  room.modules.forEach(m=>{ const lo=layout.find(l=>l.id===m.id); const isBase=m.h<140;
+  room.modules.forEach(m=>{ const lo=layout.find(l=>l.id===m.id); const isBase=m.h<140 && !m.gap;
     if(isBase){ if(!cur) cur={x0:lo.x,x1:lo.x+m.w}; else cur.x1=lo.x+m.w; } else { if(cur){ runs.push(cur); cur=null; } } });
   if(cur) runs.push(cur); return runs; }
 
@@ -282,21 +329,27 @@ function renderScene(){
   if(mods.length){ const x0=padX+layout[0].x, x1=padX+layout[layout.length-1].x+mods[mods.length-1].w;
     svg+=`<ellipse cx="${(x0+x1)/2}" cy="${floorY+3}" rx="${(x1-x0)/2+8}" ry="6" fill="#000" opacity="0.12"/>`; }
   // corpuri suspendate (bucătărie)
-  if(room.wall){ mods.forEach(m=>{ if(m.h<140 && m.type!=="coltar-buc"){ const lo=layout.find(l=>l.id===m.id);
+  if(room.wall){ mods.forEach(m=>{ if(m.h<140 && m.type!=="coltar-buc" && !m.gap){ const lo=layout.find(l=>l.id===m.id);
     const wm={type:"suspendat-buc",w:m.w,h:WALL_H,doors:m.w>70?2:1,drawers:0,shelves:1,front:m.front,body:m.body,handle:m.handle,view:"closed"};
     const topY=padTop+(roomH-WALL_BOTTOM-WALL_H);
     svg+=`<g transform="translate(${padX+lo.x},${topY})" opacity="0.98">`+moduleBody(wm)+`</g>`; } }); }
   // corpuri de bază + înalte
   mods.forEach(m=>{ const lo=layout.find(l=>l.id===m.id); const topY=padTop+(roomH-m.h);
     const dragging=drag.active&&drag.id===m.id;
-    svg+=`<g class="mod" data-id="${m.id}" transform="translate(${padX+lo.x},${topY})" opacity="${dragging?0.5:1}">`+moduleBody({...m,view:"closed"})+`</g>`; });
+    let inner;
+    if(m.gap){ inner=`<rect x="0" y="0" width="${m.w}" height="${m.h}" rx="5" fill="#eef2ec" stroke="#b3c0ac" stroke-width="2" stroke-dasharray="6 6"/><text x="${m.w/2}" y="${m.h/2}" text-anchor="middle" dominant-baseline="middle" fill="#93a191" font-size="12" font-family="Inter,sans-serif">spațiu liber</text>`; }
+    else inner=moduleBody({...m, view: m.open?"open":"closed"});
+    svg+=`<g class="mod" data-id="${m.id}" transform="translate(${padX+lo.x},${topY})" opacity="${dragging?0.5:1}">`+inner+`</g>`; });
   // blat continuu peste rândurile de bază (bucătărie)
   if(room.wall){ baseRuns().forEach(r=>{ const x=padX+r.x0-2, w=r.x1-r.x0+4;
     svg+=`<rect x="${x}" y="${floorY-90}" width="${w}" height="6.5" rx="1.5" fill="url(#counter)"/>`;
     svg+=`<rect x="${x}" y="${floorY-90}" width="${w}" height="1.6" fill="#707375" opacity="0.7"/>`; }); }
   // highlight selecție
-  mods.forEach(m=>{ if(m.id===selectedId){ const lo=layout.find(l=>l.id===m.id); const topY=padTop+(roomH-m.h);
-    svg+=`<rect x="${padX+lo.x-2}" y="${topY-2}" width="${m.w+4}" height="${m.h+4}" rx="4" fill="none" stroke="var(--forest)" stroke-width="2.5" stroke-dasharray="7 5" pointer-events="none"/>`; } });
+  mods.forEach(m=>{ if(selectedIds.includes(m.id)){ const lo=layout.find(l=>l.id===m.id); const topY=padTop+(roomH-m.h);
+    svg+=`<rect x="${padX+lo.x-2}" y="${topY-2}" width="${m.w+4}" height="${m.h+4}" rx="4" fill="none" stroke="var(--forest)" stroke-width="2.5" stroke-dasharray="7 5" pointer-events="none"/>`;
+    if(canOpen(m) && selectedIds.length===1){ const cx=padX+lo.x+m.w-15, cy=topY+15;
+      svg+=`<g class="open-toggle" data-id="${m.id}" style="cursor:pointer"><title>${m.open?'Închide':'Deschide (vezi interiorul)'}</title><circle cx="${cx}" cy="${cy}" r="13" fill="${m.open?'var(--wood)':'var(--forest)'}" stroke="#fff" stroke-width="1.5"/><g pointer-events="none" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M${cx-6.5} ${cy} q6.5 -5.5 13 0 q-6.5 5.5 -13 0 z"/><circle cx="${cx}" cy="${cy}" r="1.9" fill="#fff" stroke="none"/></g></g>`; }
+  } });
   // drop indicator la drag
   if(drag.active && drag.dropIndex!==null){ let ix=0; const gap=2; for(let i=0;i<drag.dropIndex;i++){ ix+=room.modules[i].w+gap; } const lineX=padX+ix-1;
     svg+=`<rect x="${lineX-1.5}" y="${padTop}" width="3" height="${roomH}" rx="1.5" fill="var(--wood)" pointer-events="none"/>`; }
@@ -304,7 +357,7 @@ function renderScene(){
   el("viewer").innerHTML=svg;
   attachSceneEvents();
   // stats
-  el("statCount").textContent=mods.length;
+  el("statCount").textContent=mods.filter(m=>!m.gap).length;
   el("statWidth").innerHTML=Math.round(totalW)+` <small>cm</small>`;
   updateOffer();
 }
@@ -314,10 +367,15 @@ function attachSceneEvents(){
   const svg=el("scene"); if(!svg) return;
   svg.querySelectorAll(".mod").forEach(g=>{
     g.addEventListener("pointerdown",(e)=>{ e.preventDefault();
-      drag={active:true,id:g.dataset.id,startX:e.clientX,moved:false,dropIndex:null};
+      drag={active:true,id:g.dataset.id,startX:e.clientX,moved:false,dropIndex:null,multi:(e.shiftKey||e.metaKey)};
       window.addEventListener("pointermove",onDragMove);
       window.addEventListener("pointerup",onDragUp,{once:true});
     });
+  });
+  svg.querySelectorAll(".open-toggle").forEach(g=>{
+    g.addEventListener("pointerdown",(e)=>{ e.stopPropagation(); e.preventDefault();
+      const m=room.modules.find(x=>x.id===g.dataset.id); if(!m) return;
+      m.open=!m.open; if(m.open && usesInterior(m)) ensureLayout(m); renderScene(); renderPanel(); });
   });
 }
 function baseRects(){ const svg=el("scene"); return [...svg.querySelectorAll('.mod')].map(g=>({id:g.dataset.id, r:g.getBoundingClientRect()})); }
@@ -330,21 +388,30 @@ function onDragMove(e){ if(!drag.active) return;
   drag.dropIndex=idx; renderScene();
 }
 function onDragUp(e){ window.removeEventListener("pointermove",onDragMove);
-  if(!drag.moved){ // click = select
-    selectedId=drag.id; drag={active:false,id:null,startX:0,moved:false,dropIndex:null}; renderScene(); renderPanel(); return; }
+  if(!drag.moved){ // click = select (Shift/⌘ = adaugă/scoate din selecție)
+    if(drag.multi){ const i=selectedIds.indexOf(drag.id); if(i>=0) selectedIds.splice(i,1); else selectedIds.push(drag.id); }
+    else selectedIds=[drag.id];
+    drag={active:false,id:null,startX:0,moved:false,dropIndex:null}; renderScene(); renderPanel(); return; }
   // drop = reorder
   const from=room.modules.findIndex(m=>m.id===drag.id); let to=drag.dropIndex;
-  if(from>-1 && to!==null){ const [m]=room.modules.splice(from,1); if(to>from) to--; to=Math.max(0,Math.min(room.modules.length,to)); room.modules.splice(to,0,m); selectedId=m.id; }
+  if(from>-1 && to!==null){ const [m]=room.modules.splice(from,1); if(to>from) to--; to=Math.max(0,Math.min(room.modules.length,to)); room.modules.splice(to,0,m); selectedIds=[m.id]; }
   drag={active:false,id:null,startX:0,moved:false,dropIndex:null}; renderScene(); renderPanel();
 }
 
 /* ===== PANEL editare ===== */
-function sel(){ return room.modules.find(m=>m.id===selectedId); }
+function sel(){ return room.modules.find(m=>m.id===selectedIds[selectedIds.length-1]); }
+function selMulti(){ return room.modules.filter(m=>selectedIds.includes(m.id)); }
 function renderPanel(){
+  const multi=selectedIds.length>1;
   const m=sel();
-  el("emptyHint").style.display=m?"none":"block";
-  el("editPanel").style.display=m?"block":"none";
+  el("emptyHint").style.display=(selectedIds.length===0)?"block":"none";
+  const isGap=!!(m&&m.gap&&!multi);
+  el("editPanel").style.display=(m&&!isGap&&!multi)?"block":"none";
+  el("gapPanel").style.display=isGap?"block":"none";
+  el("bulkPanel").style.display=multi?"block":"none";
+  if(multi){ buildBulkPanel(); return; }
   if(!m) return;
+  if(isGap){ renderGapPanel(m); return; }
   el("selTitle").textContent=TYPES[m.type].label;
   // type swap
   const types=(room.kind==="kitchen"?KITCHEN_TYPES:BEDROOM_TYPES);
@@ -376,6 +443,7 @@ function renderPanel(){
   const hs=el("selHandle"); hs.innerHTML="";
   HANDLES.forEach(h=>{ const b=document.createElement("button"); b.textContent=h.name; b.className=(h.id===m.handle?"active":"");
     b.onclick=()=>{ m.handle=h.id; renderScene(); renderPanel(); }; hs.appendChild(b); });
+  buildViewToggle(m); buildInteriorEditor(m);
 }
 function buildSelSwatches(){ const m=sel(); if(!m) return; const g=el("selSw"); g.innerHTML="";
   const cur = selTarget==="front"?m.front:m.body;
@@ -387,14 +455,56 @@ function buildSelSwatches(){ const m=sel(); if(!m) return; const g=el("selSw"); 
 function swapType(m,k){ const t=TYPES[k]; m.type=k;
   m.w=t.dims.w[2]; m.h=t.dims.h[2]; m.d=t.dims.d[2];
   m.doors=(t.doors.find(v=>v>0)||t.doors[0]); m.drawers=t.drawers[0]; m.shelves=t.shelves[Math.floor(t.shelves.length/2)];
+  m.layout=null;
   renderScene(); renderPanel(); }
+
+/* ===== deschidere corp + editor interior + gol + editare în grup ===== */
+function buildViewToggle(m){ const c=el("selView"); if(!canOpen(m)){ c.style.display="none"; return; }
+  c.style.display="flex"; c.innerHTML="";
+  [["closed","Uși închise"],["open","Interior"]].forEach(([v,lbl])=>{ const b=document.createElement("button");
+    b.textContent=lbl; b.className=((m.open?"open":"closed")===v)?"active":"";
+    b.onclick=()=>{ m.open=(v==="open"); if(m.open && usesInterior(m)) ensureLayout(m); renderScene(); renderPanel(); }; c.appendChild(b); });
+}
+function buildInteriorEditor(m){ const g=el("selInteriorG"); if(!usesInterior(m)){ g.style.display="none"; return; }
+  g.style.display="block"; ensureLayout(m);
+  const list=el("selLayoutList"); list.innerHTML=""; const L=m.layout; const isW=P_WARDROBE.includes(m.type);
+  if(!L.length){ list.innerHTML='<div class="cta-note" style="text-align:left; margin:0">Corp gol — adaugă un raft'+(isW?' sau o bară':'')+'.</div>'; }
+  L.forEach((it,i)=>{ const row=document.createElement("div"); row.className="layout-row";
+    row.innerHTML=`<span class="lr-ico">${it.kind==="rail"?P_RAIL_ICO:P_SHELF_ICO}</span><span class="lr-name">${it.kind==="rail"?"Bară de haine":"Raft"}</span>`;
+    row.appendChild(mkIntBtn("↑",()=>{ [L[i-1],L[i]]=[L[i],L[i-1]]; refreshInt(m); }, i===0));
+    row.appendChild(mkIntBtn("↓",()=>{ [L[i+1],L[i]]=[L[i],L[i+1]]; refreshInt(m); }, i===L.length-1));
+    row.appendChild(mkIntBtn("✕",()=>{ L.splice(i,1); refreshInt(m); }, false));
+    list.appendChild(row); });
+  const add=el("selLayoutAdd"); add.innerHTML="";
+  const sb=document.createElement("button"); sb.className="lbtn"; sb.textContent="+ Raft"; sb.onclick=()=>{ L.push({kind:"shelf"}); refreshInt(m); }; add.appendChild(sb);
+  if(isW){ const rb=document.createElement("button"); rb.className="lbtn"; rb.textContent="+ Bară de haine"; rb.onclick=()=>{ L.push({kind:"rail"}); refreshInt(m); }; add.appendChild(rb); }
+}
+function mkIntBtn(txt,fn,dis){ const b=document.createElement("button"); b.className="lr-btn"; b.textContent=txt; b.disabled=!!dis; if(!dis) b.onclick=fn; return b; }
+function refreshInt(m){ m.open=true; renderScene(); renderPanel(); }
+function renderGapPanel(m){ const rng=el("rngGapW"); rng.value=m.w; el("gapWv").textContent=m.w;
+  rng.oninput=(e)=>{ m.w=+e.target.value; el("gapWv").textContent=m.w; renderScene(); }; }
+function buildBulkPanel(){ el("bulkTitle").textContent=selectedIds.length+" corpuri selectate";
+  buildBulkSwatches();
+  const mm=selMulti().filter(x=>!x.gap);
+  const hs=el("bulkHandle"); hs.innerHTML="";
+  HANDLES.forEach(h=>{ const b=document.createElement("button"); b.textContent=h.name;
+    b.onclick=()=>{ mm.forEach(x=>x.handle=h.id); renderScene(); }; hs.appendChild(b); });
+  const c=el("bulkView"); c.innerHTML="";
+  [["closed","Închide toate"],["open","Deschide toate"]].forEach(([v,lbl])=>{ const b=document.createElement("button"); b.textContent=lbl;
+    b.onclick=()=>{ mm.forEach(x=>{ if(canOpen(x)){ x.open=(v==="open"); if(x.open&&usesInterior(x)) ensureLayout(x); } }); renderScene(); renderPanel(); }; c.appendChild(b); });
+}
+function buildBulkSwatches(){ const g=el("bulkSw"); g.innerHTML=""; const mm=selMulti().filter(x=>!x.gap);
+  FINISHES.forEach(f=>{ const d=document.createElement("div"); d.className="sw";
+    d.style.background=f.gloss?"linear-gradient(135deg, "+shade(f.base,0.55)+" 0%, "+f.base+" 42%, "+shade(f.base,-0.14)+" 100%)":f.base; d.title=f.name;
+    d.onclick=()=>{ mm.forEach(x=>{ if(bulkTarget==="front") x.front=f; else x.body=f; }); renderScene(); }; g.appendChild(d); });
+}
 
 /* ===== add / global color ===== */
 function buildAddMenu(){ const g=el("addMenu"); g.innerHTML="";
   const types=(room.kind==="kitchen"?KITCHEN_TYPES:BEDROOM_TYPES);
   types.forEach(k=>{ const b=document.createElement("button"); b.textContent=TYPES[k].label;
     b.onclick=()=>{ const base=room.modules[room.modules.length-1]; const m=mk(k, base?{front:base.front,body:base.body,handle:base.handle}:{});
-      room.modules.push(m); selectedId=m.id; g.classList.remove("open"); renderScene(); renderPanel(); }; g.appendChild(b); }); }
+      room.modules.push(m); selectedIds=[m.id]; g.classList.remove("open"); renderScene(); renderPanel(); }; g.appendChild(b); }); }
 function buildAllSwatches(){ const g=el("allSw"); g.innerHTML="";
   FINISHES.forEach(f=>{ const d=document.createElement("div"); d.className="sw";
     d.style.background=f.gloss?"linear-gradient(135deg, "+shade(f.base,0.55)+" 0%, "+f.base+" 42%, "+shade(f.base,-0.14)+" 100%)":f.base; d.title=f.name;
@@ -402,7 +512,8 @@ function buildAllSwatches(){ const g=el("allSw"); g.innerHTML="";
 
 /* ===== ofertă ===== */
 function updateOffer(){
-  let lines=room.modules.map((m,i)=>`${i+1}. ${TYPES[m.type].label} — ${m.w}×${m.h}×${m.d} cm, fronturi ${m.front.name}`+(m.body.id!==m.front.id?`, corp ${m.body.name}`:"")+(m.drawers?`, ${m.drawers} ${m.drawers===1?"sertar":"sertare"}`:(m.doors?`, ${m.doors} ${m.doors===1?"ușă":"uși"}`:""))+`, mâner ${handleName(m.handle).toLowerCase()}`).join("\n");
+  let lines=room.modules.filter(m=>!m.gap).map((m,i)=>{ const interior=(usesInterior(m)&&m.layout&&m.layout.length)?`, interior: ${m.layout.map(it=>it.kind==="rail"?"bară":"raft").join(", ")}`:"";
+    return `${i+1}. ${TYPES[m.type].label} — ${m.w}×${m.h}×${m.d} cm, fronturi ${m.front.name}`+(m.body.id!==m.front.id?`, corp ${m.body.name}`:"")+(m.drawers?`, ${m.drawers} ${m.drawers===1?"sertar":"sertare"}`:(m.doors?`, ${m.doors} ${m.doors===1?"ușă":"uși"}`:""))+`, mâner ${handleName(m.handle).toLowerCase()}`+interior; }).join("\n");
   const plain=`Bună ziua,\n\nAș dori o ofertă pentru amenajarea „${room.name}”:\n\n${lines}\n\nAștept o ofertă după o măsurătoare. Mulțumesc!`;
   const href="mailto:contact@normandmobilier.ro?subject="+encodeURIComponent("Cerere ofertă amenajare — "+room.name)+"&body="+encodeURIComponent(plain);
   const waHref="https://wa.me/40749572087?text="+encodeURIComponent(plain);
@@ -413,10 +524,16 @@ function updateOffer(){
 function init(){
   const tg=el("tplGrid");
   Object.keys(TEMPLATES).forEach(name=>{ const b=document.createElement("button"); b.className="tpl-btn"; b.dataset.tpl=name; b.textContent=name; b.onclick=()=>loadTemplate(name); tg.appendChild(b); });
-  el("delBtn").onclick=()=>{ if(!selectedId) return; room.modules=room.modules.filter(m=>m.id!==selectedId); selectedId=null; renderScene(); renderPanel(); };
+  el("delBtn").onclick=()=>{ if(!selectedIds.length) return; room.modules=room.modules.filter(m=>!selectedIds.includes(m.id)); selectedIds=[]; renderScene(); renderPanel(); };
   el("addBtn").onclick=()=>{ buildAddMenu(); el("addMenu").classList.toggle("open"); };
   document.querySelectorAll('.subtabs button[data-w]').forEach(b=>b.onclick=()=>{ selTarget=b.dataset.w; document.querySelectorAll('.subtabs button[data-w]').forEach(x=>x.classList.toggle("active",x===b)); buildSelSwatches(); });
   document.querySelectorAll('.subtabs button[data-all]').forEach(b=>b.onclick=()=>{ allTarget=b.dataset.all; document.querySelectorAll('.subtabs button[data-all]').forEach(x=>x.classList.toggle("active",x===b)); });
+  document.querySelectorAll('.subtabs button[data-bw]').forEach(b=>b.onclick=()=>{ bulkTarget=b.dataset.bw; document.querySelectorAll('.subtabs button[data-bw]').forEach(x=>x.classList.toggle("active",x===b)); buildBulkSwatches(); });
+  el("bulkDelBtn").onclick=()=>{ if(selectedIds.length<2) return; room.modules=room.modules.filter(m=>!selectedIds.includes(m.id)); selectedIds=[]; renderScene(); renderPanel(); };
+  el("pullBtn").onclick=()=>{ const m=sel(); if(!m) return; m.gap=true; m.open=false; renderScene(); renderPanel(); };
+  el("gapDelBtn").onclick=()=>{ if(!selectedIds.length) return; room.modules=room.modules.filter(m=>!selectedIds.includes(m.id)); selectedIds=[]; renderScene(); renderPanel(); };
+  el("gapFillBtn").onclick=()=>{ const m=sel(); if(!m||!m.gap) return; const w=m.w; const def=(room.kind==="kitchen"?"baza-buc":"dulap2"); const t=TYPES[def];
+    m.gap=false; m.type=def; m.w=w; m.h=t.dims.h[2]; m.d=t.dims.d[2]; m.doors=(t.doors.find(v=>v>0)||t.doors[0]); m.drawers=t.drawers[0]; m.shelves=t.shelves[Math.floor(t.shelves.length/2)]; m.layout=null; m.open=false; renderScene(); renderPanel(); };
   buildAllSwatches();
   loadTemplate("Bucătărie dreaptă");
   try { if (navigator.sendBeacon) navigator.sendBeacon("trimite-oferta.php?ping=open"); else fetch("trimite-oferta.php?ping=open").catch(function(){}); } catch(e) {}
