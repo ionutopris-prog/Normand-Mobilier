@@ -136,7 +136,7 @@
       <div class="stage-head">
         <div class="eyebrow">Amenajare · cameră întreagă</div>
         <h1 id="roomTitle">Bucătărie dreaptă</h1>
-        <div class="sub">Click = alegi un corp · <b>Shift/⌘+click</b> = mai multe deodată · trage = mută · butonul verde = deschide interiorul.</div>
+        <div class="sub">Click = alegi un corp · <b>încă un click</b> pe el = îl deschizi (inclusiv corpurile de sus) · <b>Shift/⌘+click</b> = mai multe deodată · trage = mută.</div>
       </div>
       <div class="viewer" id="viewer"></div>
       <div class="stage-foot">
@@ -275,7 +275,11 @@ const BEDROOM_TYPES=["dulap2","dulap3","dulap4","glisant","pat","noptiera","como
 const P_LAYOUT_TYPES=["dulap2","dulap3","dulap4","glisant","suspendat-buc","baza-buc","noptiera"];
 const P_WARDROBE=["dulap2","dulap3","dulap4","glisant"]; // permit și bară de haine
 function usesInterior(m){ return m && !m.gap && P_LAYOUT_TYPES.includes(m.type) && (m.drawers||0)===0; }
-function canOpen(m){ return m && !m.gap && m.type!=="pat"; }
+function canOpen(m){ return m && !m.gap; }
+function wallEligible(m){ return m && !m.gap && m.h<140 && m.type!=="coltar-buc"; }
+function wallOf(base){ if(!base.wall){ const t=TYPES["suspendat-buc"]; base.wall={ type:"suspendat-buc", w:base.w, h:WALL_H, d:t.dims.d[2], doors:(base.w>70?2:1), drawers:0, shelves:1, front:base.front, body:base.body, handle:base.handle, open:false, layout:null, present:true, gap:false, isWall:true, id:"w:"+base.id }; } return base.wall; }
+function resolveMod(id){ if(!id) return null; if(id.indexOf&&id.indexOf("w:")===0){ const b=room.modules.find(m=>m.id===id.slice(2)); return b?wallOf(b):null; } return room.modules.find(m=>m.id===id); }
+function isWallId(id){ return typeof id==="string" && id.indexOf("w:")===0; }
 function defaultLayoutFor(m){ const n=Math.max(1, m.shelves||2); const arr=[]; if(P_WARDROBE.includes(m.type)) arr.push({kind:"rail"}); for(let i=0;i<n;i++) arr.push({kind:"shelf"}); return arr; }
 function ensureLayout(m){ if(!m.layout) m.layout=defaultLayoutFor(m); return m.layout; }
 const P_SHELF_ICO='<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 11h18"/><path d="M6 11v4M18 11v4"/></svg>';
@@ -329,10 +333,14 @@ function renderScene(){
   if(mods.length){ const x0=padX+layout[0].x, x1=padX+layout[layout.length-1].x+mods[mods.length-1].w;
     svg+=`<ellipse cx="${(x0+x1)/2}" cy="${floorY+3}" rx="${(x1-x0)/2+8}" ry="6" fill="#000" opacity="0.12"/>`; }
   // corpuri suspendate (bucătărie)
-  if(room.wall){ mods.forEach(m=>{ if(m.h<140 && m.type!=="coltar-buc" && !m.gap){ const lo=layout.find(l=>l.id===m.id);
-    const wm={type:"suspendat-buc",w:m.w,h:WALL_H,doors:m.w>70?2:1,drawers:0,shelves:1,front:m.front,body:m.body,handle:m.handle,view:"closed"};
-    const topY=padTop+(roomH-WALL_BOTTOM-WALL_H);
-    svg+=`<g transform="translate(${padX+lo.x},${topY})" opacity="0.98">`+moduleBody(wm)+`</g>`; } }); }
+  if(room.wall){ mods.forEach(m=>{ if(!wallEligible(m)) return; const w=wallOf(m); if(w.present===false) return; const lo=layout.find(l=>l.id===m.id);
+    const wtopY=padTop+(roomH-WALL_BOTTOM-w.h); const wid="w:"+m.id; const dragging=drag.active&&drag.id===wid;
+    svg+=`<g class="mod" data-id="${wid}" transform="translate(${padX+lo.x},${wtopY})" opacity="${dragging?0.5:1}">`+moduleBody(Object.assign({},w,{view:w.open?"open":"closed"}))+`</g>`;
+    if(selectedIds.includes(wid)){ svg+=`<rect x="${padX+lo.x-2}" y="${wtopY-2}" width="${w.w+4}" height="${w.h+4}" rx="4" fill="none" stroke="var(--forest)" stroke-width="2.5" stroke-dasharray="7 5" pointer-events="none"/>`;
+      if(selectedIds.length===1){ const cx=padX+lo.x+w.w-15, cy=wtopY+15;
+        svg+=`<g class="open-toggle" data-id="${wid}" style="cursor:pointer"><title>${w.open?'Închide':'Deschide (vezi interiorul)'}</title><circle cx="${cx}" cy="${cy}" r="13" fill="${w.open?'var(--wood)':'var(--forest)'}" stroke="#fff" stroke-width="1.5"/><g pointer-events="none" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M${cx-6.5} ${cy} q6.5 -5.5 13 0 q-6.5 5.5 -13 0 z"/><circle cx="${cx}" cy="${cy}" r="1.9" fill="#fff" stroke="none"/></g></g>`; }
+    }
+  }); }
   // corpuri de bază + înalte
   mods.forEach(m=>{ const lo=layout.find(l=>l.id===m.id); const topY=padTop+(roomH-m.h);
     const dragging=drag.active&&drag.id===m.id;
@@ -357,7 +365,7 @@ function renderScene(){
   el("viewer").innerHTML=svg;
   attachSceneEvents();
   // stats
-  el("statCount").textContent=mods.filter(m=>!m.gap).length;
+  el("statCount").textContent=mods.filter(m=>!m.gap).length + (room.wall?mods.filter(m=>m.wall&&m.wall.present).length:0);
   el("statWidth").innerHTML=Math.round(totalW)+` <small>cm</small>`;
   updateOffer();
 }
@@ -374,12 +382,13 @@ function attachSceneEvents(){
   });
   svg.querySelectorAll(".open-toggle").forEach(g=>{
     g.addEventListener("pointerdown",(e)=>{ e.stopPropagation(); e.preventDefault();
-      const m=room.modules.find(x=>x.id===g.dataset.id); if(!m) return;
+      const m=resolveMod(g.dataset.id); if(!m) return;
       m.open=!m.open; if(m.open && usesInterior(m)) ensureLayout(m); renderScene(); renderPanel(); });
   });
 }
-function baseRects(){ const svg=el("scene"); return [...svg.querySelectorAll('.mod')].map(g=>({id:g.dataset.id, r:g.getBoundingClientRect()})); }
+function baseRects(){ const svg=el("scene"); return [...svg.querySelectorAll('.mod')].filter(g=>!isWallId(g.dataset.id)).map(g=>({id:g.dataset.id, r:g.getBoundingClientRect()})); }
 function onDragMove(e){ if(!drag.active) return;
+  if(isWallId(drag.id)) return; // corpurile de sus nu se reordonează
   if(Math.abs(e.clientX-drag.startX)>6) drag.moved=true;
   if(!drag.moved) return;
   const rects=baseRects(); let idx=rects.length;
@@ -388,8 +397,9 @@ function onDragMove(e){ if(!drag.active) return;
   drag.dropIndex=idx; renderScene();
 }
 function onDragUp(e){ window.removeEventListener("pointermove",onDragMove);
-  if(!drag.moved){ // click = select (Shift/⌘ = adaugă/scoate din selecție)
+  if(!drag.moved){ // click = select; Shift/⌘ = adaugă/scoate; re-click pe același corp = deschide/închide
     if(drag.multi){ const i=selectedIds.indexOf(drag.id); if(i>=0) selectedIds.splice(i,1); else selectedIds.push(drag.id); }
+    else if(selectedIds.length===1 && selectedIds[0]===drag.id){ const m=resolveMod(drag.id); if(m&&canOpen(m)){ m.open=!m.open; if(m.open&&usesInterior(m)) ensureLayout(m); } }
     else selectedIds=[drag.id];
     drag={active:false,id:null,startX:0,moved:false,dropIndex:null}; renderScene(); renderPanel(); return; }
   // drop = reorder
@@ -399,8 +409,10 @@ function onDragUp(e){ window.removeEventListener("pointermove",onDragMove);
 }
 
 /* ===== PANEL editare ===== */
-function sel(){ return room.modules.find(m=>m.id===selectedIds[selectedIds.length-1]); }
-function selMulti(){ return room.modules.filter(m=>selectedIds.includes(m.id)); }
+function sel(){ return resolveMod(selectedIds[selectedIds.length-1]); }
+function selMulti(){ return selectedIds.map(resolveMod).filter(Boolean); }
+function deleteSelection(){ selectedIds.forEach(id=>{ if(isWallId(id)){ const b=room.modules.find(m=>m.id===id.slice(2)); if(b&&b.wall) b.wall.present=false; } });
+  const baseIds=selectedIds.filter(id=>!isWallId(id)); room.modules=room.modules.filter(m=>!baseIds.includes(m.id)); selectedIds=[]; renderScene(); renderPanel(); }
 function renderPanel(){
   const multi=selectedIds.length>1;
   const m=sel();
@@ -512,8 +524,10 @@ function buildAllSwatches(){ const g=el("allSw"); g.innerHTML="";
 
 /* ===== ofertă ===== */
 function updateOffer(){
-  let lines=room.modules.filter(m=>!m.gap).map((m,i)=>{ const interior=(usesInterior(m)&&m.layout&&m.layout.length)?`, interior: ${m.layout.map(it=>it.kind==="rail"?"bară":"raft").join(", ")}`:"";
-    return `${i+1}. ${TYPES[m.type].label} — ${m.w}×${m.h}×${m.d} cm, fronturi ${m.front.name}`+(m.body.id!==m.front.id?`, corp ${m.body.name}`:"")+(m.drawers?`, ${m.drawers} ${m.drawers===1?"sertar":"sertare"}`:(m.doors?`, ${m.doors} ${m.doors===1?"ușă":"uși"}`:""))+`, mâner ${handleName(m.handle).toLowerCase()}`+interior; }).join("\n");
+  const items=[]; room.modules.forEach(m=>{ if(!m.gap) items.push(m); if(room.wall && m.wall && m.wall.present) items.push(m.wall); });
+  let lines=items.map((m,i)=>{ const interior=(usesInterior(m)&&m.layout&&m.layout.length)?`, interior: ${m.layout.map(it=>it.kind==="rail"?"bară":"raft").join(", ")}`:"";
+    const suf=m.isWall?" (suspendat)":"";
+    return `${i+1}. ${TYPES[m.type].label}${suf} — ${m.w}×${m.h}×${m.d} cm, fronturi ${m.front.name}`+(m.body.id!==m.front.id?`, corp ${m.body.name}`:"")+(m.drawers?`, ${m.drawers} ${m.drawers===1?"sertar":"sertare"}`:(m.doors?`, ${m.doors} ${m.doors===1?"ușă":"uși"}`:""))+`, mâner ${handleName(m.handle).toLowerCase()}`+interior; }).join("\n");
   const plain=`Bună ziua,\n\nAș dori o ofertă pentru amenajarea „${room.name}”:\n\n${lines}\n\nAștept o ofertă după o măsurătoare. Mulțumesc!`;
   const href="mailto:contact@normandmobilier.ro?subject="+encodeURIComponent("Cerere ofertă amenajare — "+room.name)+"&body="+encodeURIComponent(plain);
   const waHref="https://wa.me/40749572087?text="+encodeURIComponent(plain);
@@ -524,14 +538,17 @@ function updateOffer(){
 function init(){
   const tg=el("tplGrid");
   Object.keys(TEMPLATES).forEach(name=>{ const b=document.createElement("button"); b.className="tpl-btn"; b.dataset.tpl=name; b.textContent=name; b.onclick=()=>loadTemplate(name); tg.appendChild(b); });
-  el("delBtn").onclick=()=>{ if(!selectedIds.length) return; room.modules=room.modules.filter(m=>!selectedIds.includes(m.id)); selectedIds=[]; renderScene(); renderPanel(); };
+  el("delBtn").onclick=()=>{ if(!selectedIds.length) return; deleteSelection(); };
   el("addBtn").onclick=()=>{ buildAddMenu(); el("addMenu").classList.toggle("open"); };
   document.querySelectorAll('.subtabs button[data-w]').forEach(b=>b.onclick=()=>{ selTarget=b.dataset.w; document.querySelectorAll('.subtabs button[data-w]').forEach(x=>x.classList.toggle("active",x===b)); buildSelSwatches(); });
   document.querySelectorAll('.subtabs button[data-all]').forEach(b=>b.onclick=()=>{ allTarget=b.dataset.all; document.querySelectorAll('.subtabs button[data-all]').forEach(x=>x.classList.toggle("active",x===b)); });
   document.querySelectorAll('.subtabs button[data-bw]').forEach(b=>b.onclick=()=>{ bulkTarget=b.dataset.bw; document.querySelectorAll('.subtabs button[data-bw]').forEach(x=>x.classList.toggle("active",x===b)); buildBulkSwatches(); });
-  el("bulkDelBtn").onclick=()=>{ if(selectedIds.length<2) return; room.modules=room.modules.filter(m=>!selectedIds.includes(m.id)); selectedIds=[]; renderScene(); renderPanel(); };
-  el("pullBtn").onclick=()=>{ const m=sel(); if(!m) return; m.gap=true; m.open=false; renderScene(); renderPanel(); };
-  el("gapDelBtn").onclick=()=>{ if(!selectedIds.length) return; room.modules=room.modules.filter(m=>!selectedIds.includes(m.id)); selectedIds=[]; renderScene(); renderPanel(); };
+  el("bulkDelBtn").onclick=()=>{ if(selectedIds.length<2) return; deleteSelection(); };
+  el("pullBtn").onclick=()=>{ const id=selectedIds[selectedIds.length-1]; if(!id) return;
+    if(isWallId(id)){ const b=room.modules.find(m=>m.id===id.slice(2)); if(b&&b.wall) b.wall.present=false; selectedIds=[]; }
+    else { const m=sel(); if(m){ m.gap=true; m.open=false; } }
+    renderScene(); renderPanel(); };
+  el("gapDelBtn").onclick=()=>{ if(!selectedIds.length) return; deleteSelection(); };
   el("gapFillBtn").onclick=()=>{ const m=sel(); if(!m||!m.gap) return; const w=m.w; const def=(room.kind==="kitchen"?"baza-buc":"dulap2"); const t=TYPES[def];
     m.gap=false; m.type=def; m.w=w; m.h=t.dims.h[2]; m.d=t.dims.d[2]; m.doors=(t.doors.find(v=>v>0)||t.doors[0]); m.drawers=t.drawers[0]; m.shelves=t.shelves[Math.floor(t.shelves.length/2)]; m.layout=null; m.open=false; renderScene(); renderPanel(); };
   buildAllSwatches();

@@ -151,35 +151,60 @@ function tvUnit(p){ const {W,H,fin,body,drawers}=p; let s=""; const openCenter=W
   s+=`<rect x="-3" y="-4" width="${W+6}" height="6" rx="2" fill="${fillOf(fin)}" stroke="${shade(fin.base,-0.25)}" stroke-width="0.8"/>`; return s; }
 function cornerBase(p){ const {W,H,fin,body}=p; let s=""; const chip=W*0.42;
   s+=`<polygon points="${chip},4 ${W-4},4 ${W-4},${H-4} 4,${H-4} 4,${chip}" fill="${shade(body.base,-0.38)}"/>`;
-  s+=`<polygon points="${chip+2},6 ${W-6},6 ${W-6},${H-6} 6,${H-6} 6,${chip+2}" fill="${fillOf(fin)}" stroke="${shade(fin.base,-0.28)}" stroke-width="1"/>`;
-  s+=handle(W*0.5,H*0.55,p.handle,fin,true);
+  if(p.view==="open"){
+    s+=`<polygon points="${chip+4},8 ${W-8},8 ${W-8},${H-8} 8,${H-8} 8,${chip+4}" fill="${shade(body.base,-0.5)}"/>`;
+    for(let k=1;k<=2;k++){ const sy=8+(H-16)*k/3; s+=`<polygon points="${chip+4},${sy} ${W-8},${sy} ${W-8},${sy+3.5} ${chip+4},${sy+3.5}" fill="${shade(body.base,-0.06)}"/><polygon points="8,${sy} ${chip+4},${sy} ${chip+4},${sy+3.5} 8,${sy+3.5}" fill="${shade(body.base,-0.06)}"/>`; }
+  } else {
+    s+=`<polygon points="${chip+2},6 ${W-6},6 ${W-6},${H-6} 6,${H-6} 6,${chip+2}" fill="${fillOf(fin)}" stroke="${shade(fin.base,-0.28)}" stroke-width="1"/>`;
+    s+=handle(W*0.5,H*0.55,p.handle,fin,true);
+  }
   s+=`<polygon points="${chip},-4 ${W+2},-4 ${W+2},2 ${chip},2 -2,${chip} -2,${chip-6}" fill="${fillOf(fin)}" stroke="${shade(fin.base,-0.25)}" stroke-width="0.8"/>`; return s; }
 function sinkBase(p){ const {W,H,fin,body}=p; let s="";
-  s+=columnsDoorsSub(0,6,W,H-6,2,fin,p.handle);
+  if(p.view==="open"){
+    s+=`<rect x="2" y="6" width="${W-4}" height="${H-8}" rx="2" fill="${shade(body.base,-0.46)}"/>`;
+    s+=`<path d="M${W*0.5} 12 v${H*0.32} q0 12 12 12 h${W*0.16}" fill="none" stroke="#9aa09b" stroke-width="4" stroke-linecap="round"/>`;
+    s+=`<rect x="${W*0.5-5}" y="${H*0.46}" width="10" height="9" rx="2" fill="#b9beba"/>`;
+    s+=`<rect x="6" y="${H-16}" width="${W-12}" height="3" fill="${shade(body.base,-0.06)}"/>`;
+  } else s+=columnsDoorsSub(0,6,W,H-6,2,fin,p.handle);
   s+=`<rect x="-3" y="-7" width="${W+6}" height="9" rx="2" fill="${fillOf(fin)}" stroke="${shade(fin.base,-0.25)}" stroke-width="0.8"/>`;
   s+=`<rect x="${W*0.26}" y="-5.5" width="${W*0.48}" height="6" rx="2.5" fill="${shade(body.base,-0.3)}" stroke="${shade(body.base,-0.45)}" stroke-width="0.5"/>`;
   s+=`<rect x="${W*0.5-0.8}" y="-11" width="1.6" height="6" rx="0.8" fill="#9aa09b"/><circle cx="${W*0.5}" cy="-11" r="1.6" fill="#b9beba"/>`; return s; }
-function ovenTower(p){ const {W,H,fin,body}=p; let s=""; const topH=H*0.30, ovenH=H*0.19, botH=H-topH-ovenH;
-  s+=columnsDoorsSub(0,0,W,topH,Math.max(1,p.doors),fin,p.handle);
+function ovenTower(p){ const {W,H,fin,body}=p; let s=""; const topH=H*0.30, ovenH=H*0.19, botH=H-topH-ovenH; const open=p.view==="open";
+  if(open){ s+=`<rect x="2" y="2" width="${W-4}" height="${topH-2}" rx="2" fill="${shade(body.base,-0.44)}"/>`;
+    for(let k=1;k<=2;k++){ const yy=6+(topH-10)*k/3; s+=`<rect x="5" y="${yy}" width="${W-10}" height="3" fill="${shade(body.base,-0.06)}"/>`; }
+  } else s+=columnsDoorsSub(0,0,W,topH,Math.max(1,p.doors),fin,p.handle);
   s+=`<rect x="3" y="${topH}" width="${W-6}" height="${ovenH}" fill="${shade(body.base,-0.42)}"/>`;
-  s+=`<rect x="8" y="${topH+5}" width="${W-16}" height="${ovenH-10}" rx="4" fill="#2b2d2f" stroke="#141414" stroke-width="1"/>`;
-  s+=`<rect x="14" y="${topH+11}" width="${W-28}" height="${(ovenH-16)*0.42}" rx="2" fill="#3d4145"/>`;
-  s+=`<rect x="12" y="${topH+8}" width="${W-24}" height="3" rx="1.5" fill="#5a5e60"/>`;
-  s+=drawersStackSub(0,H-botH,W,botH,Math.max(2,p.drawers||3),fin,p.handle); return s; }
-function fridgeColumn(p){ const {W,H,fin,body}=p; let s=""; const topH=H*0.30, nicheH=H*0.46, botH=H-topH-nicheH;
-  s+=columnsDoorsSub(0,0,W,topH,2,fin,p.handle);
+  if(open){ s+=`<rect x="8" y="${topH+5}" width="${W-16}" height="${ovenH-10}" rx="3" fill="#3d4145" stroke="#141414" stroke-width="1"/>`;
+    for(let k=1;k<=2;k++){ const yy=topH+5+(ovenH-10)*k/3; s+=`<rect x="12" y="${yy}" width="${W-24}" height="2" fill="#7a7e80"/>`; }
+  } else { s+=`<rect x="8" y="${topH+5}" width="${W-16}" height="${ovenH-10}" rx="4" fill="#2b2d2f" stroke="#141414" stroke-width="1"/>`;
+    s+=`<rect x="14" y="${topH+11}" width="${W-28}" height="${(ovenH-16)*0.42}" rx="2" fill="#3d4145"/>`;
+    s+=`<rect x="12" y="${topH+8}" width="${W-24}" height="3" rx="1.5" fill="#5a5e60"/>`; }
+  if(open){ s+=`<rect x="2" y="${H-botH}" width="${W-4}" height="${botH-2}" rx="2" fill="${shade(body.base,-0.4)}"/>`;
+    const n=Math.max(2,p.drawers||3), dh=botH/n; for(let i=0;i<n;i++){ const y=H-botH+i*dh; s+=`<rect x="6" y="${y+3}" width="${W-12}" height="${dh-6}" rx="2" fill="${shade(body.base,-0.3)}"/><rect x="6" y="${y+3}" width="${W-12}" height="5" rx="2" fill="${shade(body.base,-0.13)}"/>`; }
+  } else s+=drawersStackSub(0,H-botH,W,botH,Math.max(2,p.drawers||3),fin,p.handle); return s; }
+function fridgeColumn(p){ const {W,H,fin,body}=p; let s=""; const topH=H*0.30, nicheH=H*0.46, botH=H-topH-nicheH; const open=p.view==="open";
+  if(open){ s+=`<rect x="2" y="2" width="${W-4}" height="${topH-2}" rx="2" fill="${shade(body.base,-0.44)}"/>`;
+    for(let k=1;k<=2;k++){ const yy=6+(topH-10)*k/3; s+=`<rect x="5" y="${yy}" width="${W-10}" height="3" fill="${shade(body.base,-0.06)}"/>`; }
+  } else s+=columnsDoorsSub(0,0,W,topH,2,fin,p.handle);
   s+=`<rect x="3" y="${topH}" width="${W-6}" height="${nicheH}" fill="${shade(body.base,-0.42)}"/>`;
-  s+=`<rect x="9" y="${topH+6}" width="${W-18}" height="${nicheH-12}" rx="3" fill="#dfe2e0" stroke="#b7bcb8" stroke-width="1"/>`;
-  s+=`<line x1="9" y1="${topH+nicheH*0.42}" x2="${W-9}" y2="${topH+nicheH*0.42}" stroke="#b7bcb8" stroke-width="1"/>`;
-  s+=`<rect x="${W-16}" y="${topH+nicheH*0.14}" width="3" height="${nicheH*0.22}" rx="1.5" fill="#9aa09b"/>`;
-  s+=`<rect x="${W-16}" y="${topH+nicheH*0.5}" width="3" height="${nicheH*0.22}" rx="1.5" fill="#9aa09b"/>`;
-  s+=columnsDoorsSub(0,H-botH,W,botH,2,fin,p.handle); return s; }
+  if(open){ s+=`<rect x="8" y="${topH+5}" width="${W-16}" height="${nicheH-10}" rx="3" fill="#eef1ee" stroke="#c4c9c4" stroke-width="1"/>`;
+    for(let k=1;k<=3;k++){ const yy=topH+5+(nicheH-10)*k/5; s+=`<rect x="11" y="${yy}" width="${W-22}" height="2.4" rx="1" fill="#cfd4cf"/>`; }
+    s+=`<rect x="11" y="${topH+nicheH-6-(nicheH*0.17)}" width="${W-22}" height="${nicheH*0.17}" rx="2" fill="#dde6dd" stroke="#c4c9c4" stroke-width="0.8"/>`;
+    s+=`<circle cx="${W*0.34}" cy="${topH+nicheH*0.2}" r="3.2" fill="#c76b52"/><rect x="${W*0.54}" y="${topH+nicheH*0.28}" width="5.5" height="9" rx="1.5" fill="#7ba05b"/><rect x="${W*0.3}" y="${topH+nicheH*0.5}" width="8" height="4" rx="1" fill="#d8b24e"/>`;
+  } else { s+=`<rect x="9" y="${topH+6}" width="${W-18}" height="${nicheH-12}" rx="3" fill="#dfe2e0" stroke="#b7bcb8" stroke-width="1"/>`;
+    s+=`<line x1="9" y1="${topH+nicheH*0.42}" x2="${W-9}" y2="${topH+nicheH*0.42}" stroke="#b7bcb8" stroke-width="1"/>`;
+    s+=`<rect x="${W-16}" y="${topH+nicheH*0.14}" width="3" height="${nicheH*0.22}" rx="1.5" fill="#9aa09b"/>`;
+    s+=`<rect x="${W-16}" y="${topH+nicheH*0.5}" width="3" height="${nicheH*0.22}" rx="1.5" fill="#9aa09b"/>`; }
+  if(open){ s+=`<rect x="2" y="${H-botH}" width="${W-4}" height="${botH-2}" rx="2" fill="${shade(body.base,-0.44)}"/>`;
+    for(let k=1;k<=2;k++){ const yy=H-botH+4+(botH-8)*k/3; s+=`<rect x="5" y="${yy}" width="${W-10}" height="3" fill="${shade(body.base,-0.06)}"/>`; }
+  } else s+=columnsDoorsSub(0,H-botH,W,botH,2,fin,p.handle); return s; }
 function bed(p){ const {W,H,fin,body}=p; let s=""; const hbH=H*0.60;
   s+=`<rect x="3" y="0" width="${W-6}" height="${hbH}" rx="7" fill="${fillOf(fin)}" stroke="${shade(fin.base,-0.25)}" stroke-width="1"/>`;
   s+=`<rect x="${W*0.13}" y="${hbH*0.18}" width="${W*0.74}" height="${hbH*0.66}" rx="7" fill="${shade(body.base,0.08)}" stroke="${shade(body.base,-0.2)}" stroke-width="1"/>`;
   for(let i=1;i<5;i++){ s+=`<line x1="${W*0.13}" y1="${hbH*0.18+hbH*0.66*i/5}" x2="${W*0.87}" y2="${hbH*0.18+hbH*0.66*i/5}" stroke="${shade(body.base,-0.12)}" stroke-width="0.6" opacity="0.5"/>`; }
   s+=`<rect x="6" y="${hbH-4}" width="${W-12}" height="12" rx="6" fill="#efeee9" stroke="#d9d8d1" stroke-width="0.8"/>`;
   s+=`<rect x="0" y="${hbH+8}" width="${W}" height="${H-hbH-8}" rx="4" fill="${fillOf(fin)}" stroke="${shade(fin.base,-0.25)}" stroke-width="1"/>`;
+  if(p.view==="open"){ const by=hbH+12, bh=H-hbH-16; s+=`<rect x="4" y="${by}" width="${W-8}" height="${bh}" rx="3" fill="${shade(body.base,-0.34)}"/><rect x="4" y="${by}" width="${W-8}" height="6" rx="3" fill="${shade(body.base,-0.13)}"/><rect x="${W*0.5-9}" y="${by+bh*0.4}" width="18" height="3" rx="1.5" fill="#b9beba"/>`; }
   s+=`<rect x="2" y="${H-6}" width="8" height="6" fill="${shade(fin.base,-0.3)}"/><rect x="${W-10}" y="${H-6}" width="8" height="6" fill="${shade(fin.base,-0.3)}"/>`;
   return s; }
 
