@@ -21,14 +21,30 @@ function np_counter_file() {
 }
 function np_counter_read() {
   $f = np_counter_file();
-  if (is_readable($f)) { $j = json_decode((string)@file_get_contents($f), true); if (is_array($j)) return array_merge(['orders'=>0,'opens'=>0], $j); }
-  return ['orders'=>0, 'opens'=>0];
+  if (is_readable($f)) { $j = json_decode((string)@file_get_contents($f), true); if (is_array($j)) return array_merge(['orders'=>0,'opens'=>0,'views'=>0], $j); }
+  return ['orders'=>0, 'opens'=>0, 'views'=>0];
 }
 function np_counter_bump($key) {
   $f = np_counter_file(); $c = np_counter_read(); $c[$key] = ((int)($c[$key] ?? 0)) + 1;
   @file_put_contents($f, json_encode($c), LOCK_EX); return $c;
 }
 
+/* ping „cineva a deschis o pagină" — numărătoare simplă: fără cookie-uri, fără IP,
+   fără nimic despre persoană. Doar câte deschideri, pe ce pagină, în ce zi. */
+if (isset($_GET['ping']) && $_GET['ping'] === 'view') {
+  $p = strtolower((string)(isset($_GET['p']) ? $_GET['p'] : 'alt'));
+  $p = preg_replace('~[^a-z0-9_-]~', '', $p); if ($p === '') { $p = 'alt'; }
+  $f = np_counter_file(); $c = np_counter_read();
+  $c['views'] = ((int)(isset($c['views']) ? $c['views'] : 0)) + 1;
+  if (!isset($c['pages']) || !is_array($c['pages'])) { $c['pages'] = []; }
+  $c['pages'][$p] = ((int)(isset($c['pages'][$p]) ? $c['pages'][$p] : 0)) + 1;
+  if (!isset($c['days']) || !is_array($c['days'])) { $c['days'] = []; }
+  $d = gmdate('Y-m-d');
+  $c['days'][$d] = ((int)(isset($c['days'][$d]) ? $c['days'][$d] : 0)) + 1;
+  if (count($c['days']) > 120) { ksort($c['days']); $c['days'] = array_slice($c['days'], -120, null, true); }
+  @file_put_contents($f, json_encode($c), LOCK_EX);
+  echo json_encode(['ok'=>true]); exit;
+}
 /* ping „s-a deschis configuratorul/planner-ul" (sendBeacon, orice metodă) */
 if (isset($_GET['ping']) && $_GET['ping'] === 'open') { np_counter_bump('opens'); echo json_encode(['ok'=>true]); exit; }
 /* citirea contorului: comenzi trimise + deschideri */

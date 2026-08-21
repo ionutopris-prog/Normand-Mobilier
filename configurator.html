@@ -396,5 +396,6 @@ init();
 // semnalează o deschidere (contor, non-blocant)
 try { if (navigator.sendBeacon) navigator.sendBeacon("trimite-oferta.php?ping=open"); else fetch("trimite-oferta.php?ping=open").catch(function(){}); } catch(e) {}
 </script>
+<script>try{var _np="configurator";if(navigator.sendBeacon)navigator.sendBeacon("trimite-oferta.php?ping=view&p="+_np);else fetch("trimite-oferta.php?ping=view&p="+_np).catch(function(){});}catch(e){}</script>
 </body>
 </html>
