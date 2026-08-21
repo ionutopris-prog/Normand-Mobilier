@@ -1,0 +1,40 @@
+bucatarie_35021550|Bucătării|Bucătărie din lemn, corpuri până în tavan|Fronturi de lemn pe toată înălțimea camerei — fără spațiu de praf deasupra și cu depozitare dublă.
+bucatarie_6032416|Bucătării|Antracit cu lemn, insulă cu lumină|Combinația care se cere cel mai des acum: corp închis la culoare, blat și accente de lemn.
+bucatarie_6076850|Bucătării|Lamele de lemn și fronturi fără mâner|Deschidere prin apăsare, fără mânere vizibile. Linia rămâne continuă pe tot peretele.
+bucatarie_6265836|Bucătării|Alb lucios cu insulă|Alb lucios reflectă lumina și face bucătăria mică să pară dublă.
+bucatarie_6283972|Bucătării|Gri cu insulă și corpuri suspendate|Corpuri de sus până în tavan, insulă cu depozitare pe ambele fețe.
+bucatarie_6284230|Bucătării|Lemn cald și zonă de luat masa integrată|Bucătăria și masa fac un singur corp — soluție pentru spații deschise.
+bucatarie_6508347|Bucătării|Alb mat cu blat de lemn|Cel mai vândut contrast: corp alb mat, blat și poliță de lemn.
+bucatarie_6508353|Bucătării|Alb cu blat de lemn, linie dreaptă|Bucătărie pe un singur perete — potrivită pentru apartamente de două camere.
+bucatarie_5041326|Bucătării|Lemn cu gri, stil nordic|Fronturi de lemn deschis și corpuri gri, cu electrocasnice încastrate.
+bucatarie_38525110|Bucătării|Bej minimalist cu insulă|Fără mânere, fără linii — totul se citește ca o singură suprafață.
+bucatarie_4151928|Bucătării|Alb cu lemn, rafturi deschise|Rafturi deschise peste blat, în loc de corpuri suspendate.
+bucatarie_34558075|Bucătării|Bleumarin cu blat alb|Culoarea închisă jos, deschisă sus — face camera să pară mai înaltă.
+dressing_20705886|Dressing|Dressing de lemn cu iluminare pe rafturi|Bandă LED pe fiecare raft: vezi ce ai fără să aprinzi lumina mare.
+dressing_6580395|Dressing|Dressing gri cu rafturi de lemn|Structură închisă la culoare, rafturi contrastante — se murdărește greu, se vede bine.
+dressing_6580406|Dressing|Dressing cu panouri lamelare|Panoul lamelar în spate ridică o cameră de depozitare la nivel de cameră de arătat.
+dressing_6585750|Dressing|Dressing de nuc, deschis|Fără uși: totul la vedere, acces în două secunde.
+dressing_7045314|Dressing|Dressing cald, rafturi pe toți pereții|Camera mică transformată în dressing complet, cu bancă la mijloc.
+dressing_7195887|Dressing|Dressing cu uși de sticlă|Ușile de sticlă țin praful afară și lasă hainele la vedere.
+dressing_8146203|Dressing|Dressing pe coridor|Un hol strâmt devine dressing pe toată lungimea.
+dressing_36777983|Dressing|Dressing alb clasic|Alb, sertare la mijloc, bare pe două niveluri — cel mai cerut model.
+dressing_7166555|Dressing|Dressing alb în colț|Colțul folosit până la ultimul centimetru.
+dressing_6670657|Dressing|Dressing cu insulă centrală|Insula cu sertare la mijlocul camerei — pentru ceasuri, bijuterii, ochelari.
+dormitor_7060824|Dormitoare|Pat cu punte de corpuri suspendate|Puntea peste pat: depozitare unde altfel era perete gol. O facem des.
+dormitor_7060826|Dormitoare|Punte suspendată cu loc de televizor|Aceeași punte, cu nișă pentru televizor și noptiere integrate.
+dormitor_6480198|Dormitoare|Perete de lemn în spatele patului|Tăblia și peretele fac un corp — se montează pe orice lățime.
+dormitor_6487951|Dormitoare|Dulap deschis, dressing în dormitor|Când nu ai cameră separată, dressingul intră în dormitor.
+dormitor_6588581|Dormitoare|Dormitor modern cu corp lung sub fereastră|Corp jos pe toată lungimea: depozitare fără să blocheze lumina.
+dormitor_6934170|Dormitoare|Pat cu tăblie tapițată și consolă de lemn|Tăblie moale, consolă pe perete în loc de noptiere.
+dormitor_7546637|Dormitoare|Birou și dulap într-un singur corp|Pentru camera de copil: dulap, birou și rafturi croite împreună.
+dormitor_7546649|Dormitoare|Dulap cu nișă pentru televizor|Televizorul intră în dulap, nu pe perete.
+dormitor_7546720|Dormitoare|Dulapuri albe pe tot peretele|Pe toată lungimea și până în tavan — depozitare maximă, aspect de perete.
+dormitor_7061419|Dormitoare|Interior de dulap, compartimentat|Bare, rafturi, sertare și suport de pantofi — organizarea dinăuntru.
+living_5661719|Living|Perete de living cu rafturi suspendate|Rafturi care par că plutesc, corp jos închis pentru ce nu vrei la vedere.
+living_6636320|Living|Perete de televizor cu comodă suspendată|Comoda ridicată de la podea — se curăță ușor, camera pare mai mare.
+living_6580232|Living|Bibliotecă pe tot peretele|De la podea până în tavan, croită pe milimetru pe peretele tău.
+living_8146216|Living|Bibliotecă de lemn cu nișe|Rafturi de adâncimi diferite, pentru cărți și obiecte deopotrivă.
+living_7587290|Living|Bibliotecă cu scară|Când peretele e înalt: scară pe șină, acces până sus.
+living_6980654|Living|Rafturi negre pe panou lamelar|Metal și lemn, pentru un living cu personalitate.
+living_8089161|Living|Panou de lemn cu televizor încastrat|Panoul ascunde cablurile și încălzește camera.
+living_36777521|Living|Rafturi minimaliste și consolă de lemn|Puțin, dar exact unde trebuie — pentru cine nu vrea mobilă multă.
