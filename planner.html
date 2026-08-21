@@ -40,7 +40,21 @@
 .lr-btn:disabled{opacity:.3;cursor:default}
 .layout-add{display:flex;flex-wrap:wrap;gap:8px;margin-top:9px}
 .lbtn{flex:1 1 46%;border:1px dashed #b7c2b0;background:#f6f8f3;border-radius:10px;padding:9px;cursor:pointer;font-weight:600;color:#2f4a37;font-size:12.5px;font-family:inherit}
-.lbtn:hover{background:#e9efe3;border-color:#2f4a37}</style>
+.lbtn:hover{background:#e9efe3;border-color:#2f4a37}
+  /* bara de selecție multiplă */
+  .selbar { display:flex; align-items:center; gap:10px; margin:0 0 12px; flex-wrap:wrap; }
+  .selbar-btn { display:inline-flex; align-items:center; gap:8px; font:inherit; font-size:13.5px;
+    font-weight:600; color:#2f4a37; background:#fff; border:1px solid #cad8c3; border-radius:999px;
+    padding:8px 15px; cursor:pointer; transition:background .15s,color .15s,border-color .15s; }
+  .selbar-btn:hover { border-color:#2f4a37; }
+  .selbar-btn .mb-box { width:14px; height:14px; border:1.8px solid #2f4a37; border-radius:4px;
+    display:inline-block; flex:none; position:relative; }
+  .selbar-btn.active { background:#2f4a37; color:#f5f3ec; border-color:#2f4a37; }
+  .selbar-btn.active .mb-box { background:#f5f3ec; border-color:#f5f3ec; }
+  .selbar-btn.active .mb-box::after { content:"✓"; position:absolute; inset:0; color:#2f4a37;
+    font-size:11px; line-height:11px; text-align:center; font-weight:700; }
+  .selbar-count { font-size:13px; color:#56634f; font-weight:600; }
+</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -137,7 +151,12 @@
       <div class="stage-head">
         <div class="eyebrow">Amenajare · cameră întreagă</div>
         <h1 id="roomTitle">Bucătărie dreaptă</h1>
-        <div class="sub">Click = alegi un corp · <b>încă un click</b> pe el = îl deschizi (inclusiv corpurile de sus) · <b>Shift/⌘+click</b> = mai multe deodată · trage = mută.</div>
+        <div class="sub">Atingi un corp = îl alegi · <b>ține apăsat</b> pe el = îl deschizi (pe calculator: încă un click) · <b>Shift/⌘+click</b> sau butonul de mai jos = mai multe deodată · trage = mută.</div>
+      </div>
+      <div class="selbar">
+        <button class="selbar-btn" id="multiBtn" type="button"><span class="mb-box"></span>Selectează mai multe</button>
+        <span class="selbar-count" id="multiCount"></span>
+        <button class="ghost-btn" id="multiDone" type="button" style="display:none">Gata</button>
       </div>
       <div class="viewer" id="viewer"></div>
       <div class="stage-foot">
@@ -291,6 +310,7 @@ let room={ name:"Bucătărie dreaptă", kind:"kitchen", wall:true, modules:[] };
 let selectedIds=[], allTarget="front", selTarget="front", bulkTarget="front";
 let layout=[]; // {id,x,w} in cm for base row
 let drag={active:false,id:null,startX:0,moved:false,dropIndex:null};
+let multiMode=false, lpTimer=null, lpFired=false;
 
 function loadTemplate(name){ const t=TEMPLATES[name]; room={ name, kind:t.kind, wall:t.wall, modules:t.make() };
   selectedIds=[]; el("roomTitle").textContent=name;
@@ -377,7 +397,21 @@ function attachSceneEvents(){
   const svg=el("scene"); if(!svg) return;
   svg.querySelectorAll(".mod").forEach(g=>{
     g.addEventListener("pointerdown",(e)=>{ e.preventDefault();
-      drag={active:true,id:g.dataset.id,startX:e.clientX,moved:false,dropIndex:null,multi:(e.shiftKey||e.metaKey)};
+      const touch = (e.pointerType==="touch" || e.pointerType==="pen");
+      lpFired=false; clearTimeout(lpTimer);
+      drag={active:true,id:g.dataset.id,startX:e.clientX,moved:false,dropIndex:null,
+            multi:(e.shiftKey||e.metaKey||multiMode), touch:touch};
+      // pe telefon: ținut apăsat = deschide/închide corpul (pe desktop rămâne re-click)
+      if(touch && !multiMode){
+        const tid=drag.id;
+        lpTimer=setTimeout(()=>{
+          if(!drag.active || drag.moved) return;
+          lpFired=true; selectedIds=[tid];
+          const m=resolveMod(tid);
+          if(m && canOpen(m)){ m.open=!m.open; if(m.open && usesInterior(m)) ensureLayout(m); }
+          renderScene(); renderPanel();
+        }, 500);
+      }
       window.addEventListener("pointermove",onDragMove);
       window.addEventListener("pointerup",onDragUp,{once:true});
     });
@@ -391,17 +425,18 @@ function attachSceneEvents(){
 function baseRects(){ const svg=el("scene"); return [...svg.querySelectorAll('.mod')].filter(g=>!isWallId(g.dataset.id)).map(g=>({id:g.dataset.id, r:g.getBoundingClientRect()})); }
 function onDragMove(e){ if(!drag.active) return;
   if(isWallId(drag.id)) return; // corpurile de sus nu se reordonează
-  if(Math.abs(e.clientX-drag.startX)>6) drag.moved=true;
+  if(Math.abs(e.clientX-drag.startX)>6){ drag.moved=true; clearTimeout(lpTimer); }
   if(!drag.moved) return;
   const rects=baseRects(); let idx=rects.length;
   for(let i=0;i<rects.length;i++){ const c=rects[i].r.left+rects[i].r.width/2; if(e.clientX<c){ idx=i; break; } }
   // ajustare: index de inserție în array-ul curent
   drag.dropIndex=idx; renderScene();
 }
-function onDragUp(e){ window.removeEventListener("pointermove",onDragMove);
-  if(!drag.moved){ // click = select; Shift/⌘ = adaugă/scoate; re-click pe același corp = deschide/închide
+function onDragUp(e){ window.removeEventListener("pointermove",onDragMove); clearTimeout(lpTimer);
+  if(lpFired){ lpFired=false; drag={active:false,id:null,startX:0,moved:false,dropIndex:null}; return; }
+  if(!drag.moved){ // atingere = alege UN corp; mod multiplu sau Shift/⌘ = adaugă/scoate; pe desktop re-click = deschide
     if(drag.multi){ const i=selectedIds.indexOf(drag.id); if(i>=0) selectedIds.splice(i,1); else selectedIds.push(drag.id); }
-    else if(selectedIds.length===1 && selectedIds[0]===drag.id){ const m=resolveMod(drag.id); if(m&&canOpen(m)){ m.open=!m.open; if(m.open&&usesInterior(m)) ensureLayout(m); } }
+    else if(!drag.touch && selectedIds.length===1 && selectedIds[0]===drag.id){ const m=resolveMod(drag.id); if(m&&canOpen(m)){ m.open=!m.open; if(m.open&&usesInterior(m)) ensureLayout(m); } }
     else selectedIds=[drag.id];
     drag={active:false,id:null,startX:0,moved:false,dropIndex:null}; renderScene(); renderPanel(); return; }
   // drop = reorder
@@ -415,7 +450,17 @@ function sel(){ return resolveMod(selectedIds[selectedIds.length-1]); }
 function selMulti(){ return selectedIds.map(resolveMod).filter(Boolean); }
 function deleteSelection(){ selectedIds.forEach(id=>{ if(isWallId(id)){ const b=room.modules.find(m=>m.id===id.slice(2)); if(b&&b.wall) b.wall.present=false; } });
   const baseIds=selectedIds.filter(id=>!isWallId(id)); room.modules=room.modules.filter(m=>!baseIds.includes(m.id)); selectedIds=[]; renderScene(); renderPanel(); }
+function updateSelBar(){
+  const b=el("multiBtn"), c=el("multiCount"), d=el("multiDone"); if(!b) return;
+  b.classList.toggle("active", multiMode);
+  d.style.display = multiMode ? "" : "none";
+  c.textContent = multiMode
+    ? (selectedIds.length===1 ? "1 corp selectat" : selectedIds.length+" corpuri selectate")
+    : "";
+}
+function setMultiMode(on){ multiMode=!!on; updateSelBar(); }
 function renderPanel(){
+  updateSelBar();
   const multi=selectedIds.length>1;
   const m=sel();
   el("emptyHint").style.display=(selectedIds.length===0)?"block":"none";
@@ -544,6 +589,8 @@ function init(){
   const tg=el("tplGrid");
   Object.keys(TEMPLATES).forEach(name=>{ const b=document.createElement("button"); b.className="tpl-btn"; b.dataset.tpl=name; b.textContent=name; b.onclick=()=>loadTemplate(name); tg.appendChild(b); });
   el("delBtn").onclick=()=>{ if(!selectedIds.length) return; deleteSelection(); };
+  el("multiBtn").onclick=()=>{ setMultiMode(!multiMode); };
+  el("multiDone").onclick=()=>{ setMultiMode(false); };
   el("addBtn").onclick=()=>{ buildAddMenu(); el("addMenu").classList.toggle("open"); };
   document.querySelectorAll('.subtabs button[data-w]').forEach(b=>b.onclick=()=>{ selTarget=b.dataset.w; document.querySelectorAll('.subtabs button[data-w]').forEach(x=>x.classList.toggle("active",x===b)); buildSelSwatches(); });
   document.querySelectorAll('.subtabs button[data-all]').forEach(b=>b.onclick=()=>{ allTarget=b.dataset.all; document.querySelectorAll('.subtabs button[data-all]').forEach(x=>x.classList.toggle("active",x===b)); });
