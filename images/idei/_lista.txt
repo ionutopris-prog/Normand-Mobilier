@@ -1,3 +1,6 @@
+bucatarie_6782272|Bucătării|Coloană de cuptoare|Toate electrocasnicele într-o coloană, blatul rămâne liber.
+dormitor_8089081|Dormitoare|Dulap de colț|Colțul camerei transformat în depozitare utilă.
+living_7214166|Living|Rafturi deschise și corpuri închise|La vedere ce arată bine, închis ce nu vrei să se vadă.
 bucatarie_36777557|Bucătării|Fronturi fără mâner|Deschidere prin apăsare — linia rămâne continuă pe tot peretele.
 dormitor_7214332|Dormitoare|Dormitor cu birou integrat|Dulap, birou și rafturi croite ca un singur corp.
 living_31376732|Living|Corp de living cu bar|Zona de pahare, integrată în peretele de mobilă.
