@@ -32,3 +32,6 @@ jobs:
             .gitignore
             site.zip
             README.md
+            data/**
+            scripts/**
+            images/idei/_*.txt

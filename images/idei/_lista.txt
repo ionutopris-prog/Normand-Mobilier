@@ -1,3 +1,13 @@
+bucatarie_36777557|Bucătării|Fronturi fără mâner|Deschidere prin apăsare — linia rămâne continuă pe tot peretele.
+dormitor_7214332|Dormitoare|Dormitor cu birou integrat|Dulap, birou și rafturi croite ca un singur corp.
+living_31376732|Living|Corp de living cu bar|Zona de pahare, integrată în peretele de mobilă.
+dressing_7045298|Dressing|Dressing pe toată camera|Rafturi și bare pe toți pereții, cu bancă la mijloc.
+bucatarie_7031879|Bucătării|Bucătărie în U|Trei laturi de blat: tot ce-ți trebuie la un pas distanță.
+dormitor_31728404|Dormitoare|Tăblie tapițată la comandă|Se face pe lățimea patului tău, în materialul ales de tine.
+living_36777844|Living|Corp jos pe toată lungimea|Linie continuă, depozitare mare, aspect liniștit.
+dressing_6297086|Dressing|Sertare cu compartimente|Fiecare lucru la locul lui, de la ceasuri la cravate.
+bucatarie_10117725|Bucătării|Blat rezistent, ușor de curățat|Alegem materialul de blat după cum gătești, nu după modă.
+dormitor_6444255|Dormitoare|Dressing în dormitor|Când nu ai cameră separată, dressingul intră aici.
 bucatarie_6523296|Bucătării|Bucătărie în L, alb mat cu blat deschis|Corpuri pe două laturi, cuptor și microunde încastrate la înălțimea ochilor — nu te mai apleci.
 bucatarie_6523300|Bucătării|Bucătărie albă cu insulă mică|Insula adaugă blat de lucru și depozitare fără să blocheze trecerea.
 bucatarie_6636302|Bucătării|Alb lucios cu nuc și electrocasnice negre|Contrastul alb–nuc–negru, cel mai cerut în apartamentele noi.

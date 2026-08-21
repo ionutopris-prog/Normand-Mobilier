@@ -1,0 +1,70 @@
+name: Idei de amenajare — 10 poze noi pe zi
+
+# Rulează singur în fiecare dimineață, în cloud. Nu depinde de calculatorul nimănui.
+on:
+  schedule:
+    - cron: '10 5 * * *'      # 05:10 UTC = 08:10 în România (ora de vară)
+  workflow_dispatch:          # și manual, din tab-ul Actions
+    inputs:
+      cate:
+        description: 'Câte poze să publice acum'
+        required: false
+        default: '10'
+
+permissions:
+  contents: write
+
+jobs:
+  publica:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Instalează ImageMagick + WebP
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq imagemagick webp
+
+      - name: Publică pozele de azi
+        env:
+          PEXELS_KEY: ${{ secrets.PEXELS_KEY }}
+          IDEI_PE_ZI: ${{ github.event.inputs.cate || '10' }}
+          IDEI_MAX: '150'
+        run: python3 scripts/idei_zilnic.py
+
+      - name: Comite ce s-a schimbat
+        id: commit
+        run: |
+          git config user.name  "Robot Normand"
+          git config user.email "actions@users.noreply.github.com"
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "nimic de comis"; echo "schimbat=nu" >> $GITHUB_OUTPUT; exit 0
+          fi
+          git add -A
+          git commit -m "Idei de amenajare: poze noi ($(date -u +%Y-%m-%d))"
+          git push
+          echo "schimbat=da" >> $GITHUB_OUTPUT
+
+      # Push-ul făcut de robot NU declanșează workflow-ul de deploy,
+      # așa că urcăm pe hosting chiar de aici.
+      - name: Urcă pe Datahost
+        if: steps.commit.outputs.schimbat == 'da'
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftp
+          port: 21
+          server-dir: ./
+          state-name: .deploy-state-4.json
+          timeout: 120000
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            .gitignore
+            site.zip
+            README.md
+            data/**
+            scripts/**
+            images/idei/_*.txt
