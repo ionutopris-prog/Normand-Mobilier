@@ -1,3 +1,13 @@
+bucatarie_7837007|Bucătării|Bucătărie cu zonă de luat masa|Masa croită din același material, ca un singur corp.
+dormitor_4090093|Dormitoare|Dulap cu nișă pentru televizor|Televizorul intră în mobilă, nu pe perete.
+living_20510024|Living|Birou încastrat în bibliotecă|Locul de lucru intră în perete, nu ocupă cameră.
+dressing_5705496|Dressing|Rafturi cu lumină|Bandă LED pe fiecare raft: vezi ce ai fără lumina mare.
+bucatarie_6899443|Bucătării|Bucătărie pe măsura camerei|Corpuri croite exact pe pereții tăi — fără spații moarte între mobilă și zid.
+dormitor_2062431|Dormitoare|Paturi suprapuse la comandă|Două locuri de dormit pe suprafața unuia singur.
+living_6934172|Living|Bibliotecă de colț|Colțul livingului, folosit până la ultimul raft.
+dressing_7061417|Dressing|Dressing deschis, fără uși|Acces în două secunde, aspect de magazin.
+bucatarie_6969988|Bucătării|Bucătărie cu insulă|Insula adaugă blat de lucru și depozitare pe ambele fețe.
+dormitor_7060822|Dormitoare|Dulap cu uși glisante|Ușile nu au nevoie de spațiu ca să se deschidă.
 bucatarie_6782272|Bucătării|Coloană de cuptoare|Toate electrocasnicele într-o coloană, blatul rămâne liber.
 dormitor_8089081|Dormitoare|Dulap de colț|Colțul camerei transformat în depozitare utilă.
 living_7214166|Living|Rafturi deschise și corpuri închise|La vedere ce arată bine, închis ce nu vrei să se vadă.
