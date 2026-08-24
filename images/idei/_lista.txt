@@ -1,3 +1,13 @@
+bucatarie_35553431|Bucătării|Bucătărie cu zonă de luat masa|Masa croită din același material, ca un singur corp.
+dormitor_4907201|Dormitoare|Corp lung sub fereastră|Depozitare joasă care nu blochează lumina.
+living_35670376|Living|Bibliotecă până în tavan|Rafturi pe toată înălțimea, calculate pe cărțile tale.
+dressing_7195876|Dressing|Dressing pe toată camera|Rafturi și bare pe toți pereții, cu bancă la mijloc.
+bucatarie_6933857|Bucătării|Bucătărie pe măsura camerei|Corpuri croite exact pe pereții tăi — fără spații moarte între mobilă și zid.
+dormitor_6835162|Dormitoare|Noptiere suspendate|Se curăță ușor dedesubt, camera pare mai mare.
+living_18337477|Living|Birou încastrat în bibliotecă|Locul de lucru intră în perete, nu ocupă cameră.
+dressing_7671161|Dressing|Sertare cu compartimente|Fiecare lucru la locul lui, de la ceasuri la cravate.
+bucatarie_7061399|Bucătării|Bucătărie cu insulă|Insula adaugă blat de lucru și depozitare pe ambele fețe.
+dormitor_8089076|Dormitoare|Dulap pe tot peretele|De la podea până în tavan, croit pe milimetru.
 bucatarie_7303779|Bucătării|Bucătărie în L|Cea mai eficientă formă pentru apartamente de două camere.
 dormitor_17125482|Dormitoare|Dressing în dormitor|Când nu ai cameră separată, dressingul intră aici.
 living_6890394|Living|Panou de lemn cu televizor|Panoul ascunde cablurile și încălzește camera.
