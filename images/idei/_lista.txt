@@ -1,3 +1,13 @@
+bucatarie_6927201|Bucătării|Bucătărie în L|Cea mai eficientă formă pentru apartamente de două camere.
+dormitor_7166567|Dormitoare|Dulap cu nișă pentru televizor|Televizorul intră în mobilă, nu pe perete.
+living_8141964|Living|Perete de living la comandă|Croit pe lungimea peretelui tău, nu pe module standard.
+dressing_38337242|Dressing|Oglindă integrată în dulap|Oglinda pe o ușă, ca să nu ocupe perete separat.
+bucatarie_6970055|Bucătării|Bucătărie deschisă spre living|Aceeași linie de mobilă continuă din bucătărie în zona de zi.
+dormitor_6585613|Dormitoare|Paturi suprapuse la comandă|Două locuri de dormit pe suprafața unuia singur.
+living_7563545|Living|Panou de lemn cu televizor|Panoul ascunde cablurile și încălzește camera.
+dressing_6274907|Dressing|Bare pe două niveluri|Dublezi lungimea de agățat în aceeași înălțime.
+bucatarie_6980709|Bucătării|Bar de separare|Desparte bucătăria de living fără să ridici perete.
+dormitor_7614613|Dormitoare|Dulap cu uși glisante|Ușile nu au nevoie de spațiu ca să se deschidă.
 bucatarie_35553431|Bucătării|Bucătărie cu zonă de luat masa|Masa croită din același material, ca un singur corp.
 dormitor_4907201|Dormitoare|Corp lung sub fereastră|Depozitare joasă care nu blochează lumina.
 living_35670376|Living|Bibliotecă până în tavan|Rafturi pe toată înălțimea, calculate pe cărțile tale.
