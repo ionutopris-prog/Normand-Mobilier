@@ -1,3 +1,13 @@
+bucatarie_8089193|Bucătării|Bucătărie în L|Cea mai eficientă formă pentru apartamente de două camere.
+dormitor_7018248|Dormitoare|Corp lung sub fereastră|Depozitare joasă care nu blochează lumina.
+living_27604128|Living|Depozitare ascunsă în living|Uși fără mâner, care se citesc ca un perete.
+dressing_7504591|Dressing|Insulă centrală cu sertare|Pentru bijuterii, ochelari, ceasuri — la îndemână.
+bucatarie_36777854|Bucătării|Bucătărie deschisă spre living|Aceeași linie de mobilă continuă din bucătărie în zona de zi.
+dormitor_38183816|Dormitoare|Noptiere suspendate|Se curăță ușor dedesubt, camera pare mai mare.
+living_6177567|Living|Perete de living la comandă|Croit pe lungimea peretelui tău, nu pe module standard.
+dressing_8997978|Dressing|Dressing pe coridor|Un hol strâmt devine dressing pe toată lungimea.
+bucatarie_12513477|Bucătării|Bar de separare|Desparte bucătăria de living fără să ridici perete.
+dormitor_6980729|Dormitoare|Dulap pe tot peretele|De la podea până în tavan, croit pe milimetru.
 bucatarie_7018387|Bucătării|Bucătărie cu zonă de luat masa|Masa croită din același material, ca un singur corp.
 dormitor_7533928|Dormitoare|Dressing în dormitor|Când nu ai cameră separată, dressingul intră aici.
 living_37330367|Living|Bibliotecă de colț|Colțul livingului, folosit până la ultimul raft.
