@@ -1,3 +1,13 @@
+bucatarie_7060821|Bucătării|Bucătărie în L|Cea mai eficientă formă pentru apartamente de două camere.
+dormitor_38253349|Dormitoare|Dressing în dormitor|Când nu ai cameră separată, dressingul intră aici.
+living_6103836|Living|Panou de lemn cu televizor|Panoul ascunde cablurile și încălzește camera.
+dressing_6489107|Dressing|Dressing deschis, fără uși|Acces în două secunde, aspect de magazin.
+bucatarie_8176590|Bucătării|Bucătărie deschisă spre living|Aceeași linie de mobilă continuă din bucătărie în zona de zi.
+dormitor_6947268|Dormitoare|Punte de corpuri peste pat|Depozitare acolo unde altfel era perete gol.
+living_5002324|Living|Depozitare ascunsă în living|Uși fără mâner, care se citesc ca un perete.
+dressing_7031842|Dressing|Oglindă integrată în dulap|Oglinda pe o ușă, ca să nu ocupe perete separat.
+bucatarie_7060820|Bucătării|Bar de separare|Desparte bucătăria de living fără să ridici perete.
+dormitor_7045354|Dormitoare|Mobilier pentru cameră de copil|Pat, dulap și loc de teme, pe dimensiunile camerei mici.
 bucatarie_7533760|Bucătării|Bucătărie cu zonă de luat masa|Masa croită din același material, ca un singur corp.
 dormitor_37070076|Dormitoare|Dulap cu nișă pentru televizor|Televizorul intră în mobilă, nu pe perete.
 living_37447584|Living|Birou încastrat în bibliotecă|Locul de lucru intră în perete, nu ocupă cameră.
@@ -138,9 +148,3 @@ dormitor_7546720|Dormitoare|Dulapuri albe pe tot peretele|Pe toată lungimea și
 dormitor_7061419|Dormitoare|Interior de dulap, compartimentat|Bare, rafturi, sertare și suport de pantofi — organizarea dinăuntru.
 living_5661719|Living|Perete de living cu rafturi suspendate|Rafturi care par că plutesc, corp jos închis pentru ce nu vrei la vedere.
 living_6636320|Living|Perete de televizor cu comodă suspendată|Comoda ridicată de la podea — se curăță ușor, camera pare mai mare.
-living_6580232|Living|Bibliotecă pe tot peretele|De la podea până în tavan, croită pe milimetru pe peretele tău.
-living_8146216|Living|Bibliotecă de lemn cu nișe|Rafturi de adâncimi diferite, pentru cărți și obiecte deopotrivă.
-living_7587290|Living|Bibliotecă cu scară|Când peretele e înalt: scară pe șină, acces până sus.
-living_6980654|Living|Rafturi negre pe panou lamelar|Metal și lemn, pentru un living cu personalitate.
-living_8089161|Living|Panou de lemn cu televizor încastrat|Panoul ascunde cablurile și încălzește camera.
-living_36777521|Living|Rafturi minimaliste și consolă de lemn|Puțin, dar exact unde trebuie — pentru cine nu vrea mobilă multă.

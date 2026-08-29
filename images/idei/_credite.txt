@@ -1,3 +1,13 @@
+bucatarie_7060821|Max Vakhtbovych|https://www.pexels.com/photo/modern-kitchen-design-with-built-in-appliances-7060821/|https://www.pexels.com/@artbovich
+dormitor_38253349|Magda Ehlers|https://www.pexels.com/photo/interior-of-historic-jail-cell-with-artwork-decor-38253349/|https://www.pexels.com/@magda-ehlers-pexels
+living_6103836|Paul Lichtblau|https://www.pexels.com/photo/books-on-shelves-in-library-6103836/|https://www.pexels.com/@laup
+dressing_6489107|Max Vakhtbovych|https://www.pexels.com/photo/spacious-room-with-modern-wardrobe-6489107/|https://www.pexels.com/@artbovich
+bucatarie_8176590|Ron Lach|https://www.pexels.com/photo/kitchen-accessories-and-ingredients-on-counter-8176590/|https://www.pexels.com/@ron-lach
+dormitor_6947268|Max Vakhtbovych|https://www.pexels.com/photo/modern-bedroom-with-tv-and-bed-6947268/|https://www.pexels.com/@artbovich
+living_5002324|Barion McQueen|https://www.pexels.com/photo/brown-wooden-shelf-with-assorted-items-5002324/|https://www.pexels.com/@framedbydavinci
+dressing_7031842|Max Vakhtbovych|https://www.pexels.com/photo/interior-of-walk-in-closet-7031842/|https://www.pexels.com/@artbovich
+bucatarie_7060820|Max Vakhtbovych|https://www.pexels.com/photo/wall-of-kitchen-with-modern-furniture-and-appliances-7060820/|https://www.pexels.com/@artbovich
+dormitor_7045354|Max Vakhtbovych|https://www.pexels.com/photo/an-interior-of-a-bedroom-7045354/|https://www.pexels.com/@artbovich
 bucatarie_7533760|Max Vakhtbovych|https://www.pexels.com/photo/kitchen-interior-with-beige-furniture-7533760/|https://www.pexels.com/@artbovich
 dormitor_37070076|UMUT   🆁🅰🆆|https://www.pexels.com/photo/bright-twin-bedroom-with-decorated-walls-37070076/|https://www.pexels.com/@umudicreative
 living_37447584|Yazid N|https://www.pexels.com/photo/cozy-bookstore-interior-with-colorful-book-collection-37447584/|https://www.pexels.com/@mzynasx
@@ -138,9 +148,3 @@ dormitor_7546720|Max Vakhtbovych|https://www.pexels.com/photo/a-modern-design-be
 dormitor_7061419|Max Vakhtbovych|https://www.pexels.com/photo/brown-wooden-shelves-7061419/|https://www.pexels.com/@artbovich
 living_5661719|Serena Koi|https://www.pexels.com/photo/cozy-living-room-with-hanging-books-on-the-wall-5661719/|https://www.pexels.com/@serenakoi
 living_6636320|Max Vakhtbovych|https://www.pexels.com/photo/cozy-living-room-interior-with-wooden-furniture-and-comfy-couch-6636320/|https://www.pexels.com/@artbovich
-living_6580232|Max Vakhtbovych|https://www.pexels.com/photo/cozy-apartament-on-water-with-floor-to-ceiling-windows-6580232/|https://www.pexels.com/@artbovich
-living_8146216|Max Vakhtbovych|https://www.pexels.com/photo/brown-wooden-shelf-in-a-white-room-8146216/|https://www.pexels.com/@artbovich
-living_7587290|Max Vakhtbovych|https://www.pexels.com/photo/wooden-bookcase-and-ladder-7587290/|https://www.pexels.com/@artbovich
-living_6980654|Max Vakhtbovych|https://www.pexels.com/photo/contemporary-room-interior-with-sofa-against-chairs-at-home-6980654/|https://www.pexels.com/@artbovich
-living_8089161|Max Vakhtbovych|https://www.pexels.com/photo/modern-furniture-in-luxury-interior-design-8089161/|https://www.pexels.com/@artbovich
-living_36777521|Curtis Adams|https://www.pexels.com/photo/modern-living-room-with-wooden-floors-and-fireplace-36777521/|https://www.pexels.com/@curtis-adams-1694007
