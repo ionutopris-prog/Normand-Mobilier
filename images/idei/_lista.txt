@@ -1,3 +1,13 @@
+bucatarie_7060816|Bucătării|Bucătărie deschisă spre living|Aceeași linie de mobilă continuă din bucătărie în zona de zi.
+dormitor_6920604|Dormitoare|Punte de corpuri peste pat|Depozitare acolo unde altfel era perete gol.
+living_7512046|Living|Depozitare ascunsă în living|Uși fără mâner, care se citesc ca un perete.
+dressing_6980733|Dressing|Oglindă integrată în dulap|Oglinda pe o ușă, ca să nu ocupe perete separat.
+bucatarie_7214337|Bucătării|Bar de separare|Desparte bucătăria de living fără să ridici perete.
+dormitor_7587815|Dormitoare|Mobilier pentru cameră de copil|Pat, dulap și loc de teme, pe dimensiunile camerei mici.
+living_7534563|Living|Perete de living la comandă|Croit pe lungimea peretelui tău, nu pe module standard.
+dressing_30922972|Dressing|Bare pe două niveluri|Dublezi lungimea de agățat în aceeași înălțime.
+bucatarie_7031759|Bucătării|Hotă ascunsă în corp|Hota intră în mobilă, nimic nu iese din linie.
+dormitor_6580380|Dormitoare|Panou de lemn în spatele patului|Tăblia și peretele fac un corp — se montează pe orice lățime.
 bucatarie_7060821|Bucătării|Bucătărie în L|Cea mai eficientă formă pentru apartamente de două camere.
 dormitor_38253349|Dormitoare|Dressing în dormitor|Când nu ai cameră separată, dressingul intră aici.
 living_6103836|Living|Panou de lemn cu televizor|Panoul ascunde cablurile și încălzește camera.
@@ -138,13 +148,3 @@ dressing_7166555|Dressing|Dressing alb în colț|Colțul folosit până la ultim
 dressing_6670657|Dressing|Dressing cu insulă centrală|Insula cu sertare la mijlocul camerei — pentru ceasuri, bijuterii, ochelari.
 dormitor_7060824|Dormitoare|Pat cu punte de corpuri suspendate|Puntea peste pat: depozitare unde altfel era perete gol. O facem des.
 dormitor_7060826|Dormitoare|Punte suspendată cu loc de televizor|Aceeași punte, cu nișă pentru televizor și noptiere integrate.
-dormitor_6480198|Dormitoare|Perete de lemn în spatele patului|Tăblia și peretele fac un corp — se montează pe orice lățime.
-dormitor_6487951|Dormitoare|Dulap deschis, dressing în dormitor|Când nu ai cameră separată, dressingul intră în dormitor.
-dormitor_6588581|Dormitoare|Dormitor modern cu corp lung sub fereastră|Corp jos pe toată lungimea: depozitare fără să blocheze lumina.
-dormitor_6934170|Dormitoare|Pat cu tăblie tapițată și consolă de lemn|Tăblie moale, consolă pe perete în loc de noptiere.
-dormitor_7546637|Dormitoare|Birou și dulap într-un singur corp|Pentru camera de copil: dulap, birou și rafturi croite împreună.
-dormitor_7546649|Dormitoare|Dulap cu nișă pentru televizor|Televizorul intră în dulap, nu pe perete.
-dormitor_7546720|Dormitoare|Dulapuri albe pe tot peretele|Pe toată lungimea și până în tavan — depozitare maximă, aspect de perete.
-dormitor_7061419|Dormitoare|Interior de dulap, compartimentat|Bare, rafturi, sertare și suport de pantofi — organizarea dinăuntru.
-living_5661719|Living|Perete de living cu rafturi suspendate|Rafturi care par că plutesc, corp jos închis pentru ce nu vrei la vedere.
-living_6636320|Living|Perete de televizor cu comodă suspendată|Comoda ridicată de la podea — se curăță ușor, camera pare mai mare.
