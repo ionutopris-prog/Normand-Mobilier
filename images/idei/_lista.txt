@@ -1,3 +1,13 @@
+bucatarie_28272329|Bucătării|Bucătărie deschisă spre living|Aceeași linie de mobilă continuă din bucătărie în zona de zi.
+dormitor_7546288|Dormitoare|Punte de corpuri peste pat|Depozitare acolo unde altfel era perete gol.
+living_6782352|Living|Depozitare ascunsă în living|Uși fără mâner, care se citesc ca un perete.
+dressing_15305298|Dressing|Oglindă integrată în dulap|Oglinda pe o ușă, ca să nu ocupe perete separat.
+bucatarie_7060815|Bucătării|Bar de separare|Desparte bucătăria de living fără să ridici perete.
+dormitor_34636332|Dormitoare|Mobilier pentru cameră de copil|Pat, dulap și loc de teme, pe dimensiunile camerei mici.
+living_7195895|Living|Perete de living la comandă|Croit pe lungimea peretelui tău, nu pe module standard.
+dressing_7745933|Dressing|Bare pe două niveluri|Dublezi lungimea de agățat în aceeași înălțime.
+bucatarie_7545855|Bucătării|Hotă ascunsă în corp|Hota intră în mobilă, nimic nu iese din linie.
+dormitor_7166944|Dormitoare|Panou de lemn în spatele patului|Tăblia și peretele fac un corp — se montează pe orice lățime.
 bucatarie_7060816|Bucătării|Bucătărie deschisă spre living|Aceeași linie de mobilă continuă din bucătărie în zona de zi.
 dormitor_6920604|Dormitoare|Punte de corpuri peste pat|Depozitare acolo unde altfel era perete gol.
 living_7512046|Living|Depozitare ascunsă în living|Uși fără mâner, care se citesc ca un perete.
@@ -138,13 +148,3 @@ bucatarie_4151928|Bucătării|Alb cu lemn, rafturi deschise|Rafturi deschise pes
 bucatarie_34558075|Bucătării|Bleumarin cu blat alb|Culoarea închisă jos, deschisă sus — face camera să pară mai înaltă.
 dressing_20705886|Dressing|Dressing de lemn cu iluminare pe rafturi|Bandă LED pe fiecare raft: vezi ce ai fără să aprinzi lumina mare.
 dressing_6580395|Dressing|Dressing gri cu rafturi de lemn|Structură închisă la culoare, rafturi contrastante — se murdărește greu, se vede bine.
-dressing_6580406|Dressing|Dressing cu panouri lamelare|Panoul lamelar în spate ridică o cameră de depozitare la nivel de cameră de arătat.
-dressing_6585750|Dressing|Dressing de nuc, deschis|Fără uși: totul la vedere, acces în două secunde.
-dressing_7045314|Dressing|Dressing cald, rafturi pe toți pereții|Camera mică transformată în dressing complet, cu bancă la mijloc.
-dressing_7195887|Dressing|Dressing cu uși de sticlă|Ușile de sticlă țin praful afară și lasă hainele la vedere.
-dressing_8146203|Dressing|Dressing pe coridor|Un hol strâmt devine dressing pe toată lungimea.
-dressing_36777983|Dressing|Dressing alb clasic|Alb, sertare la mijloc, bare pe două niveluri — cel mai cerut model.
-dressing_7166555|Dressing|Dressing alb în colț|Colțul folosit până la ultimul centimetru.
-dressing_6670657|Dressing|Dressing cu insulă centrală|Insula cu sertare la mijlocul camerei — pentru ceasuri, bijuterii, ochelari.
-dormitor_7060824|Dormitoare|Pat cu punte de corpuri suspendate|Puntea peste pat: depozitare unde altfel era perete gol. O facem des.
-dormitor_7060826|Dormitoare|Punte suspendată cu loc de televizor|Aceeași punte, cu nișă pentru televizor și noptiere integrate.

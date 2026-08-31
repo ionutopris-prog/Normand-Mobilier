@@ -1,3 +1,13 @@
+bucatarie_28272329|The R.E Editor|https://www.pexels.com/photo/a-kitchen-with-a-table-and-chairs-and-a-refrigerator-28272329/|https://www.pexels.com/@the-r-e-editor-849420489
+dormitor_7546288|Max Vakhtbovych|https://www.pexels.com/photo/a-modern-bedroom-interior-7546288/|https://www.pexels.com/@artbovich
+living_6782352|Max Vakhtbovych|https://www.pexels.com/photo/interior-of-modern-living-room-with-orchid-6782352/|https://www.pexels.com/@artbovich
+dressing_15305298|Ayyeee Ayyeee|https://www.pexels.com/photo/glass-items-on-white-shelves-over-white-wall-15305298/|https://www.pexels.com/@ayyeee-ayyeee-434363205
+bucatarie_7060815|Max Vakhtbovych|https://www.pexels.com/photo/spacious-kitchen-with-modern-furniture-and-appliances-in-minimalist-apartment-7060815/|https://www.pexels.com/@artbovich
+dormitor_34636332|Franco Garcia|https://www.pexels.com/photo/cozy-minimalist-bedroom-with-pillows-and-towels-34636332/|https://www.pexels.com/@francogarciafilms
+living_7195895|Max Vakhtbovych|https://www.pexels.com/photo/spacious-apartment-with-couch-and-tv-7195895/|https://www.pexels.com/@artbovich
+dressing_7745933|Max Vakhtbovych|https://www.pexels.com/photo/wooden-furniture-in-rustic-house-7745933/|https://www.pexels.com/@artbovich
+bucatarie_7545855|Max Vakhtbovych|https://www.pexels.com/photo/a-white-kitchen-cabinets-with-sink-7545855/|https://www.pexels.com/@artbovich
+dormitor_7166944|Max Vakhtbovych|https://www.pexels.com/photo/bed-in-hotel-room-7166944/|https://www.pexels.com/@artbovich
 bucatarie_7060816|Max Vakhtbovych|https://www.pexels.com/photo/interior-of-modern-kitchen-with-contemporary-furniture-7060816/|https://www.pexels.com/@artbovich
 dormitor_6920604|Max Vakhtbovych|https://www.pexels.com/photo/simple-and-modern-interior-design-of-a-bedroom-6920604/|https://www.pexels.com/@artbovich
 living_7512046|Max Vakhtbovych|https://www.pexels.com/photo/modern-living-room-interior-in-beige-color-7512046/|https://www.pexels.com/@artbovich
@@ -138,13 +148,3 @@ bucatarie_4151928|Mikael Blomkvist|https://www.pexels.com/photo/woman-in-pink-lo
 bucatarie_34558075|HONG SON|https://www.pexels.com/photo/modern-kitchen-interior-with-blue-cabinets-34558075/|https://www.pexels.com/@hson
 dressing_20705886|Алан Албегов|https://www.pexels.com/photo/empty-wooden-room-20705886/|https://www.pexels.com/@albeg
 dressing_6580395|Max Vakhtbovych|https://www.pexels.com/photo/modern-wardrobe-storage-6580395/|https://www.pexels.com/@artbovich
-dressing_6580406|Max Vakhtbovych|https://www.pexels.com/photo/black-and-brown-empty-wardrobe-6580406/|https://www.pexels.com/@artbovich
-dressing_6585750|Max Vakhtbovych|https://www.pexels.com/photo/interior-of-wardrobe-with-many-shelves-6585750/|https://www.pexels.com/@artbovich
-dressing_7045314|Max Vakhtbovych|https://www.pexels.com/photo/modern-wardrobe-interior-with-shelves-at-home-7045314/|https://www.pexels.com/@artbovich
-dressing_7195887|Max Vakhtbovych|https://www.pexels.com/photo/dressing-room-with-empty-shelves-7195887/|https://www.pexels.com/@artbovich
-dressing_8146203|Max Vakhtbovych|https://www.pexels.com/photo/a-brown-wooden-walk-in-closet-8146203/|https://www.pexels.com/@artbovich
-dressing_36777983|Curtis Adams|https://www.pexels.com/photo/organized-walk-in-closet-with-diverse-clothing-36777983/|https://www.pexels.com/@curtis-adams-1694007
-dressing_7166555|Max Vakhtbovych|https://www.pexels.com/photo/white-classic-styled-built-in-wardrobe-with-empty-shelves-7166555/|https://www.pexels.com/@artbovich
-dressing_6670657|Huy Quang Nguyễn|https://www.pexels.com/photo/photo-of-walk-in-closet-6670657/|https://www.pexels.com/@huy-quang-nguy-n-18652822
-dormitor_7060824|Max Vakhtbovych|https://www.pexels.com/photo/bedside-white-wardrobe-with-wooden-bookshelf-7060824/|https://www.pexels.com/@artbovich
-dormitor_7060826|Max Vakhtbovych|https://www.pexels.com/photo/interior-of-modern-bedroom-with-bathroom-7060826/|https://www.pexels.com/@artbovich
