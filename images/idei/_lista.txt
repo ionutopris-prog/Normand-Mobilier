@@ -1,3 +1,13 @@
+bucatarie_6835123|Bucătării|Bucătărie deschisă spre living|Aceeași linie de mobilă continuă din bucătărie în zona de zi.
+dormitor_2082095|Dormitoare|Punte de corpuri peste pat|Depozitare acolo unde altfel era perete gol.
+living_5502255|Living|Depozitare ascunsă în living|Uși fără mâner, care se citesc ca un perete.
+dressing_5705482|Dressing|Oglindă integrată în dulap|Oglinda pe o ușă, ca să nu ocupe perete separat.
+bucatarie_37408949|Bucătării|Bar de separare|Desparte bucătăria de living fără să ridici perete.
+dormitor_189293|Dormitoare|Mobilier pentru cameră de copil|Pat, dulap și loc de teme, pe dimensiunile camerei mici.
+living_12148587|Living|Perete de living la comandă|Croit pe lungimea peretelui tău, nu pe module standard.
+dressing_6670659|Dressing|Bare pe două niveluri|Dublezi lungimea de agățat în aceeași înălțime.
+bucatarie_36777502|Bucătării|Hotă ascunsă în corp|Hota intră în mobilă, nimic nu iese din linie.
+dormitor_14021930|Dormitoare|Panou de lemn în spatele patului|Tăblia și peretele fac un corp — se montează pe orice lățime.
 bucatarie_28272329|Bucătării|Bucătărie deschisă spre living|Aceeași linie de mobilă continuă din bucătărie în zona de zi.
 dormitor_7546288|Dormitoare|Punte de corpuri peste pat|Depozitare acolo unde altfel era perete gol.
 living_6782352|Living|Depozitare ascunsă în living|Uși fără mâner, care se citesc ca un perete.
@@ -138,13 +148,3 @@ bucatarie_35021550|Bucătării|Bucătărie din lemn, corpuri până în tavan|Fr
 bucatarie_6032416|Bucătării|Antracit cu lemn, insulă cu lumină|Combinația care se cere cel mai des acum: corp închis la culoare, blat și accente de lemn.
 bucatarie_6076850|Bucătării|Lamele de lemn și fronturi fără mâner|Deschidere prin apăsare, fără mânere vizibile. Linia rămâne continuă pe tot peretele.
 bucatarie_6265836|Bucătării|Alb lucios cu insulă|Alb lucios reflectă lumina și face bucătăria mică să pară dublă.
-bucatarie_6283972|Bucătării|Gri cu insulă și corpuri suspendate|Corpuri de sus până în tavan, insulă cu depozitare pe ambele fețe.
-bucatarie_6284230|Bucătării|Lemn cald și zonă de luat masa integrată|Bucătăria și masa fac un singur corp — soluție pentru spații deschise.
-bucatarie_6508347|Bucătării|Alb mat cu blat de lemn|Cel mai vândut contrast: corp alb mat, blat și poliță de lemn.
-bucatarie_6508353|Bucătării|Alb cu blat de lemn, linie dreaptă|Bucătărie pe un singur perete — potrivită pentru apartamente de două camere.
-bucatarie_5041326|Bucătării|Lemn cu gri, stil nordic|Fronturi de lemn deschis și corpuri gri, cu electrocasnice încastrate.
-bucatarie_38525110|Bucătării|Bej minimalist cu insulă|Fără mânere, fără linii — totul se citește ca o singură suprafață.
-bucatarie_4151928|Bucătării|Alb cu lemn, rafturi deschise|Rafturi deschise peste blat, în loc de corpuri suspendate.
-bucatarie_34558075|Bucătării|Bleumarin cu blat alb|Culoarea închisă jos, deschisă sus — face camera să pară mai înaltă.
-dressing_20705886|Dressing|Dressing de lemn cu iluminare pe rafturi|Bandă LED pe fiecare raft: vezi ce ai fără să aprinzi lumina mare.
-dressing_6580395|Dressing|Dressing gri cu rafturi de lemn|Structură închisă la culoare, rafturi contrastante — se murdărește greu, se vede bine.

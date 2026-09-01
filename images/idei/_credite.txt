@@ -1,3 +1,13 @@
+bucatarie_6835123|Curtis Adams|https://www.pexels.com/photo/chairs-and-table-in-room-6835123/|https://www.pexels.com/@curtis-adams-1694007
+dormitor_2082095|Dmitry Zvolskiy|https://www.pexels.com/photo/green-leafed-plant-in-clear-glass-vase-on-top-of-side-table-2082095/|https://www.pexels.com/@zvolskiy
+living_5502255|Curtis Adams|https://www.pexels.com/photo/wooden-bookcase-with-books-in-empty-room-with-high-ceilings-5502255/|https://www.pexels.com/@curtis-adams-1694007
+dressing_5705482|Anastasia  Shuraeva|https://www.pexels.com/photo/high-heel-female-shoes-on-the-shelf-5705482/|https://www.pexels.com/@anastasia-shuraeva
+bucatarie_37408949|Waqas ilyas|https://www.pexels.com/photo/modern-minimalist-white-kitchen-interior-design-37408949/|https://www.pexels.com/@waqas-ilyas-81841622
+dormitor_189293|Donald Tong|https://www.pexels.com/photo/white-bedding-cover-beside-brown-wooden-side-table-189293/|https://www.pexels.com/@donaldtong94
+living_12148587|Pham Ngoc Anh|https://www.pexels.com/photo/a-cozy-living-room-with-glass-doors-12148587/|https://www.pexels.com/@pham-ngoc-anh-170983008
+dressing_6670659|Huy Quang Nguyễn|https://www.pexels.com/photo/photo-of-a-bedroom-6670659/|https://www.pexels.com/@huy-quang-nguy-n-18652822
+bucatarie_36777502|Curtis Adams|https://www.pexels.com/photo/modern-white-kitchen-with-marble-countertops-36777502/|https://www.pexels.com/@curtis-adams-1694007
+dormitor_14021930|Quang Nguyen Vinh|https://www.pexels.com/photo/beds-and-closet-in-a-hotel-room-14021930/|https://www.pexels.com/@quang-nguyen-vinh-222549
 bucatarie_28272329|The R.E Editor|https://www.pexels.com/photo/a-kitchen-with-a-table-and-chairs-and-a-refrigerator-28272329/|https://www.pexels.com/@the-r-e-editor-849420489
 dormitor_7546288|Max Vakhtbovych|https://www.pexels.com/photo/a-modern-bedroom-interior-7546288/|https://www.pexels.com/@artbovich
 living_6782352|Max Vakhtbovych|https://www.pexels.com/photo/interior-of-modern-living-room-with-orchid-6782352/|https://www.pexels.com/@artbovich
@@ -138,13 +148,3 @@ bucatarie_35021550|Ajit Singh|https://www.pexels.com/photo/minimalist-modern-kit
 bucatarie_6032416|Max Vakhtbovych|https://www.pexels.com/photo/simple-interior-of-contemporary-multistory-apartment-6032416/|https://www.pexels.com/@artbovich
 bucatarie_6076850|Max Vakhtbovych|https://www.pexels.com/photo/interior-of-cozy-kitchen-with-wooden-furniture-6076850/|https://www.pexels.com/@artbovich
 bucatarie_6265836|Max Vakhtbovych|https://www.pexels.com/photo/interior-of-kitchen-with-modern-furniture-and-appliances-6265836/|https://www.pexels.com/@artbovich
-bucatarie_6283972|Max Vakhtbovych|https://www.pexels.com/photo/modern-interior-of-spacious-minimalist-kitchen-6283972/|https://www.pexels.com/@artbovich
-bucatarie_6284230|Max Vakhtbovych|https://www.pexels.com/photo/wooden-furniture-and-table-in-contemporary-kitchen-6284230/|https://www.pexels.com/@artbovich
-bucatarie_6508347|Max Vakhtbovych|https://www.pexels.com/photo/interior-of-contemporary-white-kitchen-decorated-with-potted-fire-croton-plant-6508347/|https://www.pexels.com/@artbovich
-bucatarie_6508353|Max Vakhtbovych|https://www.pexels.com/photo/contemporary-interior-of-kitchen-with-bar-counter-and-kettle-6508353/|https://www.pexels.com/@artbovich
-bucatarie_5041326|Agnieszka Pogorzelska|https://www.pexels.com/photo/brown-wooden-table-with-white-chairs-on-wooden-flooring-5041326/|https://www.pexels.com/@agnieszka-pogorzelska-3369321
-bucatarie_38525110|FMC Furniture manufacturer Chalin|https://www.pexels.com/photo/modern-minimalist-kitchen-with-island-38525110/|https://www.pexels.com/@fmc-furniture-manufacturer-chalin-2162855932
-bucatarie_4151928|Mikael Blomkvist|https://www.pexels.com/photo/woman-in-pink-long-sleeve-shirt-holding-green-fruit-4151928/|https://www.pexels.com/@mikael-blomkvist
-bucatarie_34558075|HONG SON|https://www.pexels.com/photo/modern-kitchen-interior-with-blue-cabinets-34558075/|https://www.pexels.com/@hson
-dressing_20705886|Алан Албегов|https://www.pexels.com/photo/empty-wooden-room-20705886/|https://www.pexels.com/@albeg
-dressing_6580395|Max Vakhtbovych|https://www.pexels.com/photo/modern-wardrobe-storage-6580395/|https://www.pexels.com/@artbovich
