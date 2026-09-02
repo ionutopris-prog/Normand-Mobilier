@@ -1,3 +1,13 @@
+bucatarie_36777885|Bucătării|Bucătărie deschisă spre living|Aceeași linie de mobilă continuă din bucătărie în zona de zi.
+dormitor_31728410|Dormitoare|Punte de corpuri peste pat|Depozitare acolo unde altfel era perete gol.
+living_38666674|Living|Depozitare ascunsă în living|Uși fără mâner, care se citesc ca un perete.
+dressing_5720633|Dressing|Oglindă integrată în dulap|Oglinda pe o ușă, ca să nu ocupe perete separat.
+bucatarie_8082300|Bucătării|Bar de separare|Desparte bucătăria de living fără să ridici perete.
+dormitor_6903150|Dormitoare|Mobilier pentru cameră de copil|Pat, dulap și loc de teme, pe dimensiunile camerei mici.
+living_6585599|Living|Perete de living la comandă|Croit pe lungimea peretelui tău, nu pe module standard.
+dressing_11435420|Dressing|Bare pe două niveluri|Dublezi lungimea de agățat în aceeași înălțime.
+bucatarie_13751390|Bucătării|Hotă ascunsă în corp|Hota intră în mobilă, nimic nu iese din linie.
+dormitor_7214326|Dormitoare|Panou de lemn în spatele patului|Tăblia și peretele fac un corp — se montează pe orice lățime.
 bucatarie_6835123|Bucătării|Bucătărie deschisă spre living|Aceeași linie de mobilă continuă din bucătărie în zona de zi.
 dormitor_2082095|Dormitoare|Punte de corpuri peste pat|Depozitare acolo unde altfel era perete gol.
 living_5502255|Living|Depozitare ascunsă în living|Uși fără mâner, care se citesc ca un perete.
@@ -138,13 +148,3 @@ bucatarie_30857234|Bucătării|Bucătărie de lemn cu bibliotecă integrată|Buc
 bucatarie_29252361|Bucătării|Bucătărie mică, gri cu lemn|Soluție pentru garsonieră: tot ce trebuie pe doi metri de perete.
 bucatarie_29252572|Bucătării|Bucătărie în L, lemn cu blat negru|Lemn cald cu blat negru și masă rotundă în colț.
 dormitor_6782341|Dormitoare|Dormitor cu masă de toaletă integrată|Masa de toaletă croită în același corp cu dulapul.
-dormitor_7227611|Dormitoare|Dormitor cu perete de lemn și birou integrat|Peretele de lemn ascunde dulapul, biroul iese din același corp.
-dormitor_7227614|Dormitoare|Dormitor cu dulap alb și zonă de birou|Dulap alb pe tot peretele, cu birou încastrat la capăt.
-dormitor_8146146|Dormitoare|Dormitor minimalist cu corp lung pe perete|Un singur corp jos, pe toată lungimea — depozitare fără să încarce camera.
-dormitor_12277284|Dormitoare|Dormitor cu panou de lemn și corpuri negre|Panou de lemn în spatele patului, corpuri negre mate pe lateral.
-dormitor_12277297|Dormitoare|Dormitor bej cu panou tapițat|Tăblie tapițată lată, care ține loc și de tăblie, și de perete decorativ.
-dormitor_8417310|Dormitoare|Dormitor cald, cu comodă și oglindă|Comodă joasă și oglindă înaltă — camera pare dublă.
-bucatarie_35021550|Bucătării|Bucătărie din lemn, corpuri până în tavan|Fronturi de lemn pe toată înălțimea camerei — fără spațiu de praf deasupra și cu depozitare dublă.
-bucatarie_6032416|Bucătării|Antracit cu lemn, insulă cu lumină|Combinația care se cere cel mai des acum: corp închis la culoare, blat și accente de lemn.
-bucatarie_6076850|Bucătării|Lamele de lemn și fronturi fără mâner|Deschidere prin apăsare, fără mânere vizibile. Linia rămâne continuă pe tot peretele.
-bucatarie_6265836|Bucătării|Alb lucios cu insulă|Alb lucios reflectă lumina și face bucătăria mică să pară dublă.
