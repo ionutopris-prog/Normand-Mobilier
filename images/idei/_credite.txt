@@ -1,3 +1,13 @@
+bucatarie_10855207|Derwin  Edwards|https://www.pexels.com/photo/fruit-on-plate-in-kitchen-10855207/|https://www.pexels.com/@derwin-edwards-163348797
+dormitor_6156879|cottonbro studio|https://www.pexels.com/photo/two-plush-toys-on-bed-6156879/|https://www.pexels.com/@cottonbro
+living_33883600|🇻🇳🇻🇳Nguyễn Tiến Thịnh 🇻🇳🇻🇳|https://www.pexels.com/photo/modern-workspace-with-dual-monitors-and-telescope-33883600/|https://www.pexels.com/@nguy-n-ti-n-th-nh-2150376175
+dressing_6947274|Max Vakhtbovych|https://www.pexels.com/photo/corridor-of-modern-apartment-with-wardrobe-6947274/|https://www.pexels.com/@artbovich
+bucatarie_8082210|Max Vakhtbovych|https://www.pexels.com/photo/contemporary-kitchen-design-8082210/|https://www.pexels.com/@artbovich
+dormitor_23073441|Sakshi Maheshwari|https://www.pexels.com/photo/a-bedroom-with-tv-set-and-photographies-on-shelves-23073441/|https://www.pexels.com/@sakshi-maheshwari-1241361003
+living_19572098|Karina Lysenko|https://www.pexels.com/photo/library-shelves-full-of-books-19572098/|https://www.pexels.com/@karina-lysenko-775004911
+dressing_7045297|Max Vakhtbovych|https://www.pexels.com/photo/modern-wardrobe-with-racks-and-shiny-lights-in-house-7045297/|https://www.pexels.com/@artbovich
+bucatarie_6956111|Max Vakhtbovych|https://www.pexels.com/photo/modern-kitchen-interior-with-table-under-light-bulbs-6956111/|https://www.pexels.com/@artbovich
+dormitor_4907226|Ketut Subiyanto|https://www.pexels.com/photo/women-sitting-on-a-hostel-bunk-bed-4907226/|https://www.pexels.com/@ketut-subiyanto
 bucatarie_36777885|Curtis Adams|https://www.pexels.com/photo/sleek-modern-kitchen-interior-with-marble-counters-36777885/|https://www.pexels.com/@curtis-adams-1694007
 dormitor_31728410|Đậu Photograph|https://www.pexels.com/photo/cozy-warm-bedroom-with-soft-lighting-atmosphere-31728410/|https://www.pexels.com/@dauphotographer
 living_38666674|Magda Ehlers|https://www.pexels.com/photo/vintage-room-with-antique-books-and-furniture-38666674/|https://www.pexels.com/@magda-ehlers-pexels
@@ -138,13 +148,3 @@ bucatarie_6782481|Max Vakhtbovych|https://www.pexels.com/photo/kitchen-interior-
 bucatarie_6956114|Max Vakhtbovych|https://www.pexels.com/photo/modern-kitchen-interior-with-cabinets-and-fridge-at-home-6956114/|https://www.pexels.com/@artbovich
 bucatarie_6956124|Max Vakhtbovych|https://www.pexels.com/photo/contemporary-kitchen-interior-with-furniture-under-shiny-light-bulbs-6956124/|https://www.pexels.com/@artbovich
 bucatarie_6958122|Max Vakhtbovych|https://www.pexels.com/photo/kitchen-counter-in-stylish-apartment-6958122/|https://www.pexels.com/@artbovich
-bucatarie_6980571|Max Vakhtbovych|https://www.pexels.com/photo/contemporary-kitchen-interior-with-furniture-and-built-in-electric-appliances-6980571/|https://www.pexels.com/@artbovich
-bucatarie_7045995|Max Vakhtbovych|https://www.pexels.com/photo/contemporary-kitchen-interior-with-cabinets-and-decorative-dragonflies-in-house-7045995/|https://www.pexels.com/@artbovich
-bucatarie_7546221|Max Vakhtbovych|https://www.pexels.com/photo/neat-modern-apartment-kitchen-7546221/|https://www.pexels.com/@artbovich
-bucatarie_8143944|Max Vakhtbovych|https://www.pexels.com/photo/wooden-cabinets-in-the-modern-kitchen-8143944/|https://www.pexels.com/@artbovich
-bucatarie_38311092|Bilguun Gantumur|https://www.pexels.com/photo/modern-scandinavian-white-kitchen-design-38311092/|https://www.pexels.com/@bilguun-gantumur-2162568235
-bucatarie_7160602|Dorin Ursulescu|https://www.pexels.com/photo/blue-chairs-in-the-kitchen-7160602/|https://www.pexels.com/@dorin-ursulescu-21435818
-bucatarie_30857234|Karolina K|https://www.pexels.com/photo/modern-minimalist-kitchen-with-wooden-cabinets-30857234/|https://www.pexels.com/@karolina-k-2149378526
-bucatarie_29252361|Mateusz Pielech|https://www.pexels.com/photo/modern-minimalist-kitchen-design-with-light-wood-29252361/|https://www.pexels.com/@mateusz-pielech-1032276948
-bucatarie_29252572|Mateusz Pielech|https://www.pexels.com/photo/modern-minimalist-kitchen-interior-with-wooden-accents-29252572/|https://www.pexels.com/@mateusz-pielech-1032276948
-dormitor_6782341|Max Vakhtbovych|https://www.pexels.com/photo/light-cozy-bedroom-with-cosmetic-mirror-and-pouf-6782341/|https://www.pexels.com/@artbovich

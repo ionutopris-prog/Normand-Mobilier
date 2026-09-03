@@ -1,3 +1,13 @@
+bucatarie_10855207|Bucătării|Bucătărie deschisă spre living|Aceeași linie de mobilă continuă din bucătărie în zona de zi.
+dormitor_6156879|Dormitoare|Punte de corpuri peste pat|Depozitare acolo unde altfel era perete gol.
+living_33883600|Living|Depozitare ascunsă în living|Uși fără mâner, care se citesc ca un perete.
+dressing_6947274|Dressing|Oglindă integrată în dulap|Oglinda pe o ușă, ca să nu ocupe perete separat.
+bucatarie_8082210|Bucătării|Bar de separare|Desparte bucătăria de living fără să ridici perete.
+dormitor_23073441|Dormitoare|Mobilier pentru cameră de copil|Pat, dulap și loc de teme, pe dimensiunile camerei mici.
+living_19572098|Living|Perete de living la comandă|Croit pe lungimea peretelui tău, nu pe module standard.
+dressing_7045297|Dressing|Bare pe două niveluri|Dublezi lungimea de agățat în aceeași înălțime.
+bucatarie_6956111|Bucătării|Hotă ascunsă în corp|Hota intră în mobilă, nimic nu iese din linie.
+dormitor_4907226|Dormitoare|Panou de lemn în spatele patului|Tăblia și peretele fac un corp — se montează pe orice lățime.
 bucatarie_36777885|Bucătării|Bucătărie deschisă spre living|Aceeași linie de mobilă continuă din bucătărie în zona de zi.
 dormitor_31728410|Dormitoare|Punte de corpuri peste pat|Depozitare acolo unde altfel era perete gol.
 living_38666674|Living|Depozitare ascunsă în living|Uși fără mâner, care se citesc ca un perete.
@@ -138,13 +148,3 @@ bucatarie_6782481|Bucătării|Bucătărie gri cu coloană de cuptoare|Toate elec
 bucatarie_6956114|Bucătării|Alb cu blat și poliță de lemn|Poliță de lemn în locul corpurilor suspendate pe o latură — camera respiră.
 bucatarie_6956124|Bucătării|Bucătărie albă până în tavan, frigider încastrat|Frigiderul dispare în corp, linia fronturilor rămâne neîntreruptă.
 bucatarie_6958122|Bucătării|Bucătărie cu bar și scaune înalte|Barul desparte bucătăria de living fără să ridici perete.
-bucatarie_6980571|Bucătării|Antracit cu blat de lemn și LED sub corpuri|Banda LED sub corpurile de sus luminează exact unde tai.
-bucatarie_7045995|Bucătării|Bucătărie albă clasică, cu blat de lemn|Fronturi cu ramă, pentru cine nu vrea linie modernă.
-bucatarie_7546221|Bucătării|Alb cu blat negru și loc de masă|Blatul negru mat se curăță ușor și nu arată praful.
-bucatarie_8143944|Bucătării|Bucătărie de lemn cu hotă ascunsă în corp|Lemn pe toată suprafața, hota integrată — nimic nu iese din linie.
-bucatarie_38311092|Bucătării|Bucătărie albă cu insulă cu colț rotunjit|Colțul rotunjit al insulei: trecere mai ușoară în bucătării înguste.
-bucatarie_7160602|Bucătării|Bucătărie cu bar și nișe iluminate|Nișele din perete, cu lumină, țin lucrurile la vedere fără rafturi în plus.
-bucatarie_30857234|Bucătării|Bucătărie de lemn cu bibliotecă integrată|Bucătăria și biblioteca livingului fac un singur corp continuu.
-bucatarie_29252361|Bucătării|Bucătărie mică, gri cu lemn|Soluție pentru garsonieră: tot ce trebuie pe doi metri de perete.
-bucatarie_29252572|Bucătării|Bucătărie în L, lemn cu blat negru|Lemn cald cu blat negru și masă rotundă în colț.
-dormitor_6782341|Dormitoare|Dormitor cu masă de toaletă integrată|Masa de toaletă croită în același corp cu dulapul.
