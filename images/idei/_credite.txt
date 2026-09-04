@@ -1,3 +1,13 @@
+bucatarie_7546770|Max Vakhtbovych|https://www.pexels.com/photo/dining-and-kitchen-area-of-a-house-7546770/|https://www.pexels.com/@artbovich
+dormitor_6585756|Max Vakhtbovych|https://www.pexels.com/photo/bedroom-interior-with-bed-near-table-with-pouf-under-mirror-6585756/|https://www.pexels.com/@artbovich
+living_6058443|Max Vakhtbovych|https://www.pexels.com/photo/interior-of-modern-workplace-in-apartment-6058443/|https://www.pexels.com/@artbovich
+dressing_8580732|RDNE Stock project|https://www.pexels.com/photo/boxes-on-the-floor-8580732/|https://www.pexels.com/@rdne
+bucatarie_37677516|Ryan  Stephens|https://www.pexels.com/photo/modern-kitchen-with-marble-countertops-and-island-37677516/|https://www.pexels.com/@rstephens
+dormitor_5461590|Amelia Hallsworth|https://www.pexels.com/photo/single-beds-inside-a-hotel-room-5461590/|https://www.pexels.com/@amelia-hallsworth
+living_6908560|Max Vakhtbovych|https://www.pexels.com/photo/flat-screen-tv-on-a-wooden-wall-in-front-of-a-couch-6908560/|https://www.pexels.com/@artbovich
+dressing_7166640|Max Vakhtbovych|https://www.pexels.com/photo/a-spacious-living-room-with-chandelier-7166640/|https://www.pexels.com/@artbovich
+bucatarie_7061337|Max Vakhtbovych|https://www.pexels.com/photo/white-glossy-cabinets-in-minimalist-kitchen-7061337/|https://www.pexels.com/@artbovich
+dormitor_7546293|Max Vakhtbovych|https://www.pexels.com/photo/photo-of-the-bed-7546293/|https://www.pexels.com/@artbovich
 bucatarie_10855207|Derwin  Edwards|https://www.pexels.com/photo/fruit-on-plate-in-kitchen-10855207/|https://www.pexels.com/@derwin-edwards-163348797
 dormitor_6156879|cottonbro studio|https://www.pexels.com/photo/two-plush-toys-on-bed-6156879/|https://www.pexels.com/@cottonbro
 living_33883600|🇻🇳🇻🇳Nguyễn Tiến Thịnh 🇻🇳🇻🇳|https://www.pexels.com/photo/modern-workspace-with-dual-monitors-and-telescope-33883600/|https://www.pexels.com/@nguy-n-ti-n-th-nh-2150376175
@@ -138,13 +148,3 @@ dressing_7045298|Max Vakhtbovych|https://www.pexels.com/photo/modern-room-interi
 bucatarie_7031879|Max Vakhtbovych|https://www.pexels.com/photo/interior-of-modern-kitchen-with-marble-table-7031879/|https://www.pexels.com/@artbovich
 dormitor_31728404|Đậu Photograph|https://www.pexels.com/photo/modern-minimalist-bedroom-interior-design-31728404/|https://www.pexels.com/@dauphotographer
 living_36777844|Curtis Adams|https://www.pexels.com/photo/modern-home-office-interior-with-stylish-decor-36777844/|https://www.pexels.com/@curtis-adams-1694007
-dressing_6297086|Max Vakhtbovych|https://www.pexels.com/photo/spacious-apartment-with-living-room-and-kitchen-6297086/|https://www.pexels.com/@artbovich
-bucatarie_10117725|Keegan Checks|https://www.pexels.com/photo/interior-of-an-apartment-10117725/|https://www.pexels.com/@keeganjchecks
-dormitor_6444255|Max Vakhtbovych|https://www.pexels.com/photo/apartment-interior-with-bed-on-carpet-near-tv-and-window-6444255/|https://www.pexels.com/@artbovich
-bucatarie_6523296|Max Vakhtbovych|https://www.pexels.com/photo/contemporary-simple-kitchen-with-modern-equipment-6523296/|https://www.pexels.com/@artbovich
-bucatarie_6523300|Max Vakhtbovych|https://www.pexels.com/photo/interior-of-modern-kitchen-with-counter-6523300/|https://www.pexels.com/@artbovich
-bucatarie_6636302|Max Vakhtbovych|https://www.pexels.com/photo/interior-of-modern-kitchen-with-furniture-and-dining-zone-6636302/|https://www.pexels.com/@artbovich
-bucatarie_6782481|Max Vakhtbovych|https://www.pexels.com/photo/kitchen-interior-with-cupboards-and-oven-near-sink-6782481/|https://www.pexels.com/@artbovich
-bucatarie_6956114|Max Vakhtbovych|https://www.pexels.com/photo/modern-kitchen-interior-with-cabinets-and-fridge-at-home-6956114/|https://www.pexels.com/@artbovich
-bucatarie_6956124|Max Vakhtbovych|https://www.pexels.com/photo/contemporary-kitchen-interior-with-furniture-under-shiny-light-bulbs-6956124/|https://www.pexels.com/@artbovich
-bucatarie_6958122|Max Vakhtbovych|https://www.pexels.com/photo/kitchen-counter-in-stylish-apartment-6958122/|https://www.pexels.com/@artbovich
