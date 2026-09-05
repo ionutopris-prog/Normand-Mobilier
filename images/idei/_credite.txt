@@ -1,3 +1,13 @@
+bucatarie_10117725|Keegan Checks|https://www.pexels.com/photo/interior-of-an-apartment-10117725/|https://www.pexels.com/@keeganjchecks
+dormitor_6444255|Max Vakhtbovych|https://www.pexels.com/photo/apartment-interior-with-bed-on-carpet-near-tv-and-window-6444255/|https://www.pexels.com/@artbovich
+living_6920454|Max Vakhtbovych|https://www.pexels.com/photo/modern-design-living-room-with-marble-wall-accent-6920454/|https://www.pexels.com/@artbovich
+dressing_6297086|Max Vakhtbovych|https://www.pexels.com/photo/spacious-apartment-with-living-room-and-kitchen-6297086/|https://www.pexels.com/@artbovich
+bucatarie_6987720|Max Vakhtbovych|https://www.pexels.com/photo/room-and-kitchen-interior-with-furniture-and-electric-appliances-6987720/|https://www.pexels.com/@artbovich
+dormitor_11701120|Max Vakhtbovych|https://www.pexels.com/photo/empty-dressing-room-11701120/|https://www.pexels.com/@artbovich
+living_7031875|Max Vakhtbovych|https://www.pexels.com/photo/light-spacious-modern-living-room-7031875/|https://www.pexels.com/@artbovich
+dressing_26859478|Alexander F Ungerer|https://www.pexels.com/photo/a-room-with-a-large-window-and-white-cupboards-26859478/|https://www.pexels.com/@alexander-f-ungerer-157458816
+bucatarie_6436757|Max Vakhtbovych|https://www.pexels.com/photo/kitchen-and-living-room-interiors-at-home-6436757/|https://www.pexels.com/@artbovich
+dormitor_37468272|mcpeter|https://www.pexels.com/photo/elegant-modern-bedroom-with-minimalist-decor-37468272/|https://www.pexels.com/@thisismcpeter
 bucatarie_7546770|Max Vakhtbovych|https://www.pexels.com/photo/dining-and-kitchen-area-of-a-house-7546770/|https://www.pexels.com/@artbovich
 dormitor_6585756|Max Vakhtbovych|https://www.pexels.com/photo/bedroom-interior-with-bed-near-table-with-pouf-under-mirror-6585756/|https://www.pexels.com/@artbovich
 living_6058443|Max Vakhtbovych|https://www.pexels.com/photo/interior-of-modern-workplace-in-apartment-6058443/|https://www.pexels.com/@artbovich
@@ -138,13 +148,3 @@ living_6934172|Max Vakhtbovych|https://www.pexels.com/photo/red-soft-sofa-in-lou
 dressing_7061417|Max Vakhtbovych|https://www.pexels.com/photo/corridor-furnished-with-wooden-cabinet-and-shelf-above-shoe-rack-7061417/|https://www.pexels.com/@artbovich
 bucatarie_6969988|Max Vakhtbovych|https://www.pexels.com/photo/photo-of-kitchen-counter-6969988/|https://www.pexels.com/@artbovich
 dormitor_7060822|Max Vakhtbovych|https://www.pexels.com/photo/bedroom-interior-with-bed-near-wardrobe-with-shelves-7060822/|https://www.pexels.com/@artbovich
-bucatarie_6782272|Max Vakhtbovych|https://www.pexels.com/photo/house-with-table-with-chairs-next-to-kitchen-with-cupboards-6782272/|https://www.pexels.com/@artbovich
-dormitor_8089081|Max Vakhtbovych|https://www.pexels.com/photo/bed-in-hotel-room-8089081/|https://www.pexels.com/@artbovich
-living_7214166|Max Vakhtbovych|https://www.pexels.com/photo/interior-of-living-room-in-modern-apartment-7214166/|https://www.pexels.com/@artbovich
-bucatarie_36777557|Curtis Adams|https://www.pexels.com/photo/modern-kitchen-interior-with-wooden-accents-36777557/|https://www.pexels.com/@curtis-adams-1694007
-dormitor_7214332|Max Vakhtbovych|https://www.pexels.com/photo/interior-design-of-a-bedroom-7214332/|https://www.pexels.com/@artbovich
-living_31376732|Michael D Beckwith|https://www.pexels.com/photo/stunning-interior-of-gladstone-s-library-in-wales-31376732/|https://www.pexels.com/@michael-d-beckwith-2150568551
-dressing_7045298|Max Vakhtbovych|https://www.pexels.com/photo/modern-room-interior-with-wardrobe-in-apartment-7045298/|https://www.pexels.com/@artbovich
-bucatarie_7031879|Max Vakhtbovych|https://www.pexels.com/photo/interior-of-modern-kitchen-with-marble-table-7031879/|https://www.pexels.com/@artbovich
-dormitor_31728404|Đậu Photograph|https://www.pexels.com/photo/modern-minimalist-bedroom-interior-design-31728404/|https://www.pexels.com/@dauphotographer
-living_36777844|Curtis Adams|https://www.pexels.com/photo/modern-home-office-interior-with-stylish-decor-36777844/|https://www.pexels.com/@curtis-adams-1694007

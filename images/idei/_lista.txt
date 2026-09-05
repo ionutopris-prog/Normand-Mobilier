@@ -1,3 +1,13 @@
+bucatarie_10117725|Bucătării|Bucătărie deschisă spre living|Aceeași linie de mobilă continuă din bucătărie în zona de zi.
+dormitor_6444255|Dormitoare|Punte de corpuri peste pat|Depozitare acolo unde altfel era perete gol.
+living_6920454|Living|Depozitare ascunsă în living|Uși fără mâner, care se citesc ca un perete.
+dressing_6297086|Dressing|Oglindă integrată în dulap|Oglinda pe o ușă, ca să nu ocupe perete separat.
+bucatarie_6987720|Bucătării|Bar de separare|Desparte bucătăria de living fără să ridici perete.
+dormitor_11701120|Dormitoare|Mobilier pentru cameră de copil|Pat, dulap și loc de teme, pe dimensiunile camerei mici.
+living_7031875|Living|Perete de living la comandă|Croit pe lungimea peretelui tău, nu pe module standard.
+dressing_26859478|Dressing|Bare pe două niveluri|Dublezi lungimea de agățat în aceeași înălțime.
+bucatarie_6436757|Bucătării|Hotă ascunsă în corp|Hota intră în mobilă, nimic nu iese din linie.
+dormitor_37468272|Dormitoare|Panou de lemn în spatele patului|Tăblia și peretele fac un corp — se montează pe orice lățime.
 bucatarie_7546770|Bucătării|Bucătărie deschisă spre living|Aceeași linie de mobilă continuă din bucătărie în zona de zi.
 dormitor_6585756|Dormitoare|Punte de corpuri peste pat|Depozitare acolo unde altfel era perete gol.
 living_6058443|Living|Depozitare ascunsă în living|Uși fără mâner, care se citesc ca un perete.
@@ -138,13 +148,3 @@ living_6934172|Living|Bibliotecă de colț|Colțul livingului, folosit până la
 dressing_7061417|Dressing|Dressing deschis, fără uși|Acces în două secunde, aspect de magazin.
 bucatarie_6969988|Bucătării|Bucătărie cu insulă|Insula adaugă blat de lucru și depozitare pe ambele fețe.
 dormitor_7060822|Dormitoare|Dulap cu uși glisante|Ușile nu au nevoie de spațiu ca să se deschidă.
-bucatarie_6782272|Bucătării|Coloană de cuptoare|Toate electrocasnicele într-o coloană, blatul rămâne liber.
-dormitor_8089081|Dormitoare|Dulap de colț|Colțul camerei transformat în depozitare utilă.
-living_7214166|Living|Rafturi deschise și corpuri închise|La vedere ce arată bine, închis ce nu vrei să se vadă.
-bucatarie_36777557|Bucătării|Fronturi fără mâner|Deschidere prin apăsare — linia rămâne continuă pe tot peretele.
-dormitor_7214332|Dormitoare|Dormitor cu birou integrat|Dulap, birou și rafturi croite ca un singur corp.
-living_31376732|Living|Corp de living cu bar|Zona de pahare, integrată în peretele de mobilă.
-dressing_7045298|Dressing|Dressing pe toată camera|Rafturi și bare pe toți pereții, cu bancă la mijloc.
-bucatarie_7031879|Bucătării|Bucătărie în U|Trei laturi de blat: tot ce-ți trebuie la un pas distanță.
-dormitor_31728404|Dormitoare|Tăblie tapițată la comandă|Se face pe lățimea patului tău, în materialul ales de tine.
-living_36777844|Living|Corp jos pe toată lungimea|Linie continuă, depozitare mare, aspect liniștit.
