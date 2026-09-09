@@ -1,3 +1,13 @@
+bucatarie_35553431|Bucătării|Bucătărie deschisă spre living|Aceeași linie de mobilă continuă din bucătărie în zona de zi.
+dormitor_4907201|Dormitoare|Punte de corpuri peste pat|Depozitare acolo unde altfel era perete gol.
+living_6958132|Living|Depozitare ascunsă în living|Uși fără mâner, care se citesc ca un perete.
+dressing_7195876|Dressing|Oglindă integrată în dulap|Oglinda pe o ușă, ca să nu ocupe perete separat.
+bucatarie_6933857|Bucătării|Bar de separare|Desparte bucătăria de living fără să ridici perete.
+dormitor_6835162|Dormitoare|Mobilier pentru cameră de copil|Pat, dulap și loc de teme, pe dimensiunile camerei mici.
+living_35670376|Living|Perete de living la comandă|Croit pe lungimea peretelui tău, nu pe module standard.
+dressing_7671161|Dressing|Bare pe două niveluri|Dublezi lungimea de agățat în aceeași înălțime.
+bucatarie_7061399|Bucătării|Hotă ascunsă în corp|Hota intră în mobilă, nimic nu iese din linie.
+dormitor_8089076|Dormitoare|Panou de lemn în spatele patului|Tăblia și peretele fac un corp — se montează pe orice lățime.
 bucatarie_7303779|Bucătării|Bucătărie deschisă spre living|Aceeași linie de mobilă continuă din bucătărie în zona de zi.
 dormitor_17125482|Dormitoare|Punte de corpuri peste pat|Depozitare acolo unde altfel era perete gol.
 living_6934172|Living|Depozitare ascunsă în living|Uși fără mâner, care se citesc ca un perete.
@@ -138,13 +148,3 @@ living_7031831|Living|Bibliotecă până în tavan|Rafturi pe toată înălțime
 dressing_9850405|Dressing|Rafturi cu lumină|Bandă LED pe fiecare raft: vezi ce ai fără lumina mare.
 bucatarie_38525199|Bucătării|Bucătărie cu insulă|Insula adaugă blat de lucru și depozitare pe ambele fețe.
 dormitor_8082217|Dormitoare|Mobilier pentru cameră de copil|Pat, dulap și loc de teme, pe dimensiunile camerei mici.
-bucatarie_6927201|Bucătării|Bucătărie în L|Cea mai eficientă formă pentru apartamente de două camere.
-dormitor_7166567|Dormitoare|Dulap cu nișă pentru televizor|Televizorul intră în mobilă, nu pe perete.
-living_8141964|Living|Perete de living la comandă|Croit pe lungimea peretelui tău, nu pe module standard.
-dressing_38337242|Dressing|Oglindă integrată în dulap|Oglinda pe o ușă, ca să nu ocupe perete separat.
-bucatarie_6970055|Bucătării|Bucătărie deschisă spre living|Aceeași linie de mobilă continuă din bucătărie în zona de zi.
-dormitor_6585613|Dormitoare|Paturi suprapuse la comandă|Două locuri de dormit pe suprafața unuia singur.
-living_7563545|Living|Panou de lemn cu televizor|Panoul ascunde cablurile și încălzește camera.
-dressing_6274907|Dressing|Bare pe două niveluri|Dublezi lungimea de agățat în aceeași înălțime.
-bucatarie_6980709|Bucătării|Bar de separare|Desparte bucătăria de living fără să ridici perete.
-dormitor_7614613|Dormitoare|Dulap cu uși glisante|Ușile nu au nevoie de spațiu ca să se deschidă.

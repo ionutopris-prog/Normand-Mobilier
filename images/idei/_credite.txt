@@ -1,3 +1,13 @@
+bucatarie_35553431|Ali   Soheil|https://www.pexels.com/photo/modern-minimalist-kitchen-design-with-appliances-35553431/|https://www.pexels.com/@ali-soheil-2154370577
+dormitor_4907201|Ketut Subiyanto|https://www.pexels.com/photo/women-sitting-on-bunk-beds-talking-and-smiling-4907201/|https://www.pexels.com/@ketut-subiyanto
+living_6958132|Max Vakhtbovych|https://www.pexels.com/photo/soft-couch-near-wooden-cupboards-6958132/|https://www.pexels.com/@artbovich
+dressing_7195876|Max Vakhtbovych|https://www.pexels.com/photo/narrow-corridor-with-empty-shelves-7195876/|https://www.pexels.com/@artbovich
+bucatarie_6933857|Max Vakhtbovych|https://www.pexels.com/photo/modern-kitchen-with-black-cupboard-and-brown-table-6933857/|https://www.pexels.com/@artbovich
+dormitor_6835162|Curtis Adams|https://www.pexels.com/photo/empty-room-with-bed-6835162/|https://www.pexels.com/@curtis-adams-1694007
+living_35670376|atelierbyvineeth . . .|https://www.pexels.com/photo/cozy-bookshelf-in-a-warmly-lit-library-35670376/|https://www.pexels.com/@atelierbyvineeth
+dressing_7671161|Ivan S|https://www.pexels.com/photo/clothe-hangers-on-a-meta-rack-7671161/|https://www.pexels.com/@ivan-s
+bucatarie_7061399|Max Vakhtbovych|https://www.pexels.com/photo/modern-kitchen-with-counter-and-built-in-appliances-7061399/|https://www.pexels.com/@artbovich
+dormitor_8089076|Max Vakhtbovych|https://www.pexels.com/photo/mattress-on-a-white-bed-frame-8089076/|https://www.pexels.com/@artbovich
 bucatarie_7303779|Cup of  Couple|https://www.pexels.com/photo/close-up-shot-of-interior-decoration-on-kitchen-sink-7303779/|https://www.pexels.com/@cup-of-couple
 dormitor_17125482|rishi raj khare|https://www.pexels.com/photo/bathrobe-on-the-bed-in-a-bedroom-17125482/|https://www.pexels.com/@rishi-raj-khare-593097024
 living_6934172|Max Vakhtbovych|https://www.pexels.com/photo/red-soft-sofa-in-lounge-with-black-metal-fireplace-6934172/|https://www.pexels.com/@artbovich
@@ -138,13 +148,3 @@ living_7031831|Max Vakhtbovych|https://www.pexels.com/photo/spacious-living-room
 dressing_9850405|Ron Lach|https://www.pexels.com/photo/a-close-up-on-hangers-with-clothes-9850405/|https://www.pexels.com/@ron-lach
 bucatarie_38525199|FMC Furniture manufacturer Chalin|https://www.pexels.com/photo/minimalist-modern-kitchen-interior-with-cabinets-38525199/|https://www.pexels.com/@fmc-furniture-manufacturer-chalin-2162855932
 dormitor_8082217|Max Vakhtbovych|https://www.pexels.com/photo/a-cozy-bed-with-flat-screen-television-8082217/|https://www.pexels.com/@artbovich
-bucatarie_6927201|cottonbro studio|https://www.pexels.com/photo/kitchen-interior-with-gray-cabinets-and-wooden-counter-top-6927201/|https://www.pexels.com/@cottonbro
-dormitor_7166567|Max Vakhtbovych|https://www.pexels.com/photo/simple-built-in-white-wardrobe-7166567/|https://www.pexels.com/@artbovich
-living_8141964|Max Vakhtbovych|https://www.pexels.com/photo/white-couch-in-the-living-room-8141964/|https://www.pexels.com/@artbovich
-dressing_38337242|MBA Product Photography|https://www.pexels.com/photo/colorful-t-shirts-on-wooden-hangers-display-38337242/|https://www.pexels.com/@aftabmirza
-bucatarie_6970055|Max Vakhtbovych|https://www.pexels.com/photo/grey-marble-kitchen-design-6970055/|https://www.pexels.com/@artbovich
-dormitor_6585613|Max Vakhtbovych|https://www.pexels.com/photo/bathroom-with-glass-walls-in-modern-bedroom-6585613/|https://www.pexels.com/@artbovich
-living_7563545|VAZHNIK|https://www.pexels.com/photo/light-person-walking-space-7563545/|https://www.pexels.com/@vazhnik
-dressing_6274907|https://kaboompics.com/|https://www.pexels.com/photo/woman-and-girl-laughing-together-6274907/|https://www.pexels.com/@karola-g
-bucatarie_6980709|Max Vakhtbovych|https://www.pexels.com/photo/modern-kitchen-interior-with-furniture-and-chandelier-at-home-6980709/|https://www.pexels.com/@artbovich
-dormitor_7614613|Max Vakhtbovych|https://www.pexels.com/photo/a-white-bed-in-the-bedroom-7614613/|https://www.pexels.com/@artbovich
