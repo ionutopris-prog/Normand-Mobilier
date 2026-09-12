@@ -1,3 +1,13 @@
+bucatarie_8089193|Max Vakhtbovych|https://www.pexels.com/photo/kitchen-in-room-8089193/|https://www.pexels.com/@artbovich
+dormitor_7018248|Max Vakhtbovych|https://www.pexels.com/photo/contemporary-bedroom-interior-with-tv-and-bed-in-house-7018248/|https://www.pexels.com/@artbovich
+living_7031831|Max Vakhtbovych|https://www.pexels.com/photo/spacious-living-room-with-tv-7031831/|https://www.pexels.com/@artbovich
+dressing_7504591|cottonbro studio|https://www.pexels.com/photo/wood-planks-on-white-wooden-shelves-7504591/|https://www.pexels.com/@cottonbro
+bucatarie_36777854|Curtis Adams|https://www.pexels.com/photo/modern-kitchen-interior-with-sleek-design-36777854/|https://www.pexels.com/@curtis-adams-1694007
+dormitor_38183816|UMUT   🆁🅰🆆|https://www.pexels.com/photo/cozy-rustic-twin-bedroom-with-stone-walls-38183816/|https://www.pexels.com/@umudicreative
+living_27604128|Ansar Muhammad|https://www.pexels.com/photo/dania-city-villa-in-sulaymaniyah-city-27604128/|https://www.pexels.com/@ansar-muhammad-380085065
+dressing_8997978|PNW Production|https://www.pexels.com/photo/home-interior-with-hanging-dresses-in-a-doorway-8997978/|https://www.pexels.com/@pnw-prod
+bucatarie_12513477|Matheus Bertelli|https://www.pexels.com/photo/a-kitchen-in-an-apartment-12513477/|https://www.pexels.com/@bertellifotografia
+dormitor_6980729|Max Vakhtbovych|https://www.pexels.com/photo/closet-on-parquet-under-shiny-chandelier-at-home-6980729/|https://www.pexels.com/@artbovich
 bucatarie_7018387|Max Vakhtbovych|https://www.pexels.com/photo/interior-of-modern-kitchen-and-dining-zone-in-apartment-7018387/|https://www.pexels.com/@artbovich
 dormitor_7533928|Max Vakhtbovych|https://www.pexels.com/photo/glass-wardrobe-in-modern-apartment-7533928/|https://www.pexels.com/@artbovich
 living_7563545|VAZHNIK|https://www.pexels.com/photo/light-person-walking-space-7563545/|https://www.pexels.com/@vazhnik
@@ -138,13 +148,3 @@ living_5002324|Barion McQueen|https://www.pexels.com/photo/brown-wooden-shelf-wi
 dressing_7031842|Max Vakhtbovych|https://www.pexels.com/photo/interior-of-walk-in-closet-7031842/|https://www.pexels.com/@artbovich
 bucatarie_7060820|Max Vakhtbovych|https://www.pexels.com/photo/wall-of-kitchen-with-modern-furniture-and-appliances-7060820/|https://www.pexels.com/@artbovich
 dormitor_7045354|Max Vakhtbovych|https://www.pexels.com/photo/an-interior-of-a-bedroom-7045354/|https://www.pexels.com/@artbovich
-bucatarie_7533760|Max Vakhtbovych|https://www.pexels.com/photo/kitchen-interior-with-beige-furniture-7533760/|https://www.pexels.com/@artbovich
-dormitor_37070076|UMUT   🆁🅰🆆|https://www.pexels.com/photo/bright-twin-bedroom-with-decorated-walls-37070076/|https://www.pexels.com/@umudicreative
-living_37447584|Yazid N|https://www.pexels.com/photo/cozy-bookstore-interior-with-colorful-book-collection-37447584/|https://www.pexels.com/@mzynasx
-dressing_3060330|RF._.studio _|https://www.pexels.com/photo/different-clothings-on-a-hanger-3060330/|https://www.pexels.com/@rethaferguson
-bucatarie_38071640|Ali   Soheil|https://www.pexels.com/photo/modern-minimalist-kitchen-interior-design-38071640/|https://www.pexels.com/@ali-soheil-2154370577
-dormitor_26752642|Iqbal farooz|https://www.pexels.com/photo/beds-and-wooden-walls-in-vintage-room-26752642/|https://www.pexels.com/@wanderinglenses
-living_37153442|Curtis Adams|https://www.pexels.com/photo/elegant-living-room-with-fireplace-interior-37153442/|https://www.pexels.com/@curtis-adams-1694007
-dressing_8417307|Furkan Tumer|https://www.pexels.com/photo/blue-and-white-pillows-on-the-bed-8417307/|https://www.pexels.com/@furkan-tumer-1560109
-bucatarie_6035312|Curtis Adams|https://www.pexels.com/photo/modern-house-kitchen-interior-design-6035312/|https://www.pexels.com/@curtis-adams-1694007
-dormitor_30673279|Alexander F Ungerer|https://www.pexels.com/photo/spacious-unfurnished-bedroom-with-built-in-wardrobe-30673279/|https://www.pexels.com/@alexander-f-ungerer-157458816

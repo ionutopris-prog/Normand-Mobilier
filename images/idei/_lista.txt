@@ -1,3 +1,13 @@
+bucatarie_8089193|Bucătării|Bucătărie deschisă spre living|Aceeași linie de mobilă continuă din bucătărie în zona de zi.
+dormitor_7018248|Dormitoare|Punte de corpuri peste pat|Depozitare acolo unde altfel era perete gol.
+living_7031831|Living|Depozitare ascunsă în living|Uși fără mâner, care se citesc ca un perete.
+dressing_7504591|Dressing|Oglindă integrată în dulap|Oglinda pe o ușă, ca să nu ocupe perete separat.
+bucatarie_36777854|Bucătării|Bar de separare|Desparte bucătăria de living fără să ridici perete.
+dormitor_38183816|Dormitoare|Mobilier pentru cameră de copil|Pat, dulap și loc de teme, pe dimensiunile camerei mici.
+living_27604128|Living|Perete de living la comandă|Croit pe lungimea peretelui tău, nu pe module standard.
+dressing_8997978|Dressing|Bare pe două niveluri|Dublezi lungimea de agățat în aceeași înălțime.
+bucatarie_12513477|Bucătării|Hotă ascunsă în corp|Hota intră în mobilă, nimic nu iese din linie.
+dormitor_6980729|Dormitoare|Panou de lemn în spatele patului|Tăblia și peretele fac un corp — se montează pe orice lățime.
 bucatarie_7018387|Bucătării|Bucătărie deschisă spre living|Aceeași linie de mobilă continuă din bucătărie în zona de zi.
 dormitor_7533928|Dormitoare|Punte de corpuri peste pat|Depozitare acolo unde altfel era perete gol.
 living_7563545|Living|Depozitare ascunsă în living|Uși fără mâner, care se citesc ca un perete.
@@ -138,13 +148,3 @@ living_5002324|Living|Depozitare ascunsă în living|Uși fără mâner, care se
 dressing_7031842|Dressing|Oglindă integrată în dulap|Oglinda pe o ușă, ca să nu ocupe perete separat.
 bucatarie_7060820|Bucătării|Bar de separare|Desparte bucătăria de living fără să ridici perete.
 dormitor_7045354|Dormitoare|Mobilier pentru cameră de copil|Pat, dulap și loc de teme, pe dimensiunile camerei mici.
-bucatarie_7533760|Bucătării|Bucătărie cu zonă de luat masa|Masa croită din același material, ca un singur corp.
-dormitor_37070076|Dormitoare|Dulap cu nișă pentru televizor|Televizorul intră în mobilă, nu pe perete.
-living_37447584|Living|Birou încastrat în bibliotecă|Locul de lucru intră în perete, nu ocupă cameră.
-dressing_3060330|Dressing|Suport pentru pantofi înclinat|Rafturi oblice: vezi perechea, nu cutia.
-bucatarie_38071640|Bucătării|Bucătărie pe măsura camerei|Corpuri croite exact pe pereții tăi — fără spații moarte între mobilă și zid.
-dormitor_26752642|Dormitoare|Paturi suprapuse la comandă|Două locuri de dormit pe suprafața unuia singur.
-living_37153442|Living|Bibliotecă de colț|Colțul livingului, folosit până la ultimul raft.
-dressing_8417307|Dressing|Dressing pe toată camera|Rafturi și bare pe toți pereții, cu bancă la mijloc.
-bucatarie_6035312|Bucătării|Bucătărie cu insulă|Insula adaugă blat de lucru și depozitare pe ambele fețe.
-dormitor_30673279|Dormitoare|Dulap cu uși glisante|Ușile nu au nevoie de spațiu ca să se deschidă.
