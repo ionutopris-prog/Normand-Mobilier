@@ -1,3 +1,13 @@
+bucatarie_36777885|Curtis Adams|https://www.pexels.com/photo/sleek-modern-kitchen-interior-with-marble-counters-36777885/|https://www.pexels.com/@curtis-adams-1694007
+dormitor_31728410|Đậu Photograph|https://www.pexels.com/photo/cozy-warm-bedroom-with-soft-lighting-atmosphere-31728410/|https://www.pexels.com/@dauphotographer
+living_12148587|Pham Ngoc Anh|https://www.pexels.com/photo/a-cozy-living-room-with-glass-doors-12148587/|https://www.pexels.com/@pham-ngoc-anh-170983008
+dressing_5720633|Anastasia  Shuraeva|https://www.pexels.com/photo/woman-in-white-sleeveless-dress-sitting-on-white-bed-5720633/|https://www.pexels.com/@anastasia-shuraeva
+bucatarie_8082300|Max Vakhtbovych|https://www.pexels.com/photo/modern-kitchen-interior-8082300/|https://www.pexels.com/@artbovich
+dormitor_6903150|Max Vakhtbovych|https://www.pexels.com/photo/interior-of-bedroom-with-stylish-lamp-and-mirrored-cabinet-6903150/|https://www.pexels.com/@artbovich
+living_38666674|Magda Ehlers|https://www.pexels.com/photo/vintage-room-with-antique-books-and-furniture-38666674/|https://www.pexels.com/@magda-ehlers-pexels
+dressing_11435420|Shannon Deans|https://www.pexels.com/photo/clothes-on-hangers-11435420/|https://www.pexels.com/@shannon-deans-193601102
+bucatarie_13751390|Gustavo Galeano Maz|https://www.pexels.com/photo/interior-design-of-a-home-kitchen-and-dining-area-13751390/|https://www.pexels.com/@fotografiagmazg
+dormitor_7214326|Max Vakhtbovych|https://www.pexels.com/photo/interior-of-empty-bedroom-with-stylish-furniture-7214326/|https://www.pexels.com/@artbovich
 bucatarie_6835123|Curtis Adams|https://www.pexels.com/photo/chairs-and-table-in-room-6835123/|https://www.pexels.com/@curtis-adams-1694007
 dormitor_2082095|Dmitry Zvolskiy|https://www.pexels.com/photo/green-leafed-plant-in-clear-glass-vase-on-top-of-side-table-2082095/|https://www.pexels.com/@zvolskiy
 living_7195895|Max Vakhtbovych|https://www.pexels.com/photo/spacious-apartment-with-couch-and-tv-7195895/|https://www.pexels.com/@artbovich
@@ -138,13 +148,3 @@ living_6908560|Max Vakhtbovych|https://www.pexels.com/photo/flat-screen-tv-on-a-
 dressing_7166640|Max Vakhtbovych|https://www.pexels.com/photo/a-spacious-living-room-with-chandelier-7166640/|https://www.pexels.com/@artbovich
 bucatarie_7061337|Max Vakhtbovych|https://www.pexels.com/photo/white-glossy-cabinets-in-minimalist-kitchen-7061337/|https://www.pexels.com/@artbovich
 dormitor_7546293|Max Vakhtbovych|https://www.pexels.com/photo/photo-of-the-bed-7546293/|https://www.pexels.com/@artbovich
-bucatarie_10855207|Derwin  Edwards|https://www.pexels.com/photo/fruit-on-plate-in-kitchen-10855207/|https://www.pexels.com/@derwin-edwards-163348797
-dormitor_6156879|cottonbro studio|https://www.pexels.com/photo/two-plush-toys-on-bed-6156879/|https://www.pexels.com/@cottonbro
-living_33883600|🇻🇳🇻🇳Nguyễn Tiến Thịnh 🇻🇳🇻🇳|https://www.pexels.com/photo/modern-workspace-with-dual-monitors-and-telescope-33883600/|https://www.pexels.com/@nguy-n-ti-n-th-nh-2150376175
-dressing_6947274|Max Vakhtbovych|https://www.pexels.com/photo/corridor-of-modern-apartment-with-wardrobe-6947274/|https://www.pexels.com/@artbovich
-bucatarie_8082210|Max Vakhtbovych|https://www.pexels.com/photo/contemporary-kitchen-design-8082210/|https://www.pexels.com/@artbovich
-dormitor_23073441|Sakshi Maheshwari|https://www.pexels.com/photo/a-bedroom-with-tv-set-and-photographies-on-shelves-23073441/|https://www.pexels.com/@sakshi-maheshwari-1241361003
-living_19572098|Karina Lysenko|https://www.pexels.com/photo/library-shelves-full-of-books-19572098/|https://www.pexels.com/@karina-lysenko-775004911
-dressing_7045297|Max Vakhtbovych|https://www.pexels.com/photo/modern-wardrobe-with-racks-and-shiny-lights-in-house-7045297/|https://www.pexels.com/@artbovich
-bucatarie_6956111|Max Vakhtbovych|https://www.pexels.com/photo/modern-kitchen-interior-with-table-under-light-bulbs-6956111/|https://www.pexels.com/@artbovich
-dormitor_4907226|Ketut Subiyanto|https://www.pexels.com/photo/women-sitting-on-a-hostel-bunk-bed-4907226/|https://www.pexels.com/@ketut-subiyanto
