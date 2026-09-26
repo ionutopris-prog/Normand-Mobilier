@@ -4,6 +4,10 @@ name: Idei de amenajare — 10 poze noi pe zi
 on:
   schedule:
     - cron: '10 5 * * *'      # 05:10 UTC = 08:10 în România (ora de vară)
+    # Rezervă: GitHub a sărit pornirile programate între 18 și 25 sept 2026.
+    # Dacă prima a mers, a doua vede postarea de azi și nu mai publică nimic.
+    - cron: '37 11 * * *'
+    - cron: '23 17 * * *'
   workflow_dispatch:          # și manual, din tab-ul Actions
     inputs:
       cate:
@@ -20,11 +24,24 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 20
+
+      - name: A publicat deja azi?
+        id: azi
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ] && git log -20 --format=%s | grep -q "Idei de amenajare: poze noi ($(date -u +%Y-%m-%d))"; then
+            echo "Azi s-a publicat deja — nu mai public o dată."; echo "sari=da" >> $GITHUB_OUTPUT
+          else
+            echo "sari=nu" >> $GITHUB_OUTPUT
+          fi
 
       - name: Instalează ImageMagick + WebP
+        if: steps.azi.outputs.sari == 'nu'
         run: sudo apt-get update -qq && sudo apt-get install -y -qq imagemagick webp
 
       - name: Publică pozele de azi
+        if: steps.azi.outputs.sari == 'nu'
         env:
           PEXELS_KEY: ${{ secrets.PEXELS_KEY }}
           IDEI_PE_ZI: ${{ github.event.inputs.cate || '10' }}
@@ -32,6 +49,7 @@ jobs:
         run: python3 scripts/idei_zilnic.py
 
       - name: Comite ce s-a schimbat
+        if: steps.azi.outputs.sari == 'nu'
         id: commit
         run: |
           git config user.name  "Robot Normand"
