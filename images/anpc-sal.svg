@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="250" height="50" viewBox="0 0 250 50" role="img" aria-label="ANPC — Soluționarea alternativă a litigiilor (SAL)">
+  <!-- Provizoriu, până se descarcă pictograma oficială de pe anpc.ro (250×50). Linkul obligatoriu: https://reclamatiisal.anpc.ro -->
+  <rect x="0.5" y="0.5" width="249" height="49" rx="6" fill="#ffffff" stroke="#1b3f8b"/>
+  <rect x="0.5" y="0.5" width="64" height="49" rx="6" fill="#1b3f8b"/>
+  <rect x="58" y="0.5" width="7" height="49" fill="#1b3f8b"/>
+  <text x="32.5" y="31" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" fill="#ffffff">ANPC</text>
+  <text x="76" y="21" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" fill="#1b3f8b">SOLUȚIONAREA ALTERNATIVĂ</text>
+  <text x="76" y="37" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="700" fill="#1b3f8b">A LITIGIILOR · SAL</text>
+</svg>
