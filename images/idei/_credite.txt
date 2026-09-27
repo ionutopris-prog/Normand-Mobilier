@@ -1,3 +1,13 @@
+bucatarie_10855207|Derwin  Edwards|https://www.pexels.com/photo/fruit-on-plate-in-kitchen-10855207/|https://www.pexels.com/@derwin-edwards-163348797
+dormitor_6156879|cottonbro studio|https://www.pexels.com/photo/two-plush-toys-on-bed-6156879/|https://www.pexels.com/@cottonbro
+living_6585599|Max Vakhtbovych|https://www.pexels.com/photo/spacious-living-room-interior-with-wooden-furniture-and-soft-sofa-6585599/|https://www.pexels.com/@artbovich
+dressing_6947274|Max Vakhtbovych|https://www.pexels.com/photo/corridor-of-modern-apartment-with-wardrobe-6947274/|https://www.pexels.com/@artbovich
+bucatarie_8082210|Max Vakhtbovych|https://www.pexels.com/photo/contemporary-kitchen-design-8082210/|https://www.pexels.com/@artbovich
+dormitor_23073441|Sakshi Maheshwari|https://www.pexels.com/photo/a-bedroom-with-tv-set-and-photographies-on-shelves-23073441/|https://www.pexels.com/@sakshi-maheshwari-1241361003
+living_33883600|🇻🇳🇻🇳Nguyễn Tiến Thịnh 🇻🇳🇻🇳|https://www.pexels.com/photo/modern-workspace-with-dual-monitors-and-telescope-33883600/|https://www.pexels.com/@nguy-n-ti-n-th-nh-2150376175
+dressing_7045297|Max Vakhtbovych|https://www.pexels.com/photo/modern-wardrobe-with-racks-and-shiny-lights-in-house-7045297/|https://www.pexels.com/@artbovich
+bucatarie_6956111|Max Vakhtbovych|https://www.pexels.com/photo/modern-kitchen-interior-with-table-under-light-bulbs-6956111/|https://www.pexels.com/@artbovich
+dormitor_4907226|Ketut Subiyanto|https://www.pexels.com/photo/women-sitting-on-a-hostel-bunk-bed-4907226/|https://www.pexels.com/@ketut-subiyanto
 bucatarie_36777885|Curtis Adams|https://www.pexels.com/photo/sleek-modern-kitchen-interior-with-marble-counters-36777885/|https://www.pexels.com/@curtis-adams-1694007
 dormitor_31728410|Đậu Photograph|https://www.pexels.com/photo/cozy-warm-bedroom-with-soft-lighting-atmosphere-31728410/|https://www.pexels.com/@dauphotographer
 living_12148587|Pham Ngoc Anh|https://www.pexels.com/photo/a-cozy-living-room-with-glass-doors-12148587/|https://www.pexels.com/@pham-ngoc-anh-170983008
@@ -138,13 +148,3 @@ living_7031875|Max Vakhtbovych|https://www.pexels.com/photo/light-spacious-moder
 dressing_26859478|Alexander F Ungerer|https://www.pexels.com/photo/a-room-with-a-large-window-and-white-cupboards-26859478/|https://www.pexels.com/@alexander-f-ungerer-157458816
 bucatarie_6436757|Max Vakhtbovych|https://www.pexels.com/photo/kitchen-and-living-room-interiors-at-home-6436757/|https://www.pexels.com/@artbovich
 dormitor_37468272|mcpeter|https://www.pexels.com/photo/elegant-modern-bedroom-with-minimalist-decor-37468272/|https://www.pexels.com/@thisismcpeter
-bucatarie_7546770|Max Vakhtbovych|https://www.pexels.com/photo/dining-and-kitchen-area-of-a-house-7546770/|https://www.pexels.com/@artbovich
-dormitor_6585756|Max Vakhtbovych|https://www.pexels.com/photo/bedroom-interior-with-bed-near-table-with-pouf-under-mirror-6585756/|https://www.pexels.com/@artbovich
-living_6058443|Max Vakhtbovych|https://www.pexels.com/photo/interior-of-modern-workplace-in-apartment-6058443/|https://www.pexels.com/@artbovich
-dressing_8580732|RDNE Stock project|https://www.pexels.com/photo/boxes-on-the-floor-8580732/|https://www.pexels.com/@rdne
-bucatarie_37677516|Ryan  Stephens|https://www.pexels.com/photo/modern-kitchen-with-marble-countertops-and-island-37677516/|https://www.pexels.com/@rstephens
-dormitor_5461590|Amelia Hallsworth|https://www.pexels.com/photo/single-beds-inside-a-hotel-room-5461590/|https://www.pexels.com/@amelia-hallsworth
-living_6908560|Max Vakhtbovych|https://www.pexels.com/photo/flat-screen-tv-on-a-wooden-wall-in-front-of-a-couch-6908560/|https://www.pexels.com/@artbovich
-dressing_7166640|Max Vakhtbovych|https://www.pexels.com/photo/a-spacious-living-room-with-chandelier-7166640/|https://www.pexels.com/@artbovich
-bucatarie_7061337|Max Vakhtbovych|https://www.pexels.com/photo/white-glossy-cabinets-in-minimalist-kitchen-7061337/|https://www.pexels.com/@artbovich
-dormitor_7546293|Max Vakhtbovych|https://www.pexels.com/photo/photo-of-the-bed-7546293/|https://www.pexels.com/@artbovich
