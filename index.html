@@ -405,11 +405,13 @@
 
   /* ce putem face (piese desenate de configurator) */
   .idei-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-  .idea { background: var(--cream); border: 1px solid var(--line); border-radius: 14px; padding: 14px 14px 16px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+  /* min-width:0 = lasă coloanele să se strângă sub lățimea celui mai lung cuvânt;
+     fără el, etichete ca "Coloană frigider" lățesc toată pagina pe telefon. */
+  .idea { min-width: 0; background: var(--cream); border: 1px solid var(--line); border-radius: 14px; padding: 14px 14px 16px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; }
   .idea:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
   .idea-ph { aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center; padding: 4px; }
   .idea-ph img { max-width: 100%; max-height: 100%; }
-  .idea-l { display: block; margin-top: 10px; font-size: 14px; font-weight: 600; color: var(--ink); }
+  .idea-l { display: block; margin-top: 10px; font-size: 14px; font-weight: 600; color: var(--ink); overflow-wrap: break-word; }
   .idei-cta { text-align: center; margin-top: 38px; }
   .idei-cta .btn { display: inline-flex; }
 
@@ -532,11 +534,13 @@
     .cat-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
     .values-grid { grid-template-columns: 1fr 1fr; }
     .steps-grid { grid-template-columns: 1fr 1fr; }
+    .idei-grid { grid-template-columns: repeat(3, 1fr); }
     .contact-grid { grid-template-columns: 1fr; }
   }
   @media (max-width: 760px) {
     nav.mainnav, .nav-cta { display: none; }
     .hamburger { display: flex; }
+    .idei-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
     .hero-copy { text-align: center; }
     .hero-copy .hero-actions { justify-content: center; }
     .hero-copy p.lead { margin-left: auto; margin-right: auto; }
