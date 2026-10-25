@@ -1,3 +1,13 @@
+bucatarie_7060816|Max Vakhtbovych|https://www.pexels.com/photo/interior-of-modern-kitchen-with-contemporary-furniture-7060816/|https://www.pexels.com/@artbovich
+dormitor_6920604|Max Vakhtbovych|https://www.pexels.com/photo/simple-and-modern-interior-design-of-a-bedroom-6920604/|https://www.pexels.com/@artbovich
+living_5002324|Barion McQueen|https://www.pexels.com/photo/brown-wooden-shelf-with-assorted-items-5002324/|https://www.pexels.com/@framedbydavinci
+dressing_6980733|Max Vakhtbovych|https://www.pexels.com/photo/closet-on-parquet-under-chandelier-at-home-6980733/|https://www.pexels.com/@artbovich
+bucatarie_7214337|Max Vakhtbovych|https://www.pexels.com/photo/gray-chairs-and-table-neat-white-curtains-7214337/|https://www.pexels.com/@artbovich
+dormitor_7587815|Max Vakhtbovych|https://www.pexels.com/photo/a-cozy-bedroom-with-wooden-flooring-7587815/|https://www.pexels.com/@artbovich
+living_7512046|Max Vakhtbovych|https://www.pexels.com/photo/modern-living-room-interior-in-beige-color-7512046/|https://www.pexels.com/@artbovich
+dressing_30922972|Magda Ehlers|https://www.pexels.com/photo/colorful-assortment-of-vintage-dresses-on-racks-30922972/|https://www.pexels.com/@magda-ehlers-pexels
+bucatarie_7031759|Max Vakhtbovych|https://www.pexels.com/photo/stylish-kitchen-with-flower-on-table-7031759/|https://www.pexels.com/@artbovich
+dormitor_6580380|Max Vakhtbovych|https://www.pexels.com/photo/modern-design-of-a-walk-in-closet-6580380/|https://www.pexels.com/@artbovich
 bucatarie_7060821|Max Vakhtbovych|https://www.pexels.com/photo/modern-kitchen-design-with-built-in-appliances-7060821/|https://www.pexels.com/@artbovich
 dormitor_38253349|Magda Ehlers|https://www.pexels.com/photo/interior-of-historic-jail-cell-with-artwork-decor-38253349/|https://www.pexels.com/@magda-ehlers-pexels
 living_37153442|Curtis Adams|https://www.pexels.com/photo/elegant-living-room-with-fireplace-interior-37153442/|https://www.pexels.com/@curtis-adams-1694007
@@ -138,13 +148,3 @@ living_5502255|Curtis Adams|https://www.pexels.com/photo/wooden-bookcase-with-bo
 dressing_6670659|Huy Quang Nguyễn|https://www.pexels.com/photo/photo-of-a-bedroom-6670659/|https://www.pexels.com/@huy-quang-nguy-n-18652822
 bucatarie_36777502|Curtis Adams|https://www.pexels.com/photo/modern-white-kitchen-with-marble-countertops-36777502/|https://www.pexels.com/@curtis-adams-1694007
 dormitor_14021930|Quang Nguyen Vinh|https://www.pexels.com/photo/beds-and-closet-in-a-hotel-room-14021930/|https://www.pexels.com/@quang-nguyen-vinh-222549
-bucatarie_28272329|The R.E Editor|https://www.pexels.com/photo/a-kitchen-with-a-table-and-chairs-and-a-refrigerator-28272329/|https://www.pexels.com/@the-r-e-editor-849420489
-dormitor_7546288|Max Vakhtbovych|https://www.pexels.com/photo/a-modern-bedroom-interior-7546288/|https://www.pexels.com/@artbovich
-living_7534563|Max Vakhtbovych|https://www.pexels.com/photo/luxury-living-room-in-modern-apartment-7534563/|https://www.pexels.com/@artbovich
-dressing_15305298|Ayyeee Ayyeee|https://www.pexels.com/photo/glass-items-on-white-shelves-over-white-wall-15305298/|https://www.pexels.com/@ayyeee-ayyeee-434363205
-bucatarie_7060815|Max Vakhtbovych|https://www.pexels.com/photo/spacious-kitchen-with-modern-furniture-and-appliances-in-minimalist-apartment-7060815/|https://www.pexels.com/@artbovich
-dormitor_34636332|Franco Garcia|https://www.pexels.com/photo/cozy-minimalist-bedroom-with-pillows-and-towels-34636332/|https://www.pexels.com/@francogarciafilms
-living_6782352|Max Vakhtbovych|https://www.pexels.com/photo/interior-of-modern-living-room-with-orchid-6782352/|https://www.pexels.com/@artbovich
-dressing_7745933|Max Vakhtbovych|https://www.pexels.com/photo/wooden-furniture-in-rustic-house-7745933/|https://www.pexels.com/@artbovich
-bucatarie_7545855|Max Vakhtbovych|https://www.pexels.com/photo/a-white-kitchen-cabinets-with-sink-7545855/|https://www.pexels.com/@artbovich
-dormitor_7166944|Max Vakhtbovych|https://www.pexels.com/photo/bed-in-hotel-room-7166944/|https://www.pexels.com/@artbovich
