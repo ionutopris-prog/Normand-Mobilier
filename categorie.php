@@ -8,16 +8,19 @@ $BASE = 'https://normandmobilier.ro/';
 $CATS = [
   'Dormitoare' => [
     'desc' => 'Dormitoare la comandă în Galați și Brăila: paturi cu tăblie tapițată și dulapuri cu uși glisante, croite fix pe dimensiunile camerei.',
+    'info' => 'Paturi cu tăblie tapițată, dulapuri cu uși glisante sau batante și corpuri suspendate, croite fix pe dimensiunile camerei — depozitare maximă, aspect curat.',
     'img'  => 'images/og-dormitoare.jpg',
     'alt'  => 'Dormitor la comandă — pat, dulap cu uși oglindă și comodă, Normand Mobilier',
   ],
   'Bucătării' => [
     'desc' => 'Bucătării la comandă în Galați și Brăila, în L sau U, cu insulă și blat rezistent — corpuri croite pe pereți și pe electrocasnice.',
+    'info' => 'Bucătării în formă de L sau U, cu insulă și blat rezistent, care folosesc fiecare colț. Corpuri suspendate și de bază, croite pe pereți și în jurul electrocasnicelor.',
     'img'  => 'images/og-bucatarii.jpg',
     'alt'  => 'Bucătărie la comandă — Normand Mobilier, Galați și Brăila',
   ],
   'Corpuri de mobilă' => [
     'desc' => 'Corpuri de mobilă la comandă în Galați și Brăila: pereți de living, biblioteci și comode, croite pe lungimea pereților tăi.',
+    'info' => 'Pereți de living, biblioteci, comode și corpuri de depozitare — proiectate pe lungimea pereților tăi, cu vitrine, sertare și rafturi după nevoie.',
     'img'  => 'images/og-corpuri.jpg',
     'alt'  => 'Perete de living la comandă — Normand Mobilier, Galați și Brăila',
   ],
@@ -53,11 +56,15 @@ if ($known) {
   np_meta($html, '~(<meta property="og:image:alt" content=")[^"]*(")~',           $c['alt']);
   np_meta($html, '~(<meta name="twitter:image:alt" content=")[^"]*(")~',          $c['alt']);
   np_meta($html, '~(<link rel="canonical" href=")[^"]*(")~',                      $url);
-} elseif ($raw !== '') {
-  /* categorie necunoscută: nu o indexăm, trimitem canonicul acasă */
-  $html = preg_replace('~(<link rel="canonical" href=")[^"]*(")~', '${1}' . $BASE . '${2}', $html, 1);
-  $html = str_replace('</head>', '<meta name="robots" content="noindex,follow">' . "\n</head>", $html);
+  np_meta($html, '~(<meta name="robots" content=")[^"]*(")~',                     'index, follow');
+  /* titlul vizibil e pus din server, nu doar din JS (îl văd și cei care nu rulează JS) */
+  np_meta($html, '~(<h1 id="categoryTitle">)[^<]*(</h1>)~',                      $raw);
+  np_meta($html, '~(<div class="cover-title" id="coverTitle">)[^<]*(</div>)~',  $raw);
+  np_meta($html, '~(<span id="breadcrumbTitle">)[^<]*(</span>)~',               $raw);
+  np_meta($html, '~(<p id="categoryDesc">)[^<]*(</p>)~',                         $c['info']);
 }
+/* fără categorie sau categorie necunoscută: rămâne ce e în categorie.html —
+   un singur <meta name="robots" content="noindex, follow"> și canonicul spre prima pagină */
 
 header('Content-Type: text/html; charset=utf-8');
 echo $html;

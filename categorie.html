@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mobilă la comandă Galați · Brăila | Normand Mobilier</title>
 <meta name="description" content="Lucrări de mobilă la comandă din Galați și Brăila: bucătării, dormitoare și corpuri de living, proiectate, produse și montate exact pe măsura casei tale.">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://normandmobilier.ro/categorie.html">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://normandmobilier.ro/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Normand Mobilier">
 <meta property="og:title" content="Lucrări și categorii — mobilă la comandă în Galați · Brăila">
 <meta property="og:description" content="Bucătării, dormitoare și corpuri de living la comandă, proiectate și montate exact pe măsura casei tale.">
-<meta property="og:url" content="https://normandmobilier.ro/categorie.html">
+<meta property="og:url" content="https://normandmobilier.ro/">
 <meta property="og:image" content="https://normandmobilier.ro/images/og-image.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
@@ -26,9 +26,7 @@
 <meta name="theme-color" content="#2f4a37">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232f4a37'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' font-weight='700' text-anchor='middle' fill='%23cf9a4e'%3EN%3C/text%3E%3C/svg%3E">
 <style>a.brand{align-items:center}.brand-words{display:inline-flex;align-items:baseline;gap:9px}.brand-logo{width:34px;height:34px;border-radius:8px;flex:none;display:block}</style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fonts/fonts.css">
 <style>
   :root {
     --sage: #dbe8d9;
@@ -40,6 +38,7 @@
     --forest: #2f4a37;
     --forest-hover: #243a2b;
     --wood: #9a6a43;
+    --wood-text: #7b5535;
     --shadow: 0 18px 40px rgba(20,28,18,0.12);
     --shadow-lg: 0 34px 80px rgba(20,28,18,0.24);
   }
@@ -115,7 +114,7 @@
   .page:last-child .page-inner { border-bottom: none; }
   .page.flip-in .page-inner { transform: rotateY(0deg); opacity: 1; }
   .page .page-inner:hover { background: rgba(47,74,55,0.06); }
-  .page .arrow { color: var(--wood); font-size: 15px; transform: translateX(-4px); opacity: 0; transition: transform 0.2s ease, opacity 0.2s ease; }
+  .page .arrow { color: var(--wood-text); font-size: 15px; transform: translateX(-4px); opacity: 0; transition: transform 0.2s ease, opacity 0.2s ease; }
   .page .page-inner:hover .arrow { transform: translateX(0); opacity: 1; }
 
   /* ===== cartea mare ===== */
@@ -138,7 +137,7 @@
   }
   .hero-photo { flex: 1; border-radius: 10px; overflow: hidden; margin-bottom: 20px; background: var(--sage-deep); }
   .hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .page-left .eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--wood); font-weight: 600; margin-bottom: 8px; }
+  .page-left .eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em; color: var(--wood-text); font-weight: 600; margin-bottom: 8px; }
   .page-left h1 { font-size: 32px; font-weight: 700; margin: 0 0 10px; line-height: 1.05; }
   .page-left p { font-size: 14px; color: var(--ink-soft); line-height: 1.6; margin: 0; }
   .page-left .lp-cta { margin-top: auto; padding-top: 18px; }
@@ -258,9 +257,9 @@
 
   <div class="mobile-menu" id="mobileMenu">
     <a href="index.html">Acasă</a>
-    <a class="sub" href="categorie.html?titlu=Dormitoare">— Dormitoare</a>
-    <a class="sub" href="categorie.html?titlu=Bucătării">— Bucătării</a>
-    <a class="sub" href="categorie.html?titlu=Corpuri de mobilă">— Corpuri de mobilă</a>
+    <a class="sub" href="categorie.php?titlu=Dormitoare">— Dormitoare</a>
+    <a class="sub" href="categorie.php?titlu=Buc%C4%83t%C4%83rii">— Bucătării</a>
+    <a class="sub" href="categorie.php?titlu=Corpuri%20de%20mobil%C4%83">— Corpuri de mobilă</a>
     <a href="planner.html">Amenajează o cameră</a>
     <a href="configurator.html">Configurează o piesă</a>
     <a href="index.html#despre">Despre noi</a>
@@ -272,14 +271,14 @@
   <div class="catalog-panel" id="panel"><div class="catalog-pages" id="pages"></div></div>
 
   <main class="book-stage">
-    <div class="breadcrumb"><a href="index.html">Acasă</a> / <a href="index.html#colectie">Mobilier</a> / <span id="breadcrumbTitle">Categorie</span></div>
+    <div class="breadcrumb"><a href="index.html">Acasă</a> / <a href="index.html#colectie">Mobilier</a> / <span id="breadcrumbTitle">Mobilă la comandă</span></div>
 
     <div class="book-wrap" id="bookWrap">
       <div class="pages">
         <div class="page-left">
-          <div class="hero-photo"><img id="heroImg" alt=""></div>
+          <div class="hero-photo"><picture><source id="heroSrc" type="image/webp"><img id="heroImg" alt="" fetchpriority="high"></picture></div>
           <div class="eyebrow" id="catEyebrow">Colecție</div>
-          <h1 id="categoryTitle">Categorie</h1>
+          <h1 id="categoryTitle">Mobilă la comandă</h1>
           <p id="categoryDesc">Lucrări realizate la comandă. Alege o piesă din dreapta pentru a vedea toate pozele.</p>
           <div class="lp-cta"><a href="configurator.html">Configurează o piesă →</a></div>
         </div>
@@ -294,7 +293,7 @@
 
       <div class="cover" id="cover">
         <div class="cover-mono">Normand</div>
-        <div class="cover-title" id="coverTitle">Categorie</div>
+        <div class="cover-title" id="coverTitle">Mobilă la comandă</div>
         <div class="cover-sub">Catalog de lucrări</div>
       </div>
     </div>
@@ -387,7 +386,8 @@
     const params = new URLSearchParams(window.location.search);
     const KNOWN = ["Dormitoare", "Bucătării", "Corpuri de mobilă"];
     const rawTitlu = params.get("titlu");
-    const titlu = rawTitlu || "Mobilă la comandă";
+    // doar cele trei categorii reale; orice alt text din adresă nu ajunge pe pagină
+    const titlu = (rawTitlu && KNOWN.includes(rawTitlu)) ? rawTitlu : "Mobilă la comandă";
     // meta descriptions scurte (≤155c), cu orașul devreme — decuplate de textul vizibil
     const categoryMeta = {
       "Dormitoare": "Dormitoare la comandă în Galați și Brăila: paturi cu tăblie tapițată și dulapuri cu uși glisante, croite fix pe dimensiunile camerei.",
@@ -397,8 +397,9 @@
     const setMeta = (sel, val) => { const m = document.querySelector(sel); if (m) m.setAttribute("content", val); };
     const setLink = (sel, val) => { const l = document.querySelector(sel); if (l) l.setAttribute("href", val); };
     if (rawTitlu && KNOWN.includes(titlu)) {
-      const canonicalUrl = "https://normandmobilier.ro/categorie.html?titlu=" + encodeURIComponent(titlu);
-      document.title = titlu + " la comandă în Galați | Normand Mobilier";
+      const canonicalUrl = "https://normandmobilier.ro/categorie.php?titlu=" + encodeURIComponent(titlu);
+      // același titlu ca cel pus de categorie.php (cu Brăila)
+      document.title = titlu + " la comandă în Galați · Brăila — Normand Mobilier";
       const descTxt = categoryMeta[titlu] || (titlu + " la comandă în Galați și Brăila, exact pe măsura casei tale.");
       setMeta('meta[name="description"]', descTxt);
       setMeta('meta[property="og:title"]', titlu + " la comandă în Galați · Brăila");
@@ -407,6 +408,7 @@
       setMeta('meta[name="twitter:description"]', descTxt);
       setMeta('meta[property="og:url"]', canonicalUrl);
       setLink('link[rel="canonical"]', canonicalUrl);
+      setMeta('meta[name="robots"]', "index, follow");
       // BreadcrumbList pentru rich result (Acasă → Mobilier → categorie)
       const crumb = { "@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Acasă", "item": "https://normandmobilier.ro/" },
@@ -427,18 +429,62 @@
 
     const products = productsByCategory[titlu] || defaultProducts;
 
+    /* copii mai mici ale ACELORAȘI poze (480 și 800 px, JPG + WebP) pentru miniaturi și
+       poza mare din stânga; originalul se deschide doar în lightbox. Ordinea pozelor nu se schimbă. */
+    const DIMS = {
+      "images/bucatarii/bucatarie-l-bej-1.jpg":[1600,1200],
+      "images/bucatarii/bucatarie-l-bej-2.jpg":[1600,1200],
+      "images/bucatarii/bucatarie-l-bej-3.jpg":[1600,1200],
+      "images/bucatarii/hero.jpg":[1600,769],
+      "images/bucatarii/thumb1.jpg":[1536,2048],
+      "images/bucatarii/thumb2.jpg":[1536,2048],
+      "images/bucatarii/thumb3.jpg":[1536,2048],
+      "images/bucatarii/thumb4.jpg":[1536,2048],
+      "images/corpuri-mobila/birou-corp-sertare.jpg":[1600,1200],
+      "images/corpuri-mobila/hero.jpg":[1200,1600],
+      "images/corpuri-mobila/thumb1.jpg":[1500,2000],
+      "images/dormitoare/dormitor-complet-pat-dulap-comoda.jpg":[1600,1200],
+      "images/dormitoare/dormitor-dulap-oglinda-pat.jpg":[1172,1200],
+      "images/dormitoare/dormitor-punte-suspendata-1.jpg":[1600,1200],
+      "images/dormitoare/dormitor-punte-suspendata-2.jpg":[1600,1200],
+      "images/dormitoare/hero.jpg":[1200,1600],
+      "images/dormitoare/hol-dulap-glisant-oglinda.jpg":[1205,1200],
+      "images/dormitoare/hol-dulap-profil-negru.jpg":[1600,1200],
+      "images/dormitoare/hol-dulapuri-glisante-oglinda.jpg":[1600,1200],
+      "images/dormitoare/pat-tablie-capitonata.jpg":[1600,1200],
+      "images/dormitoare/thumb1.jpg":[1536,2048],
+      "images/dormitoare/thumb2.jpg":[1500,2000],
+      "images/dormitoare/thumb3.jpg":[1600,900],
+      "images/dormitoare/thumb4.jpg":[1600,1200]
+    };
+    const variant = (src, w, ext) => src.replace(/\.jpg$/, "-" + w + "." + (ext || "jpg"));
+    const setDims = (img, src) => { const d = DIMS[src]; if (d) { img.width = d[0]; img.height = d[1]; } };
+    function fillResponsive(source, img, src, sizes) {
+      source.srcset = variant(src, 480, "webp") + " 480w, " + variant(src, 800, "webp") + " 800w";
+      source.sizes = sizes;
+      img.src = variant(src, 800);
+      img.srcset = variant(src, 480) + " 480w, " + variant(src, 800) + " 800w";
+      img.sizes = sizes;
+      setDims(img, src);
+    }
+
     const heroImg = document.getElementById("heroImg");
-    heroImg.src = products[0].photos[0];
+    fillResponsive(document.getElementById("heroSrc"), heroImg, products[0].photos[0], "(max-width: 900px) calc(94vw - 76px), 394px");
     heroImg.alt = titlu;
 
     const filmreel = document.getElementById("filmreel");
     products.forEach((product, i) => {
       const frame = document.createElement("div");
       frame.className = "frame";
+      const pic = document.createElement("picture");
+      const source = document.createElement("source");
+      source.type = "image/webp";
       const img = document.createElement("img");
-      img.src = product.photos[0];
+      fillResponsive(source, img, product.photos[0], "(max-width: 900px) calc(47vw - 56px), 180px");
       img.alt = product.name;
-      frame.appendChild(img);
+      img.loading = "lazy";
+      pic.appendChild(source); pic.appendChild(img);
+      frame.appendChild(pic);
       if (product.photos.length > 1) {
         const count = document.createElement("div");
         count.className = "frame-count";
@@ -471,7 +517,8 @@
       if (product.photos.length > 1) {
         product.photos.forEach((src, i) => {
           const t = document.createElement("img");
-          t.src = src;
+          t.src = variant(src, 480);
+          setDims(t, src);
           t.alt = product.name + " — poza " + (i + 1);
           t.className = i === currentPhoto ? "active" : "";
           t.addEventListener("click", () => { currentPhoto = i; renderLightbox(); });
@@ -534,7 +581,7 @@
         inner.className = "page-inner";
         inner.style.transitionDelay = (i * 70) + "ms";
         inner.innerHTML = "<span>" + label + "</span><span class='arrow'>→</span>";
-        inner.addEventListener("click", () => { window.location.href = "categorie.html?titlu=" + encodeURIComponent(label); });
+        inner.addEventListener("click", () => { window.location.href = "categorie.php?titlu=" + encodeURIComponent(label); });
         page.appendChild(inner);
         pagesContainer.appendChild(page);
       });
@@ -568,13 +615,14 @@
   </script>
   <script src="whatsapp.js"></script>
 
-<script>try{var _np="categorie";if(navigator.sendBeacon)navigator.sendBeacon("trimite-oferta.php?ping=view&p="+_np);else fetch("trimite-oferta.php?ping=view&p="+_np).catch(function(){});}catch(e){}</script>
+<script>try{var _np="categorie";if(navigator.sendBeacon)navigator.sendBeacon("trimite-oferta.php?ping=view&p="+_np);else fetch("trimite-oferta.php?ping=view&p="+_np,{method:"POST",keepalive:true}).catch(function(){});}catch(e){}</script>
 <!-- legal-footer: obligatoriu (ANPC SAL + GDPR); același pe toate paginile -->
 <style>
   .legal-strip { background: #1f3326; color: rgba(245,243,236,.75); font: 13px/1.5 "Inter", system-ui, sans-serif; padding: 18px 20px; }
   .legal-strip .in { max-width: 1180px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 14px 24px; align-items: center; justify-content: space-between; }
   .legal-strip a { color: rgba(245,243,236,.85); }
   .legal-strip a:hover { color: #f5f3ec; }
+  .legal-strip .links a { display: inline-block; padding: 4px 0; line-height: 1.5; }
   .legal-strip .badges { display: flex; gap: 12px; flex-wrap: wrap; }
   .legal-strip .badges a { display: block; line-height: 0; border-radius: 6px; }
   .legal-strip .badges img { width: 250px; height: 50px; max-width: 100%; }

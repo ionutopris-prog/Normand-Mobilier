@@ -9,9 +9,7 @@
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#2f4a37">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232f4a37'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' font-weight='700' text-anchor='middle' fill='%23cf9a4e'%3EN%3C/text%3E%3C/svg%3E">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fonts/fonts.css">
 <style>
   :root { --cream:#f5f3ec; --ink:#21301f; --ink-soft:#56634f; --line:#cad8c3; --forest:#2f4a37; --sage:#dbe8d9; }
   * { box-sizing: border-box; }
@@ -39,7 +37,7 @@
 
 <main>
   <h1>Politica de confidențialitate</h1>
-  <div class="updated">Ultima actualizare: 26 septembrie 2026</div>
+  <div class="updated">Ultima actualizare: 1 noiembrie 2026</div>
 
   <p>Normand Mobilier face mobilă la comandă: măsurăm, proiectăm, producem, livrăm și montăm. Pentru asta avem nevoie de câteva date despre tine — cât mai puține. Pagina asta explică, pe înțeles, ce date folosim, de ce, cât le păstrăm și ce drepturi ai, conform Regulamentului (UE) 2016/679 („GDPR") și Legii nr. 190/2018.</p>
 
@@ -59,7 +57,7 @@
       <tr>
         <td>Ceri o ofertă din configurator („Trimite comanda cu desen")</td>
         <td>Nume, email, telefon, localitate (ultimele trei opționale), specificația și desenul piesei</td>
-        <td>Ca să-ți facem oferta și să te contactăm despre ea — demersuri făcute la cererea ta înainte de un contract (art. 6 alin. 1 lit. b GDPR). Dacă ne dai email, primești și tu o copie a comenzii.</td>
+        <td>Ca să-ți facem oferta și să te contactăm despre ea — demersuri făcute la cererea ta înainte de un contract (art. 6 alin. 1 lit. b GDPR). Dacă ne dai email, primești un scurt mesaj de confirmare că am primit cererea (fără desen și fără datele introduse).</td>
       </tr>
       <tr>
         <td>Ne scrii pe email sau WhatsApp ori ne suni</td>
@@ -78,8 +76,8 @@
       </tr>
       <tr>
         <td>Vizitezi site-ul</td>
-        <td>Adresa IP și date tehnice ale browserului, în jurnalele serverului; la trimiterea formularului, o amprentă anonimizată a IP-ului</td>
-        <td>Ca site-ul să funcționeze sigur și ca formularul să nu fie folosit pentru spam — limităm la câteva trimiteri pe oră de la aceeași adresă (interes legitim, art. 6 alin. 1 lit. f).</td>
+        <td>Adresa IP și date tehnice ale browserului, în jurnalele serverului. Pentru contor și pentru limitarea formularului: o amprentă calculată din adresa IP (și tipul browserului, la contor) cu o cheie care se schimbă în fiecare zi — IP-ul în sine nu îl păstrăm</td>
+        <td>Ca site-ul să funcționeze sigur, ca formularul să nu fie folosit pentru spam (câteva trimiteri pe oră de la aceeași adresă, un număr limitat de cereri pe zi, cel mult două confirmări pe zi către aceeași adresă de email) și ca să știm câți vizitatori avem (interes legitim, art. 6 alin. 1 lit. f).</td>
       </tr>
     </tbody>
   </table>
@@ -87,8 +85,8 @@
   <p>Nu vindem datele nimănui, nu îți trimitem reclame și nu luăm decizii automate despre tine.</p>
 
   <h2>3. Cookie-uri și statistici</h2>
-  <p>Site-ul nu pune cookie-uri de urmărire sau de publicitate și nu folosește Google Analytics. Numărăm doar, anonim, de câte ori se deschid configuratorul și planificatorul și câte cereri de ofertă se trimit — fără date despre cine le deschide.</p>
-  <p>Fonturile site-ului se încarcă de la Google Fonts; pentru asta, browserul tău trimite adresa IP către Google. Butonul de hartă te duce pe Google Maps și butonul de WhatsApp pe WhatsApp — acolo se aplică regulile lor.</p>
+  <p>Site-ul nu pune cookie-uri și nu folosește Google Analytics sau alte servicii de statistică ale altora. Avem un contor propriu, pe serverul nostru, care numără câți vizitatori deschid fiecare pagină într-o zi, de câte ori se deschid configuratorul și planificatorul și câte cereri de ofertă se trimit. Fiecare vizitator e numărat cel mult o dată pe zi: pentru asta se calculează o amprentă din adresa IP și tipul browserului, cu o cheie care se schimbă zilnic; amprentele și cheia se șterg a doua zi, iar IP-ul nu se scrie nicăieri. În contor rămân doar cifre (pe pagini și pe zile), fără nimic despre persoane.</p>
+  <p>Fonturile site-ului sunt găzduite pe serverul nostru, deci browserul tău nu mai contactează Google ca să le încarce. Butonul de hartă te duce pe Google Maps și butonul de WhatsApp pe WhatsApp — acolo se aplică regulile lor.</p>
 
   <h2>4. Cine mai vede datele</h2>
   <ul>
@@ -104,7 +102,8 @@
     <li>cererile de ofertă care nu devin comandă: cel mult 2 ani, apoi le ștergem;</li>
     <li>datele comenzilor: pe durata garanției și a termenului în care se pot face reclamații sau procese (termenul general de prescripție, 3 ani de la montaj);</li>
     <li>facturile și documentele contabile: cât cere legislația financiar-contabilă;</li>
-    <li>jurnalele serverului și amprentele de anti-spam: câteva zile, cât le păstrează serverul.</li>
+    <li>amprentele zilnice ale contorului și ale limitării formularului: până a doua zi, când se șterg împreună cu cheia zilei;</li>
+    <li>jurnalele serverului: câteva zile, cât le păstrează firma de găzduire.</li>
   </ul>
 
   <h2>6. Drepturile tale</h2>
@@ -131,6 +130,7 @@
   .legal-strip .in { max-width: 1180px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 14px 24px; align-items: center; justify-content: space-between; }
   .legal-strip a { color: rgba(245,243,236,.85); }
   .legal-strip a:hover { color: #f5f3ec; }
+  .legal-strip .links a { display: inline-block; padding: 4px 0; line-height: 1.5; }
   .legal-strip .badges { display: flex; gap: 12px; flex-wrap: wrap; }
   .legal-strip .badges a { display: block; line-height: 0; border-radius: 6px; }
   .legal-strip .badges img { width: 250px; height: 50px; max-width: 100%; }

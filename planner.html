@@ -55,12 +55,11 @@
     font-size:11px; line-height:11px; text-align:center; font-weight:700; }
   .selbar-count { font-size:13px; color:#56634f; font-weight:600; }
 </style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fonts/fonts.css">
 <style>
   :root { --sage:#dbe8d9; --sage-deep:#c8d9c3; --cream:#f5f3ec; --ink:#21301f; --ink-soft:#56634f;
     --line:#cad8c3; --forest:#2f4a37; --forest-hover:#243a2b; --wood:#9a6a43;
+    --wood-text: #7b5535;
     --shadow:0 18px 40px rgba(20,28,18,.12); --shadow-lg:0 30px 70px rgba(20,28,18,.2); }
   * { box-sizing:border-box; }
   html,body { margin:0; padding:0; background:var(--sage); color:var(--ink); font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; -webkit-font-smoothing:antialiased; }
@@ -76,7 +75,7 @@
   .top-cta { background:var(--forest); color:var(--cream)!important; padding:10px 18px; border-radius:999px; font-weight:600; }
   .wrap { display:grid; grid-template-columns:1fr 388px; min-height:calc(100vh - 66px); }
   .stage { position:relative; padding:22px clamp(16px,4vw,44px); display:flex; flex-direction:column; background:radial-gradient(120% 80% at 50% 0%, #e7f0e5 0%, var(--sage) 60%); }
-  .stage-head .eyebrow { font-size:11px; text-transform:uppercase; letter-spacing:.22em; color:var(--wood); font-weight:600; }
+  .stage-head .eyebrow { font-size:11px; text-transform:uppercase; letter-spacing:.22em; color:var(--wood-text); font-weight:600; }
   .stage-head h1 { font-size:clamp(24px,3.2vw,34px); margin:4px 0 2px; }
   .stage-head .sub { font-size:14px; color:var(--ink-soft); }
   .viewer { flex:1; display:flex; align-items:center; justify-content:center; min-height:320px; }
@@ -605,17 +604,18 @@ function init(){
     m.gap=false; m.type=def; m.w=w; m.h=t.dims.h[2]; m.d=t.dims.d[2]; m.doors=(t.doors.find(v=>v>0)||t.doors[0]); m.drawers=t.drawers[0]; m.shelves=t.shelves[Math.floor(t.shelves.length/2)]; m.layout=null; m.open=false; renderScene(); renderPanel(); };
   buildAllSwatches();
   loadTemplate("Bucătărie dreaptă");
-  try { if (navigator.sendBeacon) navigator.sendBeacon("trimite-oferta.php?ping=open"); else fetch("trimite-oferta.php?ping=open").catch(function(){}); } catch(e) {}
+  try { if (navigator.sendBeacon) navigator.sendBeacon("trimite-oferta.php?ping=open"); else fetch("trimite-oferta.php?ping=open",{method:"POST",keepalive:true}).catch(function(){}); } catch(e) {}
 }
 init();
 </script>
-<script>try{var _np="planner";if(navigator.sendBeacon)navigator.sendBeacon("trimite-oferta.php?ping=view&p="+_np);else fetch("trimite-oferta.php?ping=view&p="+_np).catch(function(){});}catch(e){}</script>
+<script>try{var _np="planner";if(navigator.sendBeacon)navigator.sendBeacon("trimite-oferta.php?ping=view&p="+_np);else fetch("trimite-oferta.php?ping=view&p="+_np,{method:"POST",keepalive:true}).catch(function(){});}catch(e){}</script>
 <!-- legal-footer: obligatoriu (ANPC SAL + GDPR); același pe toate paginile -->
 <style>
   .legal-strip { background: #1f3326; color: rgba(245,243,236,.75); font: 13px/1.5 "Inter", system-ui, sans-serif; padding: 18px 20px; }
   .legal-strip .in { max-width: 1180px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 14px 24px; align-items: center; justify-content: space-between; }
   .legal-strip a { color: rgba(245,243,236,.85); }
   .legal-strip a:hover { color: #f5f3ec; }
+  .legal-strip .links a { display: inline-block; padding: 4px 0; line-height: 1.5; }
   .legal-strip .badges { display: flex; gap: 12px; flex-wrap: wrap; }
   .legal-strip .badges a { display: block; line-height: 0; border-radius: 6px; }
   .legal-strip .badges img { width: 250px; height: 50px; max-width: 100%; }

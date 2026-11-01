@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Configurator mobilă la comandă | Normand Mobilier</title>
-<meta name="description" content="Configurează-ți online dulapul, bucătăria sau corpul de mobilă: dimensiuni, finisaje, interior cu rafturi și bare. Primești desenul și oferta pe email sau WhatsApp.">
+<meta name="description" content="Configurează-ți online dulapul, bucătăria sau corpul de mobilă: dimensiuni, finisaje, interior cu rafturi și bare. Trimiți desenul la atelier și primești oferta pe email sau WhatsApp.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://normandmobilier.ro/configurator.html">
 <meta property="og:type" content="website">
@@ -26,12 +26,11 @@
 <meta name="theme-color" content="#2f4a37">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232f4a37'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' font-weight='700' text-anchor='middle' fill='%23cf9a4e'%3EN%3C/text%3E%3C/svg%3E">
 <style>a.brand{align-items:center}.brand-words{display:inline-flex;align-items:baseline;gap:9px}.brand-logo{width:30px;height:30px;border-radius:7px;flex:none;display:block}</style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fonts/fonts.css">
 <style>
   :root { --sage:#dbe8d9; --sage-deep:#c8d9c3; --cream:#f5f3ec; --ink:#21301f; --ink-soft:#56634f;
     --line:#cad8c3; --forest:#2f4a37; --forest-hover:#243a2b; --wood:#9a6a43;
+    --wood-text: #7b5535;
     --shadow:0 18px 40px rgba(20,28,18,.12); --shadow-lg:0 30px 70px rgba(20,28,18,.2); }
   * { box-sizing:border-box; }
   html,body { margin:0; padding:0; background:var(--sage); color:var(--ink); font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; -webkit-font-smoothing:antialiased; }
@@ -48,7 +47,7 @@
   .config-wrap { display:grid; grid-template-columns:1fr 388px; gap:0; min-height:calc(100vh - 66px); }
   .stage { position:relative; padding:28px clamp(16px,4vw,48px); display:flex; flex-direction:column; background:radial-gradient(120% 80% at 50% 0%, #e7f0e5 0%, var(--sage) 60%); }
   .stage-head { display:flex; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:6px; }
-  .stage-head .eyebrow { font-size:11px; text-transform:uppercase; letter-spacing:.22em; color:var(--wood); font-weight:600; }
+  .stage-head .eyebrow { font-size:11px; text-transform:uppercase; letter-spacing:.22em; color:var(--wood-text); font-weight:600; }
   .stage-head h1 { font-size:clamp(26px,3.4vw,38px); margin:4px 0 2px; line-height:1.05; }
   .stage-head .sub { font-size:14px; color:var(--ink-soft); }
   .planner-link { font-size:13px; color:var(--forest); font-weight:600; text-decoration:none; border:1px solid var(--line); background:var(--cream); padding:8px 14px; border-radius:999px; }
@@ -59,9 +58,9 @@
   .stat .k { font-size:11px; text-transform:uppercase; letter-spacing:.14em; color:var(--ink-soft); }
   .stat .v { font-family:"Cormorant Garamond",serif; font-size:26px; font-weight:700; color:var(--forest); line-height:1.1; margin-top:3px; }
   .stat .v small { font-size:13px; font-family:"Inter"; color:var(--ink-soft); font-weight:500; }
-  .stat.badge .v { color:var(--wood); }
+  .stat.badge .v { color:var(--wood-text); }
   .view-toggle { display:flex; gap:6px; background:var(--sage-deep); border-radius:999px; padding:4px; }
-  .view-toggle button { border:none; background:transparent; padding:7px 14px; border-radius:999px; cursor:pointer; font-size:12.5px; font-weight:600; color:var(--ink-soft); font-family:inherit; }
+  .view-toggle button { border:none; background:transparent; padding:7px 14px; border-radius:999px; cursor:pointer; font-size:12.5px; font-weight:600; color:var(--ink); font-family:inherit; }
   .view-toggle button.active { background:var(--cream); color:var(--forest); box-shadow:0 2px 6px rgba(20,28,18,.1); }
   .panel { background:var(--cream); border-left:1px solid var(--line); padding:24px 22px 30px; overflow-y:auto; max-height:calc(100vh - 66px); }
   .group { margin-bottom:24px; }
@@ -187,7 +186,7 @@
       <div class="group" id="grpExtras"><div class="glabel">Dotări opționale (feronerie)</div><div class="seg" id="segExtras"></div></div>
       <div class="cta-block">
         <button class="btn-primary" id="ctaOrder" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v14H8l-4 3z"/><path d="M8 9h8M8 13h5"/></svg>Trimite comanda cu desen</button>
-        <div class="cta-note" style="margin:9px 0 6px">Primești pe email desenul + toate detaliile. Sau, rapid, doar text:</div>
+        <div class="cta-note" style="margin:9px 0 6px">Desenul și toate detaliile ajung la atelier, tu primești confirmarea pe email. Sau, rapid, doar text:</div>
         <div style="display:flex; gap:10px">
           <a class="btn-primary" id="ctaWa" href="#" target="_blank" rel="noopener" style="flex:1; background:#25D366; font-size:14px; padding:12px"><svg width="17" height="17" viewBox="0 0 32 32" fill="currentColor"><path d="M16 .5C7.4.5.5 7.4.5 16c0 2.8.7 5.5 2.1 7.9L.3 31.7l8-2.1c2.3 1.2 4.9 1.9 7.7 1.9 8.6 0 15.5-6.9 15.5-15.5S24.6.5 16 .5zm7.1 18.9c-.4-.2-2.3-1.1-2.6-1.3-.4-.1-.6-.2-.9.2-.3.4-1 1.3-1.2 1.5-.2.2-.4.3-.8.1-.4-.2-1.7-.6-3.2-2-1.2-1-2-2.4-2.2-2.7-.2-.4 0-.6.2-.8.2-.2.4-.4.5-.7.2-.2.2-.4.4-.6.1-.2.1-.5 0-.7-.1-.2-.9-2.1-1.2-2.9-.3-.7-.6-.6-.9-.7h-.7c-.2 0-.6.1-.9.5-.3.4-1.2 1.2-1.2 2.9 0 1.7 1.2 3.4 1.4 3.6.2.2 2.4 3.7 5.9 5.2.8.4 1.5.6 2 .7.8.3 1.6.2 2.2.1.7-.1 2.3-.9 2.6-1.8.3-.9.3-1.6.2-1.8-.1-.1-.3-.2-.7-.4z"/></svg>WhatsApp</a>
           <a class="btn-primary" id="ctaEmail" href="#" style="flex:1; background:#5c6b56; font-size:14px; padding:12px"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v16H4z"/><path d="M4 7l8 6 8-6"/></svg>Email</a>
@@ -202,9 +201,9 @@
       <button class="modal-x" id="omClose" type="button" aria-label="Închide">✕</button>
       <div id="omForm">
         <div class="modal-title" id="omTitle">Trimite comanda cu desen</div>
-        <p class="modal-sub">Îți trimitem pe email desenul configurației + toate detaliile, ca la o comandă de mobilier. Apoi te contactăm pentru o măsurătoare la fața locului și oferta finală.</p>
+        <p class="modal-sub">Trimitem la atelier desenul configurației și toate detaliile, iar tu primești pe email o confirmare. Apoi te contactăm pentru o măsurătoare la fața locului și oferta finală.</p>
         <label class="fld"><span>Nume *</span><input id="ofName" type="text" autocomplete="name" placeholder="Numele tău"></label>
-        <label class="fld"><span>Email</span><input id="ofEmail" type="email" autocomplete="email" placeholder="ca să primești și tu desenul pe email"></label>
+        <label class="fld"><span>Email</span><input id="ofEmail" type="email" autocomplete="email" placeholder="ca să primești confirmarea pe email"></label>
         <label class="fld"><span>Telefon</span><input id="ofPhone" type="tel" autocomplete="tel" placeholder="ca să te putem suna pentru ofertă"></label>
         <label class="fld"><span>Localitate</span><input id="ofCity" type="text" placeholder="oraș / localitate (opțional)"></label>
         <input id="ofHoney" type="text" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0">
@@ -301,7 +300,7 @@ async function sendOrder(){ const name=el("ofName").value.trim();
     const r=await fetch("trimite-oferta.php",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
     const j=await r.json();
     if(j && j.ok){ el("omForm").style.display="none"; el("omDone").style.display="block";
-      el("omDoneMsg").textContent=(email && j.client)?("Ți-am trimis desenul și pe email, la "+email+". Te contactăm în scurt timp."):"Am trimis configurația către atelier. Te contactăm în scurt timp."; }
+      el("omDoneMsg").textContent=(email && j.client)?("Ți-am trimis o confirmare pe email, la "+email+". Te contactăm în scurt timp."):"Am trimis configurația către atelier. Te contactăm în scurt timp."; }
     else { el("omErr").textContent="Nu am putut trimite acum. Încearcă WhatsApp sau sună-ne direct."; }
   }catch(e){ el("omErr").textContent="Nu am putut trimite acum. Încearcă WhatsApp sau sună-ne direct."; }
   btn.disabled=false; btn.textContent="Trimite comanda"; }
@@ -395,15 +394,16 @@ function init(){ buildCatTabs(); buildTypeGrid(); buildSwatchGrid("swFront","fro
   el("statCombos").textContent=comboCount().toLocaleString("ro-RO")+"+"; render(); }
 init();
 // semnalează o deschidere (contor, non-blocant)
-try { if (navigator.sendBeacon) navigator.sendBeacon("trimite-oferta.php?ping=open"); else fetch("trimite-oferta.php?ping=open").catch(function(){}); } catch(e) {}
+try { if (navigator.sendBeacon) navigator.sendBeacon("trimite-oferta.php?ping=open"); else fetch("trimite-oferta.php?ping=open",{method:"POST",keepalive:true}).catch(function(){}); } catch(e) {}
 </script>
-<script>try{var _np="configurator";if(navigator.sendBeacon)navigator.sendBeacon("trimite-oferta.php?ping=view&p="+_np);else fetch("trimite-oferta.php?ping=view&p="+_np).catch(function(){});}catch(e){}</script>
+<script>try{var _np="configurator";if(navigator.sendBeacon)navigator.sendBeacon("trimite-oferta.php?ping=view&p="+_np);else fetch("trimite-oferta.php?ping=view&p="+_np,{method:"POST",keepalive:true}).catch(function(){});}catch(e){}</script>
 <!-- legal-footer: obligatoriu (ANPC SAL + GDPR); același pe toate paginile -->
 <style>
   .legal-strip { background: #1f3326; color: rgba(245,243,236,.75); font: 13px/1.5 "Inter", system-ui, sans-serif; padding: 18px 20px; }
   .legal-strip .in { max-width: 1180px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 14px 24px; align-items: center; justify-content: space-between; }
   .legal-strip a { color: rgba(245,243,236,.85); }
   .legal-strip a:hover { color: #f5f3ec; }
+  .legal-strip .links a { display: inline-block; padding: 4px 0; line-height: 1.5; }
   .legal-strip .badges { display: flex; gap: 12px; flex-wrap: wrap; }
   .legal-strip .badges a { display: block; line-height: 0; border-radius: 6px; }
   .legal-strip .badges img { width: 250px; height: 50px; max-width: 100%; }

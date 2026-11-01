@@ -18,6 +18,11 @@ on:
 permissions:
   contents: write
 
+# o singură urcare pe FTP odată (deploy-ul și robotul folosesc aceeași stare pe server)
+concurrency:
+  group: ftp-normandmobilier
+  cancel-in-progress: false
+
 jobs:
   publica:
     runs-on: ubuntu-latest
@@ -71,7 +76,8 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftp
+          protocol: ftps
+          security: strict
           port: 21
           server-dir: ./
           state-name: .deploy-state-4.json
@@ -86,3 +92,7 @@ jobs:
             data/**
             scripts/**
             images/idei/_*.txt
+            images/idei/_scoase/**
+            **/*.md
+            **/*.zip
+            Poze Whatzupp/**

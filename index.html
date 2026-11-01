@@ -54,9 +54,7 @@
 </script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232f4a37'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' font-weight='700' text-anchor='middle' fill='%23cf9a4e'%3EN%3C/text%3E%3C/svg%3E">
 <style>a.brand{align-items:center}.brand-words{display:inline-flex;align-items:baseline;gap:9px}.brand-logo{width:34px;height:34px;border-radius:8px;flex:none;display:block}</style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fonts/fonts.css">
 <style>
   :root {
     --sage: #dbe8d9;
@@ -68,6 +66,7 @@
     --forest: #2f4a37;
     --forest-hover: #243a2b;
     --wood: #9a6a43;
+    --wood-text: #7b5535;
     --shadow: 0 18px 40px rgba(20,28,18,0.12);
     --shadow-lg: 0 34px 80px rgba(20,28,18,0.22);
   }
@@ -97,7 +96,7 @@
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 0.24em;
-    color: var(--wood);
+    color: var(--wood-text);
     font-weight: 600;
   }
 
@@ -264,7 +263,7 @@
   .page:last-child .page-inner { border-bottom: none; }
   .page.flip-in .page-inner { transform: rotateY(0deg); opacity: 1; }
   .page .page-inner:hover { background: rgba(47,74,55,0.06); }
-  .page .arrow { color: var(--wood); font-size: 15px; transform: translateX(-4px); opacity: 0; transition: transform 0.2s ease, opacity 0.2s ease; }
+  .page .arrow { color: var(--wood-text); font-size: 15px; transform: translateX(-4px); opacity: 0; transition: transform 0.2s ease, opacity 0.2s ease; }
   .page .page-inner:hover .arrow { transform: translateX(0); opacity: 1; }
 
   /* ============================ HERO ============================ */
@@ -408,7 +407,7 @@
   .idea { background: var(--cream); border: 1px solid var(--line); border-radius: 14px; padding: 14px 14px 16px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; }
   .idea:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
   .idea-ph { aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center; padding: 4px; }
-  .idea-ph img { max-width: 100%; max-height: 100%; }
+  .idea-ph img { max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; }
   .idea-l { display: block; margin-top: 10px; font-size: 14px; font-weight: 600; color: var(--ink); }
   .idei-cta { text-align: center; margin-top: 38px; }
   .idei-cta .btn { display: inline-flex; }
@@ -492,9 +491,9 @@
   .footer-inner .f-brand .brand-name { font-family: "Cormorant Garamond", serif; font-size: 24px; font-weight: 700; color: var(--cream); }
   .footer-inner .f-brand .brand-sub { font-size: 10px; text-transform: uppercase; letter-spacing: 0.32em; color: rgba(245,243,236,0.6); }
   .footer-inner .f-links { display: flex; gap: 22px; flex-wrap: wrap; }
-  .footer-inner .f-links a { color: rgba(245,243,236,0.8); text-decoration: none; font-size: 14px; }
+  .footer-inner .f-links a { color: rgba(245,243,236,0.8); text-decoration: none; font-size: 14px; display: inline-block; padding: 4px 0; line-height: 1.5; }
   .footer-inner .f-links a:hover { color: var(--cream); }
-  .footer-copy { max-width: 1180px; margin: 26px auto 0; padding-top: 22px; border-top: 1px solid rgba(245,243,236,0.14); font-size: 12.5px; color: rgba(245,243,236,0.55); }
+  .footer-copy { max-width: 1180px; margin: 26px auto 0; padding-top: 22px; border-top: 1px solid rgba(245,243,236,0.14); font-size: 12.5px; color: rgba(245,243,236,0.72); }
 
   /* reveal on scroll */
   .reveal { opacity: 0; transform: translateY(26px); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(.2,.8,.2,1); }
@@ -541,6 +540,9 @@
     .hero-copy .hero-actions { justify-content: center; }
     .hero-copy p.lead { margin-left: auto; margin-right: auto; }
   }
+  @media (max-width: 600px) {
+    .idei-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+  }
   @media (max-width: 480px) {
     .values-grid, .steps-grid { grid-template-columns: 1fr; }
     .hero-copy h1 { font-size: 38px; }
@@ -576,8 +578,8 @@
   <div class="mobile-menu" id="mobileMenu">
     <a href="#top">Acasă</a>
     <a class="sub" href="categorie.php?titlu=Dormitoare">— Dormitoare</a>
-    <a class="sub" href="categorie.php?titlu=Bucătării">— Bucătării</a>
-    <a class="sub" href="categorie.php?titlu=Corpuri de mobilă">— Corpuri de mobilă</a>
+    <a class="sub" href="categorie.php?titlu=Buc%C4%83t%C4%83rii">— Bucătării</a>
+    <a class="sub" href="categorie.php?titlu=Corpuri%20de%20mobil%C4%83">— Corpuri de mobilă</a>
     <a href="idei-amenajare.html">Idei de amenajare</a>
             <a href="planner.html">Amenajează o cameră</a>
     <a href="configurator.html">Configurează o piesă</a>
@@ -606,19 +608,19 @@
     </div>
     <div class="hero-figure reveal">
       <div class="collage">
-        <picture><source srcset="images/portfolio/p1.webp" type="image/webp"><img class="ph p1" src="images/portfolio/p1.jpg" alt="Bucătărie la comandă" loading="lazy"></picture>
-        <picture><source srcset="images/portfolio/p2.webp" type="image/webp"><img class="ph p2" src="images/portfolio/p2.jpg" alt="Bucătărie la comandă" loading="lazy"></picture>
-        <picture><source srcset="images/portfolio/p3.webp" type="image/webp"><img class="ph p3" src="images/portfolio/p3.jpg" alt="Bucătărie la comandă" loading="lazy"></picture>
-        <picture><source srcset="images/portfolio/p4.webp" type="image/webp"><img class="ph p4" src="images/portfolio/p4.jpg" alt="Bucătărie la comandă" loading="lazy"></picture>
-        <picture><source srcset="images/portfolio/p5.webp" type="image/webp"><img class="ph p5" src="images/portfolio/p5.jpg" alt="Bucătărie la comandă" loading="lazy"></picture>
-        <picture><source srcset="images/portfolio/p6.webp" type="image/webp"><img class="ph p6" src="images/portfolio/p6.jpg" alt="Bucătărie la comandă" loading="lazy"></picture>
-        <picture><source srcset="images/portfolio/p7.webp" type="image/webp"><img class="ph p7" src="images/portfolio/p7.jpg" alt="Bucătărie la comandă" loading="lazy"></picture>
-        <picture><source srcset="images/portfolio/p8.webp" type="image/webp"><img class="ph p8" src="images/portfolio/p8.jpg" alt="Bucătărie la comandă" loading="lazy"></picture>
-        <picture><source srcset="images/portfolio/p9.webp" type="image/webp"><img class="ph p9" src="images/portfolio/p9.jpg" alt="Corp de living la comandă" loading="lazy"></picture>
-        <picture><source srcset="images/portfolio/p10.webp" type="image/webp"><img class="ph p10" src="images/portfolio/p10.jpg" alt="Corp de living la comandă" loading="lazy"></picture>
-        <picture><source srcset="images/portfolio/p11.webp" type="image/webp"><img class="ph p11" src="images/portfolio/p11.jpg" alt="Dulap la comandă" loading="lazy"></picture>
-        <picture><source srcset="images/portfolio/p12.webp" type="image/webp"><img class="ph p12" src="images/portfolio/p12.jpg" alt="Dormitor la comandă — pat, dulap cu uși oglindă și comodă" loading="lazy"></picture>
-        <picture><source srcset="images/portfolio/p13.webp" type="image/webp"><img class="ph p13" src="images/portfolio/p13.jpg" alt="Pat cu tăblie capitonată, la comandă" loading="lazy"></picture>
+        <picture><source srcset="images/portfolio/p1.webp" type="image/webp"><img class="ph p1" src="images/portfolio/p1.jpg" alt="Bucătărie la comandă" width="640" height="480" fetchpriority="high"></picture>
+        <picture><source srcset="images/portfolio/p2.webp" type="image/webp"><img class="ph p2" src="images/portfolio/p2.jpg" alt="Bucătărie la comandă" width="640" height="480" loading="lazy"></picture>
+        <picture><source srcset="images/portfolio/p3.webp" type="image/webp"><img class="ph p3" src="images/portfolio/p3.jpg" alt="Bucătărie la comandă" width="640" height="480" loading="lazy"></picture>
+        <picture><source srcset="images/portfolio/p4.webp" type="image/webp"><img class="ph p4" src="images/portfolio/p4.jpg" alt="Bucătărie la comandă" width="640" height="480" loading="lazy"></picture>
+        <picture><source srcset="images/portfolio/p5.webp" type="image/webp"><img class="ph p5" src="images/portfolio/p5.jpg" alt="Bucătărie la comandă" width="640" height="480" loading="lazy"></picture>
+        <picture><source srcset="images/portfolio/p6.webp" type="image/webp"><img class="ph p6" src="images/portfolio/p6.jpg" alt="Bucătărie la comandă" width="640" height="480" loading="lazy"></picture>
+        <picture><source srcset="images/portfolio/p7.webp" type="image/webp"><img class="ph p7" src="images/portfolio/p7.jpg" alt="Bucătărie la comandă" width="640" height="480" loading="lazy"></picture>
+        <picture><source srcset="images/portfolio/p8.webp" type="image/webp"><img class="ph p8" src="images/portfolio/p8.jpg" alt="Bucătărie la comandă" width="640" height="480" loading="lazy"></picture>
+        <picture><source srcset="images/portfolio/p9.webp" type="image/webp"><img class="ph p9" src="images/portfolio/p9.jpg" alt="Corp de living la comandă" width="640" height="480" loading="lazy"></picture>
+        <picture><source srcset="images/portfolio/p10.webp" type="image/webp"><img class="ph p10" src="images/portfolio/p10.jpg" alt="Corp de living la comandă" width="640" height="480" loading="lazy"></picture>
+        <picture><source srcset="images/portfolio/p11.webp" type="image/webp"><img class="ph p11" src="images/portfolio/p11.jpg" alt="Dulap la comandă" width="640" height="480" loading="lazy"></picture>
+        <picture><source srcset="images/portfolio/p12.webp" type="image/webp"><img class="ph p12" src="images/portfolio/p12.jpg" alt="Dormitor la comandă — pat, dulap cu uși oglindă și comodă" width="900" height="675" loading="lazy"></picture>
+        <picture><source srcset="images/portfolio/p13.webp" type="image/webp"><img class="ph p13" src="images/portfolio/p13.jpg" alt="Pat cu tăblie capitonată, la comandă" width="900" height="675" loading="lazy"></picture>
       </div>
       <div class="float-tag">
         <div class="ft-k">100%</div>
@@ -637,23 +639,23 @@
       </div>
       <div class="cat-grid">
         <a class="cat-card reveal" href="categorie.php?titlu=Dormitoare">
-          <div class="cc-photo"><picture><source srcset="images/cards/dormitoare.webp" type="image/webp"><img src="images/cards/dormitoare.jpg" alt="Dormitoare la comandă" loading="lazy"></picture></div>
+          <div class="cc-photo"><picture><source srcset="images/cards/dormitoare-480.webp 480w, images/cards/dormitoare.webp 900w" sizes="(max-width: 940px) min(440px, calc(100vw - 40px)), 376px" type="image/webp"><img src="images/cards/dormitoare.jpg" srcset="images/cards/dormitoare-480.jpg 480w, images/cards/dormitoare.jpg 900w" sizes="(max-width: 940px) min(440px, calc(100vw - 40px)), 376px" width="900" height="675" alt="Dormitoare la comandă" loading="lazy"></picture></div>
           <div class="cc-body">
             <h3>Dormitoare</h3>
             <p>Paturi, dulapuri cu uși glisante sau batante, corpuri suspendate — potrivite fix pe cameră.</p>
             <span class="cc-link">Vezi colecția <span class="a">→</span></span>
           </div>
         </a>
-        <a class="cat-card reveal d1" href="categorie.php?titlu=Bucătării">
-          <div class="cc-photo"><picture><source srcset="images/cards/bucatarii.webp" type="image/webp"><img src="images/cards/bucatarii.jpg" alt="Bucătării la comandă" loading="lazy"></picture></div>
+        <a class="cat-card reveal d1" href="categorie.php?titlu=Buc%C4%83t%C4%83rii">
+          <div class="cc-photo"><picture><source srcset="images/cards/bucatarii-480.webp 480w, images/cards/bucatarii.webp 900w" sizes="(max-width: 940px) min(440px, calc(100vw - 40px)), 376px" type="image/webp"><img src="images/cards/bucatarii.jpg" srcset="images/cards/bucatarii-480.jpg 480w, images/cards/bucatarii.jpg 900w" sizes="(max-width: 940px) min(440px, calc(100vw - 40px)), 376px" width="900" height="1200" alt="Bucătării la comandă" loading="lazy"></picture></div>
           <div class="cc-body">
             <h3>Bucătării</h3>
             <p>Bucătării în formă de L sau U, cu insulă și blat rezistent, folosind fiecare colț al încăperii.</p>
             <span class="cc-link">Vezi colecția <span class="a">→</span></span>
           </div>
         </a>
-        <a class="cat-card reveal d2" href="categorie.php?titlu=Corpuri de mobilă">
-          <div class="cc-photo"><picture><source srcset="images/cards/corpuri.webp" type="image/webp"><img src="images/cards/corpuri.jpg" alt="Corpuri de mobilă la comandă" loading="lazy"></picture></div>
+        <a class="cat-card reveal d2" href="categorie.php?titlu=Corpuri%20de%20mobil%C4%83">
+          <div class="cc-photo"><picture><source srcset="images/cards/corpuri-480.webp 480w, images/cards/corpuri.webp 900w" sizes="(max-width: 940px) min(440px, calc(100vw - 40px)), 376px" type="image/webp"><img src="images/cards/corpuri.jpg" srcset="images/cards/corpuri-480.jpg 480w, images/cards/corpuri.jpg 900w" sizes="(max-width: 940px) min(440px, calc(100vw - 40px)), 376px" width="900" height="1200" alt="Corpuri de mobilă la comandă" loading="lazy"></picture></div>
           <div class="cc-body">
             <h3>Corpuri de mobilă</h3>
             <p>Pereți de living, biblioteci, comode și corpuri de depozitare pe măsura pereților tăi.</p>
@@ -673,14 +675,14 @@
         <p>De la dulapuri și bucătării la corpuri de living — proiectăm și producem orice tip de mobilă. Iată câteva idei; restul o desenezi chiar tu în configurator.</p>
       </div>
       <div class="idei-grid">
-        <div class="idea reveal"><div class="idea-ph"><img src="images/idei/idea1.svg" alt="Dulap 3 uși la comandă" loading="lazy"></div><span class="idea-l">Dulap 3 uși</span></div>
-        <div class="idea reveal d1"><div class="idea-ph"><img src="images/idei/idea2.svg" alt="Dulap cu uși glisante" loading="lazy"></div><span class="idea-l">Uși glisante</span></div>
-        <div class="idea reveal d2"><div class="idea-ph"><img src="images/idei/idea3.svg" alt="Corp de bucătărie lucios" loading="lazy"></div><span class="idea-l">Bucătărie lucioasă</span></div>
-        <div class="idea reveal d3"><div class="idea-ph"><img src="images/idei/idea4.svg" alt="Corp cuptor cu front lucios" loading="lazy"></div><span class="idea-l">Corp cuptor</span></div>
-        <div class="idea reveal"><div class="idea-ph"><img src="images/idei/idea5.svg" alt="Comodă cu sertare" loading="lazy"></div><span class="idea-l">Comodă cu sertare</span></div>
-        <div class="idea reveal d1"><div class="idea-ph"><img src="images/idei/idea6.svg" alt="Bibliotecă cu vitrină" loading="lazy"></div><span class="idea-l">Bibliotecă</span></div>
-        <div class="idea reveal d2"><div class="idea-ph"><img src="images/idei/idea7.svg" alt="Corp TV" loading="lazy"></div><span class="idea-l">Corp TV</span></div>
-        <div class="idea reveal d3"><div class="idea-ph"><img src="images/idei/idea8.svg" alt="Coloană frigider" loading="lazy"></div><span class="idea-l">Coloană frigider</span></div>
+        <div class="idea reveal"><div class="idea-ph"><img src="images/idei/idea1.svg" width="197" height="262" alt="Dulap 3 uși la comandă" loading="lazy"></div><span class="idea-l">Dulap 3 uși</span></div>
+        <div class="idea reveal d1"><div class="idea-ph"><img src="images/idei/idea2.svg" width="233" height="262" alt="Dulap cu uși glisante" loading="lazy"></div><span class="idea-l">Uși glisante</span></div>
+        <div class="idea reveal d2"><div class="idea-ph"><img src="images/idei/idea3.svg" width="183" height="262" alt="Corp de bucătărie lucios" loading="lazy"></div><span class="idea-l">Bucătărie lucioasă</span></div>
+        <div class="idea reveal d3"><div class="idea-ph"><img src="images/idei/idea4.svg" width="91" height="262" alt="Corp cuptor cu front lucios" loading="lazy"></div><span class="idea-l">Corp cuptor</span></div>
+        <div class="idea reveal"><div class="idea-ph"><img src="images/idei/idea5.svg" width="261" height="262" alt="Comodă cu sertare" loading="lazy"></div><span class="idea-l">Comodă cu sertare</span></div>
+        <div class="idea reveal d1"><div class="idea-ph"><img src="images/idei/idea6.svg" width="160" height="262" alt="Bibliotecă cu vitrină" loading="lazy"></div><span class="idea-l">Bibliotecă</span></div>
+        <div class="idea reveal d2"><div class="idea-ph"><img src="images/idei/idea7.svg" width="268" height="102" alt="Corp TV" loading="lazy"></div><span class="idea-l">Corp TV</span></div>
+        <div class="idea reveal d3"><div class="idea-ph"><img src="images/idei/idea8.svg" width="91" height="262" alt="Coloană frigider" loading="lazy"></div><span class="idea-l">Coloană frigider</span></div>
       </div>
       <div class="idei-cta reveal">
         <a class="btn btn-primary" href="configurator.html">Configurează-ți piesa →</a>
@@ -909,13 +911,14 @@
   </script>
   <script src="whatsapp.js"></script>
 
-<script>try{var _np="index";if(navigator.sendBeacon)navigator.sendBeacon("trimite-oferta.php?ping=view&p="+_np);else fetch("trimite-oferta.php?ping=view&p="+_np).catch(function(){});}catch(e){}</script>
+<script>try{var _np="index";if(navigator.sendBeacon)navigator.sendBeacon("trimite-oferta.php?ping=view&p="+_np);else fetch("trimite-oferta.php?ping=view&p="+_np,{method:"POST",keepalive:true}).catch(function(){});}catch(e){}</script>
 <!-- legal-footer: obligatoriu (ANPC SAL + GDPR); același pe toate paginile -->
 <style>
   .legal-strip { background: #1f3326; color: rgba(245,243,236,.75); font: 13px/1.5 "Inter", system-ui, sans-serif; padding: 18px 20px; }
   .legal-strip .in { max-width: 1180px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 14px 24px; align-items: center; justify-content: space-between; }
   .legal-strip a { color: rgba(245,243,236,.85); }
   .legal-strip a:hover { color: #f5f3ec; }
+  .legal-strip .links a { display: inline-block; padding: 4px 0; line-height: 1.5; }
   .legal-strip .badges { display: flex; gap: 12px; flex-wrap: wrap; }
   .legal-strip .badges a { display: block; line-height: 0; border-radius: 6px; }
   .legal-strip .badges img { width: 250px; height: 50px; max-width: 100%; }

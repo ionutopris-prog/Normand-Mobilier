@@ -6,6 +6,11 @@ on:
     branches: [ main ]
   workflow_dispatch:
 
+# o singură urcare pe FTP odată (deploy-ul și robotul folosesc aceeași stare pe server)
+concurrency:
+  group: ftp-normandmobilier
+  cancel-in-progress: false
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -19,7 +24,8 @@ jobs:
           server: ${{ secrets.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftp           # FTP normal (mai robust)
+          protocol: ftps          # FTP criptat (TLS explicit pe 21), certificat verificat
+          security: strict
           port: 21
           server-dir: ./          # contul 'deploy' recreat, ancorat direct în public_html
           state-name: .deploy-state-4.json
@@ -35,3 +41,7 @@ jobs:
             data/**
             scripts/**
             images/idei/_*.txt
+            images/idei/_scoase/**
+            **/*.md
+            **/*.zip
+            Poze Whatzupp/**

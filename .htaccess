@@ -1,0 +1,85 @@
+
+# BEGIN cPanel-generated php ini directives, do not edit
+# Manual editing of this file may result in unexpected behavior.
+# To make changes to this file, use the cPanel MultiPHP INI Editor (Home >> Software >> MultiPHP INI Editor)
+# For more information, read our documentation (https://go.cpanel.net/EA4ModifyINI)
+<IfModule php8_module>
+   php_value error_log "/home/normandm/logs/php.error.log"
+   php_flag log_errors On
+</IfModule>
+<IfModule lsapi_module>
+   php_value error_log "/home/normandm/logs/php.error.log"
+   php_flag log_errors On
+</IfModule>
+# END cPanel-generated php ini directives, do not edit
+
+# ============================================================================
+# Normand Mobilier — reguli de server (1 nov 2026)
+# Blocul cPanel de mai sus a fost copiat ÎNTOCMAI de pe server; nu-l modifica.
+# Fișierul se urcă la fiecare deploy: ce schimbi pe server direct se pierde.
+# ============================================================================
+
+# fără listarea folderelor (/images/, /images/idei/ ...)
+Options -Indexes
+
+# pagini de eroare în română
+ErrorDocument 404 /404.html
+ErrorDocument 403 /404.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # 1) o singură adresă: https://normandmobilier.ro (fără www, fără http)
+  #    .well-known rămâne accesibil pe http pentru reînnoirea certificatului SSL
+  RewriteCond %{REQUEST_URI} !^/\.well-known/
+  RewriteCond %{ENV:REDIRECT_STATUS} ^$
+  RewriteCond %{HTTPS} !=on [OR]
+  RewriteCond %{HTTP_HOST} !^normandmobilier\.ro$ [NC]
+  RewriteRule ^ https://normandmobilier.ro%{REQUEST_URI} [R=301,L,NE]
+
+  # 2) fișiere care nu se servesc: arhive, note .md, starea deploy-ului,
+  #    fișiere ascunse (.ceva), listele interne ale robotului și pozele scoase
+  RewriteCond %{REQUEST_URI} !^/\.well-known/
+  RewriteRule (^|/)\. - [R=404,L]
+  RewriteRule \.(zip|md|tar|gz|bak|sql|log|sh|py|ini)$ - [R=404,L,NC]
+  RewriteRule ^images/idei/_ - [R=404,L]
+  RewriteRule ^(data|scripts|Poze\sWhatzupp)(/|$) - [R=404,L]
+
+  # 3) contorul nu se mai citește public
+  RewriteCond %{QUERY_STRING} (^|&)count(=|&|$) [NC]
+  RewriteRule ^trimite-oferta\.php$ - [R=404,L]
+
+  # 4) categorie.html e doar șablonul pentru categorie.php — o singură adresă indexată
+  RewriteCond %{THE_REQUEST} \s/+categorie\.html[\s?]
+  RewriteRule ^categorie\.html$ https://normandmobilier.ro/categorie.php [R=301,L,QSA]
+</IfModule>
+
+<IfModule mod_headers.c>
+  # HTTPS obligatoriu în browser pentru un an (fără subdomenii: mail/webmail rămân cum sunt)
+  Header always set Strict-Transport-Security "max-age=31536000"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+
+  # cache: paginile se verifică la fiecare vizită, scripturile o zi, pozele o săptămână,
+  # fonturile un an (numele lor nu se schimbă)
+  <FilesMatch "\.(html|php)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+  <FilesMatch "\.(js|css)$">
+    Header set Cache-Control "public, max-age=86400"
+  </FilesMatch>
+  <FilesMatch "\.(jpe?g|png|webp|svg|ico)$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+  <FilesMatch "\.(woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_mime.c>
+  AddType font/woff2 .woff2
+  AddType image/webp .webp
+  AddType image/x-icon .ico
+</IfModule>
