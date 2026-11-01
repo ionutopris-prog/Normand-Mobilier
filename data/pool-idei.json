@@ -24,10 +24,8 @@
   "byurl": "https://www.pexels.com/@artbovich",
   "base": "bucatarie_7031879",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Bucătărie în L albă și bej, cu cuptor în coloană",
-  "desc": "Cuptorul montat în coloana înaltă stă la nivelul ochilor, iar blatul rămâne liber pentru gătit.",
-  "alt_ro": "Bucătărie în L cu corpuri albe sus, bej jos, cuptor încastrat în coloană și masă de marmură cu scaune matlasate"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: cutie de șampanie Moët cu marcă lizibilă pe blat (alcool, marcă) — aceeași bucătărie ca 7031759/7031765 respinse"
  },
  {
   "id": "10117725",
@@ -121,10 +119,8 @@
   "byurl": "https://www.pexels.com/@curtis-adams-1694007",
   "base": "bucatarie_36777878",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Bucătărie gri deschis cu insulă albă",
-  "desc": "Insula cu chiuvetă adaugă blat de lucru și loc pentru două scaune, fără să blocheze trecerea.",
-  "alt_ro": "Bucătărie cu corpuri gri deschis, insulă albă cu chiuvetă, două scaune înalte cu șezut maro și cuptoare încastrate"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: aceeași serie ca 36777886 (respinsă pentru marcă); plăcuțe de marcă pe cuptor și frigider"
  },
  {
   "id": "7303776",
@@ -267,10 +263,8 @@
   "byurl": "https://www.pexels.com/@fmc-furniture-manufacturer-chalin-2162855932",
   "base": "bucatarie_38525199",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Dulap alb până la tavan cu nișă de birou",
-  "desc": "Dulapul și biroul în același corp: folosești tot peretele, iar mânerele profil nu ies în cale.",
-  "alt_ro": "Dulap alb cu uși înalte până la tavan, lângă o nișă de birou cu blat de lemn, raft deschis și corpuri suspendate"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: marcă BOSS lizibilă pe cutii și cutii Funko Pop cu personaje pe raft"
  },
  {
   "id": "8089193",
@@ -325,10 +319,8 @@
   "byurl": "https://www.pexels.com/@artbovich",
   "base": "bucatarie_7533760",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Bucătărie în U, alb lucios cu blat maro de piatră",
-  "desc": "Forma în U pune totul la un pas, iar electrocasnicele încastrate în coloană eliberează blatul.",
-  "alt_ro": "Bucătărie în formă de U cu dulapuri suspendate albe lucioase, corpuri bej, blat maro și cuptor încastrat în coloană"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: marcă Bosch lizibilă pe espressorul și cuptorul încastrate"
  },
  {
   "id": "38071640",
@@ -340,10 +332,8 @@
   "byurl": "https://www.pexels.com/@ali-soheil-2154370577",
   "base": "bucatarie_38071640",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Alb lucios și lemn deschis, insulă efect marmură",
-  "desc": "Coloanele înalte țin cămara și electrocasnicele, iar insula cu patru scaune devine bar.",
-  "alt_ro": "Bucătărie albă lucioasă cu sertare de lemn deschis, coloane până la tavan și insulă efect marmură cu scaune negre"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: statuetă aurie în formă de om în prim-plan, tăiată de marginea cadrului"
  },
  {
   "id": "6035312",
@@ -355,10 +345,8 @@
   "byurl": "https://www.pexels.com/@curtis-adams-1694007",
   "base": "bucatarie_6035312",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Bucătărie albă cu uși cu ramă și insulă",
-  "desc": "Ușile cu ramă dau un aer clasic, iar insula aduce blat liber de lucru în mijlocul camerei.",
-  "alt_ro": "Bucătărie albă cu uși cu ramă, insulă cu blat alb și două scaune de lemn, frigider inox și două ferestre"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: tăbliță cu text lizibil (Do Good Work); frigider mare cu etichete de magazin în prim-plan"
  },
  {
   "id": "7060821",
@@ -370,10 +358,8 @@
   "byurl": "https://www.pexels.com/@artbovich",
   "base": "bucatarie_7060821",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Bucătărie în L, alb lucios cu coloane imitație lemn",
-  "desc": "Coloana cu cuptor și microunde la înălțimea ochilor scutește spatele, iar blatul în L lasă loc de lucru.",
-  "alt_ro": "Bucătărie în L cu corpuri suspendate albe lucioase, corpuri jos și coloană cu aspect de lemn, cuptor și microunde încastrate"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: același apartament ca seria respinsă pentru Bosch (7060815/16/18/20), cuptoare Bosch"
  },
  {
   "id": "8176590",
@@ -424,10 +410,8 @@
   "byurl": "https://www.pexels.com/@artbovich",
   "base": "bucatarie_7214337",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Bucătărie liniară gri cu raft deschis de lemn",
-  "desc": "Pe un singur perete: corpuri sus și jos, cuptor sub plită, iar restul camerei rămâne pentru masă.",
-  "alt_ro": "Bucătărie liniară gri efect beton cu blat alb, raft de lemn deschis, hotă cilindrică și masă ovală cu patru scaune"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: autocolant cu text lizibil (în rusă) pe cuptorul cu microunde; etichete de magazin pe aparate"
  },
  {
   "id": "7031759",
@@ -452,10 +436,8 @@
   "byurl": "https://www.pexels.com/@the-r-e-editor-849420489",
   "base": "bucatarie_28272329",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Bucătărie gri cu uși cu ramă și coloană de cămară",
-  "desc": "Coloana-cămară de lângă frigider ține proviziile la îndemână, fără să încarce blatul.",
-  "alt_ro": "Bucătărie cu dulapuri gri cu ramă, frigider inox lângă o coloană înaltă, blat alb și masă de lemn închis cu bancă"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: poză imobiliară: masă veche cu folie de protecție, ambalaje pe blat, magnet pe frigider; bucătăria e în fundal"
  },
  {
   "id": "7060815",
@@ -467,10 +449,8 @@
   "byurl": "https://www.pexels.com/@artbovich",
   "base": "bucatarie_7060815",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Bucătărie liniară cu lemn și alb lucios, cu bar",
-  "desc": "Pe un singur perete încap coloana cu cuptoare, chiuveta și plita; barul alb ține loc de masă rapidă.",
-  "alt_ro": "Bucătărie liniară cu corpuri cu textură de lemn, dulapuri suspendate albe lucioase, cuptor încastrat și bar alb cu scaune"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: aceeași bucătărie ca 7060816/7060820 (respinse pt Bosch); sigla Bosch se distinge pe microunde"
  },
  {
   "id": "7545855",
@@ -555,10 +535,8 @@
   "byurl": "https://www.pexels.com/@artbovich",
   "base": "bucatarie_8082300",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Bucătărie lucioasă model zebrano cu insulă",
-  "desc": "Coloana cu cuptor și microunde stă separat, iar insula cu bar lasă blatul de lucru liber.",
-  "alt_ro": "Bucătărie spațioasă cu fronturi lucioase cu model de lemn dungat, insulă cu blat negru și scaun de bar"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: decor baroc aurit (rame aurite pe corpuri, picioare aurii), nu e mobilier din PAL; aspect datat"
  },
  {
   "id": "13751390",
@@ -660,10 +638,8 @@
   "byurl": "https://www.pexels.com/@artbovich",
   "base": "bucatarie_7061337",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Bucătărie în L, crem lucios, cu loc pentru frigider",
-  "desc": "Locul pentru frigiderul de sine stătător se măsoară de la început, ca să intre la centimetru între corpuri.",
-  "alt_ro": "Bucătărie în L cu fronturi crem lucioase, blat alb, cuptor încastrat, frigider alb și ușă spre o cameră cu rafturi de lemn"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: marca gorenje lizibilă pe microunde; etichete de magazin pe frigider"
  },
  {
   "id": "6987720",
@@ -675,10 +651,8 @@
   "byurl": "https://www.pexels.com/@artbovich",
   "base": "bucatarie_6987720",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Bucătărie albă deschisă spre un living clasic",
-  "desc": "Fronturile albe simple se potrivesc și lângă mobilier clasic, fără să concureze cu livingul.",
-  "alt_ro": "Bucătărie albă cu blat gri și frigider inox, deschisă spre un living clasic cu canapea verde și podea lucioasă"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: statuetă aurie cu figură umană în prim-plan dreapta; siglă Bosch pe frigider; domină livingul clasic, bucătăria e secundară"
  },
  {
   "id": "6436757",
@@ -802,10 +776,8 @@
   "byurl": "https://www.pexels.com/@artbovich",
   "base": "bucatarie_7060818",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Bucătărie deschisă cu bar, alb lucios și lemn",
-  "desc": "Blatul prelungit pe un picior devine bar de mic dejun, fără să mai ocupi loc cu încă o masă.",
-  "alt_ro": "Bucătărie deschisă cu corpuri albe lucioase, corpuri cu aspect de lemn, cuptoare încastrate, bar și masă cu scaune albe"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: același apartament ca 7060816/7060820 (marcă Bosch lizibilă); siglă Bosch pe microunde"
  },
  {
   "id": "6835139",
@@ -875,10 +847,8 @@
   "byurl": "https://www.pexels.com/@curtis-adams-1694007",
   "base": "bucatarie_6510973",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Bucătărie albă în U cu insulă îngustă",
-  "desc": "O insulă îngustă adaugă blat și loc de stat fără să încurce trecerea dintre cele două laturi.",
-  "alt_ro": "Bucătărie albă în U cu corpuri până la tavan, frigider de inox, insulă îngustă cu blat de marmură și două scaune înalte"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: iMac pe blat (produs Apple recognoscibil), electronice"
  },
  {
   "id": "7614607",
@@ -918,10 +888,8 @@
   "byurl": "https://www.pexels.com/@artbovich",
   "base": "bucatarie_7195857",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Bucătărie clasică albă deschisă spre living",
-  "desc": "Bucătăria deschisă cu insulă scurtă leagă zona de gătit de living fără perete despărțitor.",
-  "alt_ro": "Living cu canapea maro și perete de cărămidă; în fundal, bucătărie albă clasică și insulă cu două scaune înalte"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: canapeaua domină cadrul; bucătăria e mică, în fundal"
  },
  {
   "id": "6835136",
@@ -1023,10 +991,8 @@
   "byurl": "https://www.pexels.com/@cosmin-gavris-2437254",
   "base": "bucatarie_17918516",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Bucătărie liniară albă, clasică, cu blat de lemn",
-  "desc": "Fronturile clasice cu arcadă și mânerele aurii se potrivesc cu un cuptor retro și o hotă neagră.",
-  "alt_ro": "Bucătărie albă liniară cu fronturi clasice și mânere aurii, blat de lemn, cuptor negru retro, hotă neagră și masă neagră"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: centrală termică cu țevi și fire la vedere, etichetă pe ușa cuptorului; bucătărie de serie în apartament de închiriat"
  },
  {
   "id": "7147289",
@@ -1113,10 +1079,8 @@
   "byurl": "https://www.pexels.com/@curtis-adams-1694007",
   "base": "bucatarie_36777879",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Bucătărie albă cu insulă gri și scaune înalte",
-  "desc": "Insula în altă culoare devine centrul bucătăriei și aduce locuri de stat la blat.",
-  "alt_ro": "Bucătărie albă cu uși cu ramă, frigider inox, faianță mozaic și insulă gri cu blat de marmură și scaune înalte"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: aceeași serie ca 36777886/36777878 (plăcuțe de marcă KitchenAid)"
  },
  {
   "id": "7045364",
@@ -1248,10 +1212,8 @@
   "byurl": "https://www.pexels.com/@ahmetcotur",
   "base": "bucatarie_27195985",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Bucătărie bleumarin cu alb și bar lung",
-  "desc": "Corpurile de jos închise la culoare și cele de sus albe fac o bucătărie îngustă să pară mai înaltă.",
-  "alt_ro": "Bucătărie îngustă cu corpuri albe sus și bleumarin jos, bar lung pregătit pentru masă și ușă de sticlă spre balcon"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: aspect de apartament de vacanță de închiriat: masă pusă pentru mulți, tavă cu ceainic, balcon spre stradă"
  },
  {
   "id": "7534537",
@@ -1278,10 +1240,8 @@
   "byurl": "https://www.pexels.com/@alexander-f-ungerer-157458816",
   "base": "bucatarie_19776309",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Bucătărie albă cu coșuri de răchită și vitrină",
-  "desc": "Corpurile pe toată lungimea ferestrei dau blat mult de lucru, iar sertarele cu coșuri aerisesc legumele.",
-  "alt_ro": "Bucătărie albă cu faianță tip metrou, chiuvetă sub fereastră, sertare cu coșuri de răchită și vitrină cu uși de sticlă"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: poză imobiliară de bucătărie modestă; frigider cu obiecte agățate și coș de gunoi la marginea dreaptă, gratii la geam"
  },
  {
   "id": "7166932",
@@ -1293,10 +1253,8 @@
   "byurl": "https://www.pexels.com/@artbovich",
   "base": "bucatarie_7166932",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Bucătărie îngustă bej și albă cu loc de masă",
-  "desc": "Pe o bucătărie îngustă, corpurile pe o singură latură lasă loc pentru masă și trecere liberă.",
-  "alt_ro": "Bucătărie îngustă cu corpuri albe jos, coloane bej, frigider inox, panouri de nuc și masă mică cu scaune albe"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: serie de hotel: același apartament ca 7166944 („bed-in-hotel-room”)"
  },
  {
   "id": "7303749",
@@ -1321,10 +1279,8 @@
   "byurl": "https://www.pexels.com/@curtis-adams-1694007",
   "base": "bucatarie_6835116",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Corpuri albe cu ramă și blat de granit",
-  "desc": "Cuptorul cu microunde montat deasupra aragazului face și oficiul de hotă și eliberează blatul.",
-  "alt_ro": "Bucătărie cu corpuri albe cu ramă, blat de granit, aragaz și microunde de inox deasupra lui, frigider de inox lângă ușă"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: electrocasnice inox în centrul cadrului (aragaz, frigider, microunde); bucătărie de serie, poză imobiliară — ca 36777886 respinsă"
  },
  {
   "id": "7671236",
@@ -1467,10 +1423,8 @@
   "byurl": "https://www.pexels.com/@artbovich",
   "base": "bucatarie_6487957",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Coloane verde pal cu cuptor și microunde încastrate",
-  "desc": "Cuptorul și microundele la înălțimea ochilor — nu te mai apleci, iar coloanele urcă până sus.",
-  "alt_ro": "Coloane de bucătărie verde pal cu cuptor și microunde încastrate, perete de lemn cu polițe pentru cărți și vedere spre living"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: coperți de benzi desenate cu personaje și titluri, expuse în prim-plan pe rafturi; bucătăria ocupă doar marginea dreaptă"
  },
  {
   "id": "36777874",
@@ -1482,10 +1436,8 @@
   "byurl": "https://www.pexels.com/@curtis-adams-1694007",
   "base": "bucatarie_36777874",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Bucătărie gri cu insulă albă și zonă de masă",
-  "desc": "Coloana cu cuptoare duble lângă frigider adună aparatele într-un loc și eliberează blatul.",
-  "alt_ro": "Bucătărie deschisă cu dulapuri gri, cuptoare încastrate, frigider inox, insulă albă cu scaune și masă de lemn închis"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: bust-sculptură (figură umană) pe comodă; masa de dining domină, bucătăria e în fundal"
  },
  {
   "id": "10117733",
@@ -1497,10 +1449,8 @@
   "byurl": "https://www.pexels.com/@keeganjchecks",
   "base": "bucatarie_10117733",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Bucătărie verde petrol cu rafturi deschise de lemn",
-  "desc": "Corpurile înalte încadrează frigiderul, iar rafturile deschise țin la vedere ce folosești zilnic.",
-  "alt_ro": "Bucătărie cu corpuri verde petrol, faianță albă, rafturi deschise de lemn, aragaz inox și frigider între dulapuri înalte"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: aceeași casă ca 10117725 (respinsă): bol pentru animale și coș de gunoi în prim-plan, frigider plin de magneți/poze"
  },
  {
   "id": "8142976",
@@ -1527,10 +1477,8 @@
   "byurl": "https://www.pexels.com/@artbovich",
   "base": "bucatarie_8146322",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Bucătărie mică de stejar deschis, la mansardă",
-  "desc": "Sub mansardă, corpurile joase duc greul, iar sus rămâne loc pentru hotă și centrală.",
-  "alt_ro": "Bucătărie mică cu corpuri de stejar deschis, blat alb, plită pe gaz, hotă neagră, centrală pe perete și ușă spre balcon"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: centrală termică pe perete, la vedere (ca 17918516)"
  },
  {
   "id": "6835155",
@@ -1542,10 +1490,8 @@
   "byurl": "https://www.pexels.com/@curtis-adams-1694007",
   "base": "bucatarie_6835155",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Bucătărie din lemn maro cu electrocasnice negre",
-  "desc": "Corpurile suspendate cu cornișă și microundele deasupra plitei dau aer clasic unei bucătării în L.",
-  "alt_ro": "Bucătărie cu corpuri de lemn maro, blat bej, aragaz și microunde negre, frigider negru cu două uși și chiuvetă dublă"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: bucătărie datată, de serie (blat laminat în prim-plan, electrocasnice negre), poză imobiliară de casă goală"
  },
  {
   "id": "7545792",
@@ -1615,10 +1561,8 @@
   "byurl": "https://www.pexels.com/@artbovich",
   "base": "dormitor_7214332",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Dormitor cu dulap din lemn albit și pat de stejar",
-  "desc": "Dulapul cu ramă de stejar și fronturi albite urcă aproape până la tavan și adună tot ce nu încape în pat.",
-  "alt_ro": "Dormitor luminos cu pat de lemn cu tăblie, dulap cu fronturi albite și ramă de stejar și o plantă mare în colț"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: ghiveci în formă de cască Darth Vader (personaj cu marcă înregistrată)"
  },
  {
   "id": "31728404",
@@ -1630,10 +1574,8 @@
   "byurl": "https://www.pexels.com/@dauphotographer",
   "base": "dormitor_31728404",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Dormitor cu dulap alb, rafturi de stejar și birou",
-  "desc": "Dulapul, rafturile și biroul pe același perete eliberează restul camerei pentru pat.",
-  "alt_ro": "Dormitor cu dulap alb până la tavan, rafturi deschise din lemn deschis, birou mic cu scaun și pat dublu alb"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: auditul independent: aceeași serie de hotel ca 31728410, minifrigider"
  },
  {
   "id": "6444255",
@@ -1660,10 +1602,8 @@
   "byurl": "https://www.pexels.com/@artbovich",
   "base": "dormitor_8089081",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Dormitor cu masă de toaletă albă și dulap alb",
-  "desc": "Masa de toaletă cu sertar și taburetul ascuns dedesubt țin totul la îndemână lângă pat.",
-  "alt_ro": "Dormitor cu pat cu tăblie gri capitonată, masă de toaletă albă cu oglindă, dulap alb și două lămpi suspendate"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: auditul independent: „bed-in-hotel-room” pe Pexels"
  },
  {
   "id": "4090093",
@@ -1688,10 +1628,8 @@
   "byurl": "https://www.pexels.com/@zvolskiy",
   "base": "dormitor_2062431",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Dormitor luminos cu noptiere albe cu sertar",
-  "desc": "Noptierele cu un sertar, pe picioare de lemn, lasă podeaua liberă și fac loc pentru telefon și veioză.",
-  "alt_ro": "Dormitor cu pat jos cu lenjerie albă, două noptiere albe cu sertar, raft pe perete, etajeră albă și bancă tapițată gri"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: afiș cu text mare lizibil (Sometimes you need to let go...); decor de studio foto, mobilier de serie"
  },
  {
   "id": "7060822",
@@ -1718,10 +1656,8 @@
   "byurl": "https://www.pexels.com/@rishi-raj-khare-593097024",
   "base": "dormitor_17125482",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Dormitor roz cu birou suspendat și dulap alb",
-  "desc": "Biroul prins de perete și polița cu LED de deasupra lasă podeaua liberă și fac loc de lucru în dormitor.",
-  "alt_ro": "Dormitor roz cu birou de lemn și poliță luminată, dulap alb cu nișă de lemn, perete cu panouri 3D și pat cu cuvertură roz"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: halat aruncat pe pat (aspect de hotel); statuete cu figuri umane pe raft, pe birou și pe noptieră"
  },
  {
   "id": "8141962",
@@ -1860,10 +1796,8 @@
   "byurl": "https://www.pexels.com/@chadpopulisphotography",
   "base": "dormitor_30725665",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Dormitor cu perete verde cu ramă și comodă de lemn",
-  "desc": "O comodă lată cu multe sertare ține hainele mărunte și servește și ca suprafață pentru decor.",
-  "alt_ro": "Dormitor cu perete verde închis decorat cu rame, pat tapițat capitonat, comodă de lemn cu sertare, fotoliu și două ferestre"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: comodă rustică din lemn masiv (nu PAL), fără mobilier pe comandă; poză imobiliară cu mașini parcate în ferestre"
  },
  {
   "id": "8082217",
@@ -1875,10 +1809,8 @@
   "byurl": "https://www.pexels.com/@artbovich",
   "base": "dormitor_8082217",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Dormitor cu comodă wenge sub televizor",
-  "desc": "Comoda lungă cu sertare ține lucrurile mărunte și servește și drept suport pentru televizor.",
-  "alt_ro": "Dormitor spațios cu pat, comodă închisă la culoare cu televizor, lustră, birou mic și două fotolii albe la fereastră"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: saltea goală cu etichetă de magazin și marcă pe lateral, lizibile la mărime mare"
  },
  {
   "id": "7018248",
@@ -2088,10 +2020,8 @@
   "byurl": "https://www.pexels.com/@artbovich",
   "base": "dormitor_7166944",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Dormitor cu consolă lungă vișinie sub televizor",
-  "desc": "O consolă lungă pe tot peretele face din birou și suport TV o singură piesă.",
-  "alt_ro": "Dormitor cu pat tapițat mov, noptiere albe și o consolă lungă vișinie cu birou, sub televizorul de pe perete"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: slug Pexels „bed-in-hotel-room” (cameră de hotel); aceeași serie cu 7166938"
  },
  {
   "id": "2082095",
@@ -2103,10 +2033,8 @@
   "byurl": "https://www.pexels.com/@zvolskiy",
   "base": "dormitor_2082095",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Noptieră albă cu sertar, pe picioare de lemn",
-  "desc": "O noptieră pe picioare lasă podeaua liberă și se face la înălțimea exactă a patului.",
-  "alt_ro": "Noptieră albă cu un sertar și picioare de lemn, cu veioză albă și vază cu crenguță verde, lângă un pat alb"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: prim-plan decorativ (vază cu plantă pe noptieră de serie), nu arată o cameră cu mobilier pe comandă"
  },
  {
   "id": "189293",
@@ -2118,10 +2046,8 @@
   "byurl": "https://www.pexels.com/@donaldtong94",
   "base": "dormitor_189293",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Pat cu tăblie de lemn în carouri și aplică",
-  "desc": "O tăblie de lemn fixată pe perete protejează zugrăveala și dă patului un aer cald.",
-  "alt_ro": "Pat cu lenjerie albă și tăblie de lemn în carouri fixată pe perete, aplică clasică aprinsă și noptieră de lemn"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: aspect de pensiune/hotel: paturi single gemene cu lenjerie albă de hotel; prim-plan pe pat, fără mobilier pe comandă"
  },
  {
   "id": "14021930",
@@ -2228,10 +2154,8 @@
   "byurl": "https://www.pexels.com/@artbovich",
   "base": "dormitor_6585756",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Dormitor cu perete placat geometric și dulap gri",
-  "desc": "Dulapul gri din colț și consola îngustă de machiaj lasă patul liber în mijlocul camerei.",
-  "alt_ro": "Dormitor cu perete placat cu lemn în model geometric, pat tapițat gri, dulap gri până la tavan și consolă cu oglindă"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: saltea fără așternut cu eticheta mărcii (Forest) vizibilă; cabluri atârnând la televizor"
  },
  {
   "id": "5461590",
@@ -2256,10 +2180,8 @@
   "byurl": "https://www.pexels.com/@artbovich",
   "base": "dormitor_7546293",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Dormitor cu pat tapițat albastru și dulap cu oglindă",
-  "desc": "Ușile cu oglindă ale dulapului dublează vizual camera și țin loc de oglindă mare.",
-  "alt_ro": "Dormitor cu pat tapițat din catifea albastră, noptiere albe cu sertare și dulap alb lucios cu uși de oglindă"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: saltea fără lenjerie în prim-plan, aspect de apartament de închiriat nelocuit"
  },
  {
   "id": "11701120",
@@ -2344,10 +2266,8 @@
   "byurl": "https://www.pexels.com/@artbovich",
   "base": "dormitor_6444973",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Dormitor cu dulap negru cu uși de sticlă",
-  "desc": "Ușile de sticlă fumurie țin praful departe, dar lasă hainele la vedere ca într-un dressing.",
-  "alt_ro": "Dormitor cu dulap negru cu uși de sticlă fumurie și masă de toaletă, pat cu tăblie albă capitonată și noptieră neagră"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: pernă cu text lizibil („…HOME”) pe pat"
  },
  {
   "id": "7005272",
@@ -2467,10 +2387,8 @@
   "byurl": "https://www.pexels.com/@artbovich",
   "base": "dormitor_6933767",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Cameră de copii cu două paturi și bibliotecă-birou",
-  "desc": "Biblioteca cu nișe deschise și blat de birou integrat ține cărțile și temele în același loc.",
-  "alt_ro": "Cameră luminoasă cu două paturi cu pături albastre, bibliotecă de lemn cu nișe și birou integrat, televizor pe perete"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: două paturi gemene într-o cameră aerisită (aspect de hotel); mobilierul pe comandă e mic, în fundal"
  },
  {
   "id": "6489100",
@@ -2497,10 +2415,8 @@
   "byurl": "https://www.pexels.com/@artbovich",
   "base": "dormitor_7005699",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Dormitor cu dulap încastrat și consolă suspendată",
-  "desc": "Dulapul de pe peretele din fund preia toată depozitarea, iar consola suspendată ține loc de măsuță.",
-  "alt_ro": "Dormitor cu tapet floral, pat gri cu tăblie portocalie, dulap încastrat bej-gri în fund și consolă de lemn pe perete verde"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: cameră aproape goală, saltea fără lenjerie; dulapul încastrat e mic, în fundal"
  },
  {
   "id": "37460683",
@@ -2553,10 +2469,8 @@
   "byurl": "https://www.pexels.com/@zvolskiy",
   "base": "dormitor_2082087",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Dormitor luminos cu noptiere albe și raft deschis",
-  "desc": "Noptierele mici cu sertar și un raft deschis ajung când camera e gândită simplu.",
-  "alt_ro": "Dormitor cu pat jos, noptiere albe cu picioare de lemn, raft alb cu decor, paravan de lemn și podea din scânduri"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: cameră decorată cu mobilier de serie (raft metalic, paravan, șevalet), tăbliță cu text"
  },
  {
   "id": "7166938",
@@ -2568,10 +2482,8 @@
   "byurl": "https://www.pexels.com/@artbovich",
   "base": "dormitor_7166938",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Dormitor cu dulap glisant alb și comodă TV vișinie",
-  "desc": "Ușile glisante ale dulapului nu ocupă loc în fața patului, iar comoda joasă ține televizorul.",
-  "alt_ro": "Dormitor cu pat tapițat mov, noptiere albe, dulap alb cu uși glisante, comodă TV vișinie și televizor pe perete"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: serie de hotel: aceeași cameră ca 7166944 („bed-in-hotel-room”)"
  },
  {
   "id": "7031881",
@@ -2583,10 +2495,8 @@
   "byurl": "https://www.pexels.com/@artbovich",
   "base": "dormitor_7031881",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Cameră de copil cu pat supraetajat gri",
-  "desc": "Patul supraetajat cu sertare dedesubt eliberează podeaua pentru joacă și pentru birou.",
-  "alt_ro": "Cameră de copil cu pat supraetajat gri cu sertare, ursuleț de pluș, birou lângă fereastră și rafturi gri deschise"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: figurină de supererou și jucării pe pat; raft metalic și pat supraetajat de serie, nu mobilier pe comandă"
  },
  {
   "id": "6758516",
@@ -2613,10 +2523,8 @@
   "byurl": "https://www.pexels.com/@artbovich",
   "base": "dressing_7045298",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Dressing în nișă, cu lemn și LED",
-  "desc": "Nișa cu bare de umerașe și bancă joasă transformă un colț al camerei în loc de îmbrăcat.",
-  "alt_ro": "Cameră cu ferestre pe colț și comodă joasă cu lamele de lemn, iar în dreapta o nișă de dressing cu lemn, bare și LED"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: cameră goală noaptea, dressingul e o nișă aproape goală; aceeași serie cu 7045308 respinsă"
  },
  {
   "id": "6297086",
@@ -2816,10 +2724,8 @@
   "byurl": "https://www.pexels.com/@furkan-tumer-1560109",
   "base": "dressing_8417307",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Dormitor cu tăblie roz înaltă și dressing deschis",
-  "desc": "Tăblia tapițată până aproape de tavan dă greutate patului, iar dressingul deschis rămâne la un pas.",
-  "alt_ro": "Dormitor mare cu tăblie tapițată roz, pat cu cuvertură gri, două fotolii și un dressing deschis cu haine în colț"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: geacă cu marca Moncler lizibilă în dressing"
  },
  {
   "id": "6489107",
@@ -2911,10 +2817,8 @@
   "byurl": "https://www.pexels.com/@anastasia-shuraeva",
   "base": "dressing_5705482",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Dressing alb cu rafturi pentru pantofi sub bară",
-  "desc": "Rafturile joase de sub bară țin pantofii la vedere, perechi aliniate, fără cutii.",
-  "alt_ro": "Dulap alb deschis cu haine pe umerașe sus și două rafturi cu pantofi cu toc dedesubt"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: prim-plan cu pantofi; mobilierul nu e subiectul"
  },
  {
   "id": "6670659",
@@ -3023,10 +2927,8 @@
   "byurl": "https://www.pexels.com/@alexander-f-ungerer-157458816",
   "base": "dressing_26859478",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Dulap alb simplu cu patru uși",
-  "desc": "Patru uși albe drepte, fără ornamente: depozitare multă, cu un aspect liniștit.",
-  "alt_ro": "Cameră goală însorită cu pereți crem și un dulap alb cu patru uși înalte, lângă o ușă deschisă spre hol"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: cameră goală, poză imobiliară cu mochetă veche (același fotograf/stil ca 30673279 respinsă)"
  },
  {
   "id": "1516420",
@@ -3649,10 +3551,8 @@
   "byurl": "https://www.pexels.com/@artbovich",
   "base": "living_6782352",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Comodă TV gri joasă și raft vertical de perete",
-  "desc": "Raftul de perete în trepte ține cărțile la vedere fără să ocupe podeaua.",
-  "alt_ro": "Living cu televizor pe perete alb, comodă joasă gri, raft gri de perete cu cărți, orhidee și canapea turcoaz"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: titluri de cărți lizibile pe raftul din centru (Alex Ferguson, The Firm, CIA)"
  },
  {
   "id": "7195895",
@@ -3694,10 +3594,8 @@
   "byurl": "https://www.pexels.com/@pham-ngoc-anh-170983008",
   "base": "living_12148587",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Living luminos cu raft cub pentru cărți și TV",
-  "desc": "Un raft cu cuburi deschise ține cărțile și televizorul și se face exact pe lățimea peretelui.",
-  "alt_ro": "Living luminos cu masă de lemn și scaune gri, raft alb cu cuburi pentru cărți și televizor, covor gri și uși spre balcon"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: mobilier IKEA de serie (raft Kallax), router și cabluri la vedere, siluetă de mână pe geamul din stânga; nu e mobilier pe comandă"
  },
  {
   "id": "38666674",
@@ -3847,10 +3745,8 @@
   "byurl": "https://www.pexels.com/@hiroom",
   "base": "living_17240684",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Loc de luat masa cu bufet gri cu uși cu lamele",
-  "desc": "Un bufet lângă masă ține farfuriile și fețele de masă exact unde ai nevoie de ele.",
-  "alt_ro": "Sufragerie cu masă de lemn închis, scaune negre, bufet gri cu sertare și uși cu lamele, candelabru și tablou pe perete"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: auditul independent: fotografii de familie cu persoane pe perete"
  },
  {
   "id": "38545698",
@@ -3890,10 +3786,8 @@
   "byurl": "https://www.pexels.com/@artbovich",
   "base": "living_6296917",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Living cu nișe de lemn în jurul ușii",
-  "desc": "Rafturile îngropate în jurul ușii folosesc un perete care altfel ar rămâne gol.",
-  "alt_ro": "Living cu canapea bej, rafturi de lemn în nișe în jurul unei uși, scară de lemn în stânga și șemineu de cărămidă"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: portret al unei persoane în rama din vitrina centrală; decor încărcat (samovare, pasăre împăiată)"
  },
  {
   "id": "34951489",
@@ -4000,10 +3894,8 @@
   "byurl": "https://www.pexels.com/@didi-lecatompessy-2149441489",
   "base": "living_32512266",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Living cu biblioteci de lemn și comodă TV",
-  "desc": "Două biblioteci de o parte și de alta a comodei TV fac din peretele întreg un loc pentru cărți.",
-  "alt_ro": "Living cu canapele bej, două biblioteci de lemn pline cu cărți, comodă TV de lemn cu uși cu grilaj și tablouri pe pereți"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: tablouri și fotografii înrămate cu figuri umane, statuete pe bibliotecă, pantofi pe raft; vilă de închiriat"
  },
  {
   "id": "6588583",
@@ -4198,10 +4090,8 @@
   "byurl": "https://www.pexels.com/@artbovich",
   "base": "living_6758359",
   "verificat": "2026-11-01",
-  "ok": true,
-  "titlu": "Comodă albastră pe picioare metalice subțiri",
-  "desc": "O comodă joasă cu patru uși, vopsită într-o culoare puternică, devine piesa principală a peretelui.",
-  "alt_ro": "Comodă lungă albastră cu patru uși, pe picioare metalice negre, cu un bol de sticlă și pești decorativi roșii deasupra"
+  "ok": false,
+  "motiv": "re-verificare 1 nov: acvariu (bol cu pești decorativi) ca punct de atenție; decor de showroom/studio"
  },
  {
   "id": "36777852",

@@ -180,9 +180,9 @@
           <div class="glabel">Schimbă tipul de corp</div>
           <div class="type-grid" id="selTypes" style="margin-bottom:16px"></div>
           <div class="glabel">Dimensiuni</div>
-          <div class="field" data-dim="w"><div class="frow"><span class="fname">Lățime</span><span class="fval"><span class="dv">60</span> cm</span></div><input type="range" id="rngW"></div>
-          <div class="field" data-dim="h"><div class="frow"><span class="fname">Înălțime</span><span class="fval"><span class="dv">85</span> cm</span></div><input type="range" id="rngH"></div>
-          <div class="field" data-dim="d"><div class="frow"><span class="fname">Adâncime</span><span class="fval"><span class="dv">60</span> cm</span></div><input type="range" id="rngD"></div>
+          <div class="field" data-dim="w"><div class="frow"><span class="fname">Lățime</span><span class="fval"><span class="dv">60</span> cm</span></div><input type="range" id="rngW" aria-label="Lățime, în centimetri"></div>
+          <div class="field" data-dim="h"><div class="frow"><span class="fname">Înălțime</span><span class="fval"><span class="dv">85</span> cm</span></div><input type="range" id="rngH" aria-label="Înălțime, în centimetri"></div>
+          <div class="field" data-dim="d"><div class="frow"><span class="fname">Adâncime</span><span class="fval"><span class="dv">60</span> cm</span></div><input type="range" id="rngD" aria-label="Adâncime, în centimetri"></div>
           <div class="group" id="selDoorsG"><div class="glabel">Uși / sertare</div><div class="seg" id="selStruct"></div></div>
           <div class="glabel">Finisaj</div>
           <div class="subtabs"><button data-w="front" class="active">Fronturi</button><button data-w="body">Corp</button></div>
@@ -200,7 +200,7 @@
         <div id="gapPanel" style="display:none">
           <div class="sel-head"><h3>Spațiu liber</h3></div>
           <p class="cta-note" style="text-align:left; margin-top:0">Ai scos corpul de aici și a rămas un gol. Îl poți umple la loc sau închide (corpurile se lipesc).</p>
-          <div class="field" data-dim="gw"><div class="frow"><span class="fname">Lățime gol</span><span class="fval"><span class="dv" id="gapWv">60</span> cm</span></div><input type="range" id="rngGapW" min="30" max="180" step="5"></div>
+          <div class="field" data-dim="gw"><div class="frow"><span class="fname">Lățime gol</span><span class="fval"><span class="dv" id="gapWv">60</span> cm</span></div><input type="range" id="rngGapW" aria-label="Lățimea golului, în centimetri" min="30" max="180" step="5"></div>
           <button class="btn-ghost" id="gapFillBtn" style="width:100%">+ Umple cu un corp</button>
           <button class="del-btn" id="gapDelBtn" style="width:100%; margin-top:8px">Închide golul</button>
         </div>

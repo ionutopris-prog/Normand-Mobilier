@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Idei de amenajare — proiecte pe care ți le facem | Normand Mobilier</title>
-<meta name="description" content="150 de idei de amenajare pentru bucătărie, dressing, dormitor și living — proiecte pe care le producem la comandă în Galați și Brăila.">
+<meta name="description" content="121 de idei de amenajare pentru bucătărie, dressing, dormitor și living — proiecte pe care le producem la comandă în Galați și Brăila.">
 <link rel="canonical" href="https://normandmobilier.ro/idei-amenajare.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Normand Mobilier">
 <meta property="og:title" content="Idei de amenajare — proiecte pe care ți le facem">
-<meta property="og:description" content="150 de idei de amenajare pentru bucătărie, dressing, dormitor și living — proiecte pe care le producem la comandă în Galați și Brăila.">
+<meta property="og:description" content="121 de idei de amenajare pentru bucătărie, dressing, dormitor și living — proiecte pe care le producem la comandă în Galați și Brăila.">
 <meta property="og:url" content="https://normandmobilier.ro/idei-amenajare.html">
 <meta property="og:image" content="https://normandmobilier.ro/images/og-configurator.jpg">
 <meta property="og:image:type" content="image/jpeg">
@@ -19,7 +19,7 @@
 <meta property="og:locale" content="ro_RO">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Idei de amenajare — proiecte pe care ți le facem">
-<meta name="twitter:description" content="150 de idei de amenajare pentru bucătărie, dressing, dormitor și living — proiecte pe care le producem la comandă în Galați și Brăila.">
+<meta name="twitter:description" content="121 de idei de amenajare pentru bucătărie, dressing, dormitor și living — proiecte pe care le producem la comandă în Galați și Brăila.">
 <meta name="twitter:image" content="https://normandmobilier.ro/images/og-configurator.jpg">
 <meta name="twitter:image:alt" content="Configuratorul Normand Mobilier — alegi forma, dimensiunile și finisajul, mobila se desenează în timp real">
 <meta name="theme-color" content="#2f4a37">
@@ -490,7 +490,7 @@
   .footer-inner { max-width: 1180px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between; }
   .footer-inner .f-brand { display: flex; align-items: baseline; gap: 9px; }
   .footer-inner .f-brand .brand-name { font-family: "Cormorant Garamond", serif; font-size: 24px; font-weight: 700; color: var(--cream); }
-  .footer-inner .f-brand .brand-sub { font-size: 10px; text-transform: uppercase; letter-spacing: 0.32em; color: rgba(245,243,236,0.6); }
+  .footer-inner .f-brand .brand-sub { font-size: 10px; text-transform: uppercase; letter-spacing: 0.32em; color: rgba(245,243,236,0.75); }
   .footer-inner .f-links { display: flex; gap: 22px; flex-wrap: wrap; }
   .footer-inner .f-links a { color: rgba(245,243,236,0.8); text-decoration: none; font-size: 14px; display: inline-block; padding: 4px 0; line-height: 1.5; }
   .footer-inner .f-links a:hover { color: var(--cream); }
@@ -598,19 +598,36 @@
     </a>
     <nav class="mainnav">
       <ul id="nav-list">
-        <li><a class="nav-item" href="#top" data-scroll="top">Acasă</a></li>
+        <li><a class="nav-item" href="index.html">Acasă</a></li>
         <li><span class="nav-item" data-menu="mobilier">Mobilier</span></li>
-        <li><a class="nav-item" href="idei-amenajare.html">Idei</a><a class="nav-item" href="planner.html">Amenajează</a></li>
+        <li><a class="nav-item" href="idei-amenajare.html" aria-current="page">Idei</a><a class="nav-item" href="planner.html">Amenajează</a></li>
         <li><a class="nav-item" href="configurator.html">Configurează</a></li>
-        <li><a class="nav-item" href="#despre" data-scroll="despre">Despre noi</a></li>
-        <li><a class="nav-item" href="#contact" data-scroll="contact">Contact</a></li>
-        <li><a class="nav-cta" href="#contact">Cere o ofertă</a></li>
+        <li><a class="nav-item" href="index.html#despre">Despre noi</a></li>
+        <li><a class="nav-item" href="index.html#contact">Contact</a></li>
+        <li><a class="nav-cta" href="index.html#contact">Cere o ofertă</a></li>
       </ul>
     </nav>
-    <button class="hamburger" id="hamburger" aria-label="Deschide meniul">
+    <button class="hamburger" id="hamburger" aria-label="Deschide meniul" aria-expanded="false" aria-controls="mobileMenu">
       <span></span><span></span><span></span>
     </button>
   </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Acasă</a>
+    <a class="sub" href="categorie.php?titlu=Dormitoare">— Dormitoare</a>
+    <a class="sub" href="categorie.php?titlu=Buc%C4%83t%C4%83rii">— Bucătării</a>
+    <a class="sub" href="categorie.php?titlu=Corpuri%20de%20mobil%C4%83">— Corpuri de mobilă</a>
+    <a href="idei-amenajare.html">Idei de amenajare</a>
+    <a href="planner.html">Amenajează o cameră</a>
+    <a href="configurator.html">Configurează o piesă</a>
+    <a href="index.html#despre">Despre noi</a>
+    <a href="index.html#contact">Contact</a>
+    <a class="mm-cta" href="index.html#contact">Cere o ofertă</a>
+  </div>
+
+  <div class="catalog-overlay" id="overlay"></div>
+  <div class="catalog-panel" id="panel"><div class="catalog-pages" id="pages"></div></div>
+
   <section class="idei-head">
     <div class="eyebrow">Inspirație · ce se produce în lume</div>
     <h1>Idei de amenajare</h1>
@@ -618,703 +635,766 @@
     pe dimensiunile casei tale. Alege ce-ți place și scrie-ne: îți spunem ce se poate, cum se face și cât costă.</p>
   </section>
   <div class="idei-filters">
-    <button class="fbtn active" data-f="*">Toate (150)</button>
-    <button class="fbtn" data-f="Bucătării">Bucătării (60)</button>
-    <button class="fbtn" data-f="Dormitoare">Dormitoare (41)</button>
-    <button class="fbtn" data-f="Living">Living (24)</button>
-    <button class="fbtn" data-f="Dressing">Dressing (25)</button>
+    <button class="fbtn active" data-f="*">Toate (121)</button>
+    <button class="fbtn" data-f="Bucătării">Bucătării (49)</button>
+    <button class="fbtn" data-f="Dormitoare">Dormitoare (30)</button>
+    <button class="fbtn" data-f="Living">Living (21)</button>
+    <button class="fbtn" data-f="Dressing">Dressing (21)</button>
   </div>
   <main class="idei-grid" id="ideiGrid">
       <article class="icard" data-cat="Bucătării">
-        <div class="ph" data-full="images/idei/bucatarie_6523296.jpg" data-t="Bucătărie în L, alb mat cu blat deschis" data-d="Corpuri pe două laturi, cuptor și microunde încastrate la înălțimea ochilor — nu te mai apleci.">
+        <div class="ph" data-full="images/idei/bucatarie_6523296.jpg" data-t="Bucătărie albă mată în U, cu blat deschis" data-d="Corpuri pe trei laturi, cuptor și microunde încastrate la înălțimea ochilor — nu te mai apleci.">
           <picture><source srcset="images/idei/bucatarie_6523296-480.webp 480w, images/idei/bucatarie_6523296-800.webp 800w, images/idei/bucatarie_6523296.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/bucatarie_6523296.jpg" alt="Bucătărie în L, alb mat cu blat deschis — Bucătării la comandă, Normand Mobilier" width="1100" height="733" loading="lazy"></picture>
+          <img src="images/idei/bucatarie_6523296.jpg" alt="Bucătărie albă mată în U, cu blat bej deschis, plită și o coloană cu cuptor și microunde încastrate" width="1100" height="733" loading="lazy"></picture>
         </div>
         <div class="bd">
-          <h3>Bucătărie în L, alb mat cu blat deschis</h3>
-          <p>Corpuri pe două laturi, cuptor și microunde încastrate la înălțimea ochilor — nu te mai apleci.</p>
-          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EBuc%C4%83t%C4%83rie%20%C3%AEn%20L%2C%20alb%20mat%20cu%20blat%20deschis%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
+          <h3>Bucătărie albă mată în U, cu blat deschis</h3>
+          <p>Corpuri pe trei laturi, cuptor și microunde încastrate la înălțimea ochilor — nu te mai apleci.</p>
+          <a class="cred" href="https://www.pexels.com/photo/contemporary-simple-kitchen-with-modern-equipment-6523296/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
+          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EBuc%C4%83t%C4%83rie%20alb%C4%83%20mat%C4%83%20%C3%AEn%20U%2C%20cu%20blat%20deschis%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Bucătării">
         <div class="ph" data-full="images/idei/bucatarie_6523300.jpg" data-t="Bucătărie albă cu insulă mică" data-d="Insula adaugă blat de lucru și depozitare fără să blocheze trecerea.">
           <picture><source srcset="images/idei/bucatarie_6523300-480.webp 480w, images/idei/bucatarie_6523300-800.webp 800w, images/idei/bucatarie_6523300.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/bucatarie_6523300.jpg" alt="Bucătărie albă cu insulă mică — Bucătării la comandă, Normand Mobilier" width="1100" height="734" loading="lazy"></picture>
+          <img src="images/idei/bucatarie_6523300.jpg" alt="Bucătărie albă cu corpuri până în tavan, insulă mică cu rafturi deschise și cuptoare încastrate" width="1100" height="734" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Bucătărie albă cu insulă mică</h3>
           <p>Insula adaugă blat de lucru și depozitare fără să blocheze trecerea.</p>
+          <a class="cred" href="https://www.pexels.com/photo/interior-of-modern-kitchen-with-counter-6523300/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EBuc%C4%83t%C4%83rie%20alb%C4%83%20cu%20insul%C4%83%20mic%C4%83%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Bucătării">
         <div class="ph" data-full="images/idei/bucatarie_6636302.jpg" data-t="Alb lucios cu nuc și electrocasnice negre" data-d="Contrastul alb–nuc–negru, cel mai cerut în apartamentele noi.">
           <picture><source srcset="images/idei/bucatarie_6636302-480.webp 480w, images/idei/bucatarie_6636302-800.webp 800w, images/idei/bucatarie_6636302.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/bucatarie_6636302.jpg" alt="Alb lucios cu nuc și electrocasnice negre — Bucătării la comandă, Normand Mobilier" width="1100" height="729" loading="lazy"></picture>
+          <img src="images/idei/bucatarie_6636302.jpg" alt="Bucătărie albă lucioasă cu corpuri de nuc, cuptor și microunde negre și bar cu scaune albastre" width="1100" height="729" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Alb lucios cu nuc și electrocasnice negre</h3>
           <p>Contrastul alb–nuc–negru, cel mai cerut în apartamentele noi.</p>
+          <a class="cred" href="https://www.pexels.com/photo/interior-of-modern-kitchen-with-furniture-and-dining-zone-6636302/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EAlb%20lucios%20cu%20nuc%20%C8%99i%20electrocasnice%20negre%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Bucătării">
-        <div class="ph" data-full="images/idei/bucatarie_6782481.jpg" data-t="Bucătărie gri cu coloană de cuptoare" data-d="Toate electrocasnicele într-o coloană: blatul de lucru rămâne complet liber.">
+        <div class="ph" data-full="images/idei/bucatarie_6782481.jpg" data-t="Bucătărie gri cu coloană de cuptoare" data-d="Cuptorul, espressorul și răcitorul de vin stau într-o coloană, iar blatul rămâne pentru lucru.">
           <picture><source srcset="images/idei/bucatarie_6782481-480.webp 480w, images/idei/bucatarie_6782481-800.webp 800w, images/idei/bucatarie_6782481.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/bucatarie_6782481.jpg" alt="Bucătărie gri cu coloană de cuptoare — Bucătării la comandă, Normand Mobilier" width="1100" height="734" loading="lazy"></picture>
+          <img src="images/idei/bucatarie_6782481.jpg" alt="Bucătărie gri-bej în L cu o coloană neagră cu cuptor, espressor încastrat și răcitor de vin" width="1100" height="734" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Bucătărie gri cu coloană de cuptoare</h3>
-          <p>Toate electrocasnicele într-o coloană: blatul de lucru rămâne complet liber.</p>
+          <p>Cuptorul, espressorul și răcitorul de vin stau într-o coloană, iar blatul rămâne pentru lucru.</p>
+          <a class="cred" href="https://www.pexels.com/photo/kitchen-interior-with-cupboards-and-oven-near-sink-6782481/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EBuc%C4%83t%C4%83rie%20gri%20cu%20coloan%C4%83%20de%20cuptoare%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Bucătării">
-        <div class="ph" data-full="images/idei/bucatarie_6956114.jpg" data-t="Alb cu blat și poliță de lemn" data-d="Poliță de lemn în locul corpurilor suspendate pe o latură — camera respiră.">
+        <div class="ph" data-full="images/idei/bucatarie_6956114.jpg" data-t="Bucătărie albă cu nișe și panouri de lemn" data-d="Nișele deschise de lemn dintre corpuri țin la îndemână ce folosești zilnic.">
           <picture><source srcset="images/idei/bucatarie_6956114-480.webp 480w, images/idei/bucatarie_6956114-800.webp 800w, images/idei/bucatarie_6956114.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/bucatarie_6956114.jpg" alt="Alb cu blat și poliță de lemn — Bucătării la comandă, Normand Mobilier" width="1100" height="734" loading="lazy"></picture>
+          <img src="images/idei/bucatarie_6956114.jpg" alt="Bucătărie albă în L cu panouri și nișe de lemn, frigider de inox și o masă albă în prim-plan" width="1100" height="734" loading="lazy"></picture>
         </div>
         <div class="bd">
-          <h3>Alb cu blat și poliță de lemn</h3>
-          <p>Poliță de lemn în locul corpurilor suspendate pe o latură — camera respiră.</p>
-          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EAlb%20cu%20blat%20%C8%99i%20poli%C8%9B%C4%83%20de%20lemn%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
+          <h3>Bucătărie albă cu nișe și panouri de lemn</h3>
+          <p>Nișele deschise de lemn dintre corpuri țin la îndemână ce folosești zilnic.</p>
+          <a class="cred" href="https://www.pexels.com/photo/modern-kitchen-interior-with-cabinets-and-fridge-at-home-6956114/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
+          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EBuc%C4%83t%C4%83rie%20alb%C4%83%20cu%20ni%C8%99e%20%C8%99i%20panouri%20de%20lemn%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Bucătării">
-        <div class="ph" data-full="images/idei/bucatarie_6956124.jpg" data-t="Bucătărie albă până în tavan, frigider încastrat" data-d="Frigiderul dispare în corp, linia fronturilor rămâne neîntreruptă.">
+        <div class="ph" data-full="images/idei/bucatarie_6956124.jpg" data-t="Bucătărie albă până în tavan, cu frigider de inox" data-d="Corpurile duse până în tavan încadrează frigiderul liber și adaugă depozitare deasupra.">
           <picture><source srcset="images/idei/bucatarie_6956124-480.webp 480w, images/idei/bucatarie_6956124-800.webp 800w, images/idei/bucatarie_6956124.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/bucatarie_6956124.jpg" alt="Bucătărie albă până în tavan, frigider încastrat — Bucătării la comandă, Normand Mobilier" width="1100" height="720" loading="lazy"></picture>
+          <img src="images/idei/bucatarie_6956124.jpg" alt="Bucătărie albă în L cu corpuri până în tavan, frigider de inox liber și panouri de lemn" width="1100" height="720" loading="lazy"></picture>
         </div>
         <div class="bd">
-          <h3>Bucătărie albă până în tavan, frigider încastrat</h3>
-          <p>Frigiderul dispare în corp, linia fronturilor rămâne neîntreruptă.</p>
-          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EBuc%C4%83t%C4%83rie%20alb%C4%83%20p%C3%A2n%C4%83%20%C3%AEn%20tavan%2C%20frigider%20%C3%AEncastrat%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
+          <h3>Bucătărie albă până în tavan, cu frigider de inox</h3>
+          <p>Corpurile duse până în tavan încadrează frigiderul liber și adaugă depozitare deasupra.</p>
+          <a class="cred" href="https://www.pexels.com/photo/contemporary-kitchen-interior-with-furniture-under-shiny-light-bulbs-6956124/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
+          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EBuc%C4%83t%C4%83rie%20alb%C4%83%20p%C3%A2n%C4%83%20%C3%AEn%20tavan%2C%20cu%20frigider%20de%20inox%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Bucătării">
         <div class="ph" data-full="images/idei/bucatarie_6958122.jpg" data-t="Bucătărie cu bar și scaune înalte" data-d="Barul desparte bucătăria de living fără să ridici perete.">
           <picture><source srcset="images/idei/bucatarie_6958122-480.webp 480w, images/idei/bucatarie_6958122-800.webp 800w, images/idei/bucatarie_6958122.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/bucatarie_6958122.jpg" alt="Bucătărie cu bar și scaune înalte — Bucătării la comandă, Normand Mobilier" width="1100" height="847" loading="lazy"></picture>
+          <img src="images/idei/bucatarie_6958122.jpg" alt="Bucătărie albă cu bar, scaune înalte turcoaz și trei lustre din lamele de lemn" width="1100" height="847" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Bucătărie cu bar și scaune înalte</h3>
           <p>Barul desparte bucătăria de living fără să ridici perete.</p>
+          <a class="cred" href="https://www.pexels.com/photo/kitchen-counter-in-stylish-apartment-6958122/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EBuc%C4%83t%C4%83rie%20cu%20bar%20%C8%99i%20scaune%20%C3%AEnalte%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Bucătării">
         <div class="ph" data-full="images/idei/bucatarie_6980571.jpg" data-t="Antracit cu blat de lemn și LED sub corpuri" data-d="Banda LED sub corpurile de sus luminează exact unde tai.">
           <picture><source srcset="images/idei/bucatarie_6980571-480.webp 480w, images/idei/bucatarie_6980571-800.webp 800w, images/idei/bucatarie_6980571.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/bucatarie_6980571.jpg" alt="Antracit cu blat de lemn și LED sub corpuri — Bucătării la comandă, Normand Mobilier" width="1100" height="734" loading="lazy"></picture>
+          <img src="images/idei/bucatarie_6980571.jpg" alt="Bucătărie în L cu corpuri jos antracit, blat și placare de lemn și bandă LED sub corpurile de sus" width="1100" height="734" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Antracit cu blat de lemn și LED sub corpuri</h3>
           <p>Banda LED sub corpurile de sus luminează exact unde tai.</p>
+          <a class="cred" href="https://www.pexels.com/photo/contemporary-kitchen-interior-with-furniture-and-built-in-electric-appliances-6980571/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EAntracit%20cu%20blat%20de%20lemn%20%C8%99i%20LED%20sub%20corpuri%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Bucătării">
         <div class="ph" data-full="images/idei/bucatarie_7045995.jpg" data-t="Bucătărie albă clasică, cu blat de lemn" data-d="Fronturi cu ramă, pentru cine nu vrea linie modernă.">
           <picture><source srcset="images/idei/bucatarie_7045995-480.webp 480w, images/idei/bucatarie_7045995-800.webp 800w, images/idei/bucatarie_7045995.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/bucatarie_7045995.jpg" alt="Bucătărie albă clasică, cu blat de lemn — Bucătării la comandă, Normand Mobilier" width="1100" height="734" loading="lazy"></picture>
+          <img src="images/idei/bucatarie_7045995.jpg" alt="Bucătărie albă clasică în L, cu fronturi cu ramă, blat de lemn și cuptor încastrat" width="1100" height="734" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Bucătărie albă clasică, cu blat de lemn</h3>
           <p>Fronturi cu ramă, pentru cine nu vrea linie modernă.</p>
+          <a class="cred" href="https://www.pexels.com/photo/contemporary-kitchen-interior-with-cabinets-and-decorative-dragonflies-in-house-7045995/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EBuc%C4%83t%C4%83rie%20alb%C4%83%20clasic%C4%83%2C%20cu%20blat%20de%20lemn%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Bucătării">
         <div class="ph" data-full="images/idei/bucatarie_7546221.jpg" data-t="Alb cu blat negru și loc de masă" data-d="Blatul negru mat se curăță ușor și nu arată praful.">
           <picture><source srcset="images/idei/bucatarie_7546221-480.webp 480w, images/idei/bucatarie_7546221-800.webp 800w, images/idei/bucatarie_7546221.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/bucatarie_7546221.jpg" alt="Alb cu blat negru și loc de masă — Bucătării la comandă, Normand Mobilier" width="1100" height="734" loading="lazy"></picture>
+          <img src="images/idei/bucatarie_7546221.jpg" alt="Bucătărie albă cu blat negru, frigider de inox și o masă cu scaune tapițate în prim-plan" width="1100" height="734" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Alb cu blat negru și loc de masă</h3>
           <p>Blatul negru mat se curăță ușor și nu arată praful.</p>
+          <a class="cred" href="https://www.pexels.com/photo/neat-modern-apartment-kitchen-7546221/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EAlb%20cu%20blat%20negru%20%C8%99i%20loc%20de%20mas%C4%83%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Bucătării">
-        <div class="ph" data-full="images/idei/bucatarie_8143944.jpg" data-t="Bucătărie de lemn cu hotă ascunsă în corp" data-d="Lemn pe toată suprafața, hota integrată — nimic nu iese din linie.">
+        <div class="ph" data-full="images/idei/bucatarie_8143944.jpg" data-t="Bucătărie din lemn cu hotă neagră la vedere" data-d="Fronturi cu fibră de lemn pe toată suprafața, iar hota neagră rămâne accentul peretelui.">
           <picture><source srcset="images/idei/bucatarie_8143944-480.webp 480w, images/idei/bucatarie_8143944-800.webp 800w, images/idei/bucatarie_8143944.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/bucatarie_8143944.jpg" alt="Bucătărie de lemn cu hotă ascunsă în corp — Bucătării la comandă, Normand Mobilier" width="1100" height="734" loading="lazy"></picture>
+          <img src="images/idei/bucatarie_8143944.jpg" alt="Bucătărie în L din lemn, cu hotă neagră, faianță cu model și o canapea gri în prim-plan" width="1100" height="734" loading="lazy"></picture>
         </div>
         <div class="bd">
-          <h3>Bucătărie de lemn cu hotă ascunsă în corp</h3>
-          <p>Lemn pe toată suprafața, hota integrată — nimic nu iese din linie.</p>
-          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EBuc%C4%83t%C4%83rie%20de%20lemn%20cu%20hot%C4%83%20ascuns%C4%83%20%C3%AEn%20corp%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
+          <h3>Bucătărie din lemn cu hotă neagră la vedere</h3>
+          <p>Fronturi cu fibră de lemn pe toată suprafața, iar hota neagră rămâne accentul peretelui.</p>
+          <a class="cred" href="https://www.pexels.com/photo/wooden-cabinets-in-the-modern-kitchen-8143944/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
+          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EBuc%C4%83t%C4%83rie%20din%20lemn%20cu%20hot%C4%83%20neagr%C4%83%20la%20vedere%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Bucătării">
         <div class="ph" data-full="images/idei/bucatarie_38311092.jpg" data-t="Bucătărie albă cu insulă cu colț rotunjit" data-d="Colțul rotunjit al insulei: trecere mai ușoară în bucătării înguste.">
           <picture><source srcset="images/idei/bucatarie_38311092-480.webp 480w, images/idei/bucatarie_38311092-800.webp 800w, images/idei/bucatarie_38311092.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/bucatarie_38311092.jpg" alt="Bucătărie albă cu insulă cu colț rotunjit — Bucătării la comandă, Normand Mobilier" width="1100" height="799" loading="lazy"></picture>
+          <img src="images/idei/bucatarie_38311092.jpg" alt="Bucătărie albă cu insulă cu colț rotunjit, blat de marmură și corpuri până în tavan" width="1100" height="799" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Bucătărie albă cu insulă cu colț rotunjit</h3>
           <p>Colțul rotunjit al insulei: trecere mai ușoară în bucătării înguste.</p>
+          <a class="cred" href="https://www.pexels.com/photo/modern-scandinavian-white-kitchen-design-38311092/" target="_blank" rel="noopener">Foto: Bilguun Gantumur · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EBuc%C4%83t%C4%83rie%20alb%C4%83%20cu%20insul%C4%83%20cu%20col%C8%9B%20rotunjit%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Bucătării">
         <div class="ph" data-full="images/idei/bucatarie_7160602.jpg" data-t="Bucătărie cu bar și nișe iluminate" data-d="Nișele din perete, cu lumină, țin lucrurile la vedere fără rafturi în plus.">
           <picture><source srcset="images/idei/bucatarie_7160602-480.webp 480w, images/idei/bucatarie_7160602-800.webp 800w, images/idei/bucatarie_7160602.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/bucatarie_7160602.jpg" alt="Bucătărie cu bar și nișe iluminate — Bucătării la comandă, Normand Mobilier" width="1100" height="733" loading="lazy"></picture>
+          <img src="images/idei/bucatarie_7160602.jpg" alt="Bucătărie albă deschisă spre living, cu bar cu scaune albastre și nișe iluminate într-un perete de lemn" width="1100" height="733" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Bucătărie cu bar și nișe iluminate</h3>
           <p>Nișele din perete, cu lumină, țin lucrurile la vedere fără rafturi în plus.</p>
+          <a class="cred" href="https://www.pexels.com/photo/blue-chairs-in-the-kitchen-7160602/" target="_blank" rel="noopener">Foto: Dorin Ursulescu · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EBuc%C4%83t%C4%83rie%20cu%20bar%20%C8%99i%20ni%C8%99e%20iluminate%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Bucătării">
-        <div class="ph" data-full="images/idei/bucatarie_30857234.jpg" data-t="Bucătărie de lemn cu bibliotecă integrată" data-d="Bucătăria și biblioteca livingului fac un singur corp continuu.">
+        <div class="ph" data-full="images/idei/bucatarie_30857234.jpg" data-t="Bucătărie de lemn cu raft deschis pe toată înălțimea" data-d="Un raft îngust, deschis, pe toată înălțimea, închide linia bucătăriei la capăt.">
           <picture><source srcset="images/idei/bucatarie_30857234-480.webp 480w, images/idei/bucatarie_30857234-800.webp 800w, images/idei/bucatarie_30857234.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/bucatarie_30857234.jpg" alt="Bucătărie de lemn cu bibliotecă integrată — Bucătării la comandă, Normand Mobilier" width="1100" height="729" loading="lazy"></picture>
+          <img src="images/idei/bucatarie_30857234.jpg" alt="Bucătărie liniară din lemn, cu corpuri de sus albe lucioase, faianță cu model și un raft îngust deschis" width="1100" height="729" loading="lazy"></picture>
         </div>
         <div class="bd">
-          <h3>Bucătărie de lemn cu bibliotecă integrată</h3>
-          <p>Bucătăria și biblioteca livingului fac un singur corp continuu.</p>
-          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EBuc%C4%83t%C4%83rie%20de%20lemn%20cu%20bibliotec%C4%83%20integrat%C4%83%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
+          <h3>Bucătărie de lemn cu raft deschis pe toată înălțimea</h3>
+          <p>Un raft îngust, deschis, pe toată înălțimea, închide linia bucătăriei la capăt.</p>
+          <a class="cred" href="https://www.pexels.com/photo/modern-minimalist-kitchen-with-wooden-cabinets-30857234/" target="_blank" rel="noopener">Foto: Karolina K · vezi mai multe pe Pexels ↗</a>
+          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EBuc%C4%83t%C4%83rie%20de%20lemn%20cu%20raft%20deschis%20pe%20toat%C4%83%20%C3%AEn%C4%83l%C8%9Bimea%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Bucătării">
         <div class="ph" data-full="images/idei/bucatarie_29252361.jpg" data-t="Bucătărie mică, gri cu lemn" data-d="Soluție pentru garsonieră: tot ce trebuie pe doi metri de perete.">
           <picture><source srcset="images/idei/bucatarie_29252361-480.webp 480w, images/idei/bucatarie_29252361-800.webp 800w, images/idei/bucatarie_29252361.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/bucatarie_29252361.jpg" alt="Bucătărie mică, gri cu lemn — Bucătării la comandă, Normand Mobilier" width="1100" height="733" loading="lazy"></picture>
+          <img src="images/idei/bucatarie_29252361.jpg" alt="Bucătărie mică în L, cu corpuri de sus din lemn, corpuri jos gri și o coloană înaltă albă" width="1100" height="733" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Bucătărie mică, gri cu lemn</h3>
           <p>Soluție pentru garsonieră: tot ce trebuie pe doi metri de perete.</p>
+          <a class="cred" href="https://www.pexels.com/photo/modern-minimalist-kitchen-design-with-light-wood-29252361/" target="_blank" rel="noopener">Foto: Mateusz Pielech · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EBuc%C4%83t%C4%83rie%20mic%C4%83%2C%20gri%20cu%20lemn%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Bucătării">
         <div class="ph" data-full="images/idei/bucatarie_29252572.jpg" data-t="Bucătărie în L, lemn cu blat negru" data-d="Lemn cald cu blat negru și masă rotundă în colț.">
           <picture><source srcset="images/idei/bucatarie_29252572-480.webp 480w, images/idei/bucatarie_29252572-800.webp 800w, images/idei/bucatarie_29252572.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/bucatarie_29252572.jpg" alt="Bucătărie în L, lemn cu blat negru — Bucătării la comandă, Normand Mobilier" width="1100" height="733" loading="lazy"></picture>
+          <img src="images/idei/bucatarie_29252572.jpg" alt="Bucătărie în L din lemn cu blat negru, corpuri de sus albe și o masă rotundă" width="1100" height="733" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Bucătărie în L, lemn cu blat negru</h3>
           <p>Lemn cald cu blat negru și masă rotundă în colț.</p>
+          <a class="cred" href="https://www.pexels.com/photo/modern-minimalist-kitchen-interior-with-wooden-accents-29252572/" target="_blank" rel="noopener">Foto: Mateusz Pielech · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EBuc%C4%83t%C4%83rie%20%C3%AEn%20L%2C%20lemn%20cu%20blat%20negru%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Dormitoare">
-        <div class="ph" data-full="images/idei/dormitor_6782341.jpg" data-t="Dormitor cu masă de toaletă integrată" data-d="Masa de toaletă croită în același corp cu dulapul.">
+        <div class="ph" data-full="images/idei/dormitor_6782341.jpg" data-t="Dormitor cu masă de toaletă suspendată" data-d="Masa de toaletă suspendată, cu oglindă luminată, ocupă puțin loc lângă pat.">
           <picture><source srcset="images/idei/dormitor_6782341-480.webp 480w, images/idei/dormitor_6782341-800.webp 800w, images/idei/dormitor_6782341.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/dormitor_6782341.jpg" alt="Dormitor cu masă de toaletă integrată — Dormitoare la comandă, Normand Mobilier" width="1100" height="734" loading="lazy"></picture>
+          <img src="images/idei/dormitor_6782341.jpg" alt="Dormitor alb cu pat tapițat, masă de toaletă suspendată cu oglindă luminată și taburet" width="1100" height="734" loading="lazy"></picture>
         </div>
         <div class="bd">
-          <h3>Dormitor cu masă de toaletă integrată</h3>
-          <p>Masa de toaletă croită în același corp cu dulapul.</p>
-          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EDormitor%20cu%20mas%C4%83%20de%20toalet%C4%83%20integrat%C4%83%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
+          <h3>Dormitor cu masă de toaletă suspendată</h3>
+          <p>Masa de toaletă suspendată, cu oglindă luminată, ocupă puțin loc lângă pat.</p>
+          <a class="cred" href="https://www.pexels.com/photo/light-cozy-bedroom-with-cosmetic-mirror-and-pouf-6782341/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
+          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EDormitor%20cu%20mas%C4%83%20de%20toalet%C4%83%20suspendat%C4%83%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Dormitoare">
-        <div class="ph" data-full="images/idei/dormitor_7227611.jpg" data-t="Dormitor cu perete de lemn și birou integrat" data-d="Peretele de lemn ascunde dulapul, biroul iese din același corp.">
+        <div class="ph" data-full="images/idei/dormitor_7227611.jpg" data-t="Dormitor cu perete de lemn gri și dulap alb lucios" data-d="Peretele placat cu lemn gri face pereche cu dulapul alb lucios cu nișă pentru televizor.">
           <picture><source srcset="images/idei/dormitor_7227611-480.webp 480w, images/idei/dormitor_7227611-800.webp 800w, images/idei/dormitor_7227611.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/dormitor_7227611.jpg" alt="Dormitor cu perete de lemn și birou integrat — Dormitoare la comandă, Normand Mobilier" width="1100" height="734" loading="lazy"></picture>
+          <img src="images/idei/dormitor_7227611.jpg" alt="Dormitor cu perete placat cu lemn gri, pat tapițat și dulap alb lucios cu nișă pentru televizor" width="1100" height="734" loading="lazy"></picture>
         </div>
         <div class="bd">
-          <h3>Dormitor cu perete de lemn și birou integrat</h3>
-          <p>Peretele de lemn ascunde dulapul, biroul iese din același corp.</p>
-          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EDormitor%20cu%20perete%20de%20lemn%20%C8%99i%20birou%20integrat%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
+          <h3>Dormitor cu perete de lemn gri și dulap alb lucios</h3>
+          <p>Peretele placat cu lemn gri face pereche cu dulapul alb lucios cu nișă pentru televizor.</p>
+          <a class="cred" href="https://www.pexels.com/photo/stylish-bedroom-with-tv-and-bed-7227611/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
+          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EDormitor%20cu%20perete%20de%20lemn%20gri%20%C8%99i%20dulap%20alb%20lucios%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Dormitoare">
-        <div class="ph" data-full="images/idei/dormitor_7227614.jpg" data-t="Dormitor cu dulap alb și zonă de birou" data-d="Dulap alb pe tot peretele, cu birou încastrat la capăt.">
+        <div class="ph" data-full="images/idei/dormitor_7227614.jpg" data-t="Dulap alb lucios cu nișă TV și sertare" data-d="Dulapul, nișa pentru televizor și sertarele joase sunt croite ca un singur perete de mobilă.">
           <picture><source srcset="images/idei/dormitor_7227614-480.webp 480w, images/idei/dormitor_7227614-800.webp 800w, images/idei/dormitor_7227614.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/dormitor_7227614.jpg" alt="Dormitor cu dulap alb și zonă de birou — Dormitoare la comandă, Normand Mobilier" width="1100" height="734" loading="lazy"></picture>
+          <img src="images/idei/dormitor_7227614.jpg" alt="Perete de dulap alb lucios cu nișă pentru televizor și sertare joase, într-un dormitor cu tavan de lemn" width="1100" height="734" loading="lazy"></picture>
         </div>
         <div class="bd">
-          <h3>Dormitor cu dulap alb și zonă de birou</h3>
-          <p>Dulap alb pe tot peretele, cu birou încastrat la capăt.</p>
-          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EDormitor%20cu%20dulap%20alb%20%C8%99i%20zon%C4%83%20de%20birou%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
+          <h3>Dulap alb lucios cu nișă TV și sertare</h3>
+          <p>Dulapul, nișa pentru televizor și sertarele joase sunt croite ca un singur perete de mobilă.</p>
+          <a class="cred" href="https://www.pexels.com/photo/bedroom-interior-with-tv-and-cupboard-7227614/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
+          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EDulap%20alb%20lucios%20cu%20ni%C8%99%C4%83%20TV%20%C8%99i%20sertare%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Dormitoare">
         <div class="ph" data-full="images/idei/dormitor_8146146.jpg" data-t="Dormitor minimalist cu corp lung pe perete" data-d="Un singur corp jos, pe toată lungimea — depozitare fără să încarce camera.">
           <picture><source srcset="images/idei/dormitor_8146146-480.webp 480w, images/idei/dormitor_8146146-800.webp 800w, images/idei/dormitor_8146146.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/dormitor_8146146.jpg" alt="Dormitor minimalist cu corp lung pe perete — Dormitoare la comandă, Normand Mobilier" width="1100" height="734" loading="lazy"></picture>
+          <img src="images/idei/dormitor_8146146.jpg" alt="Dormitor minimalist cu pat de lemn și un corp lung, jos, suspendat pe perete" width="1100" height="734" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Dormitor minimalist cu corp lung pe perete</h3>
           <p>Un singur corp jos, pe toată lungimea — depozitare fără să încarce camera.</p>
+          <a class="cred" href="https://www.pexels.com/photo/bedroom-with-bed-and-side-tables-8146146/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EDormitor%20minimalist%20cu%20corp%20lung%20pe%20perete%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Dormitoare">
         <div class="ph" data-full="images/idei/dormitor_12277284.jpg" data-t="Dormitor cu panou de lemn și corpuri negre" data-d="Panou de lemn în spatele patului, corpuri negre mate pe lateral.">
           <picture><source srcset="images/idei/dormitor_12277284-480.webp 480w, images/idei/dormitor_12277284-800.webp 800w, images/idei/dormitor_12277284.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/dormitor_12277284.jpg" alt="Dormitor cu panou de lemn și corpuri negre — Dormitoare la comandă, Normand Mobilier" width="1100" height="619" loading="lazy"></picture>
+          <img src="images/idei/dormitor_12277284.jpg" alt="Dormitor cu panou din lamele de lemn în spatele patului și dulapuri negre mate" width="1100" height="619" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Dormitor cu panou de lemn și corpuri negre</h3>
           <p>Panou de lemn în spatele patului, corpuri negre mate pe lateral.</p>
+          <a class="cred" href="https://www.pexels.com/photo/bedroom-with-neoclassical-design-12277284/" target="_blank" rel="noopener">Foto: dada _design · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EDormitor%20cu%20panou%20de%20lemn%20%C8%99i%20corpuri%20negre%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Dormitoare">
         <div class="ph" data-full="images/idei/dormitor_12277297.jpg" data-t="Dormitor bej cu panou tapițat" data-d="Tăblie tapițată lată, care ține loc și de tăblie, și de perete decorativ.">
           <picture><source srcset="images/idei/dormitor_12277297-480.webp 480w, images/idei/dormitor_12277297-800.webp 800w, images/idei/dormitor_12277297.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/dormitor_12277297.jpg" alt="Dormitor bej cu panou tapițat — Dormitoare la comandă, Normand Mobilier" width="1100" height="619" loading="lazy"></picture>
+          <img src="images/idei/dormitor_12277297.jpg" alt="Dormitor bej cu tăblie tapițată lată, panouri de lemn pe perete și dulapuri până în tavan" width="1100" height="619" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Dormitor bej cu panou tapițat</h3>
           <p>Tăblie tapițată lată, care ține loc și de tăblie, și de perete decorativ.</p>
+          <a class="cred" href="https://www.pexels.com/photo/bedroom-interior-design-12277297/" target="_blank" rel="noopener">Foto: dada _design · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EDormitor%20bej%20cu%20panou%20tapi%C8%9Bat%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Dormitoare">
         <div class="ph" data-full="images/idei/dormitor_8417310.jpg" data-t="Dormitor cald, cu comodă și oglindă" data-d="Comodă joasă și oglindă înaltă — camera pare dublă.">
           <picture><source srcset="images/idei/dormitor_8417310-480.webp 480w, images/idei/dormitor_8417310-800.webp 800w, images/idei/dormitor_8417310.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/dormitor_8417310.jpg" alt="Dormitor cald, cu comodă și oglindă — Dormitoare la comandă, Normand Mobilier" width="1100" height="733" loading="lazy"></picture>
+          <img src="images/idei/dormitor_8417310.jpg" alt="Dormitor cu comodă gri cu sertare, oglindă octogonală, pat tapițat și draperii roșii" width="1100" height="733" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Dormitor cald, cu comodă și oglindă</h3>
           <p>Comodă joasă și oglindă înaltă — camera pare dublă.</p>
+          <a class="cred" href="https://www.pexels.com/photo/a-cozy-bedroom-with-a-dresser-8417310/" target="_blank" rel="noopener">Foto: Furkan Tumer · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EDormitor%20cald%2C%20cu%20comod%C4%83%20%C8%99i%20oglind%C4%83%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Bucătării">
         <div class="ph" data-full="images/idei/bucatarie_35021550.jpg" data-t="Bucătărie din lemn, corpuri până în tavan" data-d="Fronturi de lemn pe toată înălțimea camerei — fără spațiu de praf deasupra și cu depozitare dublă.">
           <picture><source srcset="images/idei/bucatarie_35021550-480.webp 480w, images/idei/bucatarie_35021550-800.webp 800w, images/idei/bucatarie_35021550.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/bucatarie_35021550.jpg" alt="Bucătărie din lemn, corpuri până în tavan — Bucătării la comandă, Normand Mobilier" width="1100" height="733" loading="lazy"></picture>
+          <img src="images/idei/bucatarie_35021550.jpg" alt="Bucătărie din lemn cu corpuri până în tavan și insulă cu blat negru" width="1100" height="733" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Bucătărie din lemn, corpuri până în tavan</h3>
           <p>Fronturi de lemn pe toată înălțimea camerei — fără spațiu de praf deasupra și cu depozitare dublă.</p>
+          <a class="cred" href="https://www.pexels.com/photo/minimalist-modern-kitchen-with-wooden-finish-35021550/" target="_blank" rel="noopener">Foto: Ajit Singh · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EBuc%C4%83t%C4%83rie%20din%20lemn%2C%20corpuri%20p%C3%A2n%C4%83%20%C3%AEn%20tavan%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Bucătării">
-        <div class="ph" data-full="images/idei/bucatarie_6032416.jpg" data-t="Antracit cu lemn, insulă cu lumină" data-d="Combinația care se cere cel mai des acum: corp închis la culoare, blat și accente de lemn.">
+        <div class="ph" data-full="images/idei/bucatarie_6032416.jpg" data-t="Bucătărie de lemn cu insulă, în cadru antracit" data-d="Lemnul cald și insula albă ies în evidență pe pereții închiși la culoare.">
           <picture><source srcset="images/idei/bucatarie_6032416-480.webp 480w, images/idei/bucatarie_6032416-800.webp 800w, images/idei/bucatarie_6032416.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/bucatarie_6032416.jpg" alt="Antracit cu lemn, insulă cu lumină — Bucătării la comandă, Normand Mobilier" width="1100" height="883" loading="lazy"></picture>
+          <img src="images/idei/bucatarie_6032416.jpg" alt="Bucătărie de lemn cu corpuri de sus albe și insulă, văzută printr-un portal antracit" width="1100" height="883" loading="lazy"></picture>
         </div>
         <div class="bd">
-          <h3>Antracit cu lemn, insulă cu lumină</h3>
-          <p>Combinația care se cere cel mai des acum: corp închis la culoare, blat și accente de lemn.</p>
-          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EAntracit%20cu%20lemn%2C%20insul%C4%83%20cu%20lumin%C4%83%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
+          <h3>Bucătărie de lemn cu insulă, în cadru antracit</h3>
+          <p>Lemnul cald și insula albă ies în evidență pe pereții închiși la culoare.</p>
+          <a class="cred" href="https://www.pexels.com/photo/simple-interior-of-contemporary-multistory-apartment-6032416/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
+          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EBuc%C4%83t%C4%83rie%20de%20lemn%20cu%20insul%C4%83%2C%20%C3%AEn%20cadru%20antracit%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Bucătării">
         <div class="ph" data-full="images/idei/bucatarie_6076850.jpg" data-t="Lamele de lemn și fronturi fără mâner" data-d="Deschidere prin apăsare, fără mânere vizibile. Linia rămâne continuă pe tot peretele.">
           <picture><source srcset="images/idei/bucatarie_6076850-480.webp 480w, images/idei/bucatarie_6076850-800.webp 800w, images/idei/bucatarie_6076850.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/bucatarie_6076850.jpg" alt="Lamele de lemn și fronturi fără mâner — Bucătării la comandă, Normand Mobilier" width="1100" height="734" loading="lazy"></picture>
+          <img src="images/idei/bucatarie_6076850.jpg" alt="Bucătărie cu fronturi de lemn fără mânere, corpuri de sus albe și un perete din lamele de lemn" width="1100" height="734" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Lamele de lemn și fronturi fără mâner</h3>
           <p>Deschidere prin apăsare, fără mânere vizibile. Linia rămâne continuă pe tot peretele.</p>
+          <a class="cred" href="https://www.pexels.com/photo/interior-of-cozy-kitchen-with-wooden-furniture-6076850/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9ELamele%20de%20lemn%20%C8%99i%20fronturi%20f%C4%83r%C4%83%20m%C3%A2ner%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Bucătării">
         <div class="ph" data-full="images/idei/bucatarie_6265836.jpg" data-t="Alb lucios cu insulă" data-d="Alb lucios reflectă lumina și face bucătăria mică să pară dublă.">
           <picture><source srcset="images/idei/bucatarie_6265836-480.webp 480w, images/idei/bucatarie_6265836-800.webp 800w, images/idei/bucatarie_6265836.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/bucatarie_6265836.jpg" alt="Alb lucios cu insulă — Bucătării la comandă, Normand Mobilier" width="1100" height="734" loading="lazy"></picture>
+          <img src="images/idei/bucatarie_6265836.jpg" alt="Bucătărie albă lucioasă cu insulă neagră cu blat de lemn, hotă cilindrică și scaune înalte" width="1100" height="734" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Alb lucios cu insulă</h3>
           <p>Alb lucios reflectă lumina și face bucătăria mică să pară dublă.</p>
+          <a class="cred" href="https://www.pexels.com/photo/interior-of-kitchen-with-modern-furniture-and-appliances-6265836/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EAlb%20lucios%20cu%20insul%C4%83%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Bucătării">
         <div class="ph" data-full="images/idei/bucatarie_6283972.jpg" data-t="Gri cu insulă și corpuri suspendate" data-d="Corpuri de sus până în tavan, insulă cu depozitare pe ambele fețe.">
           <picture><source srcset="images/idei/bucatarie_6283972-480.webp 480w, images/idei/bucatarie_6283972-800.webp 800w, images/idei/bucatarie_6283972.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/bucatarie_6283972.jpg" alt="Gri cu insulă și corpuri suspendate — Bucătării la comandă, Normand Mobilier" width="1100" height="734" loading="lazy"></picture>
+          <img src="images/idei/bucatarie_6283972.jpg" alt="Bucătărie cu corpuri gri închis, corpuri de sus albe lucioase, insulă și trei lustre negre" width="1100" height="734" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Gri cu insulă și corpuri suspendate</h3>
           <p>Corpuri de sus până în tavan, insulă cu depozitare pe ambele fețe.</p>
+          <a class="cred" href="https://www.pexels.com/photo/modern-interior-of-spacious-minimalist-kitchen-6283972/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EGri%20cu%20insul%C4%83%20%C8%99i%20corpuri%20suspendate%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Bucătării">
         <div class="ph" data-full="images/idei/bucatarie_6284230.jpg" data-t="Lemn cald și zonă de luat masa integrată" data-d="Bucătăria și masa fac un singur corp — soluție pentru spații deschise.">
           <picture><source srcset="images/idei/bucatarie_6284230-480.webp 480w, images/idei/bucatarie_6284230-800.webp 800w, images/idei/bucatarie_6284230.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/bucatarie_6284230.jpg" alt="Lemn cald și zonă de luat masa integrată — Bucătării la comandă, Normand Mobilier" width="1100" height="734" loading="lazy"></picture>
+          <img src="images/idei/bucatarie_6284230.jpg" alt="Bucătărie din lemn cu masă integrată, perete din lamele și coloană cu cuptor" width="1100" height="734" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Lemn cald și zonă de luat masa integrată</h3>
           <p>Bucătăria și masa fac un singur corp — soluție pentru spații deschise.</p>
+          <a class="cred" href="https://www.pexels.com/photo/wooden-furniture-and-table-in-contemporary-kitchen-6284230/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9ELemn%20cald%20%C8%99i%20zon%C4%83%20de%20luat%20masa%20integrat%C4%83%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Bucătării">
         <div class="ph" data-full="images/idei/bucatarie_6508347.jpg" data-t="Alb mat cu blat de lemn" data-d="Cel mai vândut contrast: corp alb mat, blat și poliță de lemn.">
           <picture><source srcset="images/idei/bucatarie_6508347-480.webp 480w, images/idei/bucatarie_6508347-800.webp 800w, images/idei/bucatarie_6508347.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/bucatarie_6508347.jpg" alt="Alb mat cu blat de lemn — Bucătării la comandă, Normand Mobilier" width="1100" height="734" loading="lazy"></picture>
+          <img src="images/idei/bucatarie_6508347.jpg" alt="Bucătărie albă mată în L, cu blat și placare de lemn și un bar îngust" width="1100" height="734" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Alb mat cu blat de lemn</h3>
           <p>Cel mai vândut contrast: corp alb mat, blat și poliță de lemn.</p>
+          <a class="cred" href="https://www.pexels.com/photo/interior-of-contemporary-white-kitchen-decorated-with-potted-fire-croton-plant-6508347/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EAlb%20mat%20cu%20blat%20de%20lemn%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Bucătării">
-        <div class="ph" data-full="images/idei/bucatarie_6508353.jpg" data-t="Alb cu blat de lemn, linie dreaptă" data-d="Bucătărie pe un singur perete — potrivită pentru apartamente de două camere.">
+        <div class="ph" data-full="images/idei/bucatarie_6508353.jpg" data-t="Alb cu blat de lemn, în L, cu bar îngust" data-d="Corpuri albe pe doi pereți și un bar îngust pe picior metalic, pentru micul dejun.">
           <picture><source srcset="images/idei/bucatarie_6508353-480.webp 480w, images/idei/bucatarie_6508353-800.webp 800w, images/idei/bucatarie_6508353.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/bucatarie_6508353.jpg" alt="Alb cu blat de lemn, linie dreaptă — Bucătării la comandă, Normand Mobilier" width="1100" height="734" loading="lazy"></picture>
+          <img src="images/idei/bucatarie_6508353.jpg" alt="Bucătărie albă în L cu blat și placare de lemn, cuptor încastrat și bar pe picior metalic" width="1100" height="734" loading="lazy"></picture>
         </div>
         <div class="bd">
-          <h3>Alb cu blat de lemn, linie dreaptă</h3>
-          <p>Bucătărie pe un singur perete — potrivită pentru apartamente de două camere.</p>
-          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EAlb%20cu%20blat%20de%20lemn%2C%20linie%20dreapt%C4%83%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
+          <h3>Alb cu blat de lemn, în L, cu bar îngust</h3>
+          <p>Corpuri albe pe doi pereți și un bar îngust pe picior metalic, pentru micul dejun.</p>
+          <a class="cred" href="https://www.pexels.com/photo/contemporary-interior-of-kitchen-with-bar-counter-and-kettle-6508353/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
+          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EAlb%20cu%20blat%20de%20lemn%2C%20%C3%AEn%20L%2C%20cu%20bar%20%C3%AEngust%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Bucătării">
         <div class="ph" data-full="images/idei/bucatarie_5041326.jpg" data-t="Lemn cu gri, stil nordic" data-d="Fronturi de lemn deschis și corpuri gri, cu electrocasnice încastrate.">
           <picture><source srcset="images/idei/bucatarie_5041326-480.webp 480w, images/idei/bucatarie_5041326-800.webp 800w, images/idei/bucatarie_5041326.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/bucatarie_5041326.jpg" alt="Lemn cu gri, stil nordic — Bucătării la comandă, Normand Mobilier" width="1100" height="733" loading="lazy"></picture>
+          <img src="images/idei/bucatarie_5041326.jpg" alt="Bucătărie cu corpuri de sus din lemn deschis, corpuri jos gri și o masă albă lângă fereastră" width="1100" height="733" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Lemn cu gri, stil nordic</h3>
           <p>Fronturi de lemn deschis și corpuri gri, cu electrocasnice încastrate.</p>
+          <a class="cred" href="https://www.pexels.com/photo/brown-wooden-table-with-white-chairs-on-wooden-flooring-5041326/" target="_blank" rel="noopener">Foto: Agnieszka Pogorzelska · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9ELemn%20cu%20gri%2C%20stil%20nordic%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Bucătării">
         <div class="ph" data-full="images/idei/bucatarie_38525110.jpg" data-t="Bej minimalist cu insulă" data-d="Fără mânere, fără linii — totul se citește ca o singură suprafață.">
           <picture><source srcset="images/idei/bucatarie_38525110-480.webp 480w, images/idei/bucatarie_38525110-800.webp 800w, images/idei/bucatarie_38525110.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/bucatarie_38525110.jpg" alt="Bej minimalist cu insulă — Bucătării la comandă, Normand Mobilier" width="1100" height="733" loading="lazy"></picture>
+          <img src="images/idei/bucatarie_38525110.jpg" alt="Bucătărie bej minimalistă cu insulă cu front striat și coloane până în tavan" width="1100" height="733" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Bej minimalist cu insulă</h3>
           <p>Fără mânere, fără linii — totul se citește ca o singură suprafață.</p>
+          <a class="cred" href="https://www.pexels.com/photo/modern-minimalist-kitchen-with-island-38525110/" target="_blank" rel="noopener">Foto: FMC Furniture manufacturer Chalin · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EBej%20minimalist%20cu%20insul%C4%83%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Bucătării">
-        <div class="ph" data-full="images/idei/bucatarie_4151928.jpg" data-t="Alb cu lemn, rafturi deschise" data-d="Rafturi deschise peste blat, în loc de corpuri suspendate.">
+        <div class="ph" data-full="images/idei/bucatarie_4151928.jpg" data-t="Bucătărie albă fără corpuri suspendate" data-d="Doar corpuri jos și un blat lung: peretele rămâne liber, iar camera pare mai largă.">
           <picture><source srcset="images/idei/bucatarie_4151928-480.webp 480w, images/idei/bucatarie_4151928-800.webp 800w, images/idei/bucatarie_4151928.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/bucatarie_4151928.jpg" alt="Alb cu lemn, rafturi deschise — Bucătării la comandă, Normand Mobilier" width="1100" height="733" loading="lazy"></picture>
+          <img src="images/idei/bucatarie_4151928.jpg" alt="Bucătărie albă cu corpuri jos și blat lung, fără corpuri de sus; o femeie lucrează la blat" width="1100" height="733" loading="lazy"></picture>
         </div>
         <div class="bd">
-          <h3>Alb cu lemn, rafturi deschise</h3>
-          <p>Rafturi deschise peste blat, în loc de corpuri suspendate.</p>
-          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EAlb%20cu%20lemn%2C%20rafturi%20deschise%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
+          <h3>Bucătărie albă fără corpuri suspendate</h3>
+          <p>Doar corpuri jos și un blat lung: peretele rămâne liber, iar camera pare mai largă.</p>
+          <a class="cred" href="https://www.pexels.com/photo/woman-in-pink-long-sleeve-shirt-holding-green-fruit-4151928/" target="_blank" rel="noopener">Foto: Mikael Blomkvist · vezi mai multe pe Pexels ↗</a>
+          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EBuc%C4%83t%C4%83rie%20alb%C4%83%20f%C4%83r%C4%83%20corpuri%20suspendate%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Bucătării">
         <div class="ph" data-full="images/idei/bucatarie_34558075.jpg" data-t="Bleumarin cu blat alb" data-d="Culoarea închisă jos, deschisă sus — face camera să pară mai înaltă.">
           <picture><source srcset="images/idei/bucatarie_34558075-480.webp 480w, images/idei/bucatarie_34558075-800.webp 800w, images/idei/bucatarie_34558075.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/bucatarie_34558075.jpg" alt="Bleumarin cu blat alb — Bucătării la comandă, Normand Mobilier" width="1100" height="733" loading="lazy"></picture>
+          <img src="images/idei/bucatarie_34558075.jpg" alt="Bucătărie cu corpuri jos bleumarin cu ramă, blat alb și corpuri de sus albe cu vitrine de sticlă" width="1100" height="733" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Bleumarin cu blat alb</h3>
           <p>Culoarea închisă jos, deschisă sus — face camera să pară mai înaltă.</p>
+          <a class="cred" href="https://www.pexels.com/photo/modern-kitchen-interior-with-blue-cabinets-34558075/" target="_blank" rel="noopener">Foto: HONG SON · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EBleumarin%20cu%20blat%20alb%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Dressing">
         <div class="ph" data-full="images/idei/dressing_20705886.jpg" data-t="Dressing de lemn cu iluminare pe rafturi" data-d="Bandă LED pe fiecare raft: vezi ce ai fără să aprinzi lumina mare.">
           <picture><source srcset="images/idei/dressing_20705886-480.webp 480w, images/idei/dressing_20705886-800.webp 800w, images/idei/dressing_20705886.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/dressing_20705886.jpg" alt="Dressing de lemn cu iluminare pe rafturi — Dressing la comandă, Normand Mobilier" width="1100" height="733" loading="lazy"></picture>
+          <img src="images/idei/dressing_20705886.jpg" alt="Dressing din lemn cu rafturi și bare iluminate cu bandă LED" width="1100" height="733" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Dressing de lemn cu iluminare pe rafturi</h3>
           <p>Bandă LED pe fiecare raft: vezi ce ai fără să aprinzi lumina mare.</p>
+          <a class="cred" href="https://www.pexels.com/photo/empty-wooden-room-20705886/" target="_blank" rel="noopener">Foto: Алан Албегов · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EDressing%20de%20lemn%20cu%20iluminare%20pe%20rafturi%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Dressing">
         <div class="ph" data-full="images/idei/dressing_6580395.jpg" data-t="Dressing gri cu rafturi de lemn" data-d="Structură închisă la culoare, rafturi contrastante — se murdărește greu, se vede bine.">
           <picture><source srcset="images/idei/dressing_6580395-480.webp 480w, images/idei/dressing_6580395-800.webp 800w, images/idei/dressing_6580395.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/dressing_6580395.jpg" alt="Dressing gri cu rafturi de lemn — Dressing la comandă, Normand Mobilier" width="1100" height="734" loading="lazy"></picture>
+          <img src="images/idei/dressing_6580395.jpg" alt="Dressing gri închis cu rafturi și sertare de lemn deschis și lumină sub rafturi" width="1100" height="734" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Dressing gri cu rafturi de lemn</h3>
           <p>Structură închisă la culoare, rafturi contrastante — se murdărește greu, se vede bine.</p>
+          <a class="cred" href="https://www.pexels.com/photo/modern-wardrobe-storage-6580395/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EDressing%20gri%20cu%20rafturi%20de%20lemn%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Dressing">
         <div class="ph" data-full="images/idei/dressing_6580406.jpg" data-t="Dressing cu panouri lamelare" data-d="Panoul lamelar în spate ridică o cameră de depozitare la nivel de cameră de arătat.">
           <picture><source srcset="images/idei/dressing_6580406-480.webp 480w, images/idei/dressing_6580406-800.webp 800w, images/idei/dressing_6580406.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/dressing_6580406.jpg" alt="Dressing cu panouri lamelare — Dressing la comandă, Normand Mobilier" width="1100" height="734" loading="lazy"></picture>
+          <img src="images/idei/dressing_6580406.jpg" alt="Dressing gri cu rafturi de lemn, văzut printre panouri lamelare negre" width="1100" height="734" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Dressing cu panouri lamelare</h3>
           <p>Panoul lamelar în spate ridică o cameră de depozitare la nivel de cameră de arătat.</p>
+          <a class="cred" href="https://www.pexels.com/photo/black-and-brown-empty-wardrobe-6580406/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EDressing%20cu%20panouri%20lamelare%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Dressing">
-        <div class="ph" data-full="images/idei/dressing_6585750.jpg" data-t="Dressing de nuc, deschis" data-d="Fără uși: totul la vedere, acces în două secunde.">
+        <div class="ph" data-full="images/idei/dressing_6585750.jpg" data-t="Dressing deschis, antracit cu lemn" data-d="Fără uși: totul la vedere, acces în două secunde.">
           <picture><source srcset="images/idei/dressing_6585750-480.webp 480w, images/idei/dressing_6585750-800.webp 800w, images/idei/dressing_6585750.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/dressing_6585750.jpg" alt="Dressing de nuc, deschis — Dressing la comandă, Normand Mobilier" width="1100" height="734" loading="lazy"></picture>
+          <img src="images/idei/dressing_6585750.jpg" alt="Dressing deschis cu rafturi antracit, sertare de lemn deschis și lumină LED" width="1100" height="734" loading="lazy"></picture>
         </div>
         <div class="bd">
-          <h3>Dressing de nuc, deschis</h3>
+          <h3>Dressing deschis, antracit cu lemn</h3>
           <p>Fără uși: totul la vedere, acces în două secunde.</p>
-          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EDressing%20de%20nuc%2C%20deschis%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
+          <a class="cred" href="https://www.pexels.com/photo/interior-of-wardrobe-with-many-shelves-6585750/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
+          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EDressing%20deschis%2C%20antracit%20cu%20lemn%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Dressing">
-        <div class="ph" data-full="images/idei/dressing_7045314.jpg" data-t="Dressing cald, rafturi pe toți pereții" data-d="Camera mică transformată în dressing complet, cu bancă la mijloc.">
+        <div class="ph" data-full="images/idei/dressing_7045314.jpg" data-t="Dressing cald, rafturi pe toți pereții" data-d="Lemn deschis pe pereți, rafturi și bare — o cameră mică folosită complet.">
           <picture><source srcset="images/idei/dressing_7045314-480.webp 480w, images/idei/dressing_7045314-800.webp 800w, images/idei/dressing_7045314.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/dressing_7045314.jpg" alt="Dressing cald, rafturi pe toți pereții — Dressing la comandă, Normand Mobilier" width="1100" height="734" loading="lazy"></picture>
+          <img src="images/idei/dressing_7045314.jpg" alt="Cameră mică transformată în dressing din lemn deschis, cu rafturi pe toți pereții" width="1100" height="734" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Dressing cald, rafturi pe toți pereții</h3>
-          <p>Camera mică transformată în dressing complet, cu bancă la mijloc.</p>
+          <p>Lemn deschis pe pereți, rafturi și bare — o cameră mică folosită complet.</p>
+          <a class="cred" href="https://www.pexels.com/photo/modern-wardrobe-interior-with-shelves-at-home-7045314/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EDressing%20cald%2C%20rafturi%20pe%20to%C8%9Bi%20pere%C8%9Bii%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Dressing">
-        <div class="ph" data-full="images/idei/dressing_7195887.jpg" data-t="Dressing cu uși de sticlă" data-d="Ușile de sticlă țin praful afară și lasă hainele la vedere.">
+        <div class="ph" data-full="images/idei/dressing_7195887.jpg" data-t="Dressing de nuc deschis, cu structură neagră" data-d="Panouri de nuc pe pereți și o structură metalică neagră pentru bare și rafturi.">
           <picture><source srcset="images/idei/dressing_7195887-480.webp 480w, images/idei/dressing_7195887-800.webp 800w, images/idei/dressing_7195887.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/dressing_7195887.jpg" alt="Dressing cu uși de sticlă — Dressing la comandă, Normand Mobilier" width="1100" height="734" loading="lazy"></picture>
+          <img src="images/idei/dressing_7195887.jpg" alt="Dressing cu pereți de nuc, fără uși, cu bare și rafturi pe o structură metalică neagră" width="1100" height="734" loading="lazy"></picture>
         </div>
         <div class="bd">
-          <h3>Dressing cu uși de sticlă</h3>
-          <p>Ușile de sticlă țin praful afară și lasă hainele la vedere.</p>
-          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EDressing%20cu%20u%C8%99i%20de%20sticl%C4%83%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
+          <h3>Dressing de nuc deschis, cu structură neagră</h3>
+          <p>Panouri de nuc pe pereți și o structură metalică neagră pentru bare și rafturi.</p>
+          <a class="cred" href="https://www.pexels.com/photo/dressing-room-with-empty-shelves-7195887/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
+          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EDressing%20de%20nuc%20deschis%2C%20cu%20structur%C4%83%20neagr%C4%83%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Dressing">
         <div class="ph" data-full="images/idei/dressing_8146203.jpg" data-t="Dressing pe coridor" data-d="Un hol strâmt devine dressing pe toată lungimea.">
           <picture><source srcset="images/idei/dressing_8146203-480.webp 480w, images/idei/dressing_8146203-800.webp 800w, images/idei/dressing_8146203.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/dressing_8146203.jpg" alt="Dressing pe coridor — Dressing la comandă, Normand Mobilier" width="1100" height="734" loading="lazy"></picture>
+          <img src="images/idei/dressing_8146203.jpg" alt="Dressing pe un coridor îngust, cu pereți de nuc și bare metalice negre pe ambele părți" width="1100" height="734" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Dressing pe coridor</h3>
           <p>Un hol strâmt devine dressing pe toată lungimea.</p>
+          <a class="cred" href="https://www.pexels.com/photo/a-brown-wooden-walk-in-closet-8146203/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EDressing%20pe%20coridor%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Dressing">
         <div class="ph" data-full="images/idei/dressing_36777983.jpg" data-t="Dressing alb clasic" data-d="Alb, sertare la mijloc, bare pe două niveluri — cel mai cerut model.">
           <picture><source srcset="images/idei/dressing_36777983-480.webp 480w, images/idei/dressing_36777983-800.webp 800w, images/idei/dressing_36777983.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/dressing_36777983.jpg" alt="Dressing alb clasic — Dressing la comandă, Normand Mobilier" width="1100" height="734" loading="lazy"></picture>
+          <img src="images/idei/dressing_36777983.jpg" alt="Dressing alb cu haine pe bare pe două niveluri, sertare la mijloc și rafturi pentru pantofi" width="1100" height="734" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Dressing alb clasic</h3>
           <p>Alb, sertare la mijloc, bare pe două niveluri — cel mai cerut model.</p>
+          <a class="cred" href="https://www.pexels.com/photo/organized-walk-in-closet-with-diverse-clothing-36777983/" target="_blank" rel="noopener">Foto: Curtis Adams · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EDressing%20alb%20clasic%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Dressing">
         <div class="ph" data-full="images/idei/dressing_7166555.jpg" data-t="Dressing alb în colț" data-d="Colțul folosit până la ultimul centimetru.">
           <picture><source srcset="images/idei/dressing_7166555-480.webp 480w, images/idei/dressing_7166555-800.webp 800w, images/idei/dressing_7166555.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/dressing_7166555.jpg" alt="Dressing alb în colț — Dressing la comandă, Normand Mobilier" width="1100" height="775" loading="lazy"></picture>
+          <img src="images/idei/dressing_7166555.jpg" alt="Dressing alb în colț, cu rafturi, bare și sertare cu fronturi cu ramă" width="1100" height="775" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Dressing alb în colț</h3>
           <p>Colțul folosit până la ultimul centimetru.</p>
+          <a class="cred" href="https://www.pexels.com/photo/white-classic-styled-built-in-wardrobe-with-empty-shelves-7166555/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EDressing%20alb%20%C3%AEn%20col%C8%9B%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Dressing">
-        <div class="ph" data-full="images/idei/dressing_6670657.jpg" data-t="Dressing cu insulă centrală" data-d="Insula cu sertare la mijlocul camerei — pentru ceasuri, bijuterii, ochelari.">
+        <div class="ph" data-full="images/idei/dressing_6670657.jpg" data-t="Dressing cu insulă centrală" data-d="Masa de la mijloc ține accesoriile la îndemână, lângă barele iluminate cu LED.">
           <picture><source srcset="images/idei/dressing_6670657-480.webp 480w, images/idei/dressing_6670657-800.webp 800w, images/idei/dressing_6670657.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/dressing_6670657.jpg" alt="Dressing cu insulă centrală — Dressing la comandă, Normand Mobilier" width="1100" height="732" loading="lazy"></picture>
+          <img src="images/idei/dressing_6670657.jpg" alt="Dressing cu perete de lemn, bară iluminată cu LED, comodă neagră și o masă albă la mijloc" width="1100" height="732" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Dressing cu insulă centrală</h3>
-          <p>Insula cu sertare la mijlocul camerei — pentru ceasuri, bijuterii, ochelari.</p>
+          <p>Masa de la mijloc ține accesoriile la îndemână, lângă barele iluminate cu LED.</p>
+          <a class="cred" href="https://www.pexels.com/photo/photo-of-walk-in-closet-6670657/" target="_blank" rel="noopener">Foto: Huy Quang Nguyễn · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EDressing%20cu%20insul%C4%83%20central%C4%83%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Dormitoare">
         <div class="ph" data-full="images/idei/dormitor_7060824.jpg" data-t="Pat cu punte de corpuri suspendate" data-d="Puntea peste pat: depozitare unde altfel era perete gol. O facem des.">
           <picture><source srcset="images/idei/dormitor_7060824-480.webp 480w, images/idei/dormitor_7060824-800.webp 800w, images/idei/dormitor_7060824.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/dormitor_7060824.jpg" alt="Pat cu punte de corpuri suspendate — Dormitoare la comandă, Normand Mobilier" width="1100" height="734" loading="lazy"></picture>
+          <img src="images/idei/dormitor_7060824.jpg" alt="Pat dublu încadrat de dulapuri albe până în tavan, cu o punte de corpuri suspendate deasupra" width="1100" height="734" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Pat cu punte de corpuri suspendate</h3>
           <p>Puntea peste pat: depozitare unde altfel era perete gol. O facem des.</p>
+          <a class="cred" href="https://www.pexels.com/photo/bedside-white-wardrobe-with-wooden-bookshelf-7060824/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EPat%20cu%20punte%20de%20corpuri%20suspendate%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Dormitoare">
         <div class="ph" data-full="images/idei/dormitor_7060826.jpg" data-t="Punte suspendată cu loc de televizor" data-d="Aceeași punte, cu nișă pentru televizor și noptiere integrate.">
           <picture><source srcset="images/idei/dormitor_7060826-480.webp 480w, images/idei/dormitor_7060826-800.webp 800w, images/idei/dormitor_7060826.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/dormitor_7060826.jpg" alt="Punte suspendată cu loc de televizor — Dormitoare la comandă, Normand Mobilier" width="1100" height="734" loading="lazy"></picture>
+          <img src="images/idei/dormitor_7060826.jpg" alt="Dormitor cu punte de corpuri albe peste pat, raft cu televizor și ușă de sticlă spre baie" width="1100" height="734" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Punte suspendată cu loc de televizor</h3>
           <p>Aceeași punte, cu nișă pentru televizor și noptiere integrate.</p>
+          <a class="cred" href="https://www.pexels.com/photo/interior-of-modern-bedroom-with-bathroom-7060826/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EPunte%20suspendat%C4%83%20cu%20loc%20de%20televizor%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Dormitoare">
-        <div class="ph" data-full="images/idei/dormitor_6480198.jpg" data-t="Perete de lemn în spatele patului" data-d="Tăblia și peretele fac un corp — se montează pe orice lățime.">
+        <div class="ph" data-full="images/idei/dormitor_6480198.jpg" data-t="Pat de lemn pe un perete placat cu piatră" data-d="Patul cu tăblie de lemn se croiește pe lățimea saltelei tale.">
           <picture><source srcset="images/idei/dormitor_6480198-480.webp 480w, images/idei/dormitor_6480198-800.webp 800w, images/idei/dormitor_6480198.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/dormitor_6480198.jpg" alt="Perete de lemn în spatele patului — Dormitoare la comandă, Normand Mobilier" width="1100" height="734" loading="lazy"></picture>
+          <img src="images/idei/dormitor_6480198.jpg" alt="Dormitor cu pat de lemn cu tăblie joasă, perete placat cu piatră, fotoliu și televizor" width="1100" height="734" loading="lazy"></picture>
         </div>
         <div class="bd">
-          <h3>Perete de lemn în spatele patului</h3>
-          <p>Tăblia și peretele fac un corp — se montează pe orice lățime.</p>
-          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EPerete%20de%20lemn%20%C3%AEn%20spatele%20patului%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
+          <h3>Pat de lemn pe un perete placat cu piatră</h3>
+          <p>Patul cu tăblie de lemn se croiește pe lățimea saltelei tale.</p>
+          <a class="cred" href="https://www.pexels.com/photo/interior-of-bedroom-with-armchair-and-tv-near-bed-6480198/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
+          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EPat%20de%20lemn%20pe%20un%20perete%20placat%20cu%20piatr%C4%83%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Dormitoare">
         <div class="ph" data-full="images/idei/dormitor_6487951.jpg" data-t="Dulap deschis, dressing în dormitor" data-d="Când nu ai cameră separată, dressingul intră în dormitor.">
           <picture><source srcset="images/idei/dormitor_6487951-480.webp 480w, images/idei/dormitor_6487951-800.webp 800w, images/idei/dormitor_6487951.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/dormitor_6487951.jpg" alt="Dulap deschis, dressing în dormitor — Dormitoare la comandă, Normand Mobilier" width="1100" height="761" loading="lazy"></picture>
+          <img src="images/idei/dormitor_6487951.jpg" alt="Dormitor cu dulap de lemn deschis, cu rafturi, sertare și bară, ascuns după o draperie" width="1100" height="761" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Dulap deschis, dressing în dormitor</h3>
           <p>Când nu ai cameră separată, dressingul intră în dormitor.</p>
+          <a class="cred" href="https://www.pexels.com/photo/interior-of-room-with-bed-near-cupboard-with-shelves-6487951/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EDulap%20deschis%2C%20dressing%20%C3%AEn%20dormitor%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Dormitoare">
-        <div class="ph" data-full="images/idei/dormitor_6588581.jpg" data-t="Dormitor modern cu corp lung sub fereastră" data-d="Corp jos pe toată lungimea: depozitare fără să blocheze lumina.">
+        <div class="ph" data-full="images/idei/dormitor_6588581.jpg" data-t="Dormitor modern cu comodă joasă sub televizor" data-d="O comodă joasă sub televizor și un birou mic la fereastră, fără să încarce camera.">
           <picture><source srcset="images/idei/dormitor_6588581-480.webp 480w, images/idei/dormitor_6588581-800.webp 800w, images/idei/dormitor_6588581.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/dormitor_6588581.jpg" alt="Dormitor modern cu corp lung sub fereastră — Dormitoare la comandă, Normand Mobilier" width="1100" height="734" loading="lazy"></picture>
+          <img src="images/idei/dormitor_6588581.jpg" alt="Dormitor cu pat tapițat jos, comodă joasă de lemn sub televizor și birou lângă fereastră" width="1100" height="734" loading="lazy"></picture>
         </div>
         <div class="bd">
-          <h3>Dormitor modern cu corp lung sub fereastră</h3>
-          <p>Corp jos pe toată lungimea: depozitare fără să blocheze lumina.</p>
-          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EDormitor%20modern%20cu%20corp%20lung%20sub%20fereastr%C4%83%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
+          <h3>Dormitor modern cu comodă joasă sub televizor</h3>
+          <p>O comodă joasă sub televizor și un birou mic la fereastră, fără să încarce camera.</p>
+          <a class="cred" href="https://www.pexels.com/photo/home-interior-with-bed-next-to-curtains-on-windows-6588581/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
+          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EDormitor%20modern%20cu%20comod%C4%83%20joas%C4%83%20sub%20televizor%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Dormitoare">
-        <div class="ph" data-full="images/idei/dormitor_6934170.jpg" data-t="Pat cu tăblie tapițată și consolă de lemn" data-d="Tăblie moale, consolă pe perete în loc de noptiere.">
+        <div class="ph" data-full="images/idei/dormitor_6934170.jpg" data-t="Pat cu tăblie tapițată și consolă de lemn" data-d="Tăblie moale și o consolă de lemn sub televizor, care ține și loc de birou.">
           <picture><source srcset="images/idei/dormitor_6934170-480.webp 480w, images/idei/dormitor_6934170-800.webp 800w, images/idei/dormitor_6934170.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/dormitor_6934170.jpg" alt="Pat cu tăblie tapițată și consolă de lemn — Dormitoare la comandă, Normand Mobilier" width="1100" height="734" loading="lazy"></picture>
+          <img src="images/idei/dormitor_6934170.jpg" alt="Dormitor cu pat cu tăblie tapițată roz, consolă de lemn sub televizor și noptieră albă" width="1100" height="734" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Pat cu tăblie tapițată și consolă de lemn</h3>
-          <p>Tăblie moale, consolă pe perete în loc de noptiere.</p>
+          <p>Tăblie moale și o consolă de lemn sub televizor, care ține și loc de birou.</p>
+          <a class="cred" href="https://www.pexels.com/photo/spacious-bedroom-with-brown-soft-bed-6934170/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EPat%20cu%20t%C4%83blie%20tapi%C8%9Bat%C4%83%20%C8%99i%20consol%C4%83%20de%20lemn%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Dormitoare">
-        <div class="ph" data-full="images/idei/dormitor_7546637.jpg" data-t="Birou și dulap într-un singur corp" data-d="Pentru camera de copil: dulap, birou și rafturi croite împreună.">
+        <div class="ph" data-full="images/idei/dormitor_7546637.jpg" data-t="Birou și dulap într-un singur corp" data-d="Dulapul, biroul și corpurile de sus, croite împreună în același albastru deschis.">
           <picture><source srcset="images/idei/dormitor_7546637-480.webp 480w, images/idei/dormitor_7546637-800.webp 800w, images/idei/dormitor_7546637.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/dormitor_7546637.jpg" alt="Birou și dulap într-un singur corp — Dormitoare la comandă, Normand Mobilier" width="1100" height="734" loading="lazy"></picture>
+          <img src="images/idei/dormitor_7546637.jpg" alt="Dormitor cu dulap, birou și corpuri de sus albastru deschis, cu fronturi cu ramă" width="1100" height="734" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Birou și dulap într-un singur corp</h3>
-          <p>Pentru camera de copil: dulap, birou și rafturi croite împreună.</p>
+          <p>Dulapul, biroul și corpurile de sus, croite împreună în același albastru deschis.</p>
+          <a class="cred" href="https://www.pexels.com/photo/bedroom-in-an-apartment-7546637/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EBirou%20%C8%99i%20dulap%20%C3%AEntr-un%20singur%20corp%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Dormitoare">
-        <div class="ph" data-full="images/idei/dormitor_7546649.jpg" data-t="Dulap cu nișă pentru televizor" data-d="Televizorul intră în dulap, nu pe perete.">
+        <div class="ph" data-full="images/idei/dormitor_7546649.jpg" data-t="Dormitor cu dulapuri verde-gri pe tot peretele" data-d="Fronturile cu ramă ale dulapurilor continuă panourile decorative de pe pereți.">
           <picture><source srcset="images/idei/dormitor_7546649-480.webp 480w, images/idei/dormitor_7546649-800.webp 800w, images/idei/dormitor_7546649.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/dormitor_7546649.jpg" alt="Dulap cu nișă pentru televizor — Dormitoare la comandă, Normand Mobilier" width="1100" height="734" loading="lazy"></picture>
+          <img src="images/idei/dormitor_7546649.jpg" alt="Dormitor cu dulapuri verde-gri cu fronturi cu ramă pe tot peretele și pat tapițat gri" width="1100" height="734" loading="lazy"></picture>
         </div>
         <div class="bd">
-          <h3>Dulap cu nișă pentru televizor</h3>
-          <p>Televizorul intră în dulap, nu pe perete.</p>
-          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EDulap%20cu%20ni%C8%99%C4%83%20pentru%20televizor%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
+          <h3>Dormitor cu dulapuri verde-gri pe tot peretele</h3>
+          <p>Fronturile cu ramă ale dulapurilor continuă panourile decorative de pe pereți.</p>
+          <a class="cred" href="https://www.pexels.com/photo/a-bed-with-pillows-near-a-television-7546649/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
+          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EDormitor%20cu%20dulapuri%20verde-gri%20pe%20tot%20peretele%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Dormitoare">
         <div class="ph" data-full="images/idei/dormitor_7546720.jpg" data-t="Dulapuri albe pe tot peretele" data-d="Pe toată lungimea și până în tavan — depozitare maximă, aspect de perete.">
           <picture><source srcset="images/idei/dormitor_7546720-480.webp 480w, images/idei/dormitor_7546720-800.webp 800w, images/idei/dormitor_7546720.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/dormitor_7546720.jpg" alt="Dulapuri albe pe tot peretele — Dormitoare la comandă, Normand Mobilier" width="1100" height="734" loading="lazy"></picture>
+          <img src="images/idei/dormitor_7546720.jpg" alt="Dormitor cu dulapuri albe până în tavan, televizor pe perete și consolă albă suspendată" width="1100" height="734" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Dulapuri albe pe tot peretele</h3>
           <p>Pe toată lungimea și până în tavan — depozitare maximă, aspect de perete.</p>
+          <a class="cred" href="https://www.pexels.com/photo/a-modern-design-bedroom-7546720/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EDulapuri%20albe%20pe%20tot%20peretele%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Dormitoare">
-        <div class="ph" data-full="images/idei/dormitor_7061419.jpg" data-t="Interior de dulap, compartimentat" data-d="Bare, rafturi, sertare și suport de pantofi — organizarea dinăuntru.">
+        <div class="ph" data-full="images/idei/dormitor_7061419.jpg" data-t="Interior de dulap, compartimentat" data-d="Bare, rafturi și sertare cu față de sticlă — organizarea dinăuntrul dulapului.">
           <picture><source srcset="images/idei/dormitor_7061419-480.webp 480w, images/idei/dormitor_7061419-800.webp 800w, images/idei/dormitor_7061419.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/dormitor_7061419.jpg" alt="Interior de dulap, compartimentat — Dormitoare la comandă, Normand Mobilier" width="1100" height="734" loading="lazy"></picture>
+          <img src="images/idei/dormitor_7061419.jpg" alt="Interiorul unui dulap din lemn fără uși, cu bare, rafturi și sertare cu față de sticlă" width="1100" height="734" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Interior de dulap, compartimentat</h3>
-          <p>Bare, rafturi, sertare și suport de pantofi — organizarea dinăuntru.</p>
+          <p>Bare, rafturi și sertare cu față de sticlă — organizarea dinăuntrul dulapului.</p>
+          <a class="cred" href="https://www.pexels.com/photo/brown-wooden-shelves-7061419/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EInterior%20de%20dulap%2C%20compartimentat%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Living">
         <div class="ph" data-full="images/idei/living_5661719.jpg" data-t="Perete de living cu rafturi suspendate" data-d="Rafturi care par că plutesc, corp jos închis pentru ce nu vrei la vedere.">
           <picture><source srcset="images/idei/living_5661719-480.webp 480w, images/idei/living_5661719-800.webp 800w, images/idei/living_5661719.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/living_5661719.jpg" alt="Perete de living cu rafturi suspendate — Living la comandă, Normand Mobilier" width="1100" height="733" loading="lazy"></picture>
+          <img src="images/idei/living_5661719.jpg" alt="Living cu rafturi suspendate pe perete, comodă TV joasă neagră și canapea de colț" width="1100" height="733" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Perete de living cu rafturi suspendate</h3>
           <p>Rafturi care par că plutesc, corp jos închis pentru ce nu vrei la vedere.</p>
+          <a class="cred" href="https://www.pexels.com/photo/cozy-living-room-with-hanging-books-on-the-wall-5661719/" target="_blank" rel="noopener">Foto: Serena Koi · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EPerete%20de%20living%20cu%20rafturi%20suspendate%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Living">
         <div class="ph" data-full="images/idei/living_6636320.jpg" data-t="Perete de televizor cu comodă suspendată" data-d="Comoda ridicată de la podea — se curăță ușor, camera pare mai mare.">
           <picture><source srcset="images/idei/living_6636320-480.webp 480w, images/idei/living_6636320-800.webp 800w, images/idei/living_6636320.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/living_6636320.jpg" alt="Perete de televizor cu comodă suspendată — Living la comandă, Normand Mobilier" width="1100" height="789" loading="lazy"></picture>
+          <img src="images/idei/living_6636320.jpg" alt="Perete de televizor placat cu marmură, comodă TV suspendată și corp de sus din lemn" width="1100" height="789" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Perete de televizor cu comodă suspendată</h3>
           <p>Comoda ridicată de la podea — se curăță ușor, camera pare mai mare.</p>
+          <a class="cred" href="https://www.pexels.com/photo/cozy-living-room-interior-with-wooden-furniture-and-comfy-couch-6636320/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EPerete%20de%20televizor%20cu%20comod%C4%83%20suspendat%C4%83%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Living">
         <div class="ph" data-full="images/idei/living_6580232.jpg" data-t="Bibliotecă pe tot peretele" data-d="De la podea până în tavan, croită pe milimetru pe peretele tău.">
           <picture><source srcset="images/idei/living_6580232-480.webp 480w, images/idei/living_6580232-800.webp 800w, images/idei/living_6580232.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/living_6580232.jpg" alt="Bibliotecă pe tot peretele — Living la comandă, Normand Mobilier" width="1100" height="734" loading="lazy"></picture>
+          <img src="images/idei/living_6580232.jpg" alt="Bibliotecă albă cu cărți pe tot peretele, canapea gri și fereastră mare spre apă" width="1100" height="734" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Bibliotecă pe tot peretele</h3>
           <p>De la podea până în tavan, croită pe milimetru pe peretele tău.</p>
+          <a class="cred" href="https://www.pexels.com/photo/cozy-apartament-on-water-with-floor-to-ceiling-windows-6580232/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EBibliotec%C4%83%20pe%20tot%20peretele%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Living">
-        <div class="ph" data-full="images/idei/living_8146216.jpg" data-t="Bibliotecă de lemn cu nișe" data-d="Rafturi de adâncimi diferite, pentru cărți și obiecte deopotrivă.">
+        <div class="ph" data-full="images/idei/living_8146216.jpg" data-t="Bibliotecă de lemn cu nișe" data-d="Rafturi pe tot peretele și un blat de birou care continuă sub fereastră.">
           <picture><source srcset="images/idei/living_8146216-480.webp 480w, images/idei/living_8146216-800.webp 800w, images/idei/living_8146216.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/living_8146216.jpg" alt="Bibliotecă de lemn cu nișe — Living la comandă, Normand Mobilier" width="1100" height="734" loading="lazy"></picture>
+          <img src="images/idei/living_8146216.jpg" alt="Bibliotecă de lemn închis pe tot peretele, cu blat de birou sub fereastră și canapea gri" width="1100" height="734" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Bibliotecă de lemn cu nișe</h3>
-          <p>Rafturi de adâncimi diferite, pentru cărți și obiecte deopotrivă.</p>
+          <p>Rafturi pe tot peretele și un blat de birou care continuă sub fereastră.</p>
+          <a class="cred" href="https://www.pexels.com/photo/brown-wooden-shelf-in-a-white-room-8146216/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EBibliotec%C4%83%20de%20lemn%20cu%20ni%C8%99e%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Living">
         <div class="ph" data-full="images/idei/living_7587290.jpg" data-t="Bibliotecă cu scară" data-d="Când peretele e înalt: scară pe șină, acces până sus.">
           <picture><source srcset="images/idei/living_7587290-480.webp 480w, images/idei/living_7587290-800.webp 800w, images/idei/living_7587290.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/living_7587290.jpg" alt="Bibliotecă cu scară — Living la comandă, Normand Mobilier" width="1100" height="733" loading="lazy"></picture>
+          <img src="images/idei/living_7587290.jpg" alt="Bibliotecă de lemn până în tavan cu scară pe șină, deasupra unei comode cu vitrină" width="1100" height="733" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Bibliotecă cu scară</h3>
           <p>Când peretele e înalt: scară pe șină, acces până sus.</p>
+          <a class="cred" href="https://www.pexels.com/photo/wooden-bookcase-and-ladder-7587290/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EBibliotec%C4%83%20cu%20scar%C4%83%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Living">
         <div class="ph" data-full="images/idei/living_6980654.jpg" data-t="Rafturi negre pe panou lamelar" data-d="Metal și lemn, pentru un living cu personalitate.">
           <picture><source srcset="images/idei/living_6980654-480.webp 480w, images/idei/living_6980654-800.webp 800w, images/idei/living_6980654.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/living_6980654.jpg" alt="Rafturi negre pe panou lamelar — Living la comandă, Normand Mobilier" width="1100" height="734" loading="lazy"></picture>
+          <img src="images/idei/living_6980654.jpg" alt="Rafturi metalice negre pe un perete lamelar portocaliu, canapea albastră și bar" width="1100" height="734" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Rafturi negre pe panou lamelar</h3>
           <p>Metal și lemn, pentru un living cu personalitate.</p>
+          <a class="cred" href="https://www.pexels.com/photo/contemporary-room-interior-with-sofa-against-chairs-at-home-6980654/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9ERafturi%20negre%20pe%20panou%20lamelar%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Living">
         <div class="ph" data-full="images/idei/living_8089161.jpg" data-t="Panou de lemn cu televizor încastrat" data-d="Panoul ascunde cablurile și încălzește camera.">
           <picture><source srcset="images/idei/living_8089161-480.webp 480w, images/idei/living_8089161-800.webp 800w, images/idei/living_8089161.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/living_8089161.jpg" alt="Panou de lemn cu televizor încastrat — Living la comandă, Normand Mobilier" width="1100" height="734" loading="lazy"></picture>
+          <img src="images/idei/living_8089161.jpg" alt="Perete de lemn cu televizor și poliță, în fața unei canapele mari bej" width="1100" height="734" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Panou de lemn cu televizor încastrat</h3>
           <p>Panoul ascunde cablurile și încălzește camera.</p>
+          <a class="cred" href="https://www.pexels.com/photo/modern-furniture-in-luxury-interior-design-8089161/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EPanou%20de%20lemn%20cu%20televizor%20%C3%AEncastrat%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Living">
         <div class="ph" data-full="images/idei/living_36777521.jpg" data-t="Rafturi minimaliste și consolă de lemn" data-d="Puțin, dar exact unde trebuie — pentru cine nu vrea mobilă multă.">
           <picture><source srcset="images/idei/living_36777521-480.webp 480w, images/idei/living_36777521-800.webp 800w, images/idei/living_36777521.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/living_36777521.jpg" alt="Rafturi minimaliste și consolă de lemn — Living la comandă, Normand Mobilier" width="1100" height="733" loading="lazy"></picture>
+          <img src="images/idei/living_36777521.jpg" alt="Living cu șemineu, polițe de lemn suspendate și corpuri joase de lemn de o parte și de alta" width="1100" height="733" loading="lazy"></picture>
         </div>
         <div class="bd">
           <h3>Rafturi minimaliste și consolă de lemn</h3>
           <p>Puțin, dar exact unde trebuie — pentru cine nu vrea mobilă multă.</p>
+          <a class="cred" href="https://www.pexels.com/photo/modern-living-room-with-wooden-floors-and-fireplace-36777521/" target="_blank" rel="noopener">Foto: Curtis Adams · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9ERafturi%20minimaliste%20%C8%99i%20consol%C4%83%20de%20lemn%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
@@ -1438,42 +1518,6 @@
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EDulap%20%C3%AEncastrat%20alb%20cu%20u%C8%99i%20clasice%20cu%20ram%C4%83%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
-      <article class="icard" data-cat="Dormitoare">
-        <div class="ph" data-full="images/idei/dormitor_8082217.jpg" data-t="Dormitor cu comodă wenge sub televizor" data-d="Comoda lungă cu sertare ține lucrurile mărunte și servește și drept suport pentru televizor.">
-          <picture><source srcset="images/idei/dormitor_8082217-480.webp 480w, images/idei/dormitor_8082217-800.webp 800w, images/idei/dormitor_8082217.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/dormitor_8082217.jpg" alt="Dormitor spațios cu pat, comodă închisă la culoare cu televizor, lustră, birou mic și două fotolii albe la fereastră" width="1100" height="734" loading="lazy"></picture>
-        </div>
-        <div class="bd">
-          <h3>Dormitor cu comodă wenge sub televizor</h3>
-          <p>Comoda lungă cu sertare ține lucrurile mărunte și servește și drept suport pentru televizor.</p>
-          <a class="cred" href="https://www.pexels.com/photo/a-cozy-bed-with-flat-screen-television-8082217/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
-          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EDormitor%20cu%20comod%C4%83%20wenge%20sub%20televizor%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
-        </div>
-      </article>
-      <article class="icard" data-cat="Dressing">
-        <div class="ph" data-full="images/idei/bucatarie_38525199.jpg" data-t="Dulap alb până la tavan cu nișă de birou" data-d="Dulapul și biroul în același corp: folosești tot peretele, iar mânerele profil nu ies în cale.">
-          <picture><source srcset="images/idei/bucatarie_38525199-480.webp 480w, images/idei/bucatarie_38525199-800.webp 800w, images/idei/bucatarie_38525199.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/bucatarie_38525199.jpg" alt="Dulap alb cu uși înalte până la tavan, lângă o nișă de birou cu blat de lemn, raft deschis și corpuri suspendate" width="1100" height="733" loading="lazy"></picture>
-        </div>
-        <div class="bd">
-          <h3>Dulap alb până la tavan cu nișă de birou</h3>
-          <p>Dulapul și biroul în același corp: folosești tot peretele, iar mânerele profil nu ies în cale.</p>
-          <a class="cred" href="https://www.pexels.com/photo/minimalist-modern-kitchen-interior-with-cabinets-38525199/" target="_blank" rel="noopener">Foto: FMC Furniture manufacturer Chalin · vezi mai multe pe Pexels ↗</a>
-          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EDulap%20alb%20p%C3%A2n%C4%83%20la%20tavan%20cu%20ni%C8%99%C4%83%20de%20birou%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
-        </div>
-      </article>
-      <article class="icard" data-cat="Dormitoare">
-        <div class="ph" data-full="images/idei/dormitor_30725665.jpg" data-t="Dormitor cu perete verde cu ramă și comodă de lemn" data-d="O comodă lată cu multe sertare ține hainele mărunte și servește și ca suprafață pentru decor.">
-          <picture><source srcset="images/idei/dormitor_30725665-480.webp 480w, images/idei/dormitor_30725665-800.webp 800w, images/idei/dormitor_30725665.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/dormitor_30725665.jpg" alt="Dormitor cu perete verde închis decorat cu rame, pat tapițat capitonat, comodă de lemn cu sertare, fotoliu și două ferestre" width="1100" height="734" loading="lazy"></picture>
-        </div>
-        <div class="bd">
-          <h3>Dormitor cu perete verde cu ramă și comodă de lemn</h3>
-          <p>O comodă lată cu multe sertare ține hainele mărunte și servește și ca suprafață pentru decor.</p>
-          <a class="cred" href="https://www.pexels.com/photo/modern-bedroom-interior-in-new-orleans-home-30725665/" target="_blank" rel="noopener">Foto: Chad Populis · vezi mai multe pe Pexels ↗</a>
-          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EDormitor%20cu%20perete%20verde%20cu%20ram%C4%83%20%C8%99i%20comod%C4%83%20de%20lemn%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
-        </div>
-      </article>
       <article class="icard" data-cat="Bucătării">
         <div class="ph" data-full="images/idei/bucatarie_6636314.jpg" data-t="Open space cu bucătărie albă lucioasă și coloane de nuc" data-d="Bucătăria de la capătul camerei, cu bar pentru scaune înalte, se leagă de living fără perete despărțitor.">
           <picture><source srcset="images/idei/bucatarie_6636314-480.webp 480w, images/idei/bucatarie_6636314-800.webp 800w, images/idei/bucatarie_6636314.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
@@ -1594,54 +1638,6 @@
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EColoane%20bej%20lucioase%20%C8%99i%20insul%C4%83%20lung%C4%83%20cu%20scaune%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
-      <article class="icard" data-cat="Bucătării">
-        <div class="ph" data-full="images/idei/bucatarie_6035312.jpg" data-t="Bucătărie albă cu uși cu ramă și insulă" data-d="Ușile cu ramă dau un aer clasic, iar insula aduce blat liber de lucru în mijlocul camerei.">
-          <picture><source srcset="images/idei/bucatarie_6035312-480.webp 480w, images/idei/bucatarie_6035312-800.webp 800w, images/idei/bucatarie_6035312.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/bucatarie_6035312.jpg" alt="Bucătărie albă cu uși cu ramă, insulă cu blat alb și două scaune de lemn, frigider inox și două ferestre" width="1100" height="733" loading="lazy"></picture>
-        </div>
-        <div class="bd">
-          <h3>Bucătărie albă cu uși cu ramă și insulă</h3>
-          <p>Ușile cu ramă dau un aer clasic, iar insula aduce blat liber de lucru în mijlocul camerei.</p>
-          <a class="cred" href="https://www.pexels.com/photo/modern-house-kitchen-interior-design-6035312/" target="_blank" rel="noopener">Foto: Curtis Adams · vezi mai multe pe Pexels ↗</a>
-          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EBuc%C4%83t%C4%83rie%20alb%C4%83%20cu%20u%C8%99i%20cu%20ram%C4%83%20%C8%99i%20insul%C4%83%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
-        </div>
-      </article>
-      <article class="icard" data-cat="Dormitoare">
-        <div class="ph" data-full="images/idei/dressing_8417307.jpg" data-t="Dormitor cu tăblie roz înaltă și dressing deschis" data-d="Tăblia tapițată până aproape de tavan dă greutate patului, iar dressingul deschis rămâne la un pas.">
-          <picture><source srcset="images/idei/dressing_8417307-480.webp 480w, images/idei/dressing_8417307-800.webp 800w, images/idei/dressing_8417307.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/dressing_8417307.jpg" alt="Dormitor mare cu tăblie tapițată roz, pat cu cuvertură gri, două fotolii și un dressing deschis cu haine în colț" width="1100" height="733" loading="lazy"></picture>
-        </div>
-        <div class="bd">
-          <h3>Dormitor cu tăblie roz înaltă și dressing deschis</h3>
-          <p>Tăblia tapițată până aproape de tavan dă greutate patului, iar dressingul deschis rămâne la un pas.</p>
-          <a class="cred" href="https://www.pexels.com/photo/blue-and-white-pillows-on-the-bed-8417307/" target="_blank" rel="noopener">Foto: Furkan Tumer · vezi mai multe pe Pexels ↗</a>
-          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EDormitor%20cu%20t%C4%83blie%20roz%20%C3%AEnalt%C4%83%20%C8%99i%20dressing%20deschis%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
-        </div>
-      </article>
-      <article class="icard" data-cat="Bucătării">
-        <div class="ph" data-full="images/idei/bucatarie_38071640.jpg" data-t="Alb lucios și lemn deschis, insulă efect marmură" data-d="Coloanele înalte țin cămara și electrocasnicele, iar insula cu patru scaune devine bar.">
-          <picture><source srcset="images/idei/bucatarie_38071640-480.webp 480w, images/idei/bucatarie_38071640-800.webp 800w, images/idei/bucatarie_38071640.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/bucatarie_38071640.jpg" alt="Bucătărie albă lucioasă cu sertare de lemn deschis, coloane până la tavan și insulă efect marmură cu scaune negre" width="1100" height="733" loading="lazy"></picture>
-        </div>
-        <div class="bd">
-          <h3>Alb lucios și lemn deschis, insulă efect marmură</h3>
-          <p>Coloanele înalte țin cămara și electrocasnicele, iar insula cu patru scaune devine bar.</p>
-          <a class="cred" href="https://www.pexels.com/photo/modern-minimalist-kitchen-interior-design-38071640/" target="_blank" rel="noopener">Foto: Ali   Soheil · vezi mai multe pe Pexels ↗</a>
-          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EAlb%20lucios%20%C8%99i%20lemn%20deschis%2C%20insul%C4%83%20efect%20marmur%C4%83%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
-        </div>
-      </article>
-      <article class="icard" data-cat="Bucătării">
-        <div class="ph" data-full="images/idei/bucatarie_7533760.jpg" data-t="Bucătărie în U, alb lucios cu blat maro de piatră" data-d="Forma în U pune totul la un pas, iar electrocasnicele încastrate în coloană eliberează blatul.">
-          <picture><source srcset="images/idei/bucatarie_7533760-480.webp 480w, images/idei/bucatarie_7533760-800.webp 800w, images/idei/bucatarie_7533760.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/bucatarie_7533760.jpg" alt="Bucătărie în formă de U cu dulapuri suspendate albe lucioase, corpuri bej, blat maro și cuptor încastrat în coloană" width="1100" height="778" loading="lazy"></picture>
-        </div>
-        <div class="bd">
-          <h3>Bucătărie în U, alb lucios cu blat maro de piatră</h3>
-          <p>Forma în U pune totul la un pas, iar electrocasnicele încastrate în coloană eliberează blatul.</p>
-          <a class="cred" href="https://www.pexels.com/photo/kitchen-interior-with-beige-furniture-7533760/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
-          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EBuc%C4%83t%C4%83rie%20%C3%AEn%20U%2C%20alb%20lucios%20cu%20blat%20maro%20de%20piatr%C4%83%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
-        </div>
-      </article>
       <article class="icard" data-cat="Dormitoare">
         <div class="ph" data-full="images/idei/dormitor_7045354.jpg" data-t="Dormitor cu perete de nuc în spatele patului" data-d="Placarea din lemn până la tavan ține loc de tăblie și încălzește o cameră altfel complet albă.">
           <picture><source srcset="images/idei/dormitor_7045354-480.webp 480w, images/idei/dormitor_7045354-800.webp 800w, images/idei/dormitor_7045354.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
@@ -1676,18 +1672,6 @@
           <p>Nișele de lângă șemineu devin biblioteci cu uși jos: decorul sus, mărunțișurile ascunse.</p>
           <a class="cred" href="https://www.pexels.com/photo/elegant-living-room-with-fireplace-interior-37153442/" target="_blank" rel="noopener">Foto: Curtis Adams · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EBiblioteci%20albe%20%C3%AEn%20arcad%C4%83%20l%C3%A2ng%C4%83%20%C8%99emineu%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
-        </div>
-      </article>
-      <article class="icard" data-cat="Bucătării">
-        <div class="ph" data-full="images/idei/bucatarie_7060821.jpg" data-t="Bucătărie în L, alb lucios cu coloane imitație lemn" data-d="Coloana cu cuptor și microunde la înălțimea ochilor scutește spatele, iar blatul în L lasă loc de lucru.">
-          <picture><source srcset="images/idei/bucatarie_7060821-480.webp 480w, images/idei/bucatarie_7060821-800.webp 800w, images/idei/bucatarie_7060821.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/bucatarie_7060821.jpg" alt="Bucătărie în L cu corpuri suspendate albe lucioase, corpuri jos și coloană cu aspect de lemn, cuptor și microunde încastrate" width="1100" height="691" loading="lazy"></picture>
-        </div>
-        <div class="bd">
-          <h3>Bucătărie în L, alb lucios cu coloane imitație lemn</h3>
-          <p>Coloana cu cuptor și microunde la înălțimea ochilor scutește spatele, iar blatul în L lasă loc de lucru.</p>
-          <a class="cred" href="https://www.pexels.com/photo/modern-kitchen-design-with-built-in-appliances-7060821/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
-          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EBuc%C4%83t%C4%83rie%20%C3%AEn%20L%2C%20alb%20lucios%20cu%20coloane%20imita%C8%9Bie%20lemn%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Dressing">
@@ -1726,18 +1710,6 @@
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9ECamer%C4%83%20de%20copil%20%C3%AEn%20albastru%2C%20cu%20birou%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
-      <article class="icard" data-cat="Bucătării">
-        <div class="ph" data-full="images/idei/bucatarie_7214337.jpg" data-t="Bucătărie liniară gri cu raft deschis de lemn" data-d="Pe un singur perete: corpuri sus și jos, cuptor sub plită, iar restul camerei rămâne pentru masă.">
-          <picture><source srcset="images/idei/bucatarie_7214337-480.webp 480w, images/idei/bucatarie_7214337-800.webp 800w, images/idei/bucatarie_7214337.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/bucatarie_7214337.jpg" alt="Bucătărie liniară gri efect beton cu blat alb, raft de lemn deschis, hotă cilindrică și masă ovală cu patru scaune" width="1100" height="734" loading="lazy"></picture>
-        </div>
-        <div class="bd">
-          <h3>Bucătărie liniară gri cu raft deschis de lemn</h3>
-          <p>Pe un singur perete: corpuri sus și jos, cuptor sub plită, iar restul camerei rămâne pentru masă.</p>
-          <a class="cred" href="https://www.pexels.com/photo/gray-chairs-and-table-neat-white-curtains-7214337/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
-          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EBuc%C4%83t%C4%83rie%20liniar%C4%83%20gri%20cu%20raft%20deschis%20de%20lemn%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
-        </div>
-      </article>
       <article class="icard" data-cat="Dressing">
         <div class="ph" data-full="images/idei/dressing_6980733.jpg" data-t="Dulap încastrat bej pe tot peretele" data-d="Ușile cu ramă subțire și mânerele lungi fac ca dulapul încastrat să pară parte din perete.">
           <picture><source srcset="images/idei/dressing_6980733-480.webp 480w, images/idei/dressing_6980733-800.webp 800w, images/idei/dressing_6980733.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
@@ -1762,18 +1734,6 @@
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EDormitor%20cu%20dulap%20negru%20lucios%20cu%20u%C8%99i%20glisante%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
-      <article class="icard" data-cat="Dormitoare">
-        <div class="ph" data-full="images/idei/dormitor_7166944.jpg" data-t="Dormitor cu consolă lungă vișinie sub televizor" data-d="O consolă lungă pe tot peretele face din birou și suport TV o singură piesă.">
-          <picture><source srcset="images/idei/dormitor_7166944-480.webp 480w, images/idei/dormitor_7166944-800.webp 800w, images/idei/dormitor_7166944.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/dormitor_7166944.jpg" alt="Dormitor cu pat tapițat mov, noptiere albe și o consolă lungă vișinie cu birou, sub televizorul de pe perete" width="1100" height="734" loading="lazy"></picture>
-        </div>
-        <div class="bd">
-          <h3>Dormitor cu consolă lungă vișinie sub televizor</h3>
-          <p>O consolă lungă pe tot peretele face din birou și suport TV o singură piesă.</p>
-          <a class="cred" href="https://www.pexels.com/photo/bed-in-hotel-room-7166944/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
-          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EDormitor%20cu%20consol%C4%83%20lung%C4%83%20vi%C8%99inie%20sub%20televizor%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
-        </div>
-      </article>
       <article class="icard" data-cat="Bucătării">
         <div class="ph" data-full="images/idei/bucatarie_7545855.jpg" data-t="Bucătărie clasică albă cu uși cu ramă și LED" data-d="Ușile cu ramă din MDF vopsit dau aer clasic, iar LED-ul de sub corpuri luminează blatul.">
           <picture><source srcset="images/idei/bucatarie_7545855-480.webp 480w, images/idei/bucatarie_7545855-800.webp 800w, images/idei/bucatarie_7545855.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
@@ -1784,30 +1744,6 @@
           <p>Ușile cu ramă din MDF vopsit dau aer clasic, iar LED-ul de sub corpuri luminează blatul.</p>
           <a class="cred" href="https://www.pexels.com/photo/a-white-kitchen-cabinets-with-sink-7545855/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EBuc%C4%83t%C4%83rie%20clasic%C4%83%20alb%C4%83%20cu%20u%C8%99i%20cu%20ram%C4%83%20%C8%99i%20LED%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
-        </div>
-      </article>
-      <article class="icard" data-cat="Living">
-        <div class="ph" data-full="images/idei/living_6782352.jpg" data-t="Comodă TV gri joasă și raft vertical de perete" data-d="Raftul de perete în trepte ține cărțile la vedere fără să ocupe podeaua.">
-          <picture><source srcset="images/idei/living_6782352-480.webp 480w, images/idei/living_6782352-800.webp 800w, images/idei/living_6782352.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/living_6782352.jpg" alt="Living cu televizor pe perete alb, comodă joasă gri, raft gri de perete cu cărți, orhidee și canapea turcoaz" width="1100" height="784" loading="lazy"></picture>
-        </div>
-        <div class="bd">
-          <h3>Comodă TV gri joasă și raft vertical de perete</h3>
-          <p>Raftul de perete în trepte ține cărțile la vedere fără să ocupe podeaua.</p>
-          <a class="cred" href="https://www.pexels.com/photo/interior-of-modern-living-room-with-orchid-6782352/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
-          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EComod%C4%83%20TV%20gri%20joas%C4%83%20%C8%99i%20raft%20vertical%20de%20perete%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
-        </div>
-      </article>
-      <article class="icard" data-cat="Bucătării">
-        <div class="ph" data-full="images/idei/bucatarie_7060815.jpg" data-t="Bucătărie liniară cu lemn și alb lucios, cu bar" data-d="Pe un singur perete încap coloana cu cuptoare, chiuveta și plita; barul alb ține loc de masă rapidă.">
-          <picture><source srcset="images/idei/bucatarie_7060815-480.webp 480w, images/idei/bucatarie_7060815-800.webp 800w, images/idei/bucatarie_7060815.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/bucatarie_7060815.jpg" alt="Bucătărie liniară cu corpuri cu textură de lemn, dulapuri suspendate albe lucioase, cuptor încastrat și bar alb cu scaune" width="1100" height="734" loading="lazy"></picture>
-        </div>
-        <div class="bd">
-          <h3>Bucătărie liniară cu lemn și alb lucios, cu bar</h3>
-          <p>Pe un singur perete încap coloana cu cuptoare, chiuveta și plita; barul alb ține loc de masă rapidă.</p>
-          <a class="cred" href="https://www.pexels.com/photo/spacious-kitchen-with-modern-furniture-and-appliances-in-minimalist-apartment-7060815/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
-          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EBuc%C4%83t%C4%83rie%20liniar%C4%83%20cu%20lemn%20%C8%99i%20alb%20lucios%2C%20cu%20bar%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Living">
@@ -1832,18 +1768,6 @@
           <p>Comoda joasă cu sertare late ține lenjeria la îndemână și e și suprafață pentru decor.</p>
           <a class="cred" href="https://www.pexels.com/photo/a-modern-bedroom-interior-7546288/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EComod%C4%83%20crem%20cu%20sertare%20%C8%99i%20t%C4%83blie%20capitonat%C4%83%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
-        </div>
-      </article>
-      <article class="icard" data-cat="Bucătării">
-        <div class="ph" data-full="images/idei/bucatarie_28272329.jpg" data-t="Bucătărie gri cu uși cu ramă și coloană de cămară" data-d="Coloana-cămară de lângă frigider ține proviziile la îndemână, fără să încarce blatul.">
-          <picture><source srcset="images/idei/bucatarie_28272329-480.webp 480w, images/idei/bucatarie_28272329-800.webp 800w, images/idei/bucatarie_28272329.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/bucatarie_28272329.jpg" alt="Bucătărie cu dulapuri gri cu ramă, frigider inox lângă o coloană înaltă, blat alb și masă de lemn închis cu bancă" width="1100" height="734" loading="lazy"></picture>
-        </div>
-        <div class="bd">
-          <h3>Bucătărie gri cu uși cu ramă și coloană de cămară</h3>
-          <p>Coloana-cămară de lângă frigider ține proviziile la îndemână, fără să încarce blatul.</p>
-          <a class="cred" href="https://www.pexels.com/photo/a-kitchen-with-a-table-and-chairs-and-a-refrigerator-28272329/" target="_blank" rel="noopener">Foto: The R.E Editor · vezi mai multe pe Pexels ↗</a>
-          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EBuc%C4%83t%C4%83rie%20gri%20cu%20u%C8%99i%20cu%20ram%C4%83%20%C8%99i%20coloan%C4%83%20de%20c%C4%83mar%C4%83%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Bucătării">
@@ -1882,18 +1806,6 @@
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EMansard%C4%83%20cu%20bibliotec%C4%83%20%C3%AEncastrat%C4%83%20%C8%99i%20banchet%C4%83%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
-      <article class="icard" data-cat="Dormitoare">
-        <div class="ph" data-full="images/idei/dormitor_189293.jpg" data-t="Pat cu tăblie de lemn în carouri și aplică" data-d="O tăblie de lemn fixată pe perete protejează zugrăveala și dă patului un aer cald.">
-          <picture><source srcset="images/idei/dormitor_189293-480.webp 480w, images/idei/dormitor_189293-800.webp 800w, images/idei/dormitor_189293.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/dormitor_189293.jpg" alt="Pat cu lenjerie albă și tăblie de lemn în carouri fixată pe perete, aplică clasică aprinsă și noptieră de lemn" width="1100" height="733" loading="lazy"></picture>
-        </div>
-        <div class="bd">
-          <h3>Pat cu tăblie de lemn în carouri și aplică</h3>
-          <p>O tăblie de lemn fixată pe perete protejează zugrăveala și dă patului un aer cald.</p>
-          <a class="cred" href="https://www.pexels.com/photo/white-bedding-cover-beside-brown-wooden-side-table-189293/" target="_blank" rel="noopener">Foto: Donald Tong · vezi mai multe pe Pexels ↗</a>
-          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EPat%20cu%20t%C4%83blie%20de%20lemn%20%C3%AEn%20carouri%20%C8%99i%20aplic%C4%83%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
-        </div>
-      </article>
       <article class="icard" data-cat="Bucătării">
         <div class="ph" data-full="images/idei/bucatarie_37408949.jpg" data-t="Bucătărie mică în L, albă fără mânere" data-d="Cuptorul cu microunde încastrat în coloană eliberează blatul, care rămâne întreg pentru lucru.">
           <picture><source srcset="images/idei/bucatarie_37408949-480.webp 480w, images/idei/bucatarie_37408949-800.webp 800w, images/idei/bucatarie_37408949.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
@@ -1906,18 +1818,6 @@
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EBuc%C4%83t%C4%83rie%20mic%C4%83%20%C3%AEn%20L%2C%20alb%C4%83%20f%C4%83r%C4%83%20m%C3%A2nere%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
-      <article class="icard" data-cat="Dressing">
-        <div class="ph" data-full="images/idei/dressing_5705482.jpg" data-t="Dressing alb cu rafturi pentru pantofi sub bară" data-d="Rafturile joase de sub bară țin pantofii la vedere, perechi aliniate, fără cutii.">
-          <picture><source srcset="images/idei/dressing_5705482-480.webp 480w, images/idei/dressing_5705482-800.webp 800w, images/idei/dressing_5705482.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/dressing_5705482.jpg" alt="Dulap alb deschis cu haine pe umerașe sus și două rafturi cu pantofi cu toc dedesubt" width="1100" height="735" loading="lazy"></picture>
-        </div>
-        <div class="bd">
-          <h3>Dressing alb cu rafturi pentru pantofi sub bară</h3>
-          <p>Rafturile joase de sub bară țin pantofii la vedere, perechi aliniate, fără cutii.</p>
-          <a class="cred" href="https://www.pexels.com/photo/high-heel-female-shoes-on-the-shelf-5705482/" target="_blank" rel="noopener">Foto: Anastasia  Shuraeva · vezi mai multe pe Pexels ↗</a>
-          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EDressing%20alb%20cu%20rafturi%20pentru%20pantofi%20sub%20bar%C4%83%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
-        </div>
-      </article>
       <article class="icard" data-cat="Living">
         <div class="ph" data-full="images/idei/living_7195895.jpg" data-t="Living alb cu comodă TV lungă și consolă de nuc" data-d="Comoda TV suspendată pe tot peretele și consola din spatele canapelei dau suprafețe fără să încarce camera.">
           <picture><source srcset="images/idei/living_7195895-480.webp 480w, images/idei/living_7195895-800.webp 800w, images/idei/living_7195895.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
@@ -1928,18 +1828,6 @@
           <p>Comoda TV suspendată pe tot peretele și consola din spatele canapelei dau suprafețe fără să încarce camera.</p>
           <a class="cred" href="https://www.pexels.com/photo/spacious-apartment-with-couch-and-tv-7195895/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9ELiving%20alb%20cu%20comod%C4%83%20TV%20lung%C4%83%20%C8%99i%20consol%C4%83%20de%20nuc%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
-        </div>
-      </article>
-      <article class="icard" data-cat="Dormitoare">
-        <div class="ph" data-full="images/idei/dormitor_2082095.jpg" data-t="Noptieră albă cu sertar, pe picioare de lemn" data-d="O noptieră pe picioare lasă podeaua liberă și se face la înălțimea exactă a patului.">
-          <picture><source srcset="images/idei/dormitor_2082095-480.webp 480w, images/idei/dormitor_2082095-800.webp 800w, images/idei/dormitor_2082095.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/dormitor_2082095.jpg" alt="Noptieră albă cu un sertar și picioare de lemn, cu veioză albă și vază cu crenguță verde, lângă un pat alb" width="1100" height="734" loading="lazy"></picture>
-        </div>
-        <div class="bd">
-          <h3>Noptieră albă cu sertar, pe picioare de lemn</h3>
-          <p>O noptieră pe picioare lasă podeaua liberă și se face la înălțimea exactă a patului.</p>
-          <a class="cred" href="https://www.pexels.com/photo/green-leafed-plant-in-clear-glass-vase-on-top-of-side-table-2082095/" target="_blank" rel="noopener">Foto: Dmitry Zvolskiy · vezi mai multe pe Pexels ↗</a>
-          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9ENoptier%C4%83%20alb%C4%83%20cu%20sertar%2C%20pe%20picioare%20de%20lemn%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Dormitoare">
@@ -1976,30 +1864,6 @@
           <p>Ușile glisante din sticlă fumurie pe profil negru ascund dulapul și dublează vizual camera.</p>
           <a class="cred" href="https://www.pexels.com/photo/interior-of-bedroom-with-stylish-lamp-and-mirrored-cabinet-6903150/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EDormitor%20verde%20cu%20dulap%20din%20sticl%C4%83%20fumurie%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
-        </div>
-      </article>
-      <article class="icard" data-cat="Bucătării">
-        <div class="ph" data-full="images/idei/bucatarie_8082300.jpg" data-t="Bucătărie lucioasă model zebrano cu insulă" data-d="Coloana cu cuptor și microunde stă separat, iar insula cu bar lasă blatul de lucru liber.">
-          <picture><source srcset="images/idei/bucatarie_8082300-480.webp 480w, images/idei/bucatarie_8082300-800.webp 800w, images/idei/bucatarie_8082300.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/bucatarie_8082300.jpg" alt="Bucătărie spațioasă cu fronturi lucioase cu model de lemn dungat, insulă cu blat negru și scaun de bar" width="1100" height="734" loading="lazy"></picture>
-        </div>
-        <div class="bd">
-          <h3>Bucătărie lucioasă model zebrano cu insulă</h3>
-          <p>Coloana cu cuptor și microunde stă separat, iar insula cu bar lasă blatul de lucru liber.</p>
-          <a class="cred" href="https://www.pexels.com/photo/modern-kitchen-interior-8082300/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
-          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EBuc%C4%83t%C4%83rie%20lucioas%C4%83%20model%20zebrano%20cu%20insul%C4%83%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
-        </div>
-      </article>
-      <article class="icard" data-cat="Living">
-        <div class="ph" data-full="images/idei/living_12148587.jpg" data-t="Living luminos cu raft cub pentru cărți și TV" data-d="Un raft cu cuburi deschise ține cărțile și televizorul și se face exact pe lățimea peretelui.">
-          <picture><source srcset="images/idei/living_12148587-480.webp 480w, images/idei/living_12148587-800.webp 800w, images/idei/living_12148587.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/living_12148587.jpg" alt="Living luminos cu masă de lemn și scaune gri, raft alb cu cuburi pentru cărți și televizor, covor gri și uși spre balcon" width="1100" height="825" loading="lazy"></picture>
-        </div>
-        <div class="bd">
-          <h3>Living luminos cu raft cub pentru cărți și TV</h3>
-          <p>Un raft cu cuburi deschise ține cărțile și televizorul și se face exact pe lățimea peretelui.</p>
-          <a class="cred" href="https://www.pexels.com/photo/a-cozy-living-room-with-glass-doors-12148587/" target="_blank" rel="noopener">Foto: Pham Ngoc Anh · vezi mai multe pe Pexels ↗</a>
-          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9ELiving%20luminos%20cu%20raft%20cub%20pentru%20c%C4%83r%C8%9Bi%20%C8%99i%20TV%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Bucătării">
@@ -2086,30 +1950,6 @@
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EFronturi%20deschise%20cu%20fibr%C4%83%20de%20lemn%20%C8%99i%20blat%20%C3%AEnchis%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
-      <article class="icard" data-cat="Dormitoare">
-        <div class="ph" data-full="images/idei/dormitor_7546293.jpg" data-t="Dormitor cu pat tapițat albastru și dulap cu oglindă" data-d="Ușile cu oglindă ale dulapului dublează vizual camera și țin loc de oglindă mare.">
-          <picture><source srcset="images/idei/dormitor_7546293-480.webp 480w, images/idei/dormitor_7546293-800.webp 800w, images/idei/dormitor_7546293.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/dormitor_7546293.jpg" alt="Dormitor cu pat tapițat din catifea albastră, noptiere albe cu sertare și dulap alb lucios cu uși de oglindă" width="1100" height="734" loading="lazy"></picture>
-        </div>
-        <div class="bd">
-          <h3>Dormitor cu pat tapițat albastru și dulap cu oglindă</h3>
-          <p>Ușile cu oglindă ale dulapului dublează vizual camera și țin loc de oglindă mare.</p>
-          <a class="cred" href="https://www.pexels.com/photo/photo-of-the-bed-7546293/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
-          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EDormitor%20cu%20pat%20tapi%C8%9Bat%20albastru%20%C8%99i%20dulap%20cu%20oglind%C4%83%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
-        </div>
-      </article>
-      <article class="icard" data-cat="Bucătării">
-        <div class="ph" data-full="images/idei/bucatarie_7061337.jpg" data-t="Bucătărie în L, crem lucios, cu loc pentru frigider" data-d="Locul pentru frigiderul de sine stătător se măsoară de la început, ca să intre la centimetru între corpuri.">
-          <picture><source srcset="images/idei/bucatarie_7061337-480.webp 480w, images/idei/bucatarie_7061337-800.webp 800w, images/idei/bucatarie_7061337.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/bucatarie_7061337.jpg" alt="Bucătărie în L cu fronturi crem lucioase, blat alb, cuptor încastrat, frigider alb și ușă spre o cameră cu rafturi de lemn" width="1100" height="734" loading="lazy"></picture>
-        </div>
-        <div class="bd">
-          <h3>Bucătărie în L, crem lucios, cu loc pentru frigider</h3>
-          <p>Locul pentru frigiderul de sine stătător se măsoară de la început, ca să intre la centimetru între corpuri.</p>
-          <a class="cred" href="https://www.pexels.com/photo/white-glossy-cabinets-in-minimalist-kitchen-7061337/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
-          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EBuc%C4%83t%C4%83rie%20%C3%AEn%20L%2C%20crem%20lucios%2C%20cu%20loc%20pentru%20frigider%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
-        </div>
-      </article>
       <article class="icard" data-cat="Bucătării">
         <div class="ph" data-full="images/idei/bucatarie_37677516.jpg" data-t="Bucătărie albă cu insulă albastră" data-d="Insula în altă culoare devine centrul camerei; frigiderul mare se îmbracă între corpuri până sus.">
           <picture><source srcset="images/idei/bucatarie_37677516-480.webp 480w, images/idei/bucatarie_37677516-800.webp 800w, images/idei/bucatarie_37677516.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
@@ -2120,18 +1960,6 @@
           <p>Insula în altă culoare devine centrul camerei; frigiderul mare se îmbracă între corpuri până sus.</p>
           <a class="cred" href="https://www.pexels.com/photo/modern-kitchen-with-marble-countertops-and-island-37677516/" target="_blank" rel="noopener">Foto: Ryan  Stephens · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EBuc%C4%83t%C4%83rie%20alb%C4%83%20cu%20insul%C4%83%20albastr%C4%83%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
-        </div>
-      </article>
-      <article class="icard" data-cat="Dormitoare">
-        <div class="ph" data-full="images/idei/dormitor_6585756.jpg" data-t="Dormitor cu perete placat geometric și dulap gri" data-d="Dulapul gri din colț și consola îngustă de machiaj lasă patul liber în mijlocul camerei.">
-          <picture><source srcset="images/idei/dormitor_6585756-480.webp 480w, images/idei/dormitor_6585756-800.webp 800w, images/idei/dormitor_6585756.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/dormitor_6585756.jpg" alt="Dormitor cu perete placat cu lemn în model geometric, pat tapițat gri, dulap gri până la tavan și consolă cu oglindă" width="1100" height="745" loading="lazy"></picture>
-        </div>
-        <div class="bd">
-          <h3>Dormitor cu perete placat geometric și dulap gri</h3>
-          <p>Dulapul gri din colț și consola îngustă de machiaj lasă patul liber în mijlocul camerei.</p>
-          <a class="cred" href="https://www.pexels.com/photo/bedroom-interior-with-bed-near-table-with-pouf-under-mirror-6585756/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
-          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EDormitor%20cu%20perete%20placat%20geometric%20%C8%99i%20dulap%20gri%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Bucătării">
@@ -2170,18 +1998,6 @@
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EBuc%C4%83t%C4%83rie%20gri-lemn%20l%C3%A2ng%C4%83%20dulap%20glisant%20%C3%AEn%20open%20space%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
-      <article class="icard" data-cat="Dressing">
-        <div class="ph" data-full="images/idei/dressing_26859478.jpg" data-t="Dulap alb simplu cu patru uși" data-d="Patru uși albe drepte, fără ornamente: depozitare multă, cu un aspect liniștit.">
-          <picture><source srcset="images/idei/dressing_26859478-480.webp 480w, images/idei/dressing_26859478-800.webp 800w, images/idei/dressing_26859478.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/dressing_26859478.jpg" alt="Cameră goală însorită cu pereți crem și un dulap alb cu patru uși înalte, lângă o ușă deschisă spre hol" width="1100" height="733" loading="lazy"></picture>
-        </div>
-        <div class="bd">
-          <h3>Dulap alb simplu cu patru uși</h3>
-          <p>Patru uși albe drepte, fără ornamente: depozitare multă, cu un aspect liniștit.</p>
-          <a class="cred" href="https://www.pexels.com/photo/a-room-with-a-large-window-and-white-cupboards-26859478/" target="_blank" rel="noopener">Foto: Alexander F Ungerer · vezi mai multe pe Pexels ↗</a>
-          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EDulap%20alb%20simplu%20cu%20patru%20u%C8%99i%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
-        </div>
-      </article>
       <article class="icard" data-cat="Living">
         <div class="ph" data-full="images/idei/living_6920454.jpg" data-t="Perete TV marmorat cu comodă joasă închisă" data-d="Comoda lungă cu sertare de sub televizor adună cablurile și telecomenzile într-un singur loc.">
           <picture><source srcset="images/idei/living_6920454-480.webp 480w, images/idei/living_6920454-800.webp 800w, images/idei/living_6920454.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
@@ -2204,18 +2020,6 @@
           <p>Fără uși: totul la vedere, iar banda LED de sub polițe luminează direct hainele.</p>
           <a class="cred" href="https://www.pexels.com/photo/empty-dressing-room-11701120/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EDressing%20de%20lemn%20%C3%AEn%20U%2C%20cu%20LED%20pe%20poli%C8%9Be%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
-        </div>
-      </article>
-      <article class="icard" data-cat="Bucătării">
-        <div class="ph" data-full="images/idei/bucatarie_6987720.jpg" data-t="Bucătărie albă deschisă spre un living clasic" data-d="Fronturile albe simple se potrivesc și lângă mobilier clasic, fără să concureze cu livingul.">
-          <picture><source srcset="images/idei/bucatarie_6987720-480.webp 480w, images/idei/bucatarie_6987720-800.webp 800w, images/idei/bucatarie_6987720.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/bucatarie_6987720.jpg" alt="Bucătărie albă cu blat gri și frigider inox, deschisă spre un living clasic cu canapea verde și podea lucioasă" width="1100" height="734" loading="lazy"></picture>
-        </div>
-        <div class="bd">
-          <h3>Bucătărie albă deschisă spre un living clasic</h3>
-          <p>Fronturile albe simple se potrivesc și lângă mobilier clasic, fără să concureze cu livingul.</p>
-          <a class="cred" href="https://www.pexels.com/photo/room-and-kitchen-interior-with-furniture-and-electric-appliances-6987720/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
-          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EBuc%C4%83t%C4%83rie%20alb%C4%83%20deschis%C4%83%20spre%20un%20living%20clasic%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Living">
@@ -2254,18 +2058,6 @@
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EBuc%C4%83t%C4%83rie%20alb%C4%83%20cu%20rafturi%20deschise%20%C8%99i%20insul%C4%83%20de%20marmur%C4%83%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
-      <article class="icard" data-cat="Dormitoare">
-        <div class="ph" data-full="images/idei/dormitor_7214332.jpg" data-t="Dormitor cu dulap din lemn albit și pat de stejar" data-d="Dulapul cu ramă de stejar și fronturi albite urcă aproape până la tavan și adună tot ce nu încape în pat.">
-          <picture><source srcset="images/idei/dormitor_7214332-480.webp 480w, images/idei/dormitor_7214332-800.webp 800w, images/idei/dormitor_7214332.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/dormitor_7214332.jpg" alt="Dormitor luminos cu pat de lemn cu tăblie, dulap cu fronturi albite și ramă de stejar și o plantă mare în colț" width="1100" height="734" loading="lazy"></picture>
-        </div>
-        <div class="bd">
-          <h3>Dormitor cu dulap din lemn albit și pat de stejar</h3>
-          <p>Dulapul cu ramă de stejar și fronturi albite urcă aproape până la tavan și adună tot ce nu încape în pat.</p>
-          <a class="cred" href="https://www.pexels.com/photo/interior-design-of-a-bedroom-7214332/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
-          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EDormitor%20cu%20dulap%20din%20lemn%20albit%20%C8%99i%20pat%20de%20stejar%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
-        </div>
-      </article>
       <article class="icard" data-cat="Living">
         <div class="ph" data-full="images/idei/living_7031875.jpg" data-t="Perete TV înrămat, cu comodă gri asortată" data-d="Corpul din jurul televizorului și comoda alăturată au același finisaj, așa că încăperea arată unitar.">
           <picture><source srcset="images/idei/living_7031875-480.webp 480w, images/idei/living_7031875-800.webp 800w, images/idei/living_7031875.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
@@ -2276,54 +2068,6 @@
           <p>Corpul din jurul televizorului și comoda alăturată au același finisaj, așa că încăperea arată unitar.</p>
           <a class="cred" href="https://www.pexels.com/photo/light-spacious-modern-living-room-7031875/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EPerete%20TV%20%C3%AEnr%C4%83mat%2C%20cu%20comod%C4%83%20gri%20asortat%C4%83%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
-        </div>
-      </article>
-      <article class="icard" data-cat="Dressing">
-        <div class="ph" data-full="images/idei/dressing_7045298.jpg" data-t="Dressing în nișă, cu lemn și LED" data-d="Nișa cu bare de umerașe și bancă joasă transformă un colț al camerei în loc de îmbrăcat.">
-          <picture><source srcset="images/idei/dressing_7045298-480.webp 480w, images/idei/dressing_7045298-800.webp 800w, images/idei/dressing_7045298.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/dressing_7045298.jpg" alt="Cameră cu ferestre pe colț și comodă joasă cu lamele de lemn, iar în dreapta o nișă de dressing cu lemn, bare și LED" width="1100" height="740" loading="lazy"></picture>
-        </div>
-        <div class="bd">
-          <h3>Dressing în nișă, cu lemn și LED</h3>
-          <p>Nișa cu bare de umerașe și bancă joasă transformă un colț al camerei în loc de îmbrăcat.</p>
-          <a class="cred" href="https://www.pexels.com/photo/modern-room-interior-with-wardrobe-in-apartment-7045298/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
-          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EDressing%20%C3%AEn%20ni%C8%99%C4%83%2C%20cu%20lemn%20%C8%99i%20LED%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
-        </div>
-      </article>
-      <article class="icard" data-cat="Bucătării">
-        <div class="ph" data-full="images/idei/bucatarie_7031879.jpg" data-t="Bucătărie în L albă și bej, cu cuptor în coloană" data-d="Cuptorul montat în coloana înaltă stă la nivelul ochilor, iar blatul rămâne liber pentru gătit.">
-          <picture><source srcset="images/idei/bucatarie_7031879-480.webp 480w, images/idei/bucatarie_7031879-800.webp 800w, images/idei/bucatarie_7031879.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/bucatarie_7031879.jpg" alt="Bucătărie în L cu corpuri albe sus, bej jos, cuptor încastrat în coloană și masă de marmură cu scaune matlasate" width="1100" height="734" loading="lazy"></picture>
-        </div>
-        <div class="bd">
-          <h3>Bucătărie în L albă și bej, cu cuptor în coloană</h3>
-          <p>Cuptorul montat în coloana înaltă stă la nivelul ochilor, iar blatul rămâne liber pentru gătit.</p>
-          <a class="cred" href="https://www.pexels.com/photo/interior-of-modern-kitchen-with-marble-table-7031879/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
-          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EBuc%C4%83t%C4%83rie%20%C3%AEn%20L%20alb%C4%83%20%C8%99i%20bej%2C%20cu%20cuptor%20%C3%AEn%20coloan%C4%83%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
-        </div>
-      </article>
-      <article class="icard" data-cat="Dormitoare">
-        <div class="ph" data-full="images/idei/dormitor_31728404.jpg" data-t="Dormitor cu dulap alb, rafturi de stejar și birou" data-d="Dulapul, rafturile și biroul pe același perete eliberează restul camerei pentru pat.">
-          <picture><source srcset="images/idei/dormitor_31728404-480.webp 480w, images/idei/dormitor_31728404-800.webp 800w, images/idei/dormitor_31728404.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/dormitor_31728404.jpg" alt="Dormitor cu dulap alb până la tavan, rafturi deschise din lemn deschis, birou mic cu scaun și pat dublu alb" width="1100" height="732" loading="lazy"></picture>
-        </div>
-        <div class="bd">
-          <h3>Dormitor cu dulap alb, rafturi de stejar și birou</h3>
-          <p>Dulapul, rafturile și biroul pe același perete eliberează restul camerei pentru pat.</p>
-          <a class="cred" href="https://www.pexels.com/photo/modern-minimalist-bedroom-interior-design-31728404/" target="_blank" rel="noopener">Foto: Đậu Photograph · vezi mai multe pe Pexels ↗</a>
-          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EDormitor%20cu%20dulap%20alb%2C%20rafturi%20de%20stejar%20%C8%99i%20birou%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
-        </div>
-      </article>
-      <article class="icard" data-cat="Living">
-        <div class="ph" data-full="images/idei/living_17240684.jpg" data-t="Loc de luat masa cu bufet gri cu uși cu lamele" data-d="Un bufet lângă masă ține farfuriile și fețele de masă exact unde ai nevoie de ele.">
-          <picture><source srcset="images/idei/living_17240684-480.webp 480w, images/idei/living_17240684-800.webp 800w, images/idei/living_17240684.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/living_17240684.jpg" alt="Sufragerie cu masă de lemn închis, scaune negre, bufet gri cu sertare și uși cu lamele, candelabru și tablou pe perete" width="1100" height="733" loading="lazy"></picture>
-        </div>
-        <div class="bd">
-          <h3>Loc de luat masa cu bufet gri cu uși cu lamele</h3>
-          <p>Un bufet lângă masă ține farfuriile și fețele de masă exact unde ai nevoie de ele.</p>
-          <a class="cred" href="https://www.pexels.com/photo/dining-room-interior-design-17240684/" target="_blank" rel="noopener">Foto: hi room · vezi mai multe pe Pexels ↗</a>
-          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9ELoc%20de%20luat%20masa%20cu%20bufet%20gri%20cu%20u%C8%99i%20cu%20lamele%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
       <article class="icard" data-cat="Dressing">
@@ -2350,18 +2094,6 @@
           <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EBuc%C4%83t%C4%83rie%20alb%C4%83%20cu%20faian%C8%9B%C4%83%20petrol%20%C8%99i%20mas%C4%83%20alb%C4%83%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
         </div>
       </article>
-      <article class="icard" data-cat="Dormitoare">
-        <div class="ph" data-full="images/idei/dormitor_8089081.jpg" data-t="Dormitor cu masă de toaletă albă și dulap alb" data-d="Masa de toaletă cu sertar și taburetul ascuns dedesubt țin totul la îndemână lângă pat.">
-          <picture><source srcset="images/idei/dormitor_8089081-480.webp 480w, images/idei/dormitor_8089081-800.webp 800w, images/idei/dormitor_8089081.webp 1100w" sizes="(max-width: 701px) calc(100vw - 40px), (max-width: 1043px) calc(50vw - 31px), 366px" type="image/webp">
-          <img src="images/idei/dormitor_8089081.jpg" alt="Dormitor cu pat cu tăblie gri capitonată, masă de toaletă albă cu oglindă, dulap alb și două lămpi suspendate" width="1100" height="734" loading="lazy"></picture>
-        </div>
-        <div class="bd">
-          <h3>Dormitor cu masă de toaletă albă și dulap alb</h3>
-          <p>Masa de toaletă cu sertar și taburetul ascuns dedesubt țin totul la îndemână lângă pat.</p>
-          <a class="cred" href="https://www.pexels.com/photo/bed-in-hotel-room-8089081/" target="_blank" rel="noopener">Foto: Max Vakhtbovych · vezi mai multe pe Pexels ↗</a>
-          <a class="cta" href="https://wa.me/40749572087?text=Bun%C4%83%21%20Mi-a%20pl%C4%83cut%20ideea%20%E2%80%9EDormitor%20cu%20mas%C4%83%20de%20toalet%C4%83%20alb%C4%83%20%C8%99i%20dulap%20alb%E2%80%9D%20de%20pe%20normandmobilier.ro.%20Se%20poate%20face%20ceva%20asem%C4%83n%C4%83tor%20la%20mine%3F" target="_blank" rel="noopener">Vreau așa — scrie-ne</a>
-        </div>
-      </article>
   </main>
   <p class="idei-credit">Imaginile de inspirație sunt de pe <a href="https://www.pexels.com" target="_blank" rel="noopener">Pexels</a>, cu licență liberă pentru uz comercial. Sub fiecare proiect am pus numele fotografului și linkul către sursă — dacă îți place stilul cuiva, mergi la el și vezi tot ce a publicat.</p>
   <div id="ilb"><button class="x" id="ilbX" aria-label="Închide">×</button><img id="ilbImg" alt="">
@@ -2373,16 +2105,57 @@
         <span class="brand-sub">Mobilier</span>
       </div>
       <div class="f-links">
-        <a href="#colectie">Mobilier</a>
-        <a href="#despre">Despre noi</a>
-        <a href="#contact">Contact</a>
+        <a href="index.html#colectie">Mobilier</a>
+        <a href="index.html#despre">Despre noi</a>
+        <a href="index.html#contact">Contact</a>
         <a href="tel:+40749572087">0749 572 087</a>
       </div>
     </div>
     <div class="footer-copy">
-      © <span id="year"></span> Normand Mobilier · Mobilă la comandă · Galați · normandmobilier.ro
+      © <span id="year">2026</span> Normand Mobilier · Mobilă la comandă · Galați · normandmobilier.ro
     </div>
   </footer>
+<script>
+/* meniul de sus și meniul de pe telefon (aceleași ca pe celelalte pagini) */
+(function(){
+  var menus = { mobilier: ["Dormitoare", "Bucătării", "Corpuri de mobilă"] };
+  var navItems = document.querySelectorAll(".nav-item");
+  var panel = document.getElementById("panel"), pages = document.getElementById("pages"), overlay = document.getElementById("overlay");
+  var topbar = document.getElementById("topbar"), active = null;
+  function closeMenu(){ active = null; panel.classList.remove("open"); overlay.classList.remove("visible");
+    navItems.forEach(function(n){ n.classList.remove("active"); });
+    pages.querySelectorAll(".page").forEach(function(p){ p.classList.remove("flip-in"); }); }
+  function openMenu(key, anchor){
+    if (active === key) { closeMenu(); return; }
+    active = key; pages.innerHTML = "";
+    (menus[key] || []).forEach(function(label, i){
+      var page = document.createElement("div"); page.className = "page";
+      var inner = document.createElement("div"); inner.className = "page-inner"; inner.style.transitionDelay = (i * 70) + "ms";
+      inner.innerHTML = "<span>" + label + "</span><span class='arrow'>→</span>";
+      inner.addEventListener("click", function(){ window.location.href = "categorie.php?titlu=" + encodeURIComponent(label); });
+      page.appendChild(inner); pages.appendChild(page);
+    });
+    var r = anchor.getBoundingClientRect(); panel.style.left = Math.min(r.left, window.innerWidth - 320) + "px";
+    panel.classList.add("open"); overlay.classList.add("visible");
+    navItems.forEach(function(n){ n.classList.toggle("active", n === anchor); });
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){ pages.querySelectorAll(".page").forEach(function(p){ p.classList.add("flip-in"); }); }); });
+  }
+  navItems.forEach(function(item){ item.addEventListener("click", function(e){
+    if (item.dataset.menu) { e.stopPropagation(); openMenu(item.dataset.menu, item); } else closeMenu(); }); });
+  overlay.addEventListener("click", closeMenu);
+  document.addEventListener("keydown", function(e){ if (e.key === "Escape") closeMenu(); });
+  window.addEventListener("resize", function(){ if (active) closeMenu(); });
+  var onScroll = function(){ topbar.classList.toggle("scrolled", window.scrollY > 10); };
+  window.addEventListener("scroll", onScroll); onScroll();
+  var hamburger = document.getElementById("hamburger"), mobileMenu = document.getElementById("mobileMenu");
+  hamburger.addEventListener("click", function(){
+    var open = mobileMenu.classList.toggle("open");
+    hamburger.classList.toggle("open", open); hamburger.setAttribute("aria-expanded", open ? "true" : "false"); });
+  mobileMenu.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", function(){
+    mobileMenu.classList.remove("open"); hamburger.classList.remove("open"); hamburger.setAttribute("aria-expanded", "false"); }); });
+  document.getElementById("year").textContent = new Date().getFullYear();
+})();
+</script>
 <script>
 (function(){
   var grid=document.getElementById("ideiGrid");

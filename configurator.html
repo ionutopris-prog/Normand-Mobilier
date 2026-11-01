@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Configurator mobilă la comandă | Normand Mobilier</title>
-<meta name="description" content="Configurează-ți online dulapul, bucătăria sau corpul de mobilă: dimensiuni, finisaje, interior cu rafturi și bare. Trimiți desenul la atelier și primești oferta pe email sau WhatsApp.">
+<meta name="description" content="Configurează online dulapul, bucătăria sau corpul de mobilă: dimensiuni, finisaje, interior. Trimiți desenul la atelier și primești oferta.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://normandmobilier.ro/configurator.html">
 <meta property="og:type" content="website">
@@ -49,6 +49,7 @@
   .stage-head { display:flex; align-items:flex-start; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:6px; }
   .stage-head .eyebrow { font-size:11px; text-transform:uppercase; letter-spacing:.22em; color:var(--wood-text); font-weight:600; }
   .stage-head h1 { font-size:clamp(26px,3.4vw,38px); margin:4px 0 2px; line-height:1.05; }
+  .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
   .stage-head .sub { font-size:14px; color:var(--ink-soft); }
   .planner-link { font-size:13px; color:var(--forest); font-weight:600; text-decoration:none; border:1px solid var(--line); background:var(--cream); padding:8px 14px; border-radius:999px; }
   .viewer { flex:1; display:flex; align-items:center; justify-content:center; min-height:340px; position:relative; }
@@ -138,7 +139,7 @@
       <div class="stage-head">
         <div>
           <div class="eyebrow">Configurator · o piesă</div>
-          <h1 id="pieceTitle">Dulap cu 2 uși</h1>
+          <h1><span class="sr-only">Configurator de mobilă la comandă: </span><span id="pieceTitle">Dulap cu 2 uși</span></h1>
           <div class="sub">Alege forma, dimensiunile și finisajul — se desenează în timp real.</div>
         </div>
         <div style="display:flex; flex-direction:column; gap:10px; align-items:flex-end">
@@ -162,9 +163,9 @@
       </div>
       <div class="group">
         <div class="glabel">Dimensiuni</div>
-        <div class="field" data-dim="w"><div class="frow"><span class="fname">Lățime</span><span class="fval"><span class="dv">100</span> cm</span></div><input type="range" id="rngW"></div>
-        <div class="field" data-dim="h"><div class="frow"><span class="fname">Înălțime</span><span class="fval"><span class="dv">210</span> cm</span></div><input type="range" id="rngH"></div>
-        <div class="field" data-dim="d"><div class="frow"><span class="fname">Adâncime</span><span class="fval"><span class="dv">58</span> cm</span></div><input type="range" id="rngD"></div>
+        <div class="field" data-dim="w"><div class="frow"><span class="fname">Lățime</span><span class="fval"><span class="dv">100</span> cm</span></div><input type="range" id="rngW" aria-label="Lățime, în centimetri"></div>
+        <div class="field" data-dim="h"><div class="frow"><span class="fname">Înălțime</span><span class="fval"><span class="dv">210</span> cm</span></div><input type="range" id="rngH" aria-label="Înălțime, în centimetri"></div>
+        <div class="field" data-dim="d"><div class="frow"><span class="fname">Adâncime</span><span class="fval"><span class="dv">58</span> cm</span></div><input type="range" id="rngD" aria-label="Adâncime, în centimetri"></div>
       </div>
       <div class="group" id="grpDoors"><div class="glabel">Uși</div><div class="seg" id="segDoors"></div></div>
       <div class="group" id="grpDrawers"><div class="glabel">Sertare</div><div class="seg" id="segDrawers"></div></div>

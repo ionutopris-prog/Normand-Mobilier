@@ -18,7 +18,8 @@ Reguli (1 nov 2026, după ce robotul scosese toate ideile alese de mână):
   trebuie să treacă filtrul pe metadate (trece_filtrul): fără oameni, mărci,
   electronice, cutii, magazine, hoteluri etc.
 - pozele scoase de om din galerie stau în images/idei/_scoase/ (nu se urcă pe site)
-  și nu se mai publică niciodată.
+  și nu se mai publică niciodată — excluderea e pe ID-ul Pexels, indiferent de numele
+  fișierului sau de categorie.
 """
 import os, re, json, html, shutil, subprocess, sys, urllib.parse, urllib.request
 
@@ -27,6 +28,7 @@ IMG     = os.path.join(ROOT, "images", "idei")
 ALESE   = os.path.join(IMG, "_alese.txt")
 LISTA   = os.path.join(IMG, "_lista.txt")
 CREDIT  = os.path.join(IMG, "_credite.txt")
+CRED_AL = os.path.join(IMG, "_credite_alese.txt")       # creditele celor alese de mână (doar citite)
 DIMS    = os.path.join(IMG, "_dimensiuni.txt")
 SCOASE  = os.path.join(IMG, "_scoase")
 MOTIVE  = os.path.join(SCOASE, "MOTIVE.txt")
@@ -191,12 +193,15 @@ def main():
     for b in alese_base:
         if not all(os.path.exists(os.path.join(IMG, b + e)) for e in (".jpg", ".webp")):
             raise SystemExit(f"lipsește poza aleasă de mână {b} — mă opresc, nu regenerez pagina")
-    scoase = {r.split("|")[0] for r in citeste(MOTIVE)}
-
-    pe_galerie = {r.split("|")[0] for r in lista} | alese_base
+    pid = lambda base: base.rsplit("_", 1)[-1]           # ID-ul Pexels din numele fișierului
+    scoase_id = {pid(r.split("|")[0]) for r in citeste(MOTIVE)}
+    respinse_id = {str(p["id"]) for p in pool if p.get("ok") is False}
+    # gardă: o poză scoasă (ID în _scoase) nu rămâne în galerie nici dacă a rămas în listă
+    lista = [r for r in lista if pid(r.split("|")[0]) not in scoase_id]
+    pe_galerie_id = {pid(r.split("|")[0]) for r in lista} | {pid(b) for b in alese_base}
     def eligibila(p):
-        b = base_din(p)
-        if b in pe_galerie or b in scoase: return False
+        i = str(p["id"])
+        if i in pe_galerie_id or i in scoase_id or i in respinse_id: return False
         if p.get("ok") is True: return True
         if "ok" not in p: return trece_filtrul(p)       # neverificată cu ochii: doar dacă trece filtrul
         return False                                      # "ok": false = respinsă la verificare
@@ -261,7 +266,7 @@ def main():
     scrie(LISTA,  lista)
     scrie(CREDIT, credite)
     scrie(DIMS,   sorted(dims.values()))
-    regen(alese, lista, credite, dims)
+    regen(alese, lista, credite + citeste(CRED_AL), dims)
     print(f"galerie: {len(alese)} alese de mână + {len(lista)} ale robotului = {len(alese) + len(lista)}")
 
 def srcset_webp(base):
@@ -293,9 +298,11 @@ def regen(alese, lista, credite, dims):
         f, by, url, byurl = c.split("|")
         cred[f] = {"by": by, "url": url}
     cards, cats = [], []
-    for r in alese:                                       # alese de mână: primele, exact cum le-a ales
-        base, cat, titlu, desc = r.split("|")[:4]
-        cards.append(card(base, cat, titlu, desc, f"{titlu} — {cat} la comandă, Normand Mobilier", dims[base], None))
+    for r in alese:                                       # alese de mână: primele, în ordinea aleasă
+        c = r.split("|")
+        base, cat, titlu, desc = c[:4]
+        alt = c[4] if len(c) > 4 and c[4] else titlu      # text alternativ neutru, descriptiv
+        cards.append(card(base, cat, titlu, desc, alt, dims[base], cred.get(base)))
         cats.append(cat)
     for r in lista:
         base, cat, titlu, desc, alt = r.split("|")[:5]

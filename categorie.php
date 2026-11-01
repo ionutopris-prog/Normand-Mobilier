@@ -66,5 +66,37 @@ if ($known) {
 /* fără categorie sau categorie necunoscută: rămâne ce e în categorie.html —
    un singur <meta name="robots" content="noindex, follow"> și canonicul spre prima pagină */
 
+/* poza mare din stânga: src/srcset puse din server (nu doar din JS), ca să se încarce imediat.
+   Prima poză se citește chiar din productsByCategory din categorie.html (sursa unică),
+   deci rămâne mereu aceeași cu alegerea fondatorului. */
+function np_hero_photo($html, $known, $raw) {
+  if ($known) {
+    $re = '~"' . preg_quote($raw, '~') . '":\s*\[\s*\{[^}]*?photos:\s*\[\s*"([^"]+)"~u';
+  } else {
+    $re = '~const defaultProducts = \[\s*\{[^}]*?photos:\s*\[\s*"([^"]+)"~u';
+  }
+  return preg_match($re, $html, $m) ? $m[1] : '';
+}
+$hero = np_hero_photo($html, $known, $raw);
+if ($hero !== '' && preg_match('~^images/[a-z0-9/_-]+\.jpg$~', $hero) && is_file(__DIR__ . '/' . $hero)) {
+  $v = function ($w, $ext) use ($hero) { return preg_replace('~\.jpg$~', '-' . $w . '.' . $ext, $hero); };
+  $sizes = '(max-width: 900px) calc(94vw - 76px), 394px';
+  $hasV = is_file(__DIR__ . '/' . $v(480, 'webp')) && is_file(__DIR__ . '/' . $v(800, 'jpg'));
+  $dim = @getimagesize(__DIR__ . '/' . $hero);
+  $wh = $dim ? ' width="' . (int)$dim[0] . '" height="' . (int)$dim[1] . '"' : '';
+  $alt = htmlspecialchars($known ? $raw : 'Mobilă la comandă', ENT_QUOTES, 'UTF-8');
+  if ($hasV) {
+    $src = '<source id="heroSrc" type="image/webp" srcset="' . $v(480, 'webp') . ' 480w, ' . $v(800, 'webp') . ' 800w" sizes="' . $sizes . '">';
+    $img = '<img id="heroImg" alt="' . $alt . '" fetchpriority="high" src="' . $v(800, 'jpg') . '" srcset="' . $v(480, 'jpg') . ' 480w, ' . $v(800, 'jpg') . ' 800w" sizes="' . $sizes . '"' . $wh . '>';
+  } else {
+    $src = '<source id="heroSrc" type="image/webp">';
+    $img = '<img id="heroImg" alt="' . $alt . '" fetchpriority="high" src="' . $hero . '"' . $wh . '>';
+  }
+  $html = str_replace('<source id="heroSrc" type="image/webp">', $src, $html);
+  $html = str_replace('<img id="heroImg" alt="" fetchpriority="high">', $img, $html);
+}
+
+header_remove('X-Powered-By');
 header('Content-Type: text/html; charset=utf-8');
+header('Cache-Control: no-cache');
 echo $html;

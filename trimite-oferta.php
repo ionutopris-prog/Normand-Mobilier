@@ -8,6 +8,7 @@
 header('Content-Type: application/json; charset=utf-8');
 header('X-Content-Type-Options: nosniff');
 header('Cache-Control: no-store');
+header_remove('X-Powered-By');
 
 $ATELIER = 'contact@normandmobilier.ro';   // unde ajung comenzile
 $FROM    = 'contact@normandmobilier.ro';   // expeditor (email-ul domeniului)
@@ -99,7 +100,7 @@ function np_prima_data_azi($cheie) {
 /* ping-uri de numărare: doar POST (sendBeacon), cel mult o dată pe vizitator pe zi.
    Fără cookie-uri; IP-ul nu se păstrează (doar amprenta zilei, ștearsă a doua zi). */
 if (isset($_GET['ping'])) {
-  if ($_SERVER['REQUEST_METHOD'] !== 'POST') { http_response_code(405); echo json_encode(['ok'=>false,'error'=>'post_only']); exit; }
+  if ($_SERVER['REQUEST_METHOD'] !== 'POST') { http_response_code(405); header('Allow: POST'); echo json_encode(['ok'=>false,'error'=>'post_only']); exit; }
   $tip = (string)$_GET['ping'];
   if ($tip === 'view') {
     $PAGINI = ['index', 'categorie', 'idei', 'configurator', 'planner'];
@@ -145,12 +146,13 @@ if ($name === '' || mb_strlen($spec) < 5) { http_response_code(422); echo json_e
 $emailValid = ($email !== '' && filter_var($email, FILTER_VALIDATE_EMAIL));
 
 /* limite FAIL-CLOSED: dacă starea nu se poate citi sau scrie, nu trimitem nimic.
-   Încercarea se înregistrează ÎNAINTE de trimitere, deci și erorile se numără. */
-if (!$dry) {
+   Încercarea se înregistrează ÎNAINTE de trimitere, deci și erorile se numără.
+   Aceleași limite se aplică și modului de test „dryrun" (nu le poate ocoli). */
+{
   $dir = np_state_dir(); $amp = np_amprenta('oferta');
   if ($dir === '' || $amp === '') { http_response_code(503); echo json_encode(['ok'=>false,'error'=>'unavailable']); exit; }
   $now = time();
-  $emailKey = $emailValid ? substr(hash_hmac('sha256', strtolower($email), (string)@file_get_contents("$dir/sare-" . gmdate('Y-m-d') . ".txt")), 0, 24) : '';
+  $emailKey = ($emailValid && !$dry) ? substr(hash_hmac('sha256', strtolower($email), (string)@file_get_contents("$dir/sare-" . gmdate('Y-m-d') . ".txt")), 0, 24) : '';
   $verdict = np_json_update("$dir/zi-" . gmdate('Y-m-d') . "-limite.json", function (&$j) use ($amp, $now, $emailKey, $LIM_IP_ORA, $LIM_ZI, $LIM_EMAIL_ZI) {
     $j += ['total' => 0, 'ip' => [], 'email' => []];
     $h = array_values(array_filter((array)($j['ip'][$amp] ?? []), function ($t) use ($now) { return $t > $now - 3600; }));

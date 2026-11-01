@@ -61,10 +61,14 @@ ErrorDocument 403 /404.html
   Header always set X-Frame-Options "SAMEORIGIN"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
   Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+  # fără versiunea de PHP în anteturi
+  Header always unset X-Powered-By
+  Header unset X-Powered-By
 
   # cache: paginile se verifică la fiecare vizită, scripturile o zi, pozele o săptămână,
-  # fonturile un an (numele lor nu se schimbă)
-  <FilesMatch "\.(html|php)$">
+  # fonturile un an (numele lor nu se schimbă). Fișierele .php își pun singure Cache-Control
+  # (trimite-oferta.php: no-store; categorie.php: no-cache) — aici nu le suprascriem.
+  <FilesMatch "\.html$">
     Header set Cache-Control "no-cache"
   </FilesMatch>
   <FilesMatch "\.(js|css)$">
