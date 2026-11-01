@@ -75,13 +75,13 @@ bucatarie_35553431|Ali   Soheil|https://www.pexels.com/photo/modern-minimalist-k
 living_6958132|Max Vakhtbovych|https://www.pexels.com/photo/soft-couch-near-wooden-cupboards-6958132/|https://www.pexels.com/@artbovich
 dressing_7195876|Max Vakhtbovych|https://www.pexels.com/photo/narrow-corridor-with-empty-shelves-7195876/|https://www.pexels.com/@artbovich
 bucatarie_6933857|Max Vakhtbovych|https://www.pexels.com/photo/modern-kitchen-with-black-cupboard-and-brown-table-6933857/|https://www.pexels.com/@artbovich
-bucatarie_7061399|Max Vakhtbovych|https://www.pexels.com/photo/modern-kitchen-with-counter-and-built-in-appliances-7061399/|https://www.pexels.com/@artbovich
-dormitor_17125482|rishi raj khare|https://www.pexels.com/photo/bathrobe-on-the-bed-in-a-bedroom-17125482/|https://www.pexels.com/@rishi-raj-khare-593097024
-living_6934172|Max Vakhtbovych|https://www.pexels.com/photo/red-soft-sofa-in-lounge-with-black-metal-fireplace-6934172/|https://www.pexels.com/@artbovich
-bucatarie_36777878|Curtis Adams|https://www.pexels.com/photo/modern-minimalist-kitchen-with-island-bar-36777878/|https://www.pexels.com/@curtis-adams-1694007
-living_6890394|Max Vakhtbovych|https://www.pexels.com/photo/interior-of-modern-room-with-wooden-furniture-and-couch-6890394/|https://www.pexels.com/@artbovich
-dressing_8146143|Max Vakhtbovych|https://www.pexels.com/photo/empty-wooden-closet-8146143/|https://www.pexels.com/@artbovich
-dormitor_6920438|Max Vakhtbovych|https://www.pexels.com/photo/photo-of-an-apartment-interior-6920438/|https://www.pexels.com/@artbovich
-living_7214166|Max Vakhtbovych|https://www.pexels.com/photo/interior-of-living-room-in-modern-apartment-7214166/|https://www.pexels.com/@artbovich
-bucatarie_6899443|Max Vakhtbovych|https://www.pexels.com/photo/flat-with-open-kitchen-near-table-with-chairs-6899443/|https://www.pexels.com/@artbovich
-dormitor_2062431|Dmitry Zvolskiy|https://www.pexels.com/photo/white-wooden-shelf-beside-bed-2062431/|https://www.pexels.com/@zvolskiy
+bucatarie_36777557|Curtis Adams|https://www.pexels.com/photo/modern-kitchen-interior-with-wooden-accents-36777557/|https://www.pexels.com/@curtis-adams-1694007
+dormitor_7214332|Max Vakhtbovych|https://www.pexels.com/photo/interior-design-of-a-bedroom-7214332/|https://www.pexels.com/@artbovich
+living_7031875|Max Vakhtbovych|https://www.pexels.com/photo/light-spacious-modern-living-room-7031875/|https://www.pexels.com/@artbovich
+dressing_7045298|Max Vakhtbovych|https://www.pexels.com/photo/modern-room-interior-with-wardrobe-in-apartment-7045298/|https://www.pexels.com/@artbovich
+bucatarie_7031879|Max Vakhtbovych|https://www.pexels.com/photo/interior-of-modern-kitchen-with-marble-table-7031879/|https://www.pexels.com/@artbovich
+dormitor_31728404|Đậu Photograph|https://www.pexels.com/photo/modern-minimalist-bedroom-interior-design-31728404/|https://www.pexels.com/@dauphotographer
+living_17240684|hi room|https://www.pexels.com/photo/dining-room-interior-design-17240684/|https://www.pexels.com/@hiroom
+dressing_7195889|Max Vakhtbovych|https://www.pexels.com/photo/empty-dressing-room-with-door-7195889/|https://www.pexels.com/@artbovich
+bucatarie_6782272|Max Vakhtbovych|https://www.pexels.com/photo/house-with-table-with-chairs-next-to-kitchen-with-cupboards-6782272/|https://www.pexels.com/@artbovich
+dormitor_8089081|Max Vakhtbovych|https://www.pexels.com/photo/bed-in-hotel-room-8089081/|https://www.pexels.com/@artbovich
