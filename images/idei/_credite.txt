@@ -56,3 +56,13 @@ bucatarie_36777557|Curtis Adams|https://www.pexels.com/photo/modern-kitchen-inte
 living_7031875|Max Vakhtbovych|https://www.pexels.com/photo/light-spacious-modern-living-room-7031875/|https://www.pexels.com/@artbovich
 dressing_7195889|Max Vakhtbovych|https://www.pexels.com/photo/empty-dressing-room-with-door-7195889/|https://www.pexels.com/@artbovich
 bucatarie_6782272|Max Vakhtbovych|https://www.pexels.com/photo/house-with-table-with-chairs-next-to-kitchen-with-cupboards-6782272/|https://www.pexels.com/@artbovich
+bucatarie_6899443|Max Vakhtbovych|https://www.pexels.com/photo/flat-with-open-kitchen-near-table-with-chairs-6899443/|https://www.pexels.com/@artbovich
+dormitor_7060822|Max Vakhtbovych|https://www.pexels.com/photo/bedroom-interior-with-bed-near-wardrobe-with-shelves-7060822/|https://www.pexels.com/@artbovich
+living_7214166|Max Vakhtbovych|https://www.pexels.com/photo/interior-of-living-room-in-modern-apartment-7214166/|https://www.pexels.com/@artbovich
+dressing_8146143|Max Vakhtbovych|https://www.pexels.com/photo/empty-wooden-closet-8146143/|https://www.pexels.com/@artbovich
+bucatarie_7061399|Max Vakhtbovych|https://www.pexels.com/photo/modern-kitchen-with-counter-and-built-in-appliances-7061399/|https://www.pexels.com/@artbovich
+dormitor_6920438|Max Vakhtbovych|https://www.pexels.com/photo/photo-of-an-apartment-interior-6920438/|https://www.pexels.com/@artbovich
+living_6934172|Max Vakhtbovych|https://www.pexels.com/photo/red-soft-sofa-in-lounge-with-black-metal-fireplace-6934172/|https://www.pexels.com/@artbovich
+dressing_6636321|Max Vakhtbovych|https://www.pexels.com/photo/minimalist-furniture-in-corridor-of-modern-apartment-6636321/|https://www.pexels.com/@artbovich
+bucatarie_7587314|Max Vakhtbovych|https://www.pexels.com/photo/a-clean-kitchen-and-dining-area-7587314/|https://www.pexels.com/@artbovich
+dormitor_7018253|Max Vakhtbovych|https://www.pexels.com/photo/bedroom-interior-with-furniture-and-tv-in-flat-7018253/|https://www.pexels.com/@artbovich
