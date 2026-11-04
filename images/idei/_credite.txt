@@ -51,7 +51,6 @@ dormitor_7614613|Max Vakhtbovych|https://www.pexels.com/photo/a-white-bed-in-the
 bucatarie_35553431|Ali   Soheil|https://www.pexels.com/photo/modern-minimalist-kitchen-design-with-appliances-35553431/|https://www.pexels.com/@ali-soheil-2154370577
 living_6958132|Max Vakhtbovych|https://www.pexels.com/photo/soft-couch-near-wooden-cupboards-6958132/|https://www.pexels.com/@artbovich
 dressing_7195876|Max Vakhtbovych|https://www.pexels.com/photo/narrow-corridor-with-empty-shelves-7195876/|https://www.pexels.com/@artbovich
-bucatarie_6933857|Max Vakhtbovych|https://www.pexels.com/photo/modern-kitchen-with-black-cupboard-and-brown-table-6933857/|https://www.pexels.com/@artbovich
 bucatarie_36777557|Curtis Adams|https://www.pexels.com/photo/modern-kitchen-interior-with-wooden-accents-36777557/|https://www.pexels.com/@curtis-adams-1694007
 living_7031875|Max Vakhtbovych|https://www.pexels.com/photo/light-spacious-modern-living-room-7031875/|https://www.pexels.com/@artbovich
 dressing_7195889|Max Vakhtbovych|https://www.pexels.com/photo/empty-dressing-room-with-door-7195889/|https://www.pexels.com/@artbovich
@@ -76,3 +75,13 @@ living_7545852|Max Vakhtbovych|https://www.pexels.com/photo/open-interior-of-sty
 bucatarie_6835139|Curtis Adams|https://www.pexels.com/photo/white-wooden-kitchen-cabinet-and-white-kitchen-cabinet-6835139/|https://www.pexels.com/@curtis-adams-1694007
 dormitor_7546641|Max Vakhtbovych|https://www.pexels.com/photo/contemporary-bedroom-with-workspace-design-7546641/|https://www.pexels.com/@artbovich
 living_7546551|Max Vakhtbovych|https://www.pexels.com/photo/interior-design-of-cozy-living-room-7546551/|https://www.pexels.com/@artbovich
+bucatarie_28054851|Ahmet ÇÖTÜR|https://www.pexels.com/photo/a-kitchen-with-a-green-counter-top-and-wooden-chairs-28054851/|https://www.pexels.com/@ahmetcotur
+dormitor_6489100|Max Vakhtbovych|https://www.pexels.com/photo/stylish-bedroom-with-big-wardrobe-6489100/|https://www.pexels.com/@artbovich
+living_7214156|Max Vakhtbovych|https://www.pexels.com/photo/spacious-living-room-with-couch-and-tv-7214156/|https://www.pexels.com/@artbovich
+bucatarie_6636304|Max Vakhtbovych|https://www.pexels.com/photo/contemporary-apartment-with-kitchen-zone-and-comfy-sofa-6636304/|https://www.pexels.com/@artbovich
+dormitor_6492385|Max Vakhtbovych|https://www.pexels.com/photo/spacious-bedroom-with-glass-wall-in-apartment-6492385/|https://www.pexels.com/@artbovich
+living_6588583|Max Vakhtbovych|https://www.pexels.com/photo/house-interior-with-couch-in-front-of-tv-near-table-6588583/|https://www.pexels.com/@artbovich
+bucatarie_7614607|Max Vakhtbovych|https://www.pexels.com/photo/a-clean-dining-room-7614607/|https://www.pexels.com/@artbovich
+dormitor_6758516|Max Vakhtbovych|https://www.pexels.com/photo/interior-of-light-bedroom-with-table-and-chair-6758516/|https://www.pexels.com/@artbovich
+living_7214329|Max Vakhtbovych|https://www.pexels.com/photo/long-sofa-in-spacious-living-room-7214329/|https://www.pexels.com/@artbovich
+bucatarie_6835136|Curtis Adams|https://www.pexels.com/photo/white-wooden-kitchen-cabinet-with-sink-6835136/|https://www.pexels.com/@curtis-adams-1694007
