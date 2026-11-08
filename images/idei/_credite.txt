@@ -11,16 +11,6 @@ living_6585599|Max Vakhtbovych|https://www.pexels.com/photo/spacious-living-room
 dressing_6947274|Max Vakhtbovych|https://www.pexels.com/photo/corridor-of-modern-apartment-with-wardrobe-6947274/|https://www.pexels.com/@artbovich
 bucatarie_8082210|Max Vakhtbovych|https://www.pexels.com/photo/contemporary-kitchen-design-8082210/|https://www.pexels.com/@artbovich
 dressing_7045297|Max Vakhtbovych|https://www.pexels.com/photo/modern-wardrobe-with-racks-and-shiny-lights-in-house-7045297/|https://www.pexels.com/@artbovich
-bucatarie_6956111|Max Vakhtbovych|https://www.pexels.com/photo/modern-kitchen-interior-with-table-under-light-bulbs-6956111/|https://www.pexels.com/@artbovich
-bucatarie_36777885|Curtis Adams|https://www.pexels.com/photo/sleek-modern-kitchen-interior-with-marble-counters-36777885/|https://www.pexels.com/@curtis-adams-1694007
-dormitor_6903150|Max Vakhtbovych|https://www.pexels.com/photo/interior-of-bedroom-with-stylish-lamp-and-mirrored-cabinet-6903150/|https://www.pexels.com/@artbovich
-bucatarie_13751390|Gustavo Galeano Maz|https://www.pexels.com/photo/interior-design-of-a-home-kitchen-and-dining-area-13751390/|https://www.pexels.com/@fotografiagmazg
-dormitor_7214326|Max Vakhtbovych|https://www.pexels.com/photo/interior-of-empty-bedroom-with-stylish-furniture-7214326/|https://www.pexels.com/@artbovich
-living_7195895|Max Vakhtbovych|https://www.pexels.com/photo/spacious-apartment-with-couch-and-tv-7195895/|https://www.pexels.com/@artbovich
-bucatarie_37408949|Waqas ilyas|https://www.pexels.com/photo/modern-minimalist-white-kitchen-interior-design-37408949/|https://www.pexels.com/@waqas-ilyas-81841622
-living_5502255|Curtis Adams|https://www.pexels.com/photo/wooden-bookcase-with-books-in-empty-room-with-high-ceilings-5502255/|https://www.pexels.com/@curtis-adams-1694007
-dressing_6670659|Huy Quang Nguyễn|https://www.pexels.com/photo/photo-of-a-bedroom-6670659/|https://www.pexels.com/@huy-quang-nguy-n-18652822
-bucatarie_36777502|Curtis Adams|https://www.pexels.com/photo/modern-white-kitchen-with-marble-countertops-36777502/|https://www.pexels.com/@curtis-adams-1694007
 bucatarie_36777557|Curtis Adams|https://www.pexels.com/photo/modern-kitchen-interior-with-wooden-accents-36777557/|https://www.pexels.com/@curtis-adams-1694007
 living_7031875|Max Vakhtbovych|https://www.pexels.com/photo/light-spacious-modern-living-room-7031875/|https://www.pexels.com/@artbovich
 dressing_7195889|Max Vakhtbovych|https://www.pexels.com/photo/empty-dressing-room-with-door-7195889/|https://www.pexels.com/@artbovich
@@ -85,3 +75,13 @@ living_27604128|Ansar Muhammad|https://www.pexels.com/photo/dania-city-villa-in-
 dormitor_6980729|Max Vakhtbovych|https://www.pexels.com/photo/closet-on-parquet-under-shiny-chandelier-at-home-6980729/|https://www.pexels.com/@artbovich
 bucatarie_36777854|Curtis Adams|https://www.pexels.com/photo/modern-kitchen-interior-with-sleek-design-36777854/|https://www.pexels.com/@curtis-adams-1694007
 dressing_6585605|Max Vakhtbovych|https://www.pexels.com/photo/interior-of-modern-room-with-wooden-cabinet-and-shelves-6585605/|https://www.pexels.com/@artbovich
+bucatarie_7545855|Max Vakhtbovych|https://www.pexels.com/photo/a-white-kitchen-cabinets-with-sink-7545855/|https://www.pexels.com/@artbovich
+dormitor_6947268|Max Vakhtbovych|https://www.pexels.com/photo/modern-bedroom-with-tv-and-bed-6947268/|https://www.pexels.com/@artbovich
+living_37153442|Curtis Adams|https://www.pexels.com/photo/elegant-living-room-with-fireplace-interior-37153442/|https://www.pexels.com/@curtis-adams-1694007
+dormitor_6580380|Max Vakhtbovych|https://www.pexels.com/photo/modern-design-of-a-walk-in-closet-6580380/|https://www.pexels.com/@artbovich
+bucatarie_7045350|Max Vakhtbovych|https://www.pexels.com/photo/an-interior-of-a-modern-kitchen-7045350/|https://www.pexels.com/@artbovich
+dormitor_6920604|Max Vakhtbovych|https://www.pexels.com/photo/simple-and-modern-interior-design-of-a-bedroom-6920604/|https://www.pexels.com/@artbovich
+living_7512046|Max Vakhtbovych|https://www.pexels.com/photo/modern-living-room-interior-in-beige-color-7512046/|https://www.pexels.com/@artbovich
+dressing_6980733|Max Vakhtbovych|https://www.pexels.com/photo/closet-on-parquet-under-chandelier-at-home-6980733/|https://www.pexels.com/@artbovich
+bucatarie_7147289|Max Vakhtbovych|https://www.pexels.com/photo/modern-kitchen-with-minimalist-furniture-and-dining-area-in-spacious-apartment-7147289/|https://www.pexels.com/@artbovich
+dormitor_7587815|Max Vakhtbovych|https://www.pexels.com/photo/a-cozy-bedroom-with-wooden-flooring-7587815/|https://www.pexels.com/@artbovich
