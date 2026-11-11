@@ -1,13 +1,3 @@
-dressing_8146143|Max Vakhtbovych|https://www.pexels.com/photo/empty-wooden-closet-8146143/|https://www.pexels.com/@artbovich
-bucatarie_7061399|Max Vakhtbovych|https://www.pexels.com/photo/modern-kitchen-with-counter-and-built-in-appliances-7061399/|https://www.pexels.com/@artbovich
-dormitor_6920438|Max Vakhtbovych|https://www.pexels.com/photo/photo-of-an-apartment-interior-6920438/|https://www.pexels.com/@artbovich
-living_6934172|Max Vakhtbovych|https://www.pexels.com/photo/red-soft-sofa-in-lounge-with-black-metal-fireplace-6934172/|https://www.pexels.com/@artbovich
-dressing_6636321|Max Vakhtbovych|https://www.pexels.com/photo/minimalist-furniture-in-corridor-of-modern-apartment-6636321/|https://www.pexels.com/@artbovich
-bucatarie_7587314|Max Vakhtbovych|https://www.pexels.com/photo/a-clean-kitchen-and-dining-area-7587314/|https://www.pexels.com/@artbovich
-dormitor_7018253|Max Vakhtbovych|https://www.pexels.com/photo/bedroom-interior-with-furniture-and-tv-in-flat-7018253/|https://www.pexels.com/@artbovich
-bucatarie_6284229|Max Vakhtbovych|https://www.pexels.com/photo/stylish-kitchen-with-wooden-furniture-and-dining-zone-6284229/|https://www.pexels.com/@artbovich
-dormitor_7148847|Souranshi Fashion and Lifestyle Magazine|https://www.pexels.com/photo/a-cozy-bedroom-7148847/|https://www.pexels.com/@souranshi-fashion-and-lifestyle-magazine-2959920
-living_6890394|Max Vakhtbovych|https://www.pexels.com/photo/interior-of-modern-room-with-wooden-furniture-and-couch-6890394/|https://www.pexels.com/@artbovich
 dressing_7005294|Max Vakhtbovych|https://www.pexels.com/photo/spacious-hall-with-closets-and-big-mirror-in-apartment-7005294/|https://www.pexels.com/@artbovich
 bucatarie_6588594|Max Vakhtbovych|https://www.pexels.com/photo/interior-of-modern-apartment-with-simple-furniture-6588594/|https://www.pexels.com/@artbovich
 dormitor_7005272|Max Vakhtbovych|https://www.pexels.com/photo/interior-of-modern-room-with-sofa-and-workspace-near-window-7005272/|https://www.pexels.com/@artbovich
@@ -85,3 +75,13 @@ living_6920454|Max Vakhtbovych|https://www.pexels.com/photo/modern-design-living
 dressing_7045297|Max Vakhtbovych|https://www.pexels.com/photo/modern-wardrobe-with-racks-and-shiny-lights-in-house-7045297/|https://www.pexels.com/@artbovich
 bucatarie_6956111|Max Vakhtbovych|https://www.pexels.com/photo/modern-kitchen-interior-with-table-under-light-bulbs-6956111/|https://www.pexels.com/@artbovich
 bucatarie_7546770|Max Vakhtbovych|https://www.pexels.com/photo/dining-and-kitchen-area-of-a-house-7546770/|https://www.pexels.com/@artbovich
+bucatarie_36777557|Curtis Adams|https://www.pexels.com/photo/modern-kitchen-interior-with-wooden-accents-36777557/|https://www.pexels.com/@curtis-adams-1694007
+dormitor_6444255|Max Vakhtbovych|https://www.pexels.com/photo/apartment-interior-with-bed-on-carpet-near-tv-and-window-6444255/|https://www.pexels.com/@artbovich
+living_7214166|Max Vakhtbovych|https://www.pexels.com/photo/interior-of-living-room-in-modern-apartment-7214166/|https://www.pexels.com/@artbovich
+dormitor_11701120|Max Vakhtbovych|https://www.pexels.com/photo/empty-dressing-room-11701120/|https://www.pexels.com/@artbovich
+bucatarie_6782272|Max Vakhtbovych|https://www.pexels.com/photo/house-with-table-with-chairs-next-to-kitchen-with-cupboards-6782272/|https://www.pexels.com/@artbovich
+dormitor_7060822|Max Vakhtbovych|https://www.pexels.com/photo/bedroom-interior-with-bed-near-wardrobe-with-shelves-7060822/|https://www.pexels.com/@artbovich
+living_6908560|Max Vakhtbovych|https://www.pexels.com/photo/flat-screen-tv-on-a-wooden-wall-in-front-of-a-couch-6908560/|https://www.pexels.com/@artbovich
+dressing_7195889|Max Vakhtbovych|https://www.pexels.com/photo/empty-dressing-room-with-door-7195889/|https://www.pexels.com/@artbovich
+bucatarie_6899443|Max Vakhtbovych|https://www.pexels.com/photo/flat-with-open-kitchen-near-table-with-chairs-6899443/|https://www.pexels.com/@artbovich
+living_7031875|Max Vakhtbovych|https://www.pexels.com/photo/light-spacious-modern-living-room-7031875/|https://www.pexels.com/@artbovich
